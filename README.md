@@ -1,6 +1,12 @@
 # Overview
 
-This sample app for iOS shows the usage of AutoAPI commands and let's you dive straight into testing some of them.
+This sample app for iOS shows the usage of AutoAPI commands and let's you dive straight into testing some of them, specifically:
+
+* Door Locks
+* Trunk Access
+* Climate
+* Rooftop Control
+* Remote Control
 
 # Configuration
 
@@ -11,4 +17,8 @@ Before running the app, make sure to configure the following in `AppDelegate.swi
 
 # Run the app
 
-Run the app on your phone, or simulator (bluetooth not available), to see test some of the commands:
+Run the app on your phone or iOS simulator (Bluetooth not available on the simulator).
+
+The app layout consists of simple buttons/segments. E.g. press the Lock Doors button to send the command to the car.
+
+The remote control has a safety feature built into the UX level. In order to trigger movement of the car, the direction has to be tapped continuously - at least twice per second. As soon as tapping is stopped the vehicle goes to standstill. This is to prevent the car to continue moving when the phone is accidentally dropped.
