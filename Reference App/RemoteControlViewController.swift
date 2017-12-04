@@ -21,6 +21,7 @@ class RemoteControlViewController: UIViewController {
 
     @IBOutlet var tapContainer: TapContainer!
 
+    private var didStop: Bool = false
     private var lastTouchDate = Date()
     private var lastStatus: RemoteControl.ControlModeStatus = .unknown
 
@@ -32,6 +33,10 @@ class RemoteControlViewController: UIViewController {
 
         switch status {
         case .available:
+            guard !didStop else {
+                return
+            }
+
             sendStartCommand()
 
         case .started:
@@ -164,6 +169,8 @@ private extension RemoteControlViewController {
     }
 
     func sendStopCommand() {
+        didStop = true
+
         Car.shared.sendRemoteControlStopCommand { _ in }
     }
 
