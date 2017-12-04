@@ -13,7 +13,7 @@ import HMKit
 
 extension Car: LinkDelegate {
 
-    public func link(_ link: Link, didReceiveAuthorisationRequest serialNumber: [UInt8], approve: @escaping (() throws -> Void), timeout: TimeInterval) {
+    public func link(_ link: Link, authorisationRequestedBy serialNumber: [UInt8], approve: @escaping (() throws -> Void), timeout: TimeInterval) {
         do {
             try approve()
         }
@@ -28,7 +28,7 @@ extension Car: LinkDelegate {
         }
     }
 
-    public func link(_ link: Link, didReceiveCommand bytes: [UInt8]) {
+    public func link(_ link: Link, commandReceived bytes: [UInt8]) {
         // Only handles VALID AutoAPI responses
         guard let response = AutoAPI.parseIncomingCommand(bytes) else {
             return
@@ -39,7 +39,7 @@ extension Car: LinkDelegate {
         }
     }
 
-    public func link(_ link: Link, stateDidChange oldState: LinkState) {
+    public func link(_ link: Link, stateChanged oldState: LinkState) {
         switch (link.state, oldState) {
         case (.authenticated, .connected):
             DispatchQueue.main.asyncAfter(deadline: (DispatchTime.now() + 0.01)) {

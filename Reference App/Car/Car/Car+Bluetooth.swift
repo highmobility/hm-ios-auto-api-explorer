@@ -26,7 +26,11 @@ extension Car {
 
 
     var activeLink: Link? {
-        return device.links.first { $0.state == .authenticated }
+        if device.link?.state == .authenticated {
+            return device.link
+        }
+
+        return nil
     }
 
 
@@ -42,7 +46,7 @@ extension Car {
             return
         }
 
-        device.disconnectAll()
+        device.disconnect()
     }
 
     public func startBluetoothBroadcasting(failed: @escaping CommandFailed) {

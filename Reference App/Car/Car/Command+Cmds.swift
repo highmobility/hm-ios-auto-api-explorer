@@ -35,7 +35,7 @@ private extension Car {
         }
 
         do {
-            try link.sendCommand(command, commandSent: {
+            try link.sendCommand(command, sent: {
                 if let error = $0 {
                     failed(.miscellaneous(error))
                 }

@@ -14,7 +14,7 @@ extension String {
     var characterPairs: [String] {
         let startEmptyStringPairsArray: [String] = []
 
-        return characters.enumerated().reduce(startEmptyStringPairsArray) { (midResult, enumerationTuple) in
+        return enumerated().reduce(startEmptyStringPairsArray) { (midResult, enumerationTuple) in
             var result = midResult
 
             if (enumerationTuple.offset % 2) == 1 {

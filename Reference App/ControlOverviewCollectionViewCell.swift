@@ -98,7 +98,6 @@ private extension ControlOverviewCollectionViewCell {
         case .rooftopOpening:       return rooftopOpenButton
         case .windshieldHeating:    return windshieldHeatingButton
         case .remoteControl:        return remoteControlButton
-        default:                    return nil
         }
     }
 

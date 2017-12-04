@@ -21,7 +21,7 @@ extension UIViewController {
     }
 
     func displayStatusBarInfo(_ text: String?, for seconds: Double = 3.0, isPermanent: Bool = false, completion: (() -> Void)?) {
-        guard let text = text, text.characters.count > 0 else {
+        guard let text = text, text.count > 0 else {
             return fadeOut(duration: Constants.animationDuration)
         }
 
