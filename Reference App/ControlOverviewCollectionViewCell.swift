@@ -64,13 +64,13 @@ class ControlOverviewCollectionViewCell: UICollectionViewCell {
 
     func updateOther(_ commandType: CommandType) {
         switch commandType {
-        case .other(let command) where command is Charging:
+        case .other(let command) where command is ChargingClass:
             fallthrough
 
         case .vehicleStatii:
             OperationQueue.main.addOperation {
-                if let charging = Car.shared.charging {
-                    self.batteryLabel.text = "\(charging.battery)%"
+                if Car.shared.charging.isAvailable {
+                    self.batteryLabel.text = "\(Car.shared.charging.battery)%"
                 }
 
                 if self.statusContainer.alpha == 0.0 {
@@ -98,6 +98,7 @@ private extension ControlOverviewCollectionViewCell {
         case .rooftopOpening:       return rooftopOpenButton
         case .windshieldHeating:    return windshieldHeatingButton
         case .remoteControl:        return remoteControlButton
+        default:                    return nil
         }
     }
 

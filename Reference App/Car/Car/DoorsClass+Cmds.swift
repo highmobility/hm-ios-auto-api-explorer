@@ -1,5 +1,5 @@
 //
-//  Doors+Cmds.swift
+//  DoorsClass+Cmds.swift
 //  Car
 //
 //  Created by Mikk Rätsep on 08/07/2017.
@@ -13,7 +13,11 @@ import Foundation
 public extension Car {
 
     public func getDoorsState(failed: @escaping CommandFailed) {
-        let bytes = AutoAPI.DoorLocksCommand.getStateBytes
+        guard doors.isAvailable else {
+            return failed(.needsInitialState)
+        }
+
+        let bytes = DoorLocks.getLockState
 
         print("- Car - get doors state")
 
@@ -21,7 +25,11 @@ public extension Car {
     }
 
     public func sendDoorsCommand(lock: Bool, failed: @escaping CommandFailed) {
-        let bytes = AutoAPI.DoorLocksCommand.lockDoorsBytes(lock ? .lock : .unlock)
+        guard doors.isAvailable else {
+            return failed(.needsInitialState)
+        }
+
+        let bytes = DoorLocks.lockUnlock(lock ? .lock: .unlock)
 
         print("- Car - send doors command, lock: \(lock)")
 

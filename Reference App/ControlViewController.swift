@@ -132,7 +132,7 @@ private extension ControlViewController {
         }
     }
 
-    @discardableResult func updateControlFunctions(with command: Command) -> Bool {
+    @discardableResult func updateControlFunctions(with command: CommandClass) -> Bool {
         guard let updatedFunctions = ControlFunctionsManager.shared.updateControlFunctions(from: command), updatedFunctions.count > 0 else {
             return false
         }
@@ -173,7 +173,7 @@ private extension ControlViewController {
     func receivedCommandParsed(_ commandType: CommandType) {
         switch commandType {
         case .capabilities:
-            let allPossibleCommands = Car.shared.allCommands
+            let allPossibleCommands = Car.shared.availableCommands
             let manager = ControlFunctionsManager.shared
 
             manager.receivedCapabilities(for: allPossibleCommands)
@@ -220,7 +220,7 @@ private extension ControlViewController {
 
         case .other(let command):
             // Try to update remote if possible
-            if let command = command as? RemoteControl {
+            if let command = command as? RemoteControlClass {
                 remoteControlViewController?.updateRemoteControlStatus(command.controlMode)
             }
 
@@ -230,12 +230,12 @@ private extension ControlViewController {
 
         case .vehicleStatii:
             // Update all the functions
-            Car.shared.allCommands.flatMap { $0 }.forEach {
+            Car.shared.availableCommands.flatMap { $0 }.forEach {
                 self.updateControlFunctions(with: $0)
             }
 
             // Some additional statii needed...
-            if Car.shared.lights != nil {
+            if Car.shared.lights.isAvailable {
                 delay(0.5) {
                     Car.shared.getLightsState(failed: self.receivedCommandError)
                 }

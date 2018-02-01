@@ -1,5 +1,5 @@
 //
-//  Command+Cmds.swift
+//  CommandClass+Cmds.swift
 //  Car
 //
 //  Created by Mikk Rätsep on 08/07/2017.
@@ -66,7 +66,7 @@ private extension Car {
                     }
 
                     // Only handles VALID AutoAPI responses
-                    guard let response = AutoAPI.parseIncomingCommand(command) else {
+                    guard let response = AutoAPI.parseBinary(command) else {
                         return
                     }
 

@@ -12,5 +12,5 @@ import Foundation
 
 protocol VehicleStatusParser {
 
-    func update(from vehicleStatus: VehicleStatus)
+    @discardableResult func update(from response: Command) -> CommandType?
 }

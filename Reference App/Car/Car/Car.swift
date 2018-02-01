@@ -18,8 +18,13 @@ public class Car {
 
     // MARK: Vars
 
+
     public var activeVehicleSerial: Data?
     public var connectionMethod: ConnectionMethod
+
+    public var availableCommands: [CommandClass] {
+        return commands.filter { $0.isAvailable && !$0.isMetaCommand }
+    }
 
     public internal(set) var connectionState: ConnectionState {
         didSet {
@@ -31,38 +36,36 @@ public class Car {
         }
     }
 
-    public var allCommands: [Command?] {
-        return [charging, climate, doors, lights, remoteControl, rooftop, trunk]
-    }
-
-
-    public internal(set) var charging: Charging? = nil
-    public internal(set) var climate: Climate? = nil
-    public internal(set) var doors: Doors? = nil
-    public internal(set) var lights: Lights? = nil
-    public internal(set) var remoteControl: RemoteControl? = nil
-    public internal(set) var rooftop: Rooftop? = nil
-    public internal(set) var trunk: Trunk? = nil
+    public let charging = ChargingClass()
+    public let climate = ClimateClass()
+    public let doors = DoorsClass()
+    public let engine = EngineClass()
+    public let honkHornFlashLights = HonkHornFlashLightsClass()
+    public let lights = LightsClass()
+    public let naviDestination = NaviDestinationClass()
+    public let remoteControl = RemoteControlClass()
+    public let rooftop = RooftopClass()
+    public let trunk = TrunkClass()
+    public let vehicleLocation = VehicleLocationClass()
+    public let windows = WindowsClass()
 
 
     var anyHashableObservers: Set<AnyHashable>
-    var anyHashableParsers: Set<AnyHashable>
+    var commands: [CommandClass]
 
 
     // MARK: Methods
 
-    // TODO: Check if this is still in use in 3 ticks: tick
-    public func setBroadcastingFilter<C: Collection>(to vehicleSerial: C?) where C.Iterator.Element == UInt8 {
-        if let serial = vehicleSerial {
-            do {
-                try LocalDevice.shared.setBroadcastingFilter(vehicleSerial: serial)
-            }
-            catch {
-                print("Vehicle serial should be 9-bytes, error: \(error)")
-            }
+    public func clearBroadcastingFilter() {
+        LocalDevice.shared.clearBroadcastingFilter()
+    }
+
+    public func setBroadcastingFilter<C: Collection>(to vehicleSerial: C) where C.Iterator.Element == UInt8 {
+        do {
+            try LocalDevice.shared.setBroadcastingFilter(vehicleSerial: vehicleSerial)
         }
-        else {
-            LocalDevice.shared.clearBroadcastingFilter()
+        catch {
+            print("Vehicle serial should be 9-bytes, error: \(error)")
         }
     }
 
@@ -74,21 +77,29 @@ public class Car {
     // MARK: Initialiser
 
     private init() {
+        // Some state-y vars
         activeVehicleSerial = nil
         connectionMethod = .bluetooth
         connectionState = .unavailable
 
+        // Collections
         anyHashableObservers = Set()
-        anyHashableParsers = Set()
+        commands = [charging, climate, doors, engine, honkHornFlashLights, lights, naviDestination, remoteControl, rooftop, trunk, vehicleLocation, windows]
 
         // Initialise some of the LocalDevice things
-        LocalDevice.loggingOptions = [.command, .error, .general, .bluetooth]
+        LocalDevice.loggingOptions = [.command, .error, .general, .bluetooth, .telematics, .urlRequests]
         LocalDevice.shared.delegate = self
 
-        addCommandsParsers()
-        addMetaParsers()
+        addMetaCommands()
+    }
 
-        // Just a convenience
-        setTelematicsBasePath(to: "https://developers.h-m.space/")
+    private func addMetaCommands() {
+        let capabilities = CapabilitiesClass(parseCapability: parseCapability)
+        let failure = FailureMessageClass()
+        let vs = VehicleStatii(parseVehicleStatus: parseVehicleStatus)
+
+        commands.append(capabilities)
+        commands.append(failure)
+        commands.append(vs)
     }
 }

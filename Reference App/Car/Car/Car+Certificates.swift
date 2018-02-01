@@ -15,17 +15,21 @@ extension Car {
     // MARK: Public
 
     public func deleteAccessCertificates<T: Collection>(for carSerial: T) where T.Iterator.Element == UInt8 {
-        while LocalDevice.shared.revokeCertificate(withSerial: carSerial) { }
+        while LocalDevice.shared.revokeCertificatePair(withSerial: carSerial) { }
     }
 
     public func downloadAccessCertificates(accessToken: String, completion: @escaping (Bool) -> Void) {
         do {
             try Telematics.downloadAccessCertificate(accessToken: accessToken) {
                 switch $0 {
-                case .failure:
+                case .failure(let reason):
+                    print("Failed:", reason)
                     completion(false)
 
                 case .success:
+                    print("Registered access certificates:", LocalDevice.shared.registeredCertificates)
+                    print("Stored     access certificates:", LocalDevice.shared.storedCertificates)
+
                     completion(true)
                 }
             }
@@ -90,7 +94,7 @@ extension Car {
     }
 }
 
-fileprivate extension Car {
+private extension Car {
 
     enum Keys: String {
         case quiteSecretDeviceCert
@@ -129,7 +133,7 @@ fileprivate extension Car {
     }
 }
 
-fileprivate extension KeychainLayer {
+private extension KeychainLayer {
 
     func loadUTF8String(for key: String) -> String? {
         guard let data = loadData(for: key) else {
@@ -140,7 +144,7 @@ fileprivate extension KeychainLayer {
     }
 }
 
-fileprivate extension String {
+private extension String {
 
     var utf8EncodedData: Data? {
         return data(using: .utf8)

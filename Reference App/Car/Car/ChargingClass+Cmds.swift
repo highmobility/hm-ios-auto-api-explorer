@@ -1,5 +1,5 @@
 //
-//  Charging+Cmds.swift
+//  ChargingClass+Cmds.swift
 //  Car
 //
 //  Created by Mikk Rätsep on 08/07/2017.
@@ -13,7 +13,11 @@ import Foundation
 public extension Car {
 
     public func getChargingState(failed: @escaping CommandFailed) {
-        let bytes = AutoAPI.ChargingCommand.getStateBytes
+        guard charging.isAvailable else {
+            return failed(.needsInitialState)
+        }
+
+        let bytes = Charging.getChargeState
 
         print("- Car - get charging state")
 
@@ -21,7 +25,11 @@ public extension Car {
     }
 
     public func sendChargingCommand(start: Bool, failed: @escaping CommandFailed) {
-        let bytes = AutoAPI.ChargingCommand.startStopChargingBytes(start ? .start : .stop)
+        guard charging.isAvailable else {
+            return failed(.needsInitialState)
+        }
+
+        let bytes = Charging.startCharging(start)
 
         print("- Car - send charging command, start: \(start)")
 

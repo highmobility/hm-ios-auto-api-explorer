@@ -23,12 +23,12 @@ class RemoteControlViewController: UIViewController {
 
     private var didStop: Bool = false
     private var lastTouchDate = Date()
-    private var lastStatus: RemoteControl.ControlModeStatus = .unknown
+    private var lastStatus: RemoteControlClass.ControlModeStatus = .unknown
 
 
     // MARK: Methods
 
-    func updateRemoteControlStatus(_ status: RemoteControl.ControlModeStatus) {
+    func updateRemoteControlStatus(_ status: RemoteControlClass.ControlModeStatus) {
         lastStatus = status
 
         switch status {

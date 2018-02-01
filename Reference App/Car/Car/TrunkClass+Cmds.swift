@@ -1,5 +1,5 @@
 //
-//  Trunk+Cmds.swift
+//  TrunkClass+Cmds.swift
 //  Car
 //
 //  Created by Mikk Rätsep on 08/07/2017.
@@ -13,7 +13,11 @@ import Foundation
 public extension Car {
 
     public func getTrunkState(failed: @escaping CommandFailed) {
-        let bytes = AutoAPI.TrunkAccessCommand.getStateBytes
+        guard trunk.isAvailable else {
+            return failed(.needsInitialState)
+        }
+
+        let bytes = TrunkAccess.getTrunkState
 
         print("- Car - get trunk state")
 
@@ -21,11 +25,12 @@ public extension Car {
     }
 
     public func sendTrunkCommand(lock: Bool, failed: @escaping CommandFailed) {
-        guard let trunk = trunk else {
+        guard trunk.isAvailable else {
             return failed(.needsInitialState)
         }
 
-        let bytes = AutoAPI.TrunkAccessCommand.openTrunkBytes((lock ? .lock : .unlock), (trunk.open ? .open : .close))
+        let settings = TrunkAccess.Settings(lock: (lock ? .lock : .unlock), position: nil)
+        let bytes = TrunkAccess.openClose(settings)
 
         print("- Car - send trunk command, lock: \(lock)")
 
@@ -33,11 +38,12 @@ public extension Car {
     }
 
     public func sendTrunkCommand(open: Bool, failed: @escaping CommandFailed) {
-        guard let trunk = trunk else {
+        guard trunk.isAvailable else {
             return failed(.needsInitialState)
         }
 
-        let bytes = AutoAPI.TrunkAccessCommand.openTrunkBytes((trunk.locked ? .lock : .unlock), (open ? .open : .close))
+        let settings = TrunkAccess.Settings(lock: nil, position: (open ? .open : .close))
+        let bytes = TrunkAccess.openClose(settings)
 
         print("- Car - send trunk command, open: \(open)")
         

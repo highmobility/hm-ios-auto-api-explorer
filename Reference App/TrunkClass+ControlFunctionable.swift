@@ -1,5 +1,5 @@
 //
-//  ControlFunction+Doors.swift
+//  TrunkClass+ControlFunctionable.swift
 //  Telematics App
 //
 //  Created by Mikk Rätsep on 09/07/2017.
@@ -10,11 +10,11 @@ import Car
 import Foundation
 
 
-extension Doors: ControlFunctionable {
+extension TrunkClass: ControlFunctionable {
 
     var boolValue: (ControlFunction.Kind) -> Bool? {
         return {
-            guard $0 == .doorsLock else {
+            guard $0 == .trunkAccess else {
                 return nil
             }
 
@@ -23,23 +23,23 @@ extension Doors: ControlFunctionable {
     }
 
     var controlFunctions: [ControlFunction] {
-        let mainAction = ControlAction(name: "unlocked", iconName: "DoorlockUNLOCKED") { errorHandler in
-            Car.shared.sendDoorsCommand(lock: false) {
+        let mainAction = ControlAction(name: "unlocked", iconName: "TrunkOPEN") { errorHandler in
+            Car.shared.sendTrunkCommand(lock: false) {
                 if let error = $0 { errorHandler?(error) }
             }
         }
 
-        let oppositeAction = ControlAction(name: "locked", iconName: "DoorlockLOCKED") { errorHandler in
-            Car.shared.sendDoorsCommand(lock: true) {
+        let oppositeAction = ControlAction(name: "locked", iconName: "TrunkCLOSED") { errorHandler in
+            Car.shared.sendTrunkCommand(lock: true) {
                 if let error = $0 { errorHandler?(error) }
             }
         }
 
-        return [DualControlFunction(kind: .doorsLock, mainAction: mainAction, oppositeAction: oppositeAction, isMainTrue: false)]
+        return [DualControlFunction(kind: .trunkAccess, mainAction: mainAction, oppositeAction: oppositeAction, isMainTrue: false)]
     }
 
     var kinds: [ControlFunction.Kind] {
-        return [.doorsLock]
+        return [.trunkAccess]
     }
 
     var stringValue: (ControlFunction.Kind) -> String? {

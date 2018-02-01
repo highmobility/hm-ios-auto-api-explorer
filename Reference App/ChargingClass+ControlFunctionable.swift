@@ -1,5 +1,5 @@
 //
-//  Charging+ControlFunctionCreatable.swift
+//  ChargingClass+ControlFunctionable.swift
 //  The App
 //
 //  Created by Mikk Rätsep on 21/09/2017.
@@ -10,7 +10,7 @@ import Car
 import Foundation
 
 
-extension Charging: ControlFunctionable {
+extension ChargingClass: ControlFunctionable {
 
     var boolValue: (ControlFunction.Kind) -> Bool? {
         return {

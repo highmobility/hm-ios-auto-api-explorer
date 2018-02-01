@@ -54,8 +54,6 @@ extension Car {
         carObservers.forEach {
             $0.carCommandParsed(commandType)
         }
-
-        displayStuffInThing("cmd: \(commandType), obs. count: \(carObservers.count)")
     }
 
     func notifyConnectionStateUpdate(_ connectionState: ConnectionState) {

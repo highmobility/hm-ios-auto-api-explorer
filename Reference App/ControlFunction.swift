@@ -15,13 +15,19 @@ class ControlFunction {
     enum Kind: String {
         case charging           = "Charging"
         case doorsLock          = "Door Locks"
+        case emergencyFlasher   = "Emergency Flasher"
+        case engine             = "Engine"
+        case hvac               = "HVAC"
         case lightsFront        = "Front Lights"
         case lightsInterior     = "Interior Lights"
         case lightsRear         = "Rear Lights"
+        case naviDestination    = "Navi Destination"
         case remoteControl      = "Remote Control"
         case rooftopDimming     = "Rooftop Dimming"
         case rooftopOpening     = "Rooftop Opening"
         case trunkAccess        = "Trunk Access"
+        case vehicleLocation    = "Vehicle Location"
+        case windows            = "Windows"
         case windshieldHeating  = "Windshield Heating"
     }
 
@@ -34,7 +40,7 @@ class ControlFunction {
 
     // MARK: Methods
 
-    func receivedUpdate(_ command: Command) {
+    func receivedUpdate(_ command: CommandClass) {
         isStatusReceived = true
     }
 
@@ -46,3 +52,4 @@ class ControlFunction {
         self.kind = kind
     }
 }
+

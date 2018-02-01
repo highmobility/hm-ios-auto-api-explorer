@@ -1,5 +1,5 @@
 //
-//  ControlFunction+Rooftop.swift
+//  RooftopClass+ControlFunctionable.swift
 //  Telematics App
 //
 //  Created by Mikk Rätsep on 09/07/2017.
@@ -10,7 +10,7 @@ import Car
 import Foundation
 
 
-extension Rooftop: ControlFunctionable {
+extension RooftopClass: ControlFunctionable {
 
     var boolValue: (ControlFunction.Kind) -> Bool? {
         return {
@@ -40,7 +40,7 @@ extension Rooftop: ControlFunctionable {
     }
 }
 
-private extension Rooftop {
+private extension RooftopClass {
 
     func createRooftopDimming() -> ControlFunction {
         let mainAction = ControlAction(name: "opaque", iconName: "SunroofOPAQUE") { errorHandler in

@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		203CA8121F45CA43003C3E9A /* Car+DELETE.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203CA8111F45CA43003C3E9A /* Car+DELETE.swift */; };
+		204A9C712019D5650072F4D1 /* VehicleLocationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A9C702019D5650072F4D1 /* VehicleLocationClass.swift */; };
+		204A9C732019D9580072F4D1 /* VehicleLocationClass+Cmnds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A9C722019D9580072F4D1 /* VehicleLocationClass+Cmnds.swift */; };
+		204A9C752019DA370072F4D1 /* NaviDestinationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A9C742019DA370072F4D1 /* NaviDestinationClass.swift */; };
+		204A9C772019DD290072F4D1 /* NaviDestinationClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A9C762019DD290072F4D1 /* NaviDestinationClass+Cmds.swift */; };
+		206765D11F7B8B2D00D38F3F /* EngineClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206765D01F7B8B2D00D38F3F /* EngineClass.swift */; };
+		206765D31F7B8D2D00D38F3F /* EngineClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206765D21F7B8D2D00D38F3F /* EngineClass+Cmds.swift */; };
+		206765D81F7B99BD00D38F3F /* HonkHornFlashLightsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206765D71F7B99BD00D38F3F /* HonkHornFlashLightsClass.swift */; };
+		206765DB1F7B9C4400D38F3F /* HonkHornFlashLightsClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206765DA1F7B9C4400D38F3F /* HonkHornFlashLightsClass+Cmds.swift */; };
 		2086D8EA1F13CCB0009F01D8 /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2086D8E91F13CCB0009F01D8 /* CommandType.swift */; };
-		2086D8EC1F13D12F009F01D8 /* HashableEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2086D8EB1F13D12F009F01D8 /* HashableEmpty.swift */; };
 		2086D8EE1F13D17F009F01D8 /* ParserResponseOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2086D8ED1F13D17F009F01D8 /* ParserResponseOnly.swift */; };
 		2094F2391F0FB5BB00779FFA /* Car.h in Headers */ = {isa = PBXBuildFile; fileRef = 2094F2371F0FB5BB00779FFA /* Car.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2094F2491F0FB5E300779FFA /* AutoAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2094F2461F0FB5E300779FFA /* AutoAPI.framework */; };
@@ -21,43 +27,52 @@
 		2094F2561F0FC4D900779FFA /* Car+Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2551F0FC4D900779FFA /* Car+Observer.swift */; };
 		2094F2581F0FC81200779FFA /* Car+LocalDeviceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2571F0FC81200779FFA /* Car+LocalDeviceDelegate.swift */; };
 		2094F25A1F0FCB3100779FFA /* Car+LinkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2591F0FCB3100779FFA /* Car+LinkDelegate.swift */; };
+		2094F25C1F0FD16700779FFA /* Car+Certificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F25B1F0FD16700779FFA /* Car+Certificates.swift */; };
 		2094F25F1F0FD22600779FFA /* Collection+UInt8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F25D1F0FD22600779FFA /* Collection+UInt8.swift */; };
 		2094F2601F0FD22600779FFA /* KeychainLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F25E1F0FD22600779FFA /* KeychainLayer.swift */; };
-		2094F2641F0FD85300779FFA /* Doors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2631F0FD85300779FFA /* Doors.swift */; };
+		2094F2641F0FD85300779FFA /* DoorsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2631F0FD85300779FFA /* DoorsClass.swift */; };
 		2094F2661F0FDDA900779FFA /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2651F0FDDA900779FFA /* ResponseParser.swift */; };
-		2094F2691F0FE26D00779FFA /* Capabilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2681F0FE26D00779FFA /* Capabilities.swift */; };
-		2094F26D1F0FF92E00779FFA /* Rooftop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F26C1F0FF92E00779FFA /* Rooftop.swift */; };
+		2094F2691F0FE26D00779FFA /* CapabilitiesClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2681F0FE26D00779FFA /* CapabilitiesClass.swift */; };
+		2094F26D1F0FF92E00779FFA /* RooftopClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F26C1F0FF92E00779FFA /* RooftopClass.swift */; };
 		2094F2711F0FFDF300779FFA /* CapabilityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2701F0FFDF300779FFA /* CapabilityParser.swift */; };
-		2094F2731F10010900779FFA /* Lights.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2721F10010900779FFA /* Lights.swift */; };
-		2094F2751F10077700779FFA /* Trunk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2741F10077700779FFA /* Trunk.swift */; };
-		2094F2771F100A1500779FFA /* Climate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2761F100A1500779FFA /* Climate.swift */; };
+		2094F2731F10010900779FFA /* LightsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2721F10010900779FFA /* LightsClass.swift */; };
+		2094F2751F10077700779FFA /* TrunkClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2741F10077700779FFA /* TrunkClass.swift */; };
+		2094F2771F100A1500779FFA /* ClimateClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2761F100A1500779FFA /* ClimateClass.swift */; };
+		20A4297E1F7BAF22003FF9A2 /* WindowsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A4297D1F7BAF22003FF9A2 /* WindowsClass.swift */; };
+		20A429801F7BB065003FF9A2 /* WindowsClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A4297F1F7BB065003FF9A2 /* WindowsClass+Cmds.swift */; };
 		20EDE5291F10F5A100464E8E /* CommandError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5281F10F5A100464E8E /* CommandError.swift */; };
-		20EDE52B1F110A9C00464E8E /* Charging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE52A1F110A9C00464E8E /* Charging.swift */; };
+		20EDE52B1F110A9C00464E8E /* ChargingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE52A1F110A9C00464E8E /* ChargingClass.swift */; };
 		20EDE52E1F110EC900464E8E /* Car+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE52D1F110EC900464E8E /* Car+Parser.swift */; };
 		20EDE5301F110EE700464E8E /* VehicleStatusParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE52F1F110EE700464E8E /* VehicleStatusParser.swift */; };
-		20EDE5321F11107E00464E8E /* Charging+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5311F11107E00464E8E /* Charging+Cmds.swift */; };
-		20EDE5341F11109C00464E8E /* Climate+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5331F11109C00464E8E /* Climate+Cmds.swift */; };
-		20EDE5361F11118E00464E8E /* Doors+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5351F11118E00464E8E /* Doors+Cmds.swift */; };
-		20EDE5381F1112CE00464E8E /* Lights+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5371F1112CE00464E8E /* Lights+Cmds.swift */; };
-		20EDE53A1F11133C00464E8E /* Rooftop+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5391F11133C00464E8E /* Rooftop+Cmds.swift */; };
-		20EDE53C1F1113AD00464E8E /* Trunk+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE53B1F1113AD00464E8E /* Trunk+Cmds.swift */; };
+		20EDE5321F11107E00464E8E /* ChargingClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5311F11107E00464E8E /* ChargingClass+Cmds.swift */; };
+		20EDE5341F11109C00464E8E /* ClimateClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5331F11109C00464E8E /* ClimateClass+Cmds.swift */; };
+		20EDE5361F11118E00464E8E /* DoorsClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5351F11118E00464E8E /* DoorsClass+Cmds.swift */; };
+		20EDE5381F1112CE00464E8E /* LightsClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5371F1112CE00464E8E /* LightsClass+Cmds.swift */; };
+		20EDE53A1F11133C00464E8E /* RooftopClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5391F11133C00464E8E /* RooftopClass+Cmds.swift */; };
+		20EDE53C1F1113AD00464E8E /* TrunkClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE53B1F1113AD00464E8E /* TrunkClass+Cmds.swift */; };
 		20EDE53E1F11154000464E8E /* VehicleStatii.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE53D1F11154000464E8E /* VehicleStatii.swift */; };
 		20EDE5401F11161400464E8E /* Capabilities+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE53F1F11161400464E8E /* Capabilities+Cmds.swift */; };
 		20EDE5421F11184900464E8E /* VehicleStatii+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5411F11184900464E8E /* VehicleStatii+Cmds.swift */; };
-		20EDE5451F1118CA00464E8E /* FailureMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5441F1118CA00464E8E /* FailureMessage.swift */; };
+		20EDE5451F1118CA00464E8E /* FailureMessageClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5441F1118CA00464E8E /* FailureMessageClass.swift */; };
 		20EDE5471F1120D600464E8E /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5461F1120D600464E8E /* Parser.swift */; };
-		20EDE54A1F1126BE00464E8E /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5491F1126BE00464E8E /* Command.swift */; };
-		20EDE54C1F1131A800464E8E /* RemoteControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE54B1F1131A800464E8E /* RemoteControl.swift */; };
-		20EDE54E1F11352000464E8E /* RemoteControl+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE54D1F11352000464E8E /* RemoteControl+Cmds.swift */; };
-		20EDE5501F1136F100464E8E /* Command+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE54F1F1136F100464E8E /* Command+Cmds.swift */; };
+		20EDE54A1F1126BE00464E8E /* CommandClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5491F1126BE00464E8E /* CommandClass.swift */; };
+		20EDE54C1F1131A800464E8E /* RemoteControlClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE54B1F1131A800464E8E /* RemoteControlClass.swift */; };
+		20EDE54E1F11352000464E8E /* RemoteControlClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE54D1F11352000464E8E /* RemoteControlClass+Cmds.swift */; };
+		20EDE5501F1136F100464E8E /* CommandClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE54F1F1136F100464E8E /* CommandClass+Cmds.swift */; };
 		20EDE5551F114E0200464E8E /* Car+Driving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5541F114E0200464E8E /* Car+Driving.swift */; };
 		20EDE5571F1152CF00464E8E /* Car+Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5561F1152CF00464E8E /* Car+Bluetooth.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		203CA8111F45CA43003C3E9A /* Car+DELETE.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+DELETE.swift"; sourceTree = "<group>"; };
+		204A9C702019D5650072F4D1 /* VehicleLocationClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleLocationClass.swift; sourceTree = "<group>"; };
+		204A9C722019D9580072F4D1 /* VehicleLocationClass+Cmnds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VehicleLocationClass+Cmnds.swift"; sourceTree = "<group>"; };
+		204A9C742019DA370072F4D1 /* NaviDestinationClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviDestinationClass.swift; sourceTree = "<group>"; };
+		204A9C762019DD290072F4D1 /* NaviDestinationClass+Cmds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NaviDestinationClass+Cmds.swift"; sourceTree = "<group>"; };
+		206765D01F7B8B2D00D38F3F /* EngineClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineClass.swift; sourceTree = "<group>"; };
+		206765D21F7B8D2D00D38F3F /* EngineClass+Cmds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EngineClass+Cmds.swift"; sourceTree = "<group>"; };
+		206765D71F7B99BD00D38F3F /* HonkHornFlashLightsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HonkHornFlashLightsClass.swift; sourceTree = "<group>"; };
+		206765DA1F7B9C4400D38F3F /* HonkHornFlashLightsClass+Cmds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HonkHornFlashLightsClass+Cmds.swift"; sourceTree = "<group>"; };
 		2086D8E91F13CCB0009F01D8 /* CommandType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandType.swift; sourceTree = "<group>"; };
-		2086D8EB1F13D12F009F01D8 /* HashableEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashableEmpty.swift; sourceTree = "<group>"; };
 		2086D8ED1F13D17F009F01D8 /* ParserResponseOnly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserResponseOnly.swift; sourceTree = "<group>"; };
 		2094F2341F0FB5BB00779FFA /* Car.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Car.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2094F2371F0FB5BB00779FFA /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
@@ -71,35 +86,38 @@
 		2094F2551F0FC4D900779FFA /* Car+Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+Observer.swift"; sourceTree = "<group>"; };
 		2094F2571F0FC81200779FFA /* Car+LocalDeviceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Car+LocalDeviceDelegate.swift"; path = "Car/Car+LocalDeviceDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		2094F2591F0FCB3100779FFA /* Car+LinkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+LinkDelegate.swift"; sourceTree = "<group>"; };
+		2094F25B1F0FD16700779FFA /* Car+Certificates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+Certificates.swift"; sourceTree = "<group>"; };
 		2094F25D1F0FD22600779FFA /* Collection+UInt8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+UInt8.swift"; sourceTree = "<group>"; };
 		2094F25E1F0FD22600779FFA /* KeychainLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainLayer.swift; sourceTree = "<group>"; };
-		2094F2631F0FD85300779FFA /* Doors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Doors.swift; sourceTree = "<group>"; };
+		2094F2631F0FD85300779FFA /* DoorsClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorsClass.swift; sourceTree = "<group>"; };
 		2094F2651F0FDDA900779FFA /* ResponseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
-		2094F2681F0FE26D00779FFA /* Capabilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Capabilities.swift; sourceTree = "<group>"; };
-		2094F26C1F0FF92E00779FFA /* Rooftop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rooftop.swift; sourceTree = "<group>"; };
+		2094F2681F0FE26D00779FFA /* CapabilitiesClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapabilitiesClass.swift; sourceTree = "<group>"; };
+		2094F26C1F0FF92E00779FFA /* RooftopClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RooftopClass.swift; sourceTree = "<group>"; };
 		2094F2701F0FFDF300779FFA /* CapabilityParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapabilityParser.swift; sourceTree = "<group>"; };
-		2094F2721F10010900779FFA /* Lights.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lights.swift; sourceTree = "<group>"; };
-		2094F2741F10077700779FFA /* Trunk.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trunk.swift; sourceTree = "<group>"; };
-		2094F2761F100A1500779FFA /* Climate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Climate.swift; sourceTree = "<group>"; };
+		2094F2721F10010900779FFA /* LightsClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsClass.swift; sourceTree = "<group>"; };
+		2094F2741F10077700779FFA /* TrunkClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrunkClass.swift; sourceTree = "<group>"; };
+		2094F2761F100A1500779FFA /* ClimateClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClimateClass.swift; sourceTree = "<group>"; };
+		20A4297D1F7BAF22003FF9A2 /* WindowsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowsClass.swift; sourceTree = "<group>"; };
+		20A4297F1F7BB065003FF9A2 /* WindowsClass+Cmds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WindowsClass+Cmds.swift"; sourceTree = "<group>"; };
 		20EDE5281F10F5A100464E8E /* CommandError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandError.swift; sourceTree = "<group>"; };
-		20EDE52A1F110A9C00464E8E /* Charging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Charging.swift; sourceTree = "<group>"; };
+		20EDE52A1F110A9C00464E8E /* ChargingClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargingClass.swift; sourceTree = "<group>"; };
 		20EDE52D1F110EC900464E8E /* Car+Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+Parser.swift"; sourceTree = "<group>"; };
 		20EDE52F1F110EE700464E8E /* VehicleStatusParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleStatusParser.swift; sourceTree = "<group>"; };
-		20EDE5311F11107E00464E8E /* Charging+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Charging+Cmds.swift"; sourceTree = "<group>"; };
-		20EDE5331F11109C00464E8E /* Climate+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Climate+Cmds.swift"; sourceTree = "<group>"; };
-		20EDE5351F11118E00464E8E /* Doors+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Doors+Cmds.swift"; sourceTree = "<group>"; };
-		20EDE5371F1112CE00464E8E /* Lights+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lights+Cmds.swift"; sourceTree = "<group>"; };
-		20EDE5391F11133C00464E8E /* Rooftop+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rooftop+Cmds.swift"; sourceTree = "<group>"; };
-		20EDE53B1F1113AD00464E8E /* Trunk+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Trunk+Cmds.swift"; sourceTree = "<group>"; };
+		20EDE5311F11107E00464E8E /* ChargingClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChargingClass+Cmds.swift"; sourceTree = "<group>"; };
+		20EDE5331F11109C00464E8E /* ClimateClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClimateClass+Cmds.swift"; sourceTree = "<group>"; };
+		20EDE5351F11118E00464E8E /* DoorsClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DoorsClass+Cmds.swift"; sourceTree = "<group>"; };
+		20EDE5371F1112CE00464E8E /* LightsClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LightsClass+Cmds.swift"; sourceTree = "<group>"; };
+		20EDE5391F11133C00464E8E /* RooftopClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RooftopClass+Cmds.swift"; sourceTree = "<group>"; };
+		20EDE53B1F1113AD00464E8E /* TrunkClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TrunkClass+Cmds.swift"; sourceTree = "<group>"; };
 		20EDE53D1F11154000464E8E /* VehicleStatii.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleStatii.swift; sourceTree = "<group>"; };
 		20EDE53F1F11161400464E8E /* Capabilities+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Capabilities+Cmds.swift"; sourceTree = "<group>"; };
 		20EDE5411F11184900464E8E /* VehicleStatii+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VehicleStatii+Cmds.swift"; sourceTree = "<group>"; };
-		20EDE5441F1118CA00464E8E /* FailureMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailureMessage.swift; sourceTree = "<group>"; };
+		20EDE5441F1118CA00464E8E /* FailureMessageClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailureMessageClass.swift; sourceTree = "<group>"; };
 		20EDE5461F1120D600464E8E /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
-		20EDE5491F1126BE00464E8E /* Command.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Command.swift; sourceTree = "<group>"; };
-		20EDE54B1F1131A800464E8E /* RemoteControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControl.swift; sourceTree = "<group>"; };
-		20EDE54D1F11352000464E8E /* RemoteControl+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RemoteControl+Cmds.swift"; sourceTree = "<group>"; };
-		20EDE54F1F1136F100464E8E /* Command+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Command+Cmds.swift"; sourceTree = "<group>"; };
+		20EDE5491F1126BE00464E8E /* CommandClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandClass.swift; sourceTree = "<group>"; };
+		20EDE54B1F1131A800464E8E /* RemoteControlClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControlClass.swift; sourceTree = "<group>"; };
+		20EDE54D1F11352000464E8E /* RemoteControlClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RemoteControlClass+Cmds.swift"; sourceTree = "<group>"; };
+		20EDE54F1F1136F100464E8E /* CommandClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CommandClass+Cmds.swift"; sourceTree = "<group>"; };
 		20EDE5541F114E0200464E8E /* Car+Driving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+Driving.swift"; sourceTree = "<group>"; };
 		20EDE5561F1152CF00464E8E /* Car+Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+Bluetooth.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -171,12 +189,12 @@
 				2094F2611F0FD22D00779FFA /* Extensions */,
 				2094F24E1F0FB68C00779FFA /* Car.swift */,
 				20EDE5561F1152CF00464E8E /* Car+Bluetooth.swift */,
+				2094F25B1F0FD16700779FFA /* Car+Certificates.swift */,
 				20EDE5541F114E0200464E8E /* Car+Driving.swift */,
 				2094F2591F0FCB3100779FFA /* Car+LinkDelegate.swift */,
 				2094F2571F0FC81200779FFA /* Car+LocalDeviceDelegate.swift */,
 				2094F2551F0FC4D900779FFA /* Car+Observer.swift */,
 				20EDE52D1F110EC900464E8E /* Car+Parser.swift */,
-				203CA8111F45CA43003C3E9A /* Car+DELETE.swift */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -207,8 +225,8 @@
 				2094F2671F0FDDAC00779FFA /* Protocols */,
 				20EDE5431F11189B00464E8E /* Meta */,
 				20EDE5511F11370400464E8E /* Subclasses */,
-				20EDE5491F1126BE00464E8E /* Command.swift */,
-				20EDE54F1F1136F100464E8E /* Command+Cmds.swift */,
+				20EDE5491F1126BE00464E8E /* CommandClass.swift */,
+				20EDE54F1F1136F100464E8E /* CommandClass+Cmds.swift */,
 			);
 			name = Commands;
 			sourceTree = "<group>";
@@ -217,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				20EDE5481F1120E200464E8E /* Parsers */,
-				2086D8EB1F13D12F009F01D8 /* HashableEmpty.swift */,
 				20EDE5461F1120D600464E8E /* Parser.swift */,
 				2086D8ED1F13D17F009F01D8 /* ParserResponseOnly.swift */,
 			);
@@ -227,9 +244,9 @@
 		20EDE5431F11189B00464E8E /* Meta */ = {
 			isa = PBXGroup;
 			children = (
-				2094F2681F0FE26D00779FFA /* Capabilities.swift */,
+				2094F2681F0FE26D00779FFA /* CapabilitiesClass.swift */,
 				20EDE53F1F11161400464E8E /* Capabilities+Cmds.swift */,
-				20EDE5441F1118CA00464E8E /* FailureMessage.swift */,
+				20EDE5441F1118CA00464E8E /* FailureMessageClass.swift */,
 				20EDE53D1F11154000464E8E /* VehicleStatii.swift */,
 				20EDE5411F11184900464E8E /* VehicleStatii+Cmds.swift */,
 			);
@@ -249,20 +266,30 @@
 		20EDE5511F11370400464E8E /* Subclasses */ = {
 			isa = PBXGroup;
 			children = (
-				20EDE52A1F110A9C00464E8E /* Charging.swift */,
-				20EDE5311F11107E00464E8E /* Charging+Cmds.swift */,
-				2094F2761F100A1500779FFA /* Climate.swift */,
-				20EDE5331F11109C00464E8E /* Climate+Cmds.swift */,
-				2094F2631F0FD85300779FFA /* Doors.swift */,
-				20EDE5351F11118E00464E8E /* Doors+Cmds.swift */,
-				2094F2721F10010900779FFA /* Lights.swift */,
-				20EDE5371F1112CE00464E8E /* Lights+Cmds.swift */,
-				20EDE54B1F1131A800464E8E /* RemoteControl.swift */,
-				20EDE54D1F11352000464E8E /* RemoteControl+Cmds.swift */,
-				2094F26C1F0FF92E00779FFA /* Rooftop.swift */,
-				20EDE5391F11133C00464E8E /* Rooftop+Cmds.swift */,
-				2094F2741F10077700779FFA /* Trunk.swift */,
-				20EDE53B1F1113AD00464E8E /* Trunk+Cmds.swift */,
+				20EDE52A1F110A9C00464E8E /* ChargingClass.swift */,
+				20EDE5311F11107E00464E8E /* ChargingClass+Cmds.swift */,
+				2094F2761F100A1500779FFA /* ClimateClass.swift */,
+				20EDE5331F11109C00464E8E /* ClimateClass+Cmds.swift */,
+				2094F2631F0FD85300779FFA /* DoorsClass.swift */,
+				20EDE5351F11118E00464E8E /* DoorsClass+Cmds.swift */,
+				206765D01F7B8B2D00D38F3F /* EngineClass.swift */,
+				206765D21F7B8D2D00D38F3F /* EngineClass+Cmds.swift */,
+				206765D71F7B99BD00D38F3F /* HonkHornFlashLightsClass.swift */,
+				206765DA1F7B9C4400D38F3F /* HonkHornFlashLightsClass+Cmds.swift */,
+				2094F2721F10010900779FFA /* LightsClass.swift */,
+				20EDE5371F1112CE00464E8E /* LightsClass+Cmds.swift */,
+				204A9C742019DA370072F4D1 /* NaviDestinationClass.swift */,
+				204A9C762019DD290072F4D1 /* NaviDestinationClass+Cmds.swift */,
+				20EDE54B1F1131A800464E8E /* RemoteControlClass.swift */,
+				20EDE54D1F11352000464E8E /* RemoteControlClass+Cmds.swift */,
+				2094F26C1F0FF92E00779FFA /* RooftopClass.swift */,
+				20EDE5391F11133C00464E8E /* RooftopClass+Cmds.swift */,
+				2094F2741F10077700779FFA /* TrunkClass.swift */,
+				20EDE53B1F1113AD00464E8E /* TrunkClass+Cmds.swift */,
+				204A9C702019D5650072F4D1 /* VehicleLocationClass.swift */,
+				204A9C722019D9580072F4D1 /* VehicleLocationClass+Cmnds.swift */,
+				20A4297D1F7BAF22003FF9A2 /* WindowsClass.swift */,
+				20A4297F1F7BB065003FF9A2 /* WindowsClass+Cmds.swift */,
 			);
 			name = Subclasses;
 			sourceTree = "<group>";
@@ -349,45 +376,54 @@
 			buildActionMask = 2147483647;
 			files = (
 				2094F2711F0FFDF300779FFA /* CapabilityParser.swift in Sources */,
-				20EDE5341F11109C00464E8E /* Climate+Cmds.swift in Sources */,
-				2094F2731F10010900779FFA /* Lights.swift in Sources */,
-				20EDE5321F11107E00464E8E /* Charging+Cmds.swift in Sources */,
+				20EDE5341F11109C00464E8E /* ClimateClass+Cmds.swift in Sources */,
+				2094F2731F10010900779FFA /* LightsClass.swift in Sources */,
+				20EDE5321F11107E00464E8E /* ChargingClass+Cmds.swift in Sources */,
+				206765D31F7B8D2D00D38F3F /* EngineClass+Cmds.swift in Sources */,
 				20EDE5291F10F5A100464E8E /* CommandError.swift in Sources */,
-				203CA8121F45CA43003C3E9A /* Car+DELETE.swift in Sources */,
-				2094F2771F100A1500779FFA /* Climate.swift in Sources */,
+				2094F2771F100A1500779FFA /* ClimateClass.swift in Sources */,
 				2094F25F1F0FD22600779FFA /* Collection+UInt8.swift in Sources */,
-				20EDE52B1F110A9C00464E8E /* Charging.swift in Sources */,
+				20EDE52B1F110A9C00464E8E /* ChargingClass.swift in Sources */,
+				204A9C752019DA370072F4D1 /* NaviDestinationClass.swift in Sources */,
+				20A429801F7BB065003FF9A2 /* WindowsClass+Cmds.swift in Sources */,
 				20EDE5401F11161400464E8E /* Capabilities+Cmds.swift in Sources */,
 				2094F2581F0FC81200779FFA /* Car+LocalDeviceDelegate.swift in Sources */,
 				2094F24F1F0FB68C00779FFA /* Car.swift in Sources */,
-				20EDE53C1F1113AD00464E8E /* Trunk+Cmds.swift in Sources */,
+				20EDE53C1F1113AD00464E8E /* TrunkClass+Cmds.swift in Sources */,
 				2086D8EA1F13CCB0009F01D8 /* CommandType.swift in Sources */,
 				20EDE5301F110EE700464E8E /* VehicleStatusParser.swift in Sources */,
 				2086D8EE1F13D17F009F01D8 /* ParserResponseOnly.swift in Sources */,
 				20EDE5571F1152CF00464E8E /* Car+Bluetooth.swift in Sources */,
-				2094F2691F0FE26D00779FFA /* Capabilities.swift in Sources */,
-				2094F26D1F0FF92E00779FFA /* Rooftop.swift in Sources */,
-				2094F2641F0FD85300779FFA /* Doors.swift in Sources */,
-				20EDE54A1F1126BE00464E8E /* Command.swift in Sources */,
-				20EDE5501F1136F100464E8E /* Command+Cmds.swift in Sources */,
+				2094F2691F0FE26D00779FFA /* CapabilitiesClass.swift in Sources */,
+				2094F26D1F0FF92E00779FFA /* RooftopClass.swift in Sources */,
+				2094F2641F0FD85300779FFA /* DoorsClass.swift in Sources */,
+				20EDE54A1F1126BE00464E8E /* CommandClass.swift in Sources */,
+				20EDE5501F1136F100464E8E /* CommandClass+Cmds.swift in Sources */,
+				2094F25C1F0FD16700779FFA /* Car+Certificates.swift in Sources */,
 				20EDE5421F11184900464E8E /* VehicleStatii+Cmds.swift in Sources */,
+				204A9C772019DD290072F4D1 /* NaviDestinationClass+Cmds.swift in Sources */,
 				2094F2511F0FC46900779FFA /* ConnectionMethod.swift in Sources */,
-				20EDE54E1F11352000464E8E /* RemoteControl+Cmds.swift in Sources */,
-				20EDE5451F1118CA00464E8E /* FailureMessage.swift in Sources */,
-				20EDE5361F11118E00464E8E /* Doors+Cmds.swift in Sources */,
-				2094F2751F10077700779FFA /* Trunk.swift in Sources */,
-				20EDE53A1F11133C00464E8E /* Rooftop+Cmds.swift in Sources */,
+				206765D11F7B8B2D00D38F3F /* EngineClass.swift in Sources */,
+				20EDE54E1F11352000464E8E /* RemoteControlClass+Cmds.swift in Sources */,
+				20EDE5451F1118CA00464E8E /* FailureMessageClass.swift in Sources */,
+				20EDE5361F11118E00464E8E /* DoorsClass+Cmds.swift in Sources */,
+				2094F2751F10077700779FFA /* TrunkClass.swift in Sources */,
+				20EDE53A1F11133C00464E8E /* RooftopClass+Cmds.swift in Sources */,
+				204A9C712019D5650072F4D1 /* VehicleLocationClass.swift in Sources */,
 				2094F25A1F0FCB3100779FFA /* Car+LinkDelegate.swift in Sources */,
-				2086D8EC1F13D12F009F01D8 /* HashableEmpty.swift in Sources */,
 				20EDE52E1F110EC900464E8E /* Car+Parser.swift in Sources */,
 				20EDE53E1F11154000464E8E /* VehicleStatii.swift in Sources */,
+				204A9C732019D9580072F4D1 /* VehicleLocationClass+Cmnds.swift in Sources */,
+				20A4297E1F7BAF22003FF9A2 /* WindowsClass.swift in Sources */,
 				2094F2561F0FC4D900779FFA /* Car+Observer.swift in Sources */,
 				2094F2541F0FC4B700779FFA /* ConnectionState.swift in Sources */,
-				20EDE5381F1112CE00464E8E /* Lights+Cmds.swift in Sources */,
+				20EDE5381F1112CE00464E8E /* LightsClass+Cmds.swift in Sources */,
+				206765DB1F7B9C4400D38F3F /* HonkHornFlashLightsClass+Cmds.swift in Sources */,
 				2094F2661F0FDDA900779FFA /* ResponseParser.swift in Sources */,
+				206765D81F7B99BD00D38F3F /* HonkHornFlashLightsClass.swift in Sources */,
 				20EDE5471F1120D600464E8E /* Parser.swift in Sources */,
 				2094F2601F0FD22600779FFA /* KeychainLayer.swift in Sources */,
-				20EDE54C1F1131A800464E8E /* RemoteControl.swift in Sources */,
+				20EDE54C1F1131A800464E8E /* RemoteControlClass.swift in Sources */,
 				20EDE5551F114E0200464E8E /* Car+Driving.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,7 +562,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hm.Car;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;

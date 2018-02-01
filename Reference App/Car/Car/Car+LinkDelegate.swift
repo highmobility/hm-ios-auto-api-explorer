@@ -29,8 +29,10 @@ extension Car: LinkDelegate {
     }
 
     public func link(_ link: Link, commandReceived bytes: [UInt8]) {
+        print("DATA:", bytes.map { String(format: "%02X", $0) }.joined())
+
         // Only handles VALID AutoAPI responses
-        guard let response = AutoAPI.parseIncomingCommand(bytes) else {
+        guard let response = AutoAPI.parseBinary(bytes) else {
             return
         }
 

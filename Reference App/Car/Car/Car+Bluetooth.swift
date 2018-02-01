@@ -47,6 +47,7 @@ extension Car {
         }
 
         device.disconnect()
+        device.stopBroadcasting()
     }
 
     public func startBluetoothBroadcasting(failed: @escaping CommandFailed) {
@@ -57,6 +58,8 @@ extension Car {
         guard device.state == .idle else {
             return
         }
+
+        initialiseLocalDevice()
 
         do {
             try device.startBroadcasting()

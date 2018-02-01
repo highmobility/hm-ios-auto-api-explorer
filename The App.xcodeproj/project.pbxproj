@@ -23,7 +23,7 @@
 		20201EE11EC31F4500793611 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20201EE01EC31F4500793611 /* ImageButton.swift */; };
 		20201EE31EC3505B00793611 /* UInt8Collection+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20201EE21EC3505B00793611 /* UInt8Collection+Hex.swift */; };
 		2023F1361ECC7D490009B9C5 /* Collection+Unique.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2023F1351ECC7D490009B9C5 /* Collection+Unique.swift */; };
-		20269CDB1F73B8B70085A744 /* Charging+ControlFunctionCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20269CDA1F73B8B70085A744 /* Charging+ControlFunctionCreatable.swift */; };
+		20269CDB1F73B8B70085A744 /* ChargingClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20269CDA1F73B8B70085A744 /* ChargingClass+ControlFunctionable.swift */; };
 		2036D1281EE8743E0075F5D2 /* RoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2036D1271EE8743E0075F5D2 /* RoundedView.swift */; };
 		2036D12C1EE876700075F5D2 /* ShadowButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2036D12B1EE876700075F5D2 /* ShadowButton.swift */; };
 		204D06A61ED310F200736B6A /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204D06A51ED310F200736B6A /* ShadowView.swift */; };
@@ -49,13 +49,13 @@
 		20AC533C1F7932CC00C9C23E /* TripleControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC533B1F7932CC00C9C23E /* TripleControlButton.swift */; };
 		20B18B4C1F0BE0BC001E7BE2 /* HMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B18B4A1F0BE0A8001E7BE2 /* HMKit.framework */; };
 		20B18B4D1F0BE0BC001E7BE2 /* HMKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B18B4A1F0BE0A8001E7BE2 /* HMKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		20B23CF11F1274E1006CFC06 /* Doors+ControlFunctionCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23CF01F1274E1006CFC06 /* Doors+ControlFunctionCreatable.swift */; };
-		20B23CF61F127585006CFC06 /* Trunk+ControlFunctionCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23CF51F127585006CFC06 /* Trunk+ControlFunctionCreatable.swift */; };
-		20B23CF81F1275E5006CFC06 /* Rooftop+ControlFunctionCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23CF71F1275E5006CFC06 /* Rooftop+ControlFunctionCreatable.swift */; };
+		20B23CF11F1274E1006CFC06 /* DoorsClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23CF01F1274E1006CFC06 /* DoorsClass+ControlFunctionable.swift */; };
+		20B23CF61F127585006CFC06 /* TrunkClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23CF51F127585006CFC06 /* TrunkClass+ControlFunctionable.swift */; };
+		20B23CF81F1275E5006CFC06 /* RooftopClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23CF71F1275E5006CFC06 /* RooftopClass+ControlFunctionable.swift */; };
 		20B23CFA1F127725006CFC06 /* ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23CF91F127725006CFC06 /* ControlFunctionable.swift */; };
-		20B23CFF1F1279F4006CFC06 /* Climate+ControlFunctionCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23CFE1F1279F4006CFC06 /* Climate+ControlFunctionCreatable.swift */; };
-		20B23D011F127A98006CFC06 /* Lights+ControlFunctionCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23D001F127A98006CFC06 /* Lights+ControlFunctionCreatable.swift */; };
-		20B23D031F127BDE006CFC06 /* RemoteControl+ControlFunctionCreatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23D021F127BDE006CFC06 /* RemoteControl+ControlFunctionCreatable.swift */; };
+		20B23CFF1F1279F4006CFC06 /* ClimateClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23CFE1F1279F4006CFC06 /* ClimateClass+ControlFunctionable.swift */; };
+		20B23D011F127A98006CFC06 /* LightsClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23D001F127A98006CFC06 /* LightsClass+ControlFunctionable.swift */; };
+		20B23D031F127BDE006CFC06 /* RemoteControlClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23D021F127BDE006CFC06 /* RemoteControlClass+ControlFunctionable.swift */; };
 		20B7BE411F0CE87C005CFF1C /* TripleControlFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B7BE401F0CE87C005CFF1C /* TripleControlFunction.swift */; };
 		20B8FA881EE1BBE90007EFF7 /* CustomCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8FA871EE1BBE90007EFF7 /* CustomCollectionViewFlowLayout.swift */; };
 		20B8FA8A1EE1BC030007EFF7 /* CustomItemSizeFromBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8FA891EE1BC030007EFF7 /* CustomItemSizeFromBounds.swift */; };
@@ -128,7 +128,7 @@
 		20201EE01EC31F4500793611 /* ImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		20201EE21EC3505B00793611 /* UInt8Collection+Hex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UInt8Collection+Hex.swift"; sourceTree = "<group>"; };
 		2023F1351ECC7D490009B9C5 /* Collection+Unique.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Unique.swift"; sourceTree = "<group>"; };
-		20269CDA1F73B8B70085A744 /* Charging+ControlFunctionCreatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Charging+ControlFunctionCreatable.swift"; sourceTree = "<group>"; };
+		20269CDA1F73B8B70085A744 /* ChargingClass+ControlFunctionable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChargingClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
 		2036D1271EE8743E0075F5D2 /* RoundedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedView.swift; sourceTree = "<group>"; };
 		2036D12B1EE876700075F5D2 /* ShadowButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowButton.swift; sourceTree = "<group>"; };
 		204D06A51ED310F200736B6A /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
@@ -153,13 +153,13 @@
 		209BE79B1EF0240D00FA51E1 /* RoundedImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageButton.swift; sourceTree = "<group>"; };
 		20AC533B1F7932CC00C9C23E /* TripleControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleControlButton.swift; sourceTree = "<group>"; };
 		20B18B4A1F0BE0A8001E7BE2 /* HMKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HMKit.framework; path = "Reference App/HMKit.framework"; sourceTree = "<group>"; };
-		20B23CF01F1274E1006CFC06 /* Doors+ControlFunctionCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Doors+ControlFunctionCreatable.swift"; sourceTree = "<group>"; };
-		20B23CF51F127585006CFC06 /* Trunk+ControlFunctionCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Trunk+ControlFunctionCreatable.swift"; sourceTree = "<group>"; };
-		20B23CF71F1275E5006CFC06 /* Rooftop+ControlFunctionCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Rooftop+ControlFunctionCreatable.swift"; sourceTree = "<group>"; };
+		20B23CF01F1274E1006CFC06 /* DoorsClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DoorsClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
+		20B23CF51F127585006CFC06 /* TrunkClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TrunkClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
+		20B23CF71F1275E5006CFC06 /* RooftopClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RooftopClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
 		20B23CF91F127725006CFC06 /* ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFunctionable.swift; sourceTree = "<group>"; };
-		20B23CFE1F1279F4006CFC06 /* Climate+ControlFunctionCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Climate+ControlFunctionCreatable.swift"; sourceTree = "<group>"; };
-		20B23D001F127A98006CFC06 /* Lights+ControlFunctionCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Lights+ControlFunctionCreatable.swift"; sourceTree = "<group>"; };
-		20B23D021F127BDE006CFC06 /* RemoteControl+ControlFunctionCreatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RemoteControl+ControlFunctionCreatable.swift"; sourceTree = "<group>"; };
+		20B23CFE1F1279F4006CFC06 /* ClimateClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClimateClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
+		20B23D001F127A98006CFC06 /* LightsClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LightsClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
+		20B23D021F127BDE006CFC06 /* RemoteControlClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RemoteControlClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
 		20B7BE401F0CE87C005CFF1C /* TripleControlFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripleControlFunction.swift; sourceTree = "<group>"; };
 		20B8FA871EE1BBE90007EFF7 /* CustomCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		20B8FA891EE1BC030007EFF7 /* CustomItemSizeFromBounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomItemSizeFromBounds.swift; sourceTree = "<group>"; };
@@ -341,13 +341,13 @@
 		20B23CF41F12755B006CFC06 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
-				20269CDA1F73B8B70085A744 /* Charging+ControlFunctionCreatable.swift */,
-				20B23CFE1F1279F4006CFC06 /* Climate+ControlFunctionCreatable.swift */,
-				20B23CF01F1274E1006CFC06 /* Doors+ControlFunctionCreatable.swift */,
-				20B23D001F127A98006CFC06 /* Lights+ControlFunctionCreatable.swift */,
-				20B23D021F127BDE006CFC06 /* RemoteControl+ControlFunctionCreatable.swift */,
-				20B23CF71F1275E5006CFC06 /* Rooftop+ControlFunctionCreatable.swift */,
-				20B23CF51F127585006CFC06 /* Trunk+ControlFunctionCreatable.swift */,
+				20269CDA1F73B8B70085A744 /* ChargingClass+ControlFunctionable.swift */,
+				20B23CFE1F1279F4006CFC06 /* ClimateClass+ControlFunctionable.swift */,
+				20B23CF01F1274E1006CFC06 /* DoorsClass+ControlFunctionable.swift */,
+				20B23D001F127A98006CFC06 /* LightsClass+ControlFunctionable.swift */,
+				20B23D021F127BDE006CFC06 /* RemoteControlClass+ControlFunctionable.swift */,
+				20B23CF71F1275E5006CFC06 /* RooftopClass+ControlFunctionable.swift */,
+				20B23CF51F127585006CFC06 /* TrunkClass+ControlFunctionable.swift */,
 			);
 			name = Commands;
 			sourceTree = "<group>";
@@ -476,7 +476,7 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = F42CFRE556;
 						LastSwiftMigration = 0900;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -550,7 +550,7 @@
 			files = (
 				2011669E1DC7733D0089576D /* TapToCarConverter.swift in Sources */,
 				206EB9151EEADF0000887096 /* ControlAction.swift in Sources */,
-				20269CDB1F73B8B70085A744 /* Charging+ControlFunctionCreatable.swift in Sources */,
+				20269CDB1F73B8B70085A744 /* ChargingClass+ControlFunctionable.swift in Sources */,
 				2019AAAD1F1F3CE8003A8FDB /* UInt8CollectionConvertible.swift in Sources */,
 				204D06A61ED310F200736B6A /* ShadowView.swift in Sources */,
 				20E1566F1ED447FE00208E0B /* ControlTableViewCell.swift in Sources */,
@@ -582,19 +582,19 @@
 				20FCE1671ECF45C800FA62E1 /* ControlCollectionViewController.swift in Sources */,
 				20C88A171EC5DCA300B8EF97 /* TitlesScrollViewContainer.swift in Sources */,
 				20B23CFA1F127725006CFC06 /* ControlFunctionable.swift in Sources */,
-				20B23D031F127BDE006CFC06 /* RemoteControl+ControlFunctionCreatable.swift in Sources */,
+				20B23D031F127BDE006CFC06 /* RemoteControlClass+ControlFunctionable.swift in Sources */,
 				20E270341EE1889900078DF0 /* FullCellCollectionViewFlowLayout.swift in Sources */,
 				204D06A91ED32F4400736B6A /* UIColor+Custom.swift in Sources */,
 				200C7C771DC7752100C31B21 /* CGRect.swift in Sources */,
 				206EB9121EEADEA600887096 /* ControlFunctionsManager.swift in Sources */,
 				20E1566B1ED4466F00208E0B /* DualControlTableViewCell.swift in Sources */,
-				20B23CF11F1274E1006CFC06 /* Doors+ControlFunctionCreatable.swift in Sources */,
+				20B23CF11F1274E1006CFC06 /* DoorsClass+ControlFunctionable.swift in Sources */,
 				20B8FA8F1EE1BFC10007EFF7 /* UIEdgeInsets+SimpleInit.swift in Sources */,
 				205500201EC4BC7C007C9837 /* TitlesScrollView.swift in Sources */,
 				20DBC3911EE9B07F002A0293 /* FullScreenControlButton.swift in Sources */,
-				20B23CFF1F1279F4006CFC06 /* Climate+ControlFunctionCreatable.swift in Sources */,
+				20B23CFF1F1279F4006CFC06 /* ClimateClass+ControlFunctionable.swift in Sources */,
 				20B8FA881EE1BBE90007EFF7 /* CustomCollectionViewFlowLayout.swift in Sources */,
-				20B23CF81F1275E5006CFC06 /* Rooftop+ControlFunctionCreatable.swift in Sources */,
+				20B23CF81F1275E5006CFC06 /* RooftopClass+ControlFunctionable.swift in Sources */,
 				20BA06181EDEB7B80057E6B8 /* RemoteControlViewController.swift in Sources */,
 				20CCEC531DB8ADC600EEFC7D /* Delay.swift in Sources */,
 				206EB91B1EEAEEB500887096 /* ControlFunctionSettable.swift in Sources */,
@@ -602,10 +602,10 @@
 				20AC533C1F7932CC00C9C23E /* TripleControlButton.swift in Sources */,
 				200C7C761DC7752100C31B21 /* CGPoint.swift in Sources */,
 				20B8FA8D1EE1BD150007EFF7 /* CommonInitiliser.swift in Sources */,
-				20B23CF61F127585006CFC06 /* Trunk+ControlFunctionCreatable.swift in Sources */,
+				20B23CF61F127585006CFC06 /* TrunkClass+ControlFunctionable.swift in Sources */,
 				20E7511B1DD0D83E00320674 /* RoundedButton.swift in Sources */,
 				206EB9101EEABC7C00887096 /* ControlFunction.swift in Sources */,
-				20B23D011F127A98006CFC06 /* Lights+ControlFunctionCreatable.swift in Sources */,
+				20B23D011F127A98006CFC06 /* LightsClass+ControlFunctionable.swift in Sources */,
 				20E1566C1ED4466F00208E0B /* FullScreenControlTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -746,7 +746,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = F42CFRE556;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -759,8 +760,8 @@
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hm.reference-app.explore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "008e3c24-5fbd-47ab-96fb-089296fb0e52";
-				PROVISIONING_PROFILE_SPECIFIER = "HM iOS Development - Company";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SWIFT_VERSION = 4.0;
 			};
@@ -772,8 +773,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = F42CFRE556;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -786,8 +788,8 @@
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hm.reference-app.explore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "82f49de2-2e8a-407c-9533-3662395d14b6";
-				PROVISIONING_PROFILE_SPECIFIER = "HM iOS Distribution - Company";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SWIFT_VERSION = 4.0;
 			};

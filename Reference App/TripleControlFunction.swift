@@ -75,7 +75,7 @@ class TripleControlFunction: ControlFunction {
         }
     }
 
-    override func receivedUpdate(_ command: Command) {
+    override func receivedUpdate(_ command: CommandClass) {
         super.receivedUpdate(command)
 
         guard let thingy = command as? ControlFunctionable else {

@@ -10,36 +10,35 @@ import AutoAPI
 import Foundation
 
 
-class Capabilities {
+class CapabilitiesClass: CommandClass {
 
     let parseCapability: (Capability) -> Void
 
 
     init(parseCapability: @escaping (Capability) -> Void) {
         self.parseCapability = parseCapability
+
+        super.init()
+
+        isAvailable = true
+        isMetaCommand = true
     }
 }
 
-extension Capabilities: ParserResponseOnly {
+extension CapabilitiesClass: ParserResponseOnly {
 
 }
 
-extension Capabilities: HashableEmpty {
+extension CapabilitiesClass: ResponseParser {
 
-}
-
-extension Capabilities: ResponseParser {
-
-    @discardableResult func update(from response: Response) -> CommandType? {
-        guard let response = response.value as? AutoAPI.CapabilitiesCommand.Response else {
+    @discardableResult func update(from response: Command) -> CommandType? {
+        guard let capabilities = response as? Capabilities else {
             return nil
         }
 
-        response.capabilities.forEach {
+        capabilities.forEach {
             self.parseCapability($0)
         }
-
-        Car.shared.displayStuffInThing("tere")
 
         return .capabilities
     }

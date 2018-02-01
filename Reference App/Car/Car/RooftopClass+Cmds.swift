@@ -1,5 +1,5 @@
 //
-//  Rooftop+Cmds.swift
+//  RooftopClass+Cmds.swift
 //  Car
 //
 //  Created by Mikk Rätsep on 08/07/2017.
@@ -13,7 +13,11 @@ import Foundation
 public extension Car {
 
     public func getRooftopState(failed: @escaping CommandFailed) {
-        let bytes = AutoAPI.RooftopControlCommand.getStateBytes
+        guard rooftop.isAvailable else {
+            return failed(.needsInitialState)
+        }
+
+        let bytes = RooftopControl.getRooftopState
 
         print("- Car - get rooftop state")
 
@@ -21,13 +25,11 @@ public extension Car {
     }
 
     public func sendRooftopCommand(dimmed: Bool, failed: @escaping CommandFailed) {
-        guard let rooftop = rooftop else {
+        guard rooftop.isAvailable else {
             return failed(.needsInitialState)
         }
 
-        guard let bytes = AutoAPI.RooftopControlCommand.controlRooftopBytes((dimmed ? 100 : 0), (rooftop.open ? 100 : 0)) else {
-            return failed(.invalidValues)
-        }
+        let bytes = RooftopControl.controlRooftop(.init(dimming: (dimmed ? 100 : 0), openClose: nil))
 
         print("- Car - send rooftop command, dimmed: \(dimmed)")
 
@@ -35,13 +37,11 @@ public extension Car {
     }
 
     public func sendRooftopCommand(open: Bool, failed: @escaping CommandFailed) {
-        guard let rooftop = rooftop else {
+        guard rooftop.isAvailable else {
             return failed(.needsInitialState)
         }
 
-        guard let bytes = AutoAPI.RooftopControlCommand.controlRooftopBytes((rooftop.dimmed ? 100 : 0), (open ? 100 : 0)) else {
-            return failed(.invalidValues)
-        }
+        let bytes = RooftopControl.controlRooftop(.init(dimming: nil, openClose: (open ? 100 : 0)))
 
         print("- Car - send rooftop command, open: \(open)")
         

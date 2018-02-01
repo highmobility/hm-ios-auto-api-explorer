@@ -15,6 +15,6 @@ public enum CommandType {
     case capabilities
     case vehicleStatii
 
-    case failureMessage(FailureMessage)
-    case other(Command)
+    case failureMessage(FailureMessageClass)
+    case other(CommandClass)
 }

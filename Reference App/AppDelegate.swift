@@ -55,9 +55,9 @@ fileprivate extension AppDelegate {
          An example of a snippet copied from the Developer Center (do not use, will obviously not work):
 
          do {
-            try LocalDevice.sharedDevice.initialise(deviceCertificate: Base64String,
-                                                    devicePrivateKey: Base64String,
-                                                    issuerPublicKey: Base64String)
+            try Car.shared.setDeviceCertificate(Base64String,
+                                                devicePrivateKey: Base64String,
+                                                issuerPublicKey: Base64String)
          }
          catch {
             // Handle the error

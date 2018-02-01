@@ -10,7 +10,6 @@ import Car
 import Foundation
 
 
-
 class ControlFunctionsManager {
 
     static let shared: ControlFunctionsManager = ControlFunctionsManager()
@@ -28,7 +27,7 @@ class ControlFunctionsManager {
 
     // MARK: Methods
 
-    func receivedCapabilities(for commands: [Command?]) {
+    func receivedCapabilities(for commands: [CommandClass?]) {
         // - Find the non-nil Commands from all commands
         // - Find the ControlFunctionSettable ones from them
         // - Get the ControlFunctions from those
@@ -39,7 +38,7 @@ class ControlFunctionsManager {
         self.allControlFunctions = functions.sorted { $0.name < $1.name }
     }
 
-    @discardableResult func updateControlFunctions(from command: Command) -> [ControlFunction]? {
+    @discardableResult func updateControlFunctions(from command: CommandClass) -> [ControlFunction]? {
         guard let thingy = command as? ControlFunctionable else {
             return nil
         }
@@ -55,3 +54,4 @@ class ControlFunctionsManager {
 
     private init() { }
 }
+

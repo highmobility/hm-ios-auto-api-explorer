@@ -19,11 +19,7 @@ extension Collection where Iterator.Element == UInt8 {
         return Data(bytes: bytes)
     }
 
-    var hex: String {
-        return map { String(format: "%02X", $0) }.joined()
-    }
-
-    @available(*, deprecated, renamed: "hex") var hexString: String {
+    var hexString: String {
         return map { String(format: "%02X", $0) }.joined()
     }
 }

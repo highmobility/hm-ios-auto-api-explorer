@@ -19,3 +19,10 @@ protocol ControlFunctionable {
 
     var stringValue: (ControlFunction.Kind) -> String? { get }
 }
+
+extension ControlFunctionable {
+
+    var kinds: [ControlFunction.Kind] {
+        return controlFunctions.map { $0.kind }
+    }
+}

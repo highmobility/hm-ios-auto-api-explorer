@@ -1,16 +1,16 @@
 //
-//  Lights+ControlFunctionable.swift
+//  LightsClass+ControlFunctionable.swift
 //  Telematics App
 //
-//  Created by Mikk RÃ¤tsep on 09/07/2017.
-//  Copyright Â© 2017 High-Mobility GmbH. All rights reserved.
+//  Created by Mikk Rätsep on 09/07/2017.
+//  Copyright © 2017 High-Mobility GmbH. All rights reserved.
 //
 
 import Car
 import Foundation
 
 
-extension Lights: ControlFunctionable {
+extension LightsClass: ControlFunctionable {
 
     var boolValue: (ControlFunction.Kind) -> Bool? {
         return {
@@ -46,7 +46,7 @@ extension Lights: ControlFunctionable {
     }
 }
 
-private extension Lights {
+private extension LightsClass {
 
     func createLightsFront() -> ControlFunction {
         let firstAction = ControlAction(name: "inactive", iconName: "HeadlightOFF") { errorHandler in
@@ -68,9 +68,9 @@ private extension Lights {
         }
 
         return TripleControlFunction(kind: .lightsFront,
-                                     firstActionValueTuple: (firstAction, "\(Lights.FrontLightState.inactive)"),
-                                     secondActionValueTuple: (secondAction, "\(Lights.FrontLightState.active)"),
-                                     thirdActionValueTuple: (thirdAction, "\(Lights.FrontLightState.fullBeam)"))
+                                     firstActionValueTuple: (firstAction, "\(LightsClass.FrontExteriorLightState.inactive)"),
+                                     secondActionValueTuple: (secondAction, "\(LightsClass.FrontExteriorLightState.active)"),
+                                     thirdActionValueTuple: (thirdAction, "\(LightsClass.FrontExteriorLightState.fullBeam)"))
     }
 
     func createLightsInterior() -> ControlFunction {

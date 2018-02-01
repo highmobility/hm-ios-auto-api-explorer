@@ -10,13 +10,18 @@ import AutoAPI
 import Foundation
 
 
-class VehicleStatii {
+class VehicleStatii: CommandClass {
 
-    let parseVehicleStatus: (VehicleStatus) -> Void
+    let parseVehicleStatus: (VehicleState) -> Void
 
 
-    init(parseVehicleStatus: @escaping (VehicleStatus) -> Void) {
+    init(parseVehicleStatus: @escaping (VehicleState) -> Void) {
         self.parseVehicleStatus = parseVehicleStatus
+
+        super.init()
+
+        isAvailable = true
+        isMetaCommand = true
     }
 }
 
@@ -24,18 +29,14 @@ extension VehicleStatii: ParserResponseOnly {
 
 }
 
-extension VehicleStatii: HashableEmpty {
-
-}
-
 extension VehicleStatii: ResponseParser {
 
-    @discardableResult func update(from response: Response) -> CommandType? {
-        guard let response = response.value as? AutoAPI.VehicleStatusCommand.Response else {
+    @discardableResult func update(from response: Command) -> CommandType? {
+        guard let vehicleStatus = response as? VehicleStatus else {
             return nil
         }
 
-        response.vehicleStatuses.forEach {
+        vehicleStatus.states?.forEach {
             self.parseVehicleStatus($0)
         }
 
