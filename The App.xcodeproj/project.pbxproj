@@ -51,6 +51,7 @@
 		207B4670203C7929002F346D /* SingleControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B466F203C7929002F346D /* SingleControlButton.swift */; };
 		207B4672203C7A50002F346D /* SingleControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4671203C7A50002F346D /* SingleControlTableViewCell.swift */; };
 		207B467C203C83D3002F346D /* DoorsStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B467B203C83D3002F346D /* DoorsStatusViewController.swift */; };
+		207B4682203C9579002F346D /* WindowsStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4681203C9579002F346D /* WindowsStatusViewController.swift */; };
 		207E48421DB66BE10031C0FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E48411DB66BE10031C0FB /* AppDelegate.swift */; };
 		207E484B1DB66BE10031C0FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 207E484A1DB66BE10031C0FB /* Assets.xcassets */; };
 		207E484E1DB66BE10031C0FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 207E484C1DB66BE10031C0FB /* LaunchScreen.storyboard */; };
@@ -168,6 +169,7 @@
 		207B466F203C7929002F346D /* SingleControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleControlButton.swift; sourceTree = "<group>"; };
 		207B4671203C7A50002F346D /* SingleControlTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleControlTableViewCell.swift; sourceTree = "<group>"; };
 		207B467B203C83D3002F346D /* DoorsStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsStatusViewController.swift; sourceTree = "<group>"; };
+		207B4681203C9579002F346D /* WindowsStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowsStatusViewController.swift; sourceTree = "<group>"; };
 		207E483E1DB66BE10031C0FB /* The App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		207E48411DB66BE10031C0FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		207E484A1DB66BE10031C0FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 				207B4662203C5956002F346D /* NaviDestinationViewController.swift */,
 				20BA06171EDEB7B80057E6B8 /* RemoteControlViewController.swift */,
 				207B4661203C5956002F346D /* VehicleLocationViewController.swift */,
+				207B4681203C9579002F346D /* WindowsStatusViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				20FCE1651ECF458200FA62E1 /* ControlViewController.swift in Sources */,
 				2036D12C1EE876700075F5D2 /* ShadowButton.swift in Sources */,
 				207B466E203C7709002F346D /* SingleControlFunction.swift in Sources */,
+				207B4682203C9579002F346D /* WindowsStatusViewController.swift in Sources */,
 				206EB9191EEADF5C00887096 /* FullScreenControlFunction.swift in Sources */,
 				204D06AD1ED3510900736B6A /* ControlOverviewCollectionViewCell.swift in Sources */,
 				208038C11DB6924C00285C29 /* OvalButton.swift in Sources */,

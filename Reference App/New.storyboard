@@ -40,7 +40,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="557"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="uB8-jR-Jx0">
-                                                    <rect key="frame" x="31" y="51" width="312" height="396"/>
+                                                    <rect key="frame" x="31" y="40" width="312" height="396"/>
                                                     <subviews>
                                                         <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Lpx-Bl-tlW">
                                                             <rect key="frame" x="126" y="0.0" width="60" height="0.0"/>
@@ -541,7 +541,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="m97-tb-kc0" secondAttribute="trailing" constant="31" id="1WB-gJ-Mcl"/>
                                     <constraint firstItem="3dQ-vf-gsY" firstAttribute="leading" secondItem="QKs-Rn-m4G" secondAttribute="leading" id="215-US-O05"/>
-                                    <constraint firstItem="uB8-jR-Jx0" firstAttribute="centerY" secondItem="ZxH-C1-0Ry" secondAttribute="centerY" multiplier="1.15" id="42f-yU-edr"/>
+                                    <constraint firstItem="uB8-jR-Jx0" firstAttribute="centerY" secondItem="ZxH-C1-0Ry" secondAttribute="centerY" multiplier="1.1" id="42f-yU-edr"/>
                                     <constraint firstItem="3dQ-vf-gsY" firstAttribute="top" secondItem="QKs-Rn-m4G" secondAttribute="top" id="5eq-sF-PUt"/>
                                     <constraint firstItem="m97-tb-kc0" firstAttribute="centerX" secondItem="QKs-Rn-m4G" secondAttribute="centerX" id="CKf-wg-9jo"/>
                                     <constraint firstItem="ZxH-C1-0Ry" firstAttribute="centerY" secondItem="QKs-Rn-m4G" secondAttribute="centerY" constant="-62" id="Ig0-Yq-Mpc"/>
@@ -1342,7 +1342,7 @@ move the car</string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="66n-yU-KCY">
-                                <rect key="frame" x="164.5" y="517.5" width="46.5" height="32"/>
+                                <rect key="frame" x="164.5" y="534.5" width="46.5" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOCKED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utD-ox-YKo">
                                         <rect key="frame" x="0.0" y="0.0" width="46.5" height="13.5"/>
@@ -1370,7 +1370,7 @@ move the car</string>
                             <constraint firstItem="OLx-Ow-XKE" firstAttribute="width" secondItem="OLx-Ow-XKE" secondAttribute="height" multiplier="1:1" id="YQM-An-DfP"/>
                             <constraint firstItem="OLx-Ow-XKE" firstAttribute="centerX" secondItem="lQW-jv-o18" secondAttribute="centerX" id="Yjh-oO-81W"/>
                             <constraint firstItem="lC4-nv-IhV" firstAttribute="centerY" secondItem="OLx-Ow-XKE" secondAttribute="centerY" multiplier="1.2" id="eZn-MX-iTx"/>
-                            <constraint firstItem="66n-yU-KCY" firstAttribute="centerY" secondItem="OLx-Ow-XKE" secondAttribute="centerY" multiplier="1.6" id="ec7-Kc-GuD"/>
+                            <constraint firstItem="66n-yU-KCY" firstAttribute="centerY" secondItem="OLx-Ow-XKE" secondAttribute="centerY" multiplier="1.65" id="ec7-Kc-GuD"/>
                             <constraint firstItem="W45-MS-AxH" firstAttribute="leading" secondItem="OLx-Ow-XKE" secondAttribute="centerX" multiplier="1.55" id="i1M-e7-gYN"/>
                             <constraint firstItem="C56-p9-cqP" firstAttribute="centerY" secondItem="OLx-Ow-XKE" secondAttribute="centerY" multiplier="0.9" id="oNn-UC-exN"/>
                             <constraint firstItem="66n-yU-KCY" firstAttribute="centerX" secondItem="OLx-Ow-XKE" secondAttribute="centerX" id="yMv-C4-ddb"/>
@@ -1410,6 +1410,93 @@ move the car</string>
             </objects>
             <point key="canvasLocation" x="4529" y="2309"/>
         </scene>
+        <!--WINDOWS STATUS-->
+        <scene sceneID="8be-zO-GtD">
+            <objects>
+                <viewController storyboardIdentifier="WindowsStatusViewControllerID" id="zD2-Sy-Fan" customClass="WindowsStatusViewController" customModule="The_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="URv-uf-e4H"/>
+                        <viewControllerLayoutGuide type="bottom" id="BcX-b0-ycv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vyZ-I1-gNk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.60000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hm_car" translatesAutoresizingMaskIntoConstraints="NO" id="oKP-9v-mxs">
+                                <rect key="frame" x="0.0" y="146" width="375" height="375"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPEN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YkM-w1-Wk3">
+                                <rect key="frame" x="52.5" y="293.5" width="32" height="13.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                <color key="textColor" name="Darkclay"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OPEN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CEw-wB-ayd">
+                                <rect key="frame" x="290" y="293.5" width="32" height="13.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                <color key="textColor" name="Darkclay"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLOSED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfX-w5-rJV">
+                                <rect key="frame" x="47.5" y="393.5" width="46.5" height="13.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                <color key="textColor" name="Darkclay"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLOSED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVh-Tl-I3B">
+                                <rect key="frame" x="281.5" y="393.5" width="46.5" height="13.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                <color key="textColor" name="Darkclay"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CLOSED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cgv-Zi-jq9">
+                                <rect key="frame" x="164.5" y="543.5" width="46.5" height="13.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                                <color key="textColor" name="Darkclay"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" name="Clay"/>
+                        <constraints>
+                            <constraint firstItem="oKP-9v-mxs" firstAttribute="centerX" secondItem="vyZ-I1-gNk" secondAttribute="centerX" id="3Eo-IN-qcP"/>
+                            <constraint firstItem="UVh-Tl-I3B" firstAttribute="leading" secondItem="oKP-9v-mxs" secondAttribute="centerX" multiplier="1.5" id="4IH-Ro-3Dd"/>
+                            <constraint firstItem="xfX-w5-rJV" firstAttribute="centerY" secondItem="oKP-9v-mxs" secondAttribute="centerY" multiplier="1.2" id="4Z8-dw-olm"/>
+                            <constraint firstItem="YkM-w1-Wk3" firstAttribute="centerY" secondItem="oKP-9v-mxs" secondAttribute="centerY" multiplier="0.9" id="5rS-RJ-5At"/>
+                            <constraint firstItem="YkM-w1-Wk3" firstAttribute="trailing" secondItem="oKP-9v-mxs" secondAttribute="centerX" multiplier="0.45" id="HHF-Or-9I8"/>
+                            <constraint firstItem="CEw-wB-ayd" firstAttribute="leading" secondItem="oKP-9v-mxs" secondAttribute="centerX" multiplier="1.55" id="TBp-Ml-Ma3"/>
+                            <constraint firstItem="cgv-Zi-jq9" firstAttribute="centerX" secondItem="oKP-9v-mxs" secondAttribute="centerX" id="W3k-aw-VKb"/>
+                            <constraint firstItem="xfX-w5-rJV" firstAttribute="trailing" secondItem="oKP-9v-mxs" secondAttribute="centerX" multiplier="0.5" id="dyc-8O-cVA"/>
+                            <constraint firstAttribute="centerY" secondItem="oKP-9v-mxs" secondAttribute="centerY" id="jvD-SK-std"/>
+                            <constraint firstItem="oKP-9v-mxs" firstAttribute="width" secondItem="oKP-9v-mxs" secondAttribute="height" multiplier="1:1" id="tSU-HK-Zrz"/>
+                            <constraint firstItem="CEw-wB-ayd" firstAttribute="centerY" secondItem="oKP-9v-mxs" secondAttribute="centerY" multiplier="0.9" id="tvR-EQ-bfO"/>
+                            <constraint firstItem="UVh-Tl-I3B" firstAttribute="centerY" secondItem="oKP-9v-mxs" secondAttribute="centerY" multiplier="1.2" id="u2T-8d-BkT"/>
+                            <constraint firstItem="oKP-9v-mxs" firstAttribute="width" secondItem="vyZ-I1-gNk" secondAttribute="width" id="ust-5b-cYz"/>
+                            <constraint firstItem="cgv-Zi-jq9" firstAttribute="centerY" secondItem="oKP-9v-mxs" secondAttribute="centerY" multiplier="1.65" id="zF4-E7-DMF"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="WINDOWS STATUS" id="G8j-4Y-BnR">
+                        <barButtonItem key="rightBarButtonItem" image="refresh" id="vnp-kE-i5m">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="refreshTapped:" destination="zD2-Sy-Fan" id="2Pn-Ti-MuW"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <connections>
+                        <outlet property="frontLeftPositionLabel" destination="YkM-w1-Wk3" id="b1g-sA-VEN"/>
+                        <outlet property="frontRightPositionLabel" destination="CEw-wB-ayd" id="dC6-uR-LuX"/>
+                        <outlet property="hatchPositionLabel" destination="cgv-Zi-jq9" id="o1d-Z8-BCP"/>
+                        <outlet property="rearLeftPositionLabel" destination="xfX-w5-rJV" id="5Cn-kv-NI4"/>
+                        <outlet property="rearRightPositionLabel" destination="UVh-Tl-I3B" id="huv-EA-r2v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="geP-jv-1MG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5534" y="2309"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BATTERY" width="22" height="22"/>
@@ -1442,6 +1529,12 @@ move the car</string>
         <image name="refresh" width="22" height="22"/>
         <namedColor name="Clay">
             <color red="0.32199999690055847" green="0.33700001239776611" blue="0.36100000143051147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Clay">
+            <color red="0.32199999689999997" green="0.33700001239999999" blue="0.36100000139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Darkclay">
+            <color red="0.19200000170000001" green="0.20399999620000001" blue="0.22400000689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Darkclay">
             <color red="0.19200000170000001" green="0.20399999620000001" blue="0.22400000689999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

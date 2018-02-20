@@ -18,7 +18,7 @@ class ControlFunctionsManager {
     // MARK: Vars
 
     var chassisControlFunctions: [ControlFunction] {
-        return allControlFunctions.filter { [.charging, .emergencyFlasher, .honkFlash, .rooftopDimming, .rooftopOpening, .windows].contains($0.kind) }
+        return allControlFunctions.filter { [.charging, .emergencyFlasher, .honkFlash, .rooftopDimming, .rooftopOpening, .windows, .windowsStatus].contains($0.kind) }
     }
 
     var digitalKeyControlFunctions: [ControlFunction] {

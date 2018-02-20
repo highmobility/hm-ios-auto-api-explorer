@@ -131,6 +131,7 @@ private extension ControlOverviewCollectionViewCell {
         case .vehicleLocation:      return vehicleLocationButton
         case .windshieldHeating:    return windshieldHeatingButton
         case .windows:              return windowsButton
+        case .windowsStatus:        return nil
         }
     }
 

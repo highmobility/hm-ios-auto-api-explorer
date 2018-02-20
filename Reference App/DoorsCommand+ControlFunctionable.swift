@@ -50,6 +50,6 @@ private extension DoorsCommand {
     }
 
     func createShowStatus() -> FullScreenControlFunction {
-        return FullScreenControlFunction(kind: .doorsStatus, iconName: "DoorlockUNLOCKED", viewControllerID: "DoorsStatusViewControllerID")
+        return FullScreenControlFunction(kind: .doorsStatus, iconName: "DoorlockLOCKED", viewControllerID: "DoorsStatusViewControllerID")
     }
 }

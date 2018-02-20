@@ -30,8 +30,9 @@ class ControlFunction {
         case rooftopOpening     = "Rooftop Opening"
         case trunkAccess        = "Trunk Access"
         case vehicleLocation    = "Vehicle Location"
-        case windows            = "Windows"
         case windshieldHeating  = "Windshield Heating"
+        case windows            = "Windows"
+        case windowsStatus      = "Windows Status"
     }
 
 

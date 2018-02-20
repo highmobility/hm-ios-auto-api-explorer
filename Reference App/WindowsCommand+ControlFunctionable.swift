@@ -23,6 +23,17 @@ extension WindowsCommand: ControlFunctionable {
     }
 
     var controlFunctions: [ControlFunction] {
+        return [createOpenClose(), createShowStatus()]
+    }
+
+    var stringValue: (ControlFunction.Kind) -> String? {
+        return { _ in nil }
+    }
+}
+
+private extension WindowsCommand {
+
+    func createOpenClose() -> DualControlFunction {
         let mainActions = ControlAction(name: "open", iconName: "WindowDOWN") { errorHandler in
             Car.shared.sendWindowsCommand(open: true) {
                 if let error = $0 { errorHandler?(error) }
@@ -35,14 +46,10 @@ extension WindowsCommand: ControlFunctionable {
             }
         }
 
-        return [DualControlFunction(kind: .windows, mainAction: mainActions, oppositeAction: oppositeAction, isMainTrue: true)]
+        return DualControlFunction(kind: .windows, mainAction: mainActions, oppositeAction: oppositeAction, isMainTrue: true)
     }
 
-    var kinds: [ControlFunction.Kind] {
-        return [.windows]
-    }
-
-    var stringValue: (ControlFunction.Kind) -> String? {
-        return { _ in nil }
+    func createShowStatus() -> FullScreenControlFunction {
+        return FullScreenControlFunction(kind: .windowsStatus, iconName: "WindowUP", viewControllerID: "WindowsStatusViewControllerID")
     }
 }

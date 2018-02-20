@@ -50,7 +50,7 @@ class DoorsStatusViewController: UIViewController {
     func doorsUpdated(_ doors: [DoorClass]) {
         self.doors = doors
 
-        updateUI(with: doors)
+        updateUI()
     }
 
 
@@ -63,7 +63,7 @@ class DoorsStatusViewController: UIViewController {
             getDoors()
         }
         else {
-            updateUI(with: doors)
+            updateUI()
         }
     }
 }
@@ -110,7 +110,7 @@ private extension DoorsStatusViewController {
         }
     }
 
-    func updateUI(with doors: [DoorClass]) {
+    func updateUI() {
         guard isViewLoaded else {
             return
         }

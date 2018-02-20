@@ -25,10 +25,12 @@ class ControlViewController: UIViewController {
     private var naviDestinationViewController: NaviDestinationViewController?
     private var remoteControlViewController: RemoteControlViewController?
     private var vehicleLocationViewController: VehicleLocationViewController?
+    private var windowsStatusViewController: WindowsStatusViewController?
 
     private var lastDoorsStatus: [DoorClass]?
     private var lastNaviDestination: NaviDestinationClass!
     private var lastVehicleLocation: VehicleLocationClass?
+    private var lastWindowsStatus: [WindowClass]?
 
 
     // MARK: IBActions
@@ -72,10 +74,10 @@ class ControlViewController: UIViewController {
         super.viewDidAppear(animated)
 
         doorsStatusViewController = nil
-        naviDestinationViewController = nil
+        naviDestinationViewController = nil // TODO: MapView IS RETAINING exessive amounts of memory
         remoteControlViewController = nil
-        // TODO: MapView IS RETAINING exessive amounts of memory
-        vehicleLocationViewController = nil
+        vehicleLocationViewController = nil // TODO: MapView IS RETAINING exessive amounts of memory
+        windowsStatusViewController = nil
     }
 }
 
@@ -159,6 +161,13 @@ private extension ControlViewController {
                 vehicleLocationViewController?.updateCoordinate(coordinate)
             }
         }
+        else if let controller = viewController as? WindowsStatusViewController {
+            windowsStatusViewController = controller
+
+            if let windowsStatus = lastWindowsStatus {
+                windowsStatusViewController?.windowsUpdated(windowsStatus)
+            }
+        }
 
         navigationController?.pushViewController(viewController, animated: true)
     }
@@ -198,6 +207,9 @@ private extension ControlViewController {
         }
         else if let vehicleLocation = command as? VehicleLocationClass {
             lastVehicleLocation = vehicleLocation
+        }
+        else if let windowsCommand = command as? WindowsCommand {
+            lastWindowsStatus = windowsCommand.windows
         }
 
         return true
@@ -310,6 +322,9 @@ private extension ControlViewController {
 
             case let command as VehicleLocationClass:
                 vehicleLocationViewController?.updateCoordinate(command.coordinate)
+
+            case let command as WindowsCommand:
+                windowsStatusViewController?.windowsUpdated(command.windows)
 
             default:
                 break

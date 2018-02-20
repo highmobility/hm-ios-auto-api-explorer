@@ -12,6 +12,18 @@ import Foundation
 
 public extension Car {
 
+    public func getWindowsState(failed: @escaping CommandFailed) {
+        guard windows.isAvailable else {
+            return failed(.needsInitialState)
+        }
+
+        let bytes = Windows.getWindowsState
+
+        print("- Car - get windows state")
+
+        sendCommand(bytes, failed: failed)
+    }
+
     public func sendWindowsCommand(open: Bool, failed: @escaping CommandFailed) {
         guard self.windows.isAvailable else {
             return failed(.needsInitialState)
