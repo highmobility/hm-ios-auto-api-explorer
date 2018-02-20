@@ -34,5 +34,10 @@ public extension Car {
         print("- Car - send honk horn 1 sec, flash lights once")
 
         sendCommand(bytes, failed: failed)
+
+        // This is a workaround for now
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
+            self.notifyCommandParsed(.other(self.honkHornFlashLights))
+        }
     }
 }

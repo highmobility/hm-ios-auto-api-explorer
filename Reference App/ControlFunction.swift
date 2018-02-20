@@ -17,6 +17,7 @@ class ControlFunction {
         case doorsLock          = "Door Locks"
         case emergencyFlasher   = "Emergency Flasher"
         case engine             = "Engine"
+        case honkFlash          = "Honk and Flash"
         case hvac               = "HVAC"
         case lightsFront        = "Front Lights"
         case lightsInterior     = "Interior Lights"

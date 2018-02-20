@@ -18,7 +18,7 @@ class ControlFunctionsManager {
     // MARK: Vars
 
     var chassisControlFunctions: [ControlFunction] {
-        return allControlFunctions.filter { [.charging, .emergencyFlasher, .rooftopDimming, .rooftopOpening, .windows].contains($0.kind) }
+        return allControlFunctions.filter { [.charging, .emergencyFlasher, .honkFlash, .rooftopDimming, .rooftopOpening, .windows].contains($0.kind) }
     }
 
     var digitalKeyControlFunctions: [ControlFunction] {
@@ -48,7 +48,7 @@ class ControlFunctionsManager {
         let functions = commands.flatMap { $0 }.flatMap { $0 as? ControlFunctionable }.map { $0.controlFunctions }.flatMap { $0 }
 
         // - Sort the ControlFunctions by name
-        self.allControlFunctions = functions.sorted { $0.name < $1.name }
+        allControlFunctions = functions.sorted { $0.name < $1.name }
     }
 
     @discardableResult func updateControlFunctions(from command: CommandClass) -> [ControlFunction]? {

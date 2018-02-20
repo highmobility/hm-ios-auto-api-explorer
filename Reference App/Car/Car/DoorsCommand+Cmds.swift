@@ -1,5 +1,5 @@
 //
-//  DoorsClass+Cmds.swift
+//  DoorsCommand+Cmds.swift
 //  Car
 //
 //  Created by Mikk Rätsep on 08/07/2017.

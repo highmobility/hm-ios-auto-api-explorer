@@ -39,7 +39,7 @@ public class Car {
     public let charging = ChargingClass()
     public let climate = ClimateClass()
     public let diagnostics = DiagnosticsCommand()
-    public let doors = DoorsClass()
+    public let doors = DoorsCommand()
     public let engine = EngineClass()
     public let honkHornFlashLights = HonkHornFlashLightsClass()
     public let lights = LightsClass()
@@ -49,7 +49,7 @@ public class Car {
     public let rooftop = RooftopClass()
     public let trunk = TrunkClass()
     public let vehicleLocation = VehicleLocationClass()
-    public let windows = WindowsClass()
+    public let windows = WindowsCommand()
     public let windscreen = WindscreenCommand()
 
 

@@ -47,7 +47,7 @@
                                                             <rect key="frame" x="126" y="0.0" width="60" height="0.0"/>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="uyH-jd-R9c">
-                                                            <rect key="frame" x="84" y="0.0" width="144" height="60"/>
+                                                            <rect key="frame" x="42" y="0.0" width="228" height="60"/>
                                                             <subviews>
                                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgX-kX-6sR" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
                                                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -69,8 +69,28 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </button>
-                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5te-qz-PRD" customClass="FullScreenControlButton" customModule="The_App" customModuleProvider="target">
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DUi-Dp-HW5" customClass="SingleControlButton" customModule="The_App" customModuleProvider="target">
                                                                     <rect key="frame" x="84" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="60" id="UUR-cm-qlh"/>
+                                                                        <constraint firstAttribute="height" constant="60" id="axa-2f-xlz"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="btn_honk-lights"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5te-qz-PRD" customClass="FullScreenControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="168" y="0.0" width="60" height="60"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="width" constant="60" id="Jxx-kd-Vbt"/>
                                                                         <constraint firstAttribute="height" constant="60" id="i8I-SD-mso"/>
@@ -543,6 +563,7 @@
                                     <outlet property="emergencyFlasherButton" destination="HL6-fC-YWK" id="2dd-4N-hwq"/>
                                     <outlet property="engineButton" destination="vwN-fO-dVe" id="2i5-I1-JZf"/>
                                     <outlet property="frontLightsButton" destination="Y3U-PQ-jxD" id="Bj0-WD-Lxw"/>
+                                    <outlet property="honkFlashButton" destination="DUi-Dp-HW5" id="Xh6-O9-77o"/>
                                     <outlet property="hvacButton" destination="Wfa-uB-ckd" id="5Qm-F0-9dK"/>
                                     <outlet property="interiorLightsButton" destination="6iZ-B9-xOM" id="jbr-Dt-JRY"/>
                                     <outlet property="mainStacksVerticalConstraint" destination="42f-yU-edr" id="Tj6-gR-lp6"/>
@@ -578,6 +599,7 @@
                                     <outletCollection property="buttons" destination="oct-z1-vG0" collectionClass="NSMutableArray" id="YKH-Nr-rgu"/>
                                     <outletCollection property="buttons" destination="5te-qz-PRD" collectionClass="NSMutableArray" id="U2F-EX-2si"/>
                                     <outletCollection property="buttons" destination="VgX-kX-6sR" collectionClass="NSMutableArray" id="LDh-tx-BbU"/>
+                                    <outletCollection property="buttons" destination="DUi-Dp-HW5" collectionClass="NSMutableArray" id="bIg-jy-nVD"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="controlFunctionsCellID" id="zdu-G4-Vpx" customClass="ControlFunctionsCollectionViewCell" customModule="The_App" customModuleProvider="target">
@@ -593,7 +615,7 @@
                                             <color key="separatorColor" red="0.31372549019607843" green="0.32941176470588235" blue="0.35686274509803922" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <inset key="separatorInset" minX="24" minY="0.0" maxX="24" maxY="0.0"/>
                                             <view key="tableFooterView" contentMode="scaleToFill" id="aiE-kF-Hg0" userLabel="Separators Hiding View">
-                                                <rect key="frame" x="0.0" y="358" width="375" height="0.0"/>
+                                                <rect key="frame" x="0.0" y="468" width="375" height="0.0"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
@@ -699,7 +721,7 @@
                                                         <outlet property="nameLabel" destination="wGj-ok-i72" id="Gmo-Fv-Raa"/>
                                                     </connections>
                                                 </tableViewCell>
-                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tripleControlCell" id="9y5-k7-xhY" customClass="TripleControlTableViewCell" customModule="The_App" customModuleProvider="target">
+                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="singleControlCell" id="9y5-k7-xhY" customClass="SingleControlTableViewCell" customModule="The_App" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="248" width="375" height="110"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9y5-k7-xhY" id="xXf-zT-Kj1">
@@ -727,19 +749,28 @@
                                                                             </label>
                                                                         </subviews>
                                                                     </stackView>
-                                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="9wH-nk-EWn">
-                                                                        <rect key="frame" x="0.0" y="33.5" width="327" height="29"/>
-                                                                        <color key="backgroundColor" red="0.32156862745098036" green="0.33725490196078434" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                        <segments>
-                                                                            <segment title="FIRST"/>
-                                                                            <segment title="SECOND"/>
-                                                                            <segment title="THIRD"/>
-                                                                        </segments>
-                                                                        <color key="tintColor" red="0.19215686274509802" green="0.20392156862745098" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q5T-0l-Vgc" customClass="RoundedButton" customModule="The_App" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="33.5" width="327" height="28"/>
+                                                                        <color key="backgroundColor" red="0.19215686269999999" green="0.20392156859999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <state key="normal" title="ACTION">
+                                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                <real key="value" value="5"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColour">
+                                                                                <color key="value" red="0.19215686269999999" green="0.20392156859999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                                <real key="value" value="0.0"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
                                                                         <connections>
-                                                                            <action selector="segmentValueChanged:" destination="9y5-k7-xhY" eventType="valueChanged" id="WnM-Ai-5Rx"/>
+                                                                            <action selector="buttonTapped:" destination="9y5-k7-xhY" eventType="touchUpInside" id="Oa8-Yf-kb2"/>
                                                                         </connections>
-                                                                    </segmentedControl>
+                                                                    </button>
                                                                 </subviews>
                                                             </stackView>
                                                         </subviews>
@@ -752,9 +783,67 @@
                                                     </tableViewCellContentView>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <connections>
+                                                        <outlet property="button" destination="q5T-0l-Vgc" id="9XJ-iT-HiC"/>
                                                         <outlet property="iconView" destination="KKw-HD-RHN" id="HFv-PY-6Cr"/>
                                                         <outlet property="nameLabel" destination="UVZ-a7-7X5" id="ZKs-yP-eEW"/>
-                                                        <outlet property="segment" destination="9wH-nk-EWn" id="y8F-ss-Xwz"/>
+                                                    </connections>
+                                                </tableViewCell>
+                                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="tripleControlCell" id="X34-vH-VAo" customClass="TripleControlTableViewCell" customModule="The_App" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="358" width="375" height="110"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X34-vH-VAo" id="ggS-CI-LZf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="piL-1A-Vtu">
+                                                                <rect key="frame" x="24" y="24" width="327" height="61.5"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8xO-e7-d3S">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="327" height="16"/>
+                                                                        <subviews>
+                                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hoM-6u-Vm0">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="16" id="9BW-eu-D3X"/>
+                                                                                    <constraint firstAttribute="width" constant="16" id="zDI-gJ-qx4"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NAME" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OV6-7W-11K">
+                                                                                <rect key="frame" x="31" y="0.0" width="296" height="16"/>
+                                                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="MVU-Kl-v61">
+                                                                        <rect key="frame" x="0.0" y="33.5" width="327" height="29"/>
+                                                                        <color key="backgroundColor" red="0.32156862749999998" green="0.33725490200000002" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <segments>
+                                                                            <segment title="FIRST"/>
+                                                                            <segment title="SECOND"/>
+                                                                            <segment title="THIRD"/>
+                                                                        </segments>
+                                                                        <color key="tintColor" red="0.19215686269999999" green="0.20392156859999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        <connections>
+                                                                            <action selector="segmentValueChanged:" destination="X34-vH-VAo" eventType="valueChanged" id="q7N-NX-wo8"/>
+                                                                        </connections>
+                                                                    </segmentedControl>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="piL-1A-Vtu" secondAttribute="bottom" constant="24" id="3ga-jM-zqR"/>
+                                                            <constraint firstItem="piL-1A-Vtu" firstAttribute="top" secondItem="ggS-CI-LZf" secondAttribute="top" constant="24" id="IP5-iU-T3q"/>
+                                                            <constraint firstItem="piL-1A-Vtu" firstAttribute="leading" secondItem="ggS-CI-LZf" secondAttribute="leading" constant="24" id="afQ-Mx-ePA"/>
+                                                            <constraint firstAttribute="trailing" secondItem="piL-1A-Vtu" secondAttribute="trailing" constant="24" id="uxN-h5-2qt"/>
+                                                        </constraints>
+                                                    </tableViewCellContentView>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <connections>
+                                                        <outlet property="iconView" destination="hoM-6u-Vm0" id="Qob-sV-EeF"/>
+                                                        <outlet property="nameLabel" destination="OV6-7W-11K" id="3uU-bb-yeJ"/>
+                                                        <outlet property="segment" destination="MVU-Kl-v61" id="AtF-Lx-5SN"/>
                                                     </connections>
                                                 </tableViewCell>
                                             </prototypes>
@@ -1190,6 +1279,7 @@ move the car</string>
         <image name="WindowDOWN" width="60" height="60"/>
         <image name="WindscreenHeatingON" width="60" height="60"/>
         <image name="back" width="22" height="22"/>
+        <image name="btn_honk-lights" width="60" height="60"/>
         <image name="btn_location" width="60" height="60"/>
         <image name="btn_navi-destination" width="60" height="60"/>
         <image name="btn_parking-brake_off" width="60" height="60"/>

@@ -10,7 +10,7 @@ import Car
 import Foundation
 
 
-extension DoorsClass: ControlFunctionable {
+extension DoorsCommand: ControlFunctionable {
 
     var boolValue: (ControlFunction.Kind) -> Bool? {
         return {

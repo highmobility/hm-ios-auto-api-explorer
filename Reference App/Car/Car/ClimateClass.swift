@@ -23,11 +23,11 @@ extension ClimateClass: Parser {
 extension ClimateClass: CapabilityParser {
 
     func update(from capability: Capability) {
-        guard capability.command is ClimateClass.Type else {
+        guard capability.command is Climate.Type else {
             return
         }
 
-        guard capability.supports(Climate.MessageTypes.getClimateState, .climateState, .setClimateProfile, .startStopHVAC, .startStopDefogging, .startStopDefrosting) else {
+        guard capability.supports(Climate.MessageTypes.getClimateState, .climateState, .startStopHVAC, .startStopDefrosting) else {
             return
         }
 
@@ -42,19 +42,13 @@ extension ClimateClass: ResponseParser {
             return nil
         }
 
-        if let hvacState = climate.isHVACActive, hvacState {
-            hvacActive = true
-        }
-        else {
-            hvacActive = false
+        guard let isHVACActive = climate.isHVACActive,
+            let isDefrostingActive = climate.isDefrostingActive else {
+                return nil
         }
 
-        if let defrostingState = climate.isDefrostingActive, defrostingState {
-            windshieldDefrosting = true
-        }
-        else {
-            windshieldDefrosting = false
-        }
+        hvacActive = isHVACActive
+        windshieldDefrosting = isDefrostingActive
 
         return .other(self)
     }

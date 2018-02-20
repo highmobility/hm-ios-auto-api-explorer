@@ -14,15 +14,35 @@ extension HonkHornFlashLightsClass: ControlFunctionable {
 
     var boolValue: (ControlFunction.Kind) -> Bool? {
         return {
-            guard $0 == .emergencyFlasher else {
+            switch $0 {
+            case .emergencyFlasher:
+                return self.emergencyFlasherOn
+
+            case .honkFlash:
+                return true
+
+            default:
                 return nil
             }
-
-            return self.emergencyFlasherOn
         }
     }
 
     var controlFunctions: [ControlFunction] {
+        return [createEmergerncyFlasher(), createHonkFlash()]
+    }
+
+    var kinds: [ControlFunction.Kind] {
+        return [.emergencyFlasher, .honkFlash]
+    }
+
+    var stringValue: (ControlFunction.Kind) -> String? {
+        return { _ in nil }
+    }
+}
+
+private extension HonkHornFlashLightsClass {
+
+    func createEmergerncyFlasher() -> DualControlFunction {
         let mainAction = ControlAction(name: "activate", iconName: "FlashON") { errorHandler in
             Car.shared.sendEmergencyFlasherCommand(activate: true) {
                 if let error = $0 { errorHandler?(error) }
@@ -35,14 +55,16 @@ extension HonkHornFlashLightsClass: ControlFunctionable {
             }
         }
 
-        return [DualControlFunction(kind: .emergencyFlasher, mainAction: mainAction, oppositeAction: oppositeAction, isMainTrue: true)]
+        return DualControlFunction(kind: .emergencyFlasher, mainAction: mainAction, oppositeAction: oppositeAction, isMainTrue: true)
     }
 
-    var kinds: [ControlFunction.Kind] {
-        return [.emergencyFlasher]
-    }
+    func createHonkFlash() -> SingleControlFunction {
+        let action = ControlAction(name: "honk 1s and flash once", iconName: "btn_honk-lights") { errorHandler in
+            Car.shared.sendHonkHornFlashLightsOnce() {
+                if let error = $0 { errorHandler?(error) }
+            }
+        }
 
-    var stringValue: (ControlFunction.Kind) -> String? {
-        return { _ in nil }
+        return SingleControlFunction(kind: .honkFlash, action: action)
     }
 }

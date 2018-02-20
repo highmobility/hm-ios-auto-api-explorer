@@ -59,6 +59,9 @@ extension ControlFunctionsCollectionViewCell: UITableViewDataSource {
         case is FullScreenControlFunction:
             cell = tableView.dequeueReusableCell(withIdentifier: FullScreenControlTableViewCell.identifier, for: indexPath)
 
+        case is SingleControlFunction:
+            cell = tableView.dequeueReusableCell(withIdentifier: SingleControlTableViewCell.identifier, for: indexPath)
+
         case is TripleControlFunction:
             cell = tableView.dequeueReusableCell(withIdentifier: TripleControlTableViewCell.identifier, for: indexPath)
 
@@ -71,6 +74,9 @@ extension ControlFunctionsCollectionViewCell: UITableViewDataSource {
             cell.setControlFunction(function)
         }
         else if let cell = cell as? FullScreenControlTableViewCell, let function = controlFunction as? FullScreenControlFunction {
+            cell.setControlFunction(function)
+        }
+        else if let cell = cell as? SingleControlTableViewCell, let function = controlFunction as? SingleControlFunction {
             cell.setControlFunction(function)
         }
         else if let cell = cell as? TripleControlTableViewCell, let function = controlFunction as? TripleControlFunction {

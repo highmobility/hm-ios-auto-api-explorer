@@ -32,8 +32,9 @@ class ControlOverviewCollectionViewCell: UICollectionViewCell {
     @IBOutlet var doorsLockButton: DualControlButton!
     @IBOutlet var emergencyFlasherButton: DualControlButton!
     @IBOutlet var engineButton: DualControlButton!
-    @IBOutlet var hvacButton: DualControlButton!
     @IBOutlet var frontLightsButton: TripleControlButton!
+    @IBOutlet var honkFlashButton: SingleControlButton!
+    @IBOutlet var hvacButton: DualControlButton!
     @IBOutlet var interiorLightsButton: DualControlButton!
     @IBOutlet var naviDestinationButton: FullScreenControlButton!
     @IBOutlet var parkingBrakeButton: DualControlButton!
@@ -115,6 +116,7 @@ private extension ControlOverviewCollectionViewCell {
         case .doorsLock:            return doorsLockButton
         case .emergencyFlasher:     return emergencyFlasherButton
         case .engine:               return engineButton
+        case .honkFlash:            return honkFlashButton
         case .hvac:                 return hvacButton
         case .lightsFront:          return frontLightsButton
         case .lightsInterior:       return interiorLightsButton
@@ -160,6 +162,9 @@ private extension ControlOverviewCollectionViewCell {
         }
         else if let button = button as? FullScreenControlButton, let function = controlFunction as? FullScreenControlFunction {
             button.presentViewController = presentViewController
+            button.setControlFunction(function)
+        }
+        else if let button = button as? SingleControlButton, let function = controlFunction as? SingleControlFunction {
             button.setControlFunction(function)
         }
         else if let button = button as? TripleControlButton, let function = controlFunction as? TripleControlFunction {

@@ -26,11 +26,4 @@ extension ParserResponseOnly {
     func update(from capability: Capability) {
 
     }
-
-
-    // MARK: VehicleStatusParser
-
-    func update(from vehicleStatus: VehicleStatus) {
-        
-    }
 }

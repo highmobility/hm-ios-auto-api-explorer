@@ -45,8 +45,11 @@
 		207B4663203C5956002F346D /* VehicleLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4661203C5956002F346D /* VehicleLocationViewController.swift */; };
 		207B4664203C5956002F346D /* NaviDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4662203C5956002F346D /* NaviDestinationViewController.swift */; };
 		207B4667203C61CD002F346D /* HonkHornFlashLightsClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4665203C61CD002F346D /* HonkHornFlashLightsClass+ControlFunctionable.swift */; };
-		207B4668203C61CD002F346D /* WindowsClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4666203C61CD002F346D /* WindowsClass+ControlFunctionable.swift */; };
+		207B4668203C61CD002F346D /* WindowsCommand+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4666203C61CD002F346D /* WindowsCommand+ControlFunctionable.swift */; };
 		207B466A203C6201002F346D /* EngineClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4669203C6201002F346D /* EngineClass+ControlFunctionable.swift */; };
+		207B466E203C7709002F346D /* SingleControlFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B466D203C7709002F346D /* SingleControlFunction.swift */; };
+		207B4670203C7929002F346D /* SingleControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B466F203C7929002F346D /* SingleControlButton.swift */; };
+		207B4672203C7A50002F346D /* SingleControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4671203C7A50002F346D /* SingleControlTableViewCell.swift */; };
 		207E48421DB66BE10031C0FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E48411DB66BE10031C0FB /* AppDelegate.swift */; };
 		207E484B1DB66BE10031C0FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 207E484A1DB66BE10031C0FB /* Assets.xcassets */; };
 		207E484E1DB66BE10031C0FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 207E484C1DB66BE10031C0FB /* LaunchScreen.storyboard */; };
@@ -57,7 +60,7 @@
 		20AC533C1F7932CC00C9C23E /* TripleControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC533B1F7932CC00C9C23E /* TripleControlButton.swift */; };
 		20B18B4C1F0BE0BC001E7BE2 /* HMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B18B4A1F0BE0A8001E7BE2 /* HMKit.framework */; };
 		20B18B4D1F0BE0BC001E7BE2 /* HMKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20B18B4A1F0BE0A8001E7BE2 /* HMKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		20B23CF11F1274E1006CFC06 /* DoorsClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23CF01F1274E1006CFC06 /* DoorsClass+ControlFunctionable.swift */; };
+		20B23CF11F1274E1006CFC06 /* DoorsCommand+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23CF01F1274E1006CFC06 /* DoorsCommand+ControlFunctionable.swift */; };
 		20B23CF61F127585006CFC06 /* TrunkClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23CF51F127585006CFC06 /* TrunkClass+ControlFunctionable.swift */; };
 		20B23CF81F1275E5006CFC06 /* RooftopClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23CF71F1275E5006CFC06 /* RooftopClass+ControlFunctionable.swift */; };
 		20B23CFA1F127725006CFC06 /* ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B23CF91F127725006CFC06 /* ControlFunctionable.swift */; };
@@ -158,8 +161,11 @@
 		207B4661203C5956002F346D /* VehicleLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleLocationViewController.swift; sourceTree = "<group>"; };
 		207B4662203C5956002F346D /* NaviDestinationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaviDestinationViewController.swift; sourceTree = "<group>"; };
 		207B4665203C61CD002F346D /* HonkHornFlashLightsClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HonkHornFlashLightsClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
-		207B4666203C61CD002F346D /* WindowsClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WindowsClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
+		207B4666203C61CD002F346D /* WindowsCommand+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WindowsCommand+ControlFunctionable.swift"; sourceTree = "<group>"; };
 		207B4669203C6201002F346D /* EngineClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EngineClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
+		207B466D203C7709002F346D /* SingleControlFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleControlFunction.swift; sourceTree = "<group>"; };
+		207B466F203C7929002F346D /* SingleControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleControlButton.swift; sourceTree = "<group>"; };
+		207B4671203C7A50002F346D /* SingleControlTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleControlTableViewCell.swift; sourceTree = "<group>"; };
 		207E483E1DB66BE10031C0FB /* The App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		207E48411DB66BE10031C0FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		207E484A1DB66BE10031C0FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -169,7 +175,7 @@
 		209BE79B1EF0240D00FA51E1 /* RoundedImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageButton.swift; sourceTree = "<group>"; };
 		20AC533B1F7932CC00C9C23E /* TripleControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleControlButton.swift; sourceTree = "<group>"; };
 		20B18B4A1F0BE0A8001E7BE2 /* HMKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HMKit.framework; path = "Reference App/HMKit.framework"; sourceTree = "<group>"; };
-		20B23CF01F1274E1006CFC06 /* DoorsClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DoorsClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
+		20B23CF01F1274E1006CFC06 /* DoorsCommand+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DoorsCommand+ControlFunctionable.swift"; sourceTree = "<group>"; };
 		20B23CF51F127585006CFC06 /* TrunkClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TrunkClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
 		20B23CF71F1275E5006CFC06 /* RooftopClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RooftopClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
 		20B23CF91F127725006CFC06 /* ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFunctionable.swift; sourceTree = "<group>"; };
@@ -238,6 +244,7 @@
 				20E1566E1ED447FE00208E0B /* ControlTableViewCell.swift */,
 				20E156681ED4466F00208E0B /* DualControlTableViewCell.swift */,
 				20E156691ED4466F00208E0B /* FullScreenControlTableViewCell.swift */,
+				207B4671203C7A50002F346D /* SingleControlTableViewCell.swift */,
 				20DE23571F0D123A00C4BC7A /* TripleControlTableViewCell.swift */,
 			);
 			name = TableView;
@@ -351,6 +358,7 @@
 			children = (
 				206EB9161EEADF3600887096 /* DualControlFunction.swift */,
 				206EB9181EEADF5C00887096 /* FullScreenControlFunction.swift */,
+				207B466D203C7709002F346D /* SingleControlFunction.swift */,
 				20B7BE401F0CE87C005CFF1C /* TripleControlFunction.swift */,
 			);
 			name = Subclasses;
@@ -361,7 +369,7 @@
 			children = (
 				20269CDA1F73B8B70085A744 /* ChargingClass+ControlFunctionable.swift */,
 				20B23CFE1F1279F4006CFC06 /* ClimateClass+ControlFunctionable.swift */,
-				20B23CF01F1274E1006CFC06 /* DoorsClass+ControlFunctionable.swift */,
+				20B23CF01F1274E1006CFC06 /* DoorsCommand+ControlFunctionable.swift */,
 				207B4669203C6201002F346D /* EngineClass+ControlFunctionable.swift */,
 				207B4665203C61CD002F346D /* HonkHornFlashLightsClass+ControlFunctionable.swift */,
 				20B23D001F127A98006CFC06 /* LightsClass+ControlFunctionable.swift */,
@@ -371,7 +379,7 @@
 				20B23CF71F1275E5006CFC06 /* RooftopClass+ControlFunctionable.swift */,
 				20B23CF51F127585006CFC06 /* TrunkClass+ControlFunctionable.swift */,
 				207B465D203C590D002F346D /* VehicleLocationClass+ControlFunctionable.swift */,
-				207B4666203C61CD002F346D /* WindowsClass+ControlFunctionable.swift */,
+				207B4666203C61CD002F346D /* WindowsCommand+ControlFunctionable.swift */,
 			);
 			name = Commands;
 			sourceTree = "<group>";
@@ -455,6 +463,7 @@
 				2036D1271EE8743E0075F5D2 /* RoundedView.swift */,
 				2036D12B1EE876700075F5D2 /* ShadowButton.swift */,
 				204D06A51ED310F200736B6A /* ShadowView.swift */,
+				207B466F203C7929002F346D /* SingleControlButton.swift */,
 				201166991DC7731C0089576D /* TapContainer.swift */,
 				20AC533B1F7932CC00C9C23E /* TripleControlButton.swift */,
 				2055001F1EC4BC7C007C9837 /* TitlesScrollView.swift */,
@@ -577,12 +586,14 @@
 				206EB9151EEADF0000887096 /* ControlAction.swift in Sources */,
 				20269CDB1F73B8B70085A744 /* ChargingClass+ControlFunctionable.swift in Sources */,
 				2019AAAD1F1F3CE8003A8FDB /* UInt8CollectionConvertible.swift in Sources */,
+				207B4670203C7929002F346D /* SingleControlButton.swift in Sources */,
 				204D06A61ED310F200736B6A /* ShadowView.swift in Sources */,
 				20E1566F1ED447FE00208E0B /* ControlTableViewCell.swift in Sources */,
 				201AC9131EE99A7500096D94 /* DualControlButton.swift in Sources */,
 				20CEC5CF1E55DEF800AC6B63 /* String+Extensions.swift in Sources */,
 				2011669A1DC7731C0089576D /* TapContainer.swift in Sources */,
 				204D06AF1ED35BB000736B6A /* ControlFunctionsCollectionViewCell.swift in Sources */,
+				207B4672203C7A50002F346D /* SingleControlTableViewCell.swift in Sources */,
 				2005A4231E32110900F70140 /* String+Email.swift in Sources */,
 				207B4667203C61CD002F346D /* HonkHornFlashLightsClass+ControlFunctionable.swift in Sources */,
 				207E48421DB66BE10031C0FB /* AppDelegate.swift in Sources */,
@@ -599,6 +610,7 @@
 				204D06AB1ED3366500736B6A /* ArcView.swift in Sources */,
 				20FCE1651ECF458200FA62E1 /* ControlViewController.swift in Sources */,
 				2036D12C1EE876700075F5D2 /* ShadowButton.swift in Sources */,
+				207B466E203C7709002F346D /* SingleControlFunction.swift in Sources */,
 				206EB9191EEADF5C00887096 /* FullScreenControlFunction.swift in Sources */,
 				204D06AD1ED3510900736B6A /* ControlOverviewCollectionViewCell.swift in Sources */,
 				208038C11DB6924C00285C29 /* OvalButton.swift in Sources */,
@@ -607,7 +619,7 @@
 				20B7BE411F0CE87C005CFF1C /* TripleControlFunction.swift in Sources */,
 				20FCE1671ECF45C800FA62E1 /* ControlCollectionViewController.swift in Sources */,
 				207B4660203C590E002F346D /* VehicleLocationClass+ControlFunctionable.swift in Sources */,
-				207B4668203C61CD002F346D /* WindowsClass+ControlFunctionable.swift in Sources */,
+				207B4668203C61CD002F346D /* WindowsCommand+ControlFunctionable.swift in Sources */,
 				20C88A171EC5DCA300B8EF97 /* TitlesScrollViewContainer.swift in Sources */,
 				20B23CFA1F127725006CFC06 /* ControlFunctionable.swift in Sources */,
 				207B465E203C590E002F346D /* ParkingBrakeCommand+ControlFunctionable.swift in Sources */,
@@ -618,7 +630,7 @@
 				200C7C771DC7752100C31B21 /* CGRect.swift in Sources */,
 				206EB9121EEADEA600887096 /* ControlFunctionsManager.swift in Sources */,
 				20E1566B1ED4466F00208E0B /* DualControlTableViewCell.swift in Sources */,
-				20B23CF11F1274E1006CFC06 /* DoorsClass+ControlFunctionable.swift in Sources */,
+				20B23CF11F1274E1006CFC06 /* DoorsCommand+ControlFunctionable.swift in Sources */,
 				20B8FA8F1EE1BFC10007EFF7 /* UIEdgeInsets+SimpleInit.swift in Sources */,
 				205500201EC4BC7C007C9837 /* TitlesScrollView.swift in Sources */,
 				20DBC3911EE9B07F002A0293 /* FullScreenControlButton.swift in Sources */,

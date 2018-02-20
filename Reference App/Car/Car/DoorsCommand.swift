@@ -10,16 +10,36 @@ import AutoAPI
 import Foundation
 
 
-public class DoorsClass: CommandClass {
+public class DoorClass {
+    public let isLocked: Bool
+    public let isOpen: Bool
 
+    public var locationStr: String {
+        return location.stringValue
+    }
+
+    let location: Door.Location
+
+
+    init(door: Door) {
+        isLocked = door.lock == .locked
+        isOpen = door.position == .open
+        location = door.location
+    }
+}
+
+
+public class DoorsCommand: CommandClass {
+
+    public private(set) var doors: [DoorClass] = []
     public private(set) var locked: Bool = false
 }
 
-extension DoorsClass: Parser {
+extension DoorsCommand: Parser {
 
 }
 
-extension DoorsClass: CapabilityParser {
+extension DoorsCommand: CapabilityParser {
 
     func update(from capability: Capability) {
         guard capability.command is DoorLocks.Type else {
@@ -34,7 +54,7 @@ extension DoorsClass: CapabilityParser {
     }
 }
 
-extension DoorsClass: ResponseParser {
+extension DoorsCommand: ResponseParser {
 
     @discardableResult func update(from response: Command) -> CommandType? {
         guard let doorLocks = response as? DoorLocks else {
@@ -45,7 +65,8 @@ extension DoorsClass: ResponseParser {
             return nil
         }
 
-        locked = !doors.contains { $0.lock == .unlocked }
+        self.doors = doors.map { DoorClass(door: $0) }
+        self.locked = !doors.contains { $0.lock == .unlocked }
 
         return .other(self)
     }

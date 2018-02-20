@@ -10,7 +10,7 @@ import Car
 import Foundation
 
 
-extension WindowsClass: ControlFunctionable {
+extension WindowsCommand: ControlFunctionable {
 
     var boolValue: (ControlFunction.Kind) -> Bool? {
         return {

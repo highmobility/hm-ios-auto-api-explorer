@@ -1,5 +1,5 @@
 //
-//  WindowsClass+Cmds.swift
+//  WindowsCommand+Cmds.swift
 //  Car
 //
 //  Created by Mikk Rätsep on 27/09/2017.
@@ -18,7 +18,7 @@ public extension Car {
         }
 
         let state: Window.OpenClosed = open ? .open : .close
-        let windows: [Window] = self.windows.positions.map { Window(openClosed: state, position: $0) }
+        let windows: [Window] = self.windows.windows.map { Window(openClosed: state, position: $0.position) }
         let bytes = Windows.openClose(windows)
 
         print("- Car - send windows command, open: \(open)")
