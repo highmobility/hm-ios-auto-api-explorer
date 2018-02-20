@@ -50,7 +50,3 @@ extension EngineClass: ResponseParser {
         return .other(self)
     }
 }
-
-extension EngineClass: VehicleStatusParser {
-
-}

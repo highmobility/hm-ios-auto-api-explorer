@@ -17,9 +17,22 @@ class ControlFunctionsManager {
 
     // MARK: Vars
 
-    var externalControlFunctions: [ControlFunction] {
-        // Currently ALL the capabilities are External
-        return allControlFunctions
+    var chassisControlFunctions: [ControlFunction] {
+        return allControlFunctions.filter { [.charging, .emergencyFlasher, .rooftopDimming, .rooftopOpening, .windows].contains($0.kind) }
+    }
+
+    var digitalKeyControlFunctions: [ControlFunction] {
+        return allControlFunctions.filter { [.doorsLock, .engine, .trunkAccess].contains($0.kind) }
+    }
+
+    var lightsControlFunctions: [ControlFunction] {
+        return allControlFunctions.filter { [.lightsFront, .lightsInterior, .lightsRear].contains($0.kind) }
+    }
+
+    var otherControlFunctions: [ControlFunction] {
+        let usedControlFunctionKinds = (chassisControlFunctions + digitalKeyControlFunctions + lightsControlFunctions).map { $0.kind }
+
+        return allControlFunctions.filter { !usedControlFunctionKinds.contains($0.kind) }
     }
 
     private(set) var allControlFunctions: [ControlFunction] = []
@@ -54,4 +67,3 @@ class ControlFunctionsManager {
 
     private init() { }
 }
-

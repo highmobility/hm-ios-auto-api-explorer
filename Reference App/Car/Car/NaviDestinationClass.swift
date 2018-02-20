@@ -54,7 +54,3 @@ extension NaviDestinationClass: ResponseParser {
         return .other(self)
     }
 }
-
-extension NaviDestinationClass: VehicleStatusParser {
-
-}

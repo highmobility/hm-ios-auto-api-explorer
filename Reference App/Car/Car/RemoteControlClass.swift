@@ -74,7 +74,3 @@ extension RemoteControlClass: ResponseParser {
         return .other(self)
     }
 }
-
-extension RemoteControlClass: VehicleStatusParser {
-
-}

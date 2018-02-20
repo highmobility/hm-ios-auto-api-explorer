@@ -52,7 +52,3 @@ extension VehicleLocationClass: ResponseParser {
         return .other(self)
     }
 }
-
-extension VehicleLocationClass: VehicleStatusParser {
-
-}

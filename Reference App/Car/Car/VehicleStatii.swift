@@ -12,11 +12,11 @@ import Foundation
 
 class VehicleStatii: CommandClass {
 
-    let parseVehicleStatus: (VehicleState) -> Void
+    let parseStatus: (Command) -> Void
 
 
-    init(parseVehicleStatus: @escaping (VehicleState) -> Void) {
-        self.parseVehicleStatus = parseVehicleStatus
+    init(parseStatus: @escaping (Command) -> Void) {
+        self.parseStatus = parseStatus
 
         super.init()
 
@@ -36,10 +36,22 @@ extension VehicleStatii: ResponseParser {
             return nil
         }
 
-        vehicleStatus.states?.forEach {
-            self.parseVehicleStatus($0)
+        vehicleStatus.states?.flatMap { $0 as? Command }.forEach {
+            self.parseStatus($0)
         }
 
-        return .vehicleStatii
+        if let powertrain = vehicleStatus.powerTrain {
+            switch powertrain {
+            case .allElectric:      return .vehicleStatii(powertrain: "electric")
+            case .combustionEngine: return .vehicleStatii(powertrain: "ICE")
+            case .hydrogen:         return .vehicleStatii(powertrain: "H2")
+            case .hydrogenHybrid:   return .vehicleStatii(powertrain: "H2-hybrid")
+            case .plugInHybrid:     return .vehicleStatii(powertrain: "plug-in")
+            default:                return .vehicleStatii(powertrain: "unknown")
+            }
+        }
+        else {
+            return .vehicleStatii(powertrain: "")
+        }
     }
 }

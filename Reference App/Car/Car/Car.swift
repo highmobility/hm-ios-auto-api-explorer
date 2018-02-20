@@ -38,16 +38,19 @@ public class Car {
 
     public let charging = ChargingClass()
     public let climate = ClimateClass()
+    public let diagnostics = DiagnosticsCommand()
     public let doors = DoorsClass()
     public let engine = EngineClass()
     public let honkHornFlashLights = HonkHornFlashLightsClass()
     public let lights = LightsClass()
     public let naviDestination = NaviDestinationClass()
+    public let parkingBrake = ParkingBrakeCommand()
     public let remoteControl = RemoteControlClass()
     public let rooftop = RooftopClass()
     public let trunk = TrunkClass()
     public let vehicleLocation = VehicleLocationClass()
     public let windows = WindowsClass()
+    public let windscreen = WindscreenCommand()
 
 
     var anyHashableObservers: Set<AnyHashable>
@@ -62,7 +65,7 @@ public class Car {
 
     public func setBroadcastingFilter<C: Collection>(to vehicleSerial: C) where C.Iterator.Element == UInt8 {
         do {
-            try LocalDevice.shared.setBroadcastingFilter(vehicleSerial: vehicleSerial)
+            try LocalDevice.shared.setBroadcastingFilter(serial: vehicleSerial)
         }
         catch {
             print("Vehicle serial should be 9-bytes, error: \(error)")
@@ -84,7 +87,7 @@ public class Car {
 
         // Collections
         anyHashableObservers = Set()
-        commands = [charging, climate, doors, engine, honkHornFlashLights, lights, naviDestination, remoteControl, rooftop, trunk, vehicleLocation, windows]
+        commands = [charging, climate, doors, diagnostics, engine, honkHornFlashLights, lights, naviDestination, parkingBrake, remoteControl, rooftop, trunk, vehicleLocation, windows, windscreen]
 
         // Initialise some of the LocalDevice things
         LocalDevice.loggingOptions = [.command, .error, .general, .bluetooth, .telematics, .urlRequests]
@@ -96,7 +99,7 @@ public class Car {
     private func addMetaCommands() {
         let capabilities = CapabilitiesClass(parseCapability: parseCapability)
         let failure = FailureMessageClass()
-        let vs = VehicleStatii(parseVehicleStatus: parseVehicleStatus)
+        let vs = VehicleStatii(parseStatus: parseResponse)
 
         commands.append(capabilities)
         commands.append(failure)

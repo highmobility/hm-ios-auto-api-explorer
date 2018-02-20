@@ -37,10 +37,16 @@ extension HonkHornFlashLightsClass: CapabilityParser {
 extension HonkHornFlashLightsClass: ResponseParser {
 
     @discardableResult func update(from response: Command) -> CommandType? {
-        return nil
+        guard let honkFlash = response as? HonkHornFlashFlights else {
+            return nil
+        }
+
+        guard let flasherState = honkFlash.flasherState else {
+            return nil
+        }
+
+        emergencyFlasherOn = flasherState == .emergencyFlasherActive
+
+        return .other(self)
     }
-}
-
-extension HonkHornFlashLightsClass: VehicleStatusParser {
-
 }

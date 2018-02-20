@@ -15,6 +15,10 @@
 		206765D31F7B8D2D00D38F3F /* EngineClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206765D21F7B8D2D00D38F3F /* EngineClass+Cmds.swift */; };
 		206765D81F7B99BD00D38F3F /* HonkHornFlashLightsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206765D71F7B99BD00D38F3F /* HonkHornFlashLightsClass.swift */; };
 		206765DB1F7B9C4400D38F3F /* HonkHornFlashLightsClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206765DA1F7B9C4400D38F3F /* HonkHornFlashLightsClass+Cmds.swift */; };
+		207B4654203C55DF002F346D /* DiagnosticsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4653203C55DF002F346D /* DiagnosticsCommand.swift */; };
+		207B4657203C56AC002F346D /* ParkingBrakeCommand+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4655203C56AB002F346D /* ParkingBrakeCommand+Cmds.swift */; };
+		207B4658203C56AC002F346D /* ParkingBrakeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4656203C56AC002F346D /* ParkingBrakeCommand.swift */; };
+		207B465A203C56DA002F346D /* WindscreenCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4659203C56DA002F346D /* WindscreenCommand.swift */; };
 		2086D8EA1F13CCB0009F01D8 /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2086D8E91F13CCB0009F01D8 /* CommandType.swift */; };
 		2086D8EE1F13D17F009F01D8 /* ParserResponseOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2086D8ED1F13D17F009F01D8 /* ParserResponseOnly.swift */; };
 		2094F2391F0FB5BB00779FFA /* Car.h in Headers */ = {isa = PBXBuildFile; fileRef = 2094F2371F0FB5BB00779FFA /* Car.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -43,7 +47,6 @@
 		20EDE5291F10F5A100464E8E /* CommandError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5281F10F5A100464E8E /* CommandError.swift */; };
 		20EDE52B1F110A9C00464E8E /* ChargingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE52A1F110A9C00464E8E /* ChargingClass.swift */; };
 		20EDE52E1F110EC900464E8E /* Car+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE52D1F110EC900464E8E /* Car+Parser.swift */; };
-		20EDE5301F110EE700464E8E /* VehicleStatusParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE52F1F110EE700464E8E /* VehicleStatusParser.swift */; };
 		20EDE5321F11107E00464E8E /* ChargingClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5311F11107E00464E8E /* ChargingClass+Cmds.swift */; };
 		20EDE5341F11109C00464E8E /* ClimateClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5331F11109C00464E8E /* ClimateClass+Cmds.swift */; };
 		20EDE5361F11118E00464E8E /* DoorsClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5351F11118E00464E8E /* DoorsClass+Cmds.swift */; };
@@ -72,6 +75,10 @@
 		206765D21F7B8D2D00D38F3F /* EngineClass+Cmds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EngineClass+Cmds.swift"; sourceTree = "<group>"; };
 		206765D71F7B99BD00D38F3F /* HonkHornFlashLightsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HonkHornFlashLightsClass.swift; sourceTree = "<group>"; };
 		206765DA1F7B9C4400D38F3F /* HonkHornFlashLightsClass+Cmds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HonkHornFlashLightsClass+Cmds.swift"; sourceTree = "<group>"; };
+		207B4653203C55DF002F346D /* DiagnosticsCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosticsCommand.swift; sourceTree = "<group>"; };
+		207B4655203C56AB002F346D /* ParkingBrakeCommand+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ParkingBrakeCommand+Cmds.swift"; sourceTree = "<group>"; };
+		207B4656203C56AC002F346D /* ParkingBrakeCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingBrakeCommand.swift; sourceTree = "<group>"; };
+		207B4659203C56DA002F346D /* WindscreenCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindscreenCommand.swift; sourceTree = "<group>"; };
 		2086D8E91F13CCB0009F01D8 /* CommandType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandType.swift; sourceTree = "<group>"; };
 		2086D8ED1F13D17F009F01D8 /* ParserResponseOnly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserResponseOnly.swift; sourceTree = "<group>"; };
 		2094F2341F0FB5BB00779FFA /* Car.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Car.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,7 +109,6 @@
 		20EDE5281F10F5A100464E8E /* CommandError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandError.swift; sourceTree = "<group>"; };
 		20EDE52A1F110A9C00464E8E /* ChargingClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargingClass.swift; sourceTree = "<group>"; };
 		20EDE52D1F110EC900464E8E /* Car+Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+Parser.swift"; sourceTree = "<group>"; };
-		20EDE52F1F110EE700464E8E /* VehicleStatusParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleStatusParser.swift; sourceTree = "<group>"; };
 		20EDE5311F11107E00464E8E /* ChargingClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChargingClass+Cmds.swift"; sourceTree = "<group>"; };
 		20EDE5331F11109C00464E8E /* ClimateClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClimateClass+Cmds.swift"; sourceTree = "<group>"; };
 		20EDE5351F11118E00464E8E /* DoorsClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DoorsClass+Cmds.swift"; sourceTree = "<group>"; };
@@ -258,7 +264,6 @@
 			children = (
 				2094F2701F0FFDF300779FFA /* CapabilityParser.swift */,
 				2094F2651F0FDDA900779FFA /* ResponseParser.swift */,
-				20EDE52F1F110EE700464E8E /* VehicleStatusParser.swift */,
 			);
 			name = Parsers;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				20EDE5311F11107E00464E8E /* ChargingClass+Cmds.swift */,
 				2094F2761F100A1500779FFA /* ClimateClass.swift */,
 				20EDE5331F11109C00464E8E /* ClimateClass+Cmds.swift */,
+				207B4653203C55DF002F346D /* DiagnosticsCommand.swift */,
 				2094F2631F0FD85300779FFA /* DoorsClass.swift */,
 				20EDE5351F11118E00464E8E /* DoorsClass+Cmds.swift */,
 				206765D01F7B8B2D00D38F3F /* EngineClass.swift */,
@@ -280,6 +286,8 @@
 				20EDE5371F1112CE00464E8E /* LightsClass+Cmds.swift */,
 				204A9C742019DA370072F4D1 /* NaviDestinationClass.swift */,
 				204A9C762019DD290072F4D1 /* NaviDestinationClass+Cmds.swift */,
+				207B4656203C56AC002F346D /* ParkingBrakeCommand.swift */,
+				207B4655203C56AB002F346D /* ParkingBrakeCommand+Cmds.swift */,
 				20EDE54B1F1131A800464E8E /* RemoteControlClass.swift */,
 				20EDE54D1F11352000464E8E /* RemoteControlClass+Cmds.swift */,
 				2094F26C1F0FF92E00779FFA /* RooftopClass.swift */,
@@ -290,6 +298,7 @@
 				204A9C722019D9580072F4D1 /* VehicleLocationClass+Cmnds.swift */,
 				20A4297D1F7BAF22003FF9A2 /* WindowsClass.swift */,
 				20A4297F1F7BB065003FF9A2 /* WindowsClass+Cmds.swift */,
+				207B4659203C56DA002F346D /* WindscreenCommand.swift */,
 			);
 			name = Subclasses;
 			sourceTree = "<group>";
@@ -376,6 +385,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2094F2711F0FFDF300779FFA /* CapabilityParser.swift in Sources */,
+				207B465A203C56DA002F346D /* WindscreenCommand.swift in Sources */,
 				20EDE5341F11109C00464E8E /* ClimateClass+Cmds.swift in Sources */,
 				2094F2731F10010900779FFA /* LightsClass.swift in Sources */,
 				20EDE5321F11107E00464E8E /* ChargingClass+Cmds.swift in Sources */,
@@ -391,10 +401,11 @@
 				2094F24F1F0FB68C00779FFA /* Car.swift in Sources */,
 				20EDE53C1F1113AD00464E8E /* TrunkClass+Cmds.swift in Sources */,
 				2086D8EA1F13CCB0009F01D8 /* CommandType.swift in Sources */,
-				20EDE5301F110EE700464E8E /* VehicleStatusParser.swift in Sources */,
 				2086D8EE1F13D17F009F01D8 /* ParserResponseOnly.swift in Sources */,
 				20EDE5571F1152CF00464E8E /* Car+Bluetooth.swift in Sources */,
+				207B4658203C56AC002F346D /* ParkingBrakeCommand.swift in Sources */,
 				2094F2691F0FE26D00779FFA /* CapabilitiesClass.swift in Sources */,
+				207B4654203C55DF002F346D /* DiagnosticsCommand.swift in Sources */,
 				2094F26D1F0FF92E00779FFA /* RooftopClass.swift in Sources */,
 				2094F2641F0FD85300779FFA /* DoorsClass.swift in Sources */,
 				20EDE54A1F1126BE00464E8E /* CommandClass.swift in Sources */,
@@ -417,6 +428,7 @@
 				20A4297E1F7BAF22003FF9A2 /* WindowsClass.swift in Sources */,
 				2094F2561F0FC4D900779FFA /* Car+Observer.swift in Sources */,
 				2094F2541F0FC4B700779FFA /* ConnectionState.swift in Sources */,
+				207B4657203C56AC002F346D /* ParkingBrakeCommand+Cmds.swift in Sources */,
 				20EDE5381F1112CE00464E8E /* LightsClass+Cmds.swift in Sources */,
 				206765DB1F7B9C4400D38F3F /* HonkHornFlashLightsClass+Cmds.swift in Sources */,
 				2094F2661F0FDDA900779FFA /* ResponseParser.swift in Sources */,

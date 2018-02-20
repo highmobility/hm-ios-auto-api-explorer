@@ -56,7 +56,3 @@ extension ChargingClass: ResponseParser {
         return .other(self)
     }
 }
-
-extension ChargingClass: VehicleStatusParser {
-
-}

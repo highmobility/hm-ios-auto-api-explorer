@@ -22,6 +22,7 @@ class ControlFunction {
         case lightsInterior     = "Interior Lights"
         case lightsRear         = "Rear Lights"
         case naviDestination    = "Navi Destination"
+        case parkingBrake       = "Parking Brake"
         case remoteControl      = "Remote Control"
         case rooftopDimming     = "Rooftop Dimming"
         case rooftopOpening     = "Rooftop Opening"

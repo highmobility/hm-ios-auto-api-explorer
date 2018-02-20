@@ -59,7 +59,3 @@ extension ClimateClass: ResponseParser {
         return .other(self)
     }
 }
-
-extension ClimateClass: VehicleStatusParser {
-
-}

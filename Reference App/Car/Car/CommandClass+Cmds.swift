@@ -55,7 +55,7 @@ private extension Car {
         }
 
         do {
-            try Telematics.sendCommand(command, vehicleSerial: vehicleSerial) {
+            try Telematics.sendCommand(command, serial: vehicleSerial) {
                 switch $0 {
                 case .failure(let failure):
                     failed(.telematicsFailure(failure))

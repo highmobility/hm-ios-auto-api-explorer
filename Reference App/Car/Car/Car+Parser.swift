@@ -20,10 +20,6 @@ extension Car {
         return commands.flatMap { $0 as? ResponseParser }
     }
 
-    var vehicleStatusParsers: [VehicleStatusParser] {
-        return commands.flatMap { $0 as? VehicleStatusParser }
-    }
-
 
     // MARK: Methods - Parsing
 
@@ -42,15 +38,5 @@ extension Car {
         }
 
         notifyCommandParsed(commandType)
-    }
-
-    func parseVehicleStatus(_ vehicleStatus: VehicleState) {
-        guard let command = vehicleStatus as? Command else {
-            return
-        }
-
-        vehicleStatusParsers.forEach {
-            $0.update(from: command)
-        }
     }
 }

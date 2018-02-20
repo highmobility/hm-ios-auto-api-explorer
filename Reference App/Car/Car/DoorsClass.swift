@@ -50,7 +50,3 @@ extension DoorsClass: ResponseParser {
         return .other(self)
     }
 }
-
-extension DoorsClass: VehicleStatusParser {
-
-}

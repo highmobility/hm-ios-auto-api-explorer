@@ -53,7 +53,3 @@ extension RooftopClass: ResponseParser {
         return .other(self)
     }
 }
-
-extension RooftopClass: VehicleStatusParser {
-
-}

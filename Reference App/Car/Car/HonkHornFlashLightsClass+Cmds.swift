@@ -21,20 +21,18 @@ public extension Car {
 
         print("- Car - send emergency flasher command, activate \(activate)")
 
-        // This is a workaround for keeping the state, 'cause that command doesn't have a response
-        sendCommand(bytes) {
-            if $0 != nil {
-                self.honkHornFlashLights.emergencyFlasherOn = !activate
-                self.notifyCommandParsed(.other(self.honkHornFlashLights))
-            }
+        sendCommand(bytes, failed: failed)
+    }
 
-            failed($0)
+    public func sendHonkHornFlashLightsOnce(failed: @escaping CommandFailed) {
+        guard honkHornFlashLights.isAvailable else {
+            return failed(.needsInitialState)
         }
 
-        // The workaround also sends out the state change after a faked delay
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1.0) {
-            self.honkHornFlashLights.emergencyFlasherOn = activate
-            self.notifyCommandParsed(.other(self.honkHornFlashLights))
-        }
+        let bytes = HonkHornFlashFlights.honkHornFlashLights(.init(honkHornSeconds: 1, flashLightsTimes: 1))
+
+        print("- Car - send honk horn 1 sec, flash lights once")
+
+        sendCommand(bytes, failed: failed)
     }
 }

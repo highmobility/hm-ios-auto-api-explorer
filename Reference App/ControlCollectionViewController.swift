@@ -58,10 +58,7 @@ class ControlCollectionViewController: UICollectionViewController {
 
         // Configure a specific cell
         if let cell = cell as? ControlOverviewCollectionViewCell {
-            if let functions = controlFunctionsSections.first {
-                cell.controlFunctions = functions
-            }
-
+            cell.controlFunctions = controlFunctionsSections.flatMap { $0 }
             cell.presentViewController = presentViewController
 
             overviewCell = cell

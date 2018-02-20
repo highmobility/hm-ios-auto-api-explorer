@@ -18,9 +18,15 @@ class ControlViewController: UIViewController {
 
 
     private var isDismissingViewController: Bool = false
+    private var isGettingVehicleStatus: Bool = false
 
     private var collectionViewController: ControlCollectionViewController!
+    private var naviDestinationViewController: NaviDestinationViewController?
     private var remoteControlViewController: RemoteControlViewController?
+    private var vehicleLocationViewController: VehicleLocationViewController?
+
+    private var lastNaviDestination: NaviDestinationClass!
+    private var lastVehicleLocation: VehicleLocationClass?
 
 
     // MARK: IBActions
@@ -59,6 +65,15 @@ class ControlViewController: UIViewController {
             collectionViewController = controller
         }
     }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+
+        naviDestinationViewController = nil
+        remoteControlViewController = nil
+        // TODO: MapView IS RETAINING exessive amounts of memory
+        vehicleLocationViewController = nil
+    }
 }
 
 extension ControlViewController: CarObserver {
@@ -79,6 +94,15 @@ private extension ControlViewController {
         navigationItem.title = "AUTO API"
 
         titlesView.titles = ["overview"]
+    }
+
+    func controlFunctionsCreated(_ controlFunctions: [ControlFunction], title: String) {
+        guard controlFunctions.count > 0 else {
+            return
+        }
+
+        collectionViewController.addControlFunctionsSection(controlFunctions)
+        titlesView.titles.append(title)
     }
 
     func dismissViewController() {
@@ -108,8 +132,22 @@ private extension ControlViewController {
             return
         }
 
-        if let controller = viewController as? RemoteControlViewController {
+        if let controller = viewController as? NaviDestinationViewController {
+            naviDestinationViewController = controller
+
+            if let naviDestination = lastNaviDestination {
+                naviDestinationViewController?.updateCoordinate(naviDestination.coordinate, name: naviDestination.name)
+            }
+        }
+        else if let controller = viewController as? RemoteControlViewController {
             remoteControlViewController = controller
+        }
+        else if let controller = viewController as? VehicleLocationViewController {
+            vehicleLocationViewController = controller
+
+            if let coordinate = lastVehicleLocation?.coordinate {
+                vehicleLocationViewController?.updateCoordinate(coordinate)
+            }
         }
 
         navigationController?.pushViewController(viewController, animated: true)
@@ -141,6 +179,14 @@ private extension ControlViewController {
             self.collectionViewController.receivedControlFunctionUpdate($0)
         }
 
+        // Persist some values
+        if let naviDestination = command as? NaviDestinationClass {
+            lastNaviDestination = naviDestination
+        }
+        else if let vehicleLocation = command as? VehicleLocationClass {
+            lastVehicleLocation = vehicleLocation
+        }
+
         return true
     }
 
@@ -155,11 +201,21 @@ private extension ControlViewController {
     }
 
     func getVehicleStatus() {
+        guard !isGettingVehicleStatus else {
+            return
+        }
+
+        isGettingVehicleStatus = true
+
         enableInteractions(false)
         showInfo("Getting Vehicle Status")
 
         Car.shared.getVehicleStatii {
-            self.refreshButton.isEnabled = true
+            OperationQueue.main.addOperation {
+                self.refreshButton.isEnabled = true
+            }
+
+            self.isGettingVehicleStatus = false
 
             self.clearStatusBarInfo()
             self.enableInteractions(true)
@@ -178,7 +234,11 @@ private extension ControlViewController {
 
             manager.receivedCapabilities(for: allPossibleCommands)
 
-            externalControlFunctionsCreated(manager.externalControlFunctions)
+            // This order determines their order in UI
+            controlFunctionsCreated(manager.chassisControlFunctions, title: "chassis")
+            controlFunctionsCreated(manager.digitalKeyControlFunctions, title: "digital key")
+            controlFunctionsCreated(manager.lightsControlFunctions, title: "lights")
+            controlFunctionsCreated(manager.otherControlFunctions, title: "others")
 
             delay(0.1) {
                 self.getVehicleStatus()
@@ -219,9 +279,24 @@ private extension ControlViewController {
             }
 
         case .other(let command):
-            // Try to update remote if possible
-            if let command = command as? RemoteControlClass {
+            switch command {
+            case let command as RemoteControlClass:
                 remoteControlViewController?.updateRemoteControlStatus(command.controlMode)
+
+            case _ as ChargingClass:
+                collectionViewController.receivedOther(commandType)
+
+            case _ as DiagnosticsCommand:
+                collectionViewController.receivedOther(commandType)
+
+            case let command as NaviDestinationClass:
+                naviDestinationViewController?.updateCoordinate(command.coordinate, name: command.name)
+
+            case let command as VehicleLocationClass:
+                vehicleLocationViewController?.updateCoordinate(command.coordinate)
+
+            default:
+                break
             }
 
             if !updateControlFunctions(with: command) {
@@ -234,19 +309,18 @@ private extension ControlViewController {
                 self.updateControlFunctions(with: $0)
             }
 
-            // Some additional statii needed...
-            if Car.shared.lights.isAvailable {
-                delay(0.5) {
-                    Car.shared.getLightsState(failed: self.receivedCommandError)
-                }
-            }
-
             // Also update the VS stuff
             collectionViewController.receivedOther(commandType)
 
             // Some UI things
             clearStatusBarInfo()
             enableInteractions(true)
+
+            OperationQueue.main.addOperation {
+                self.refreshButton.isEnabled = true
+            }
+
+            isGettingVehicleStatus = false
         }
     }
 

@@ -39,6 +39,14 @@
 		206EB9171EEADF3600887096 /* DualControlFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EB9161EEADF3600887096 /* DualControlFunction.swift */; };
 		206EB9191EEADF5C00887096 /* FullScreenControlFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EB9181EEADF5C00887096 /* FullScreenControlFunction.swift */; };
 		206EB91B1EEAEEB500887096 /* ControlFunctionSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EB91A1EEAEEB500887096 /* ControlFunctionSettable.swift */; };
+		207B465E203C590E002F346D /* ParkingBrakeCommand+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B465B203C590D002F346D /* ParkingBrakeCommand+ControlFunctionable.swift */; };
+		207B465F203C590E002F346D /* NaviDestinationClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B465C203C590D002F346D /* NaviDestinationClass+ControlFunctionable.swift */; };
+		207B4660203C590E002F346D /* VehicleLocationClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B465D203C590D002F346D /* VehicleLocationClass+ControlFunctionable.swift */; };
+		207B4663203C5956002F346D /* VehicleLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4661203C5956002F346D /* VehicleLocationViewController.swift */; };
+		207B4664203C5956002F346D /* NaviDestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4662203C5956002F346D /* NaviDestinationViewController.swift */; };
+		207B4667203C61CD002F346D /* HonkHornFlashLightsClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4665203C61CD002F346D /* HonkHornFlashLightsClass+ControlFunctionable.swift */; };
+		207B4668203C61CD002F346D /* WindowsClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4666203C61CD002F346D /* WindowsClass+ControlFunctionable.swift */; };
+		207B466A203C6201002F346D /* EngineClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4669203C6201002F346D /* EngineClass+ControlFunctionable.swift */; };
 		207E48421DB66BE10031C0FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E48411DB66BE10031C0FB /* AppDelegate.swift */; };
 		207E484B1DB66BE10031C0FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 207E484A1DB66BE10031C0FB /* Assets.xcassets */; };
 		207E484E1DB66BE10031C0FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 207E484C1DB66BE10031C0FB /* LaunchScreen.storyboard */; };
@@ -144,6 +152,14 @@
 		206EB9161EEADF3600887096 /* DualControlFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DualControlFunction.swift; sourceTree = "<group>"; };
 		206EB9181EEADF5C00887096 /* FullScreenControlFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenControlFunction.swift; sourceTree = "<group>"; };
 		206EB91A1EEAEEB500887096 /* ControlFunctionSettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFunctionSettable.swift; sourceTree = "<group>"; };
+		207B465B203C590D002F346D /* ParkingBrakeCommand+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ParkingBrakeCommand+ControlFunctionable.swift"; sourceTree = "<group>"; };
+		207B465C203C590D002F346D /* NaviDestinationClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NaviDestinationClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
+		207B465D203C590D002F346D /* VehicleLocationClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VehicleLocationClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
+		207B4661203C5956002F346D /* VehicleLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleLocationViewController.swift; sourceTree = "<group>"; };
+		207B4662203C5956002F346D /* NaviDestinationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NaviDestinationViewController.swift; sourceTree = "<group>"; };
+		207B4665203C61CD002F346D /* HonkHornFlashLightsClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HonkHornFlashLightsClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
+		207B4666203C61CD002F346D /* WindowsClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WindowsClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
+		207B4669203C6201002F346D /* EngineClass+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EngineClass+ControlFunctionable.swift"; sourceTree = "<group>"; };
 		207E483E1DB66BE10031C0FB /* The App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		207E48411DB66BE10031C0FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		207E484A1DB66BE10031C0FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -209,7 +225,9 @@
 				2019AAB71F1F5250003A8FDB /* ConnectViewController.swift */,
 				20FCE1641ECF458200FA62E1 /* ControlViewController.swift */,
 				20FCE1661ECF45C800FA62E1 /* ControlCollectionViewController.swift */,
+				207B4662203C5956002F346D /* NaviDestinationViewController.swift */,
 				20BA06171EDEB7B80057E6B8 /* RemoteControlViewController.swift */,
+				207B4661203C5956002F346D /* VehicleLocationViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -344,10 +362,16 @@
 				20269CDA1F73B8B70085A744 /* ChargingClass+ControlFunctionable.swift */,
 				20B23CFE1F1279F4006CFC06 /* ClimateClass+ControlFunctionable.swift */,
 				20B23CF01F1274E1006CFC06 /* DoorsClass+ControlFunctionable.swift */,
+				207B4669203C6201002F346D /* EngineClass+ControlFunctionable.swift */,
+				207B4665203C61CD002F346D /* HonkHornFlashLightsClass+ControlFunctionable.swift */,
 				20B23D001F127A98006CFC06 /* LightsClass+ControlFunctionable.swift */,
+				207B465C203C590D002F346D /* NaviDestinationClass+ControlFunctionable.swift */,
+				207B465B203C590D002F346D /* ParkingBrakeCommand+ControlFunctionable.swift */,
 				20B23D021F127BDE006CFC06 /* RemoteControlClass+ControlFunctionable.swift */,
 				20B23CF71F1275E5006CFC06 /* RooftopClass+ControlFunctionable.swift */,
 				20B23CF51F127585006CFC06 /* TrunkClass+ControlFunctionable.swift */,
+				207B465D203C590D002F346D /* VehicleLocationClass+ControlFunctionable.swift */,
+				207B4666203C61CD002F346D /* WindowsClass+ControlFunctionable.swift */,
 			);
 			name = Commands;
 			sourceTree = "<group>";
@@ -548,6 +572,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				207B466A203C6201002F346D /* EngineClass+ControlFunctionable.swift in Sources */,
 				2011669E1DC7733D0089576D /* TapToCarConverter.swift in Sources */,
 				206EB9151EEADF0000887096 /* ControlAction.swift in Sources */,
 				20269CDB1F73B8B70085A744 /* ChargingClass+ControlFunctionable.swift in Sources */,
@@ -559,6 +584,7 @@
 				2011669A1DC7731C0089576D /* TapContainer.swift in Sources */,
 				204D06AF1ED35BB000736B6A /* ControlFunctionsCollectionViewCell.swift in Sources */,
 				2005A4231E32110900F70140 /* String+Email.swift in Sources */,
+				207B4667203C61CD002F346D /* HonkHornFlashLightsClass+ControlFunctionable.swift in Sources */,
 				207E48421DB66BE10031C0FB /* AppDelegate.swift in Sources */,
 				20201EE11EC31F4500793611 /* ImageButton.swift in Sources */,
 				20B8FA8A1EE1BC030007EFF7 /* CustomItemSizeFromBounds.swift in Sources */,
@@ -580,10 +606,14 @@
 				209BE79C1EF0240D00FA51E1 /* RoundedImageButton.swift in Sources */,
 				20B7BE411F0CE87C005CFF1C /* TripleControlFunction.swift in Sources */,
 				20FCE1671ECF45C800FA62E1 /* ControlCollectionViewController.swift in Sources */,
+				207B4660203C590E002F346D /* VehicleLocationClass+ControlFunctionable.swift in Sources */,
+				207B4668203C61CD002F346D /* WindowsClass+ControlFunctionable.swift in Sources */,
 				20C88A171EC5DCA300B8EF97 /* TitlesScrollViewContainer.swift in Sources */,
 				20B23CFA1F127725006CFC06 /* ControlFunctionable.swift in Sources */,
+				207B465E203C590E002F346D /* ParkingBrakeCommand+ControlFunctionable.swift in Sources */,
 				20B23D031F127BDE006CFC06 /* RemoteControlClass+ControlFunctionable.swift in Sources */,
 				20E270341EE1889900078DF0 /* FullCellCollectionViewFlowLayout.swift in Sources */,
+				207B465F203C590E002F346D /* NaviDestinationClass+ControlFunctionable.swift in Sources */,
 				204D06A91ED32F4400736B6A /* UIColor+Custom.swift in Sources */,
 				200C7C771DC7752100C31B21 /* CGRect.swift in Sources */,
 				206EB9121EEADEA600887096 /* ControlFunctionsManager.swift in Sources */,
@@ -594,9 +624,11 @@
 				20DBC3911EE9B07F002A0293 /* FullScreenControlButton.swift in Sources */,
 				20B23CFF1F1279F4006CFC06 /* ClimateClass+ControlFunctionable.swift in Sources */,
 				20B8FA881EE1BBE90007EFF7 /* CustomCollectionViewFlowLayout.swift in Sources */,
+				207B4663203C5956002F346D /* VehicleLocationViewController.swift in Sources */,
 				20B23CF81F1275E5006CFC06 /* RooftopClass+ControlFunctionable.swift in Sources */,
 				20BA06181EDEB7B80057E6B8 /* RemoteControlViewController.swift in Sources */,
 				20CCEC531DB8ADC600EEFC7D /* Delay.swift in Sources */,
+				207B4664203C5956002F346D /* NaviDestinationViewController.swift in Sources */,
 				206EB91B1EEAEEB500887096 /* ControlFunctionSettable.swift in Sources */,
 				206EB9171EEADF3600887096 /* DualControlFunction.swift in Sources */,
 				20AC533C1F7932CC00C9C23E /* TripleControlButton.swift in Sources */,
@@ -755,7 +787,7 @@
 					"$(PROJECT_DIR)/Reference\\ App",
 				);
 				INFOPLIST_FILE = "Reference App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hm.reference-app.explore";
@@ -783,7 +815,7 @@
 					"$(PROJECT_DIR)/Reference\\ App",
 				);
 				INFOPLIST_FILE = "Reference App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hm.reference-app.explore";

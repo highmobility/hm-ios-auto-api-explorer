@@ -100,7 +100,7 @@ fileprivate extension AppDelegate {
 
          An example of an access token:
 
-         awb4oQwMHxomS926XHyqdx1d9nYLYs94GvlJYQCblbP_wt-aBrpNpmSFf2qvhj18GWXXQ-aAtSaa4rnwBAHs5wpe1aK-3bD4xfQ3qtOS1QNV3a3iJVg03lTdNOLjFxlIOA
+         6fb79a87-19bf-4db6-8ad5-12c3341603c1
 
          */
 

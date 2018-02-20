@@ -50,7 +50,3 @@ extension WindowsClass: ResponseParser {
         return .other(self)
     }
 }
-
-extension WindowsClass: VehicleStatusParser {
-
-}

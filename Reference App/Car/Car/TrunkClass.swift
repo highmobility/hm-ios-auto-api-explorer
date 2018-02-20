@@ -53,7 +53,3 @@ extension TrunkClass: ResponseParser {
         return .other(self)
     }
 }
-
-extension TrunkClass: VehicleStatusParser {
-
-}

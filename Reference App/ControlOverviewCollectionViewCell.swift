@@ -26,19 +26,31 @@ class ControlOverviewCollectionViewCell: UICollectionViewCell {
         }
     }
 
+    @IBOutlet var mainStacksVerticalConstraint: NSLayoutConstraint!
+
     @IBOutlet var chargingButton: DualControlButton!
     @IBOutlet var doorsLockButton: DualControlButton!
+    @IBOutlet var emergencyFlasherButton: DualControlButton!
+    @IBOutlet var engineButton: DualControlButton!
+    @IBOutlet var hvacButton: DualControlButton!
     @IBOutlet var frontLightsButton: TripleControlButton!
     @IBOutlet var interiorLightsButton: DualControlButton!
+    @IBOutlet var naviDestinationButton: FullScreenControlButton!
+    @IBOutlet var parkingBrakeButton: DualControlButton!
     @IBOutlet var rearLightsButton: DualControlButton!
     @IBOutlet var remoteControlButton: FullScreenControlButton!
     @IBOutlet var rooftopOpacityButton: DualControlButton!
     @IBOutlet var rooftopOpenButton: DualControlButton!
     @IBOutlet var trunkLockButton: DualControlButton!
+    @IBOutlet var vehicleLocationButton: FullScreenControlButton!
+    @IBOutlet var windowsButton: DualControlButton!
     @IBOutlet var windshieldHeatingButton: DualControlButton!
 
     @IBOutlet var batteryLabel: UILabel!
-    @IBOutlet var damageLabel: UILabel!
+    @IBOutlet var mileageLabel: UILabel!
+    @IBOutlet var powertrainLabel: UILabel!
+    @IBOutlet var speedLabel: UILabel!
+    @IBOutlet var windscreenDamageLabel: UILabel!
 
 
     // MARK: Vars
@@ -63,12 +75,21 @@ class ControlOverviewCollectionViewCell: UICollectionViewCell {
     }
 
     func updateOther(_ commandType: CommandType) {
-        switch commandType {
-        case .other(let command) where command is ChargingClass:
-            fallthrough
+        OperationQueue.main.addOperation {
+            switch commandType {
+            case .other(let command):
+                if let charging = command as? ChargingClass {
+                    self.batteryLabel.text = "\(charging.battery)%"
+                }
+                else if let diagnostics = command as? DiagnosticsCommand {
+                    self.mileageLabel.text = "\(diagnostics.mileage)km"
+                    self.speedLabel.text = "\(diagnostics.speed)km/h"
+                }
+                else if let windscreen = command as? WindscreenCommand {
+                    self.windscreenDamageLabel.text = windscreen.hasDamage ? "X" : "–"
+                }
 
-        case .vehicleStatii:
-            OperationQueue.main.addOperation {
+            case .vehicleStatii(let powertrain):
                 if Car.shared.charging.isAvailable {
                     self.batteryLabel.text = "\(Car.shared.charging.battery)%"
                 }
@@ -76,10 +97,12 @@ class ControlOverviewCollectionViewCell: UICollectionViewCell {
                 if self.statusContainer.alpha == 0.0 {
                     self.statusContainer.alpha = 1.0
                 }
-            }
 
-        default:
-            break
+                self.powertrainLabel.text = powertrain
+
+            default:
+                break
+            }
         }
     }
 }
@@ -90,15 +113,21 @@ private extension ControlOverviewCollectionViewCell {
         switch controlFunction.kind {
         case .charging:             return chargingButton
         case .doorsLock:            return doorsLockButton
+        case .emergencyFlasher:     return emergencyFlasherButton
+        case .engine:               return engineButton
+        case .hvac:                 return hvacButton
         case .lightsFront:          return frontLightsButton
         case .lightsInterior:       return interiorLightsButton
         case .lightsRear:           return rearLightsButton
-        case .trunkAccess:          return trunkLockButton
+        case .naviDestination:      return naviDestinationButton
+        case .parkingBrake:         return parkingBrakeButton
+        case .remoteControl:        return remoteControlButton
         case .rooftopDimming:       return rooftopOpacityButton
         case .rooftopOpening:       return rooftopOpenButton
+        case .trunkAccess:          return trunkLockButton
+        case .vehicleLocation:      return vehicleLocationButton
         case .windshieldHeating:    return windshieldHeatingButton
-        case .remoteControl:        return remoteControlButton
-        default:                    return nil
+        case .windows:              return windowsButton
         }
     }
 

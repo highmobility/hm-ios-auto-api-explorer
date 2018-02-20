@@ -73,7 +73,3 @@ extension LightsClass: ResponseParser {
         return .other(self)
     }
 }
-
-extension LightsClass: VehicleStatusParser {
-
-}

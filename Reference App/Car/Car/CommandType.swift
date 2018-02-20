@@ -13,7 +13,7 @@ import Foundation
 public enum CommandType {
 
     case capabilities
-    case vehicleStatii
+    case vehicleStatii(powertrain: String)
 
     case failureMessage(FailureMessageClass)
     case other(CommandClass)

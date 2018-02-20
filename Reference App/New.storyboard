@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bjo-zm-FhL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Bjo-zm-FhL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -26,288 +27,464 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="controlOverviewCellID" id="LtB-VF-Tn4" customClass="ControlOverviewCollectionViewCell" customModule="The_App" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="controlOverviewCellID" id="QKs-Rn-m4G" customClass="ControlOverviewCollectionViewCell" customModule="The_App" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="557"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="557"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hm_car" translatesAutoresizingMaskIntoConstraints="NO" id="A0o-FX-kTD">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hm_car" translatesAutoresizingMaskIntoConstraints="NO" id="ZxH-C1-0Ry">
                                             <rect key="frame" x="0.0" y="29" width="375" height="375"/>
                                         </imageView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ew5-xx-3Ez" userLabel="Control Buttons Container">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dQ-vf-gsY" userLabel="Control Buttons Container">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="557"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ML0-kb-2mO">
-                                                    <rect key="frame" x="115.5" y="102.5" width="144" height="60"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="uB8-jR-Jx0">
+                                                    <rect key="frame" x="31" y="51" width="312" height="396"/>
                                                     <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mo0-zX-qOC" userLabel="Front Lights Button" customClass="TripleControlButton" customModule="The_App" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="60" id="PcL-vk-7bc"/>
-                                                                <constraint firstAttribute="width" constant="60" id="zHt-RL-apI"/>
-                                                            </constraints>
-                                                            <size key="titleShadowOffset" width="4" height="0.0"/>
-                                                            <state key="normal" image="HeadlightOFF"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                    <real key="value" value="0.29999999999999999"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                    <real key="value" value="12"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4m-le-Dyi" userLabel="Rear Lights Button" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
-                                                            <rect key="frame" x="84" y="0.0" width="60" height="60"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="60" id="kbD-sI-WHC"/>
-                                                                <constraint firstAttribute="width" constant="60" id="l2a-7h-bMA"/>
-                                                            </constraints>
-                                                            <size key="titleShadowOffset" width="4" height="0.0"/>
-                                                            <state key="normal" image="BacklightOFF"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                    <real key="value" value="0.29999999999999999"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                    <real key="value" value="12"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
-                                                    </subviews>
-                                                </stackView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="BKk-sc-1fp">
-                                                    <rect key="frame" x="31.5" y="186.5" width="312" height="60"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D4k-ga-8sS" userLabel="Rooftop Open Button" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="60" id="93q-R9-Yr7"/>
-                                                                <constraint firstAttribute="width" constant="60" id="bZF-bI-OrL"/>
-                                                            </constraints>
-                                                            <size key="titleShadowOffset" width="4" height="0.0"/>
-                                                            <state key="normal" image="RooftopCLOSED"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                    <real key="value" value="0.29999999999999999"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                    <real key="value" value="12"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ohQ-6S-uMw" userLabel="Windshield Button" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
-                                                            <rect key="frame" x="84" y="0.0" width="60" height="60"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="60" id="PHM-f4-t9u"/>
-                                                                <constraint firstAttribute="width" constant="60" id="gjN-Jh-eP4"/>
-                                                            </constraints>
-                                                            <size key="titleShadowOffset" width="4" height="0.0"/>
-                                                            <state key="normal" image="WindscreenHeatingON"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                    <real key="value" value="0.29999999999999999"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                    <real key="value" value="12"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xQX-go-bLJ" userLabel="Rooftop Opacity Button" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
-                                                            <rect key="frame" x="168" y="0.0" width="60" height="60"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="60" id="Dot-zv-rdR"/>
-                                                                <constraint firstAttribute="width" constant="60" id="Rml-Ad-kTv"/>
-                                                            </constraints>
-                                                            <size key="titleShadowOffset" width="4" height="0.0"/>
-                                                            <state key="normal" image="SunroofTRANSPARENT"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                    <real key="value" value="0.29999999999999999"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                    <real key="value" value="12"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jDk-g5-9WU" userLabel="Interior Lights Button" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
-                                                            <rect key="frame" x="252" y="0.0" width="60" height="60"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="60" id="kq9-8d-1pa"/>
-                                                                <constraint firstAttribute="width" constant="60" id="uXl-aK-45x"/>
-                                                            </constraints>
-                                                            <size key="titleShadowOffset" width="4" height="0.0"/>
-                                                            <state key="normal" image="InteriorlightON"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                    <real key="value" value="0.29999999999999999"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                    <real key="value" value="12"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
-                                                    </subviews>
-                                                </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0j-hT-mtn" userLabel="Trunk Button" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
-                                                    <rect key="frame" x="157.5" y="270.5" width="60" height="60"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="Ijl-Cu-ccN"/>
-                                                        <constraint firstAttribute="width" constant="60" id="gef-LX-ylb"/>
-                                                    </constraints>
-                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
-                                                    <state key="normal" image="TrunkOPEN"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                            <real key="value" value="0.29999999999999999"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                            <real key="value" value="12"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
-                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qWr-H0-Cfr" userLabel="Charging Button" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
-                                                    <rect key="frame" x="157" y="354.5" width="60" height="60"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="60" id="vGv-CS-76y"/>
-                                                        <constraint firstAttribute="width" constant="60" id="vmn-Ia-HxW"/>
-                                                    </constraints>
-                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
-                                                    <state key="normal" image="BatteryCHARGING"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                            <real key="value" value="0.29999999999999999"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                            <real key="value" value="12"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
-                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </button>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Ygq-bS-dZo">
-                                                    <rect key="frame" x="207" y="459" width="144" height="60"/>
-                                                    <subviews>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SRj-z8-VGg" userLabel="Remote Button" customClass="FullScreenControlButton" customModule="The_App" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="60" id="9uM-m1-1ib"/>
-                                                                <constraint firstAttribute="width" constant="60" id="tMF-6C-f8M"/>
-                                                            </constraints>
-                                                            <size key="titleShadowOffset" width="4" height="0.0"/>
-                                                            <state key="normal" image="Remote"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                    <real key="value" value="0.29999999999999999"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                    <real key="value" value="12"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiF-ua-Fgg" userLabel="Doors Button" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
-                                                            <rect key="frame" x="84" y="0.0" width="60" height="60"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="60" id="9UO-eU-Oxh"/>
-                                                                <constraint firstAttribute="width" constant="60" id="BMF-7k-dGI"/>
-                                                            </constraints>
-                                                            <size key="titleShadowOffset" width="4" height="0.0"/>
-                                                            <state key="normal" image="DoorlockUNLOCKED"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                    <real key="value" value="0.29999999999999999"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                                    <real key="value" value="12"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
-                                                                    <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </userDefinedRuntimeAttribute>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </button>
+                                                        <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Lpx-Bl-tlW">
+                                                            <rect key="frame" x="126" y="0.0" width="60" height="0.0"/>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="uyH-jd-R9c">
+                                                            <rect key="frame" x="84" y="0.0" width="144" height="60"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgX-kX-6sR" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="60" id="4os-F9-iEA"/>
+                                                                        <constraint firstAttribute="height" constant="60" id="bW7-Fy-PcN"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="btn_parking-brake_off"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5te-qz-PRD" customClass="FullScreenControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="84" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="60" id="Jxx-kd-Vbt"/>
+                                                                        <constraint firstAttribute="height" constant="60" id="i8I-SD-mso"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="Remote"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="5Nk-Vw-egF">
+                                                            <rect key="frame" x="0.0" y="84" width="312" height="60"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HL6-fC-YWK" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="60" id="3TS-62-d4K"/>
+                                                                        <constraint firstAttribute="width" constant="60" id="d1R-UZ-oUk"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="FlashOFF"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3U-PQ-jxD" customClass="TripleControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="84" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="60" id="6AQ-xX-RpB"/>
+                                                                        <constraint firstAttribute="width" constant="60" id="eZ2-uA-2Nj"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="HeadlightOFF"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNE-aE-CkB" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="168" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="60" id="QWC-2y-gdL"/>
+                                                                        <constraint firstAttribute="width" constant="60" id="pth-6d-MWd"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="BacklightOFF"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6iZ-B9-xOM" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="252" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="60" id="clQ-vZ-bQj"/>
+                                                                        <constraint firstAttribute="width" constant="60" id="ly6-ur-azr"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="InteriorlightON"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="Vlc-Fe-koQ">
+                                                            <rect key="frame" x="0.0" y="168" width="312" height="60"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ab-Hv-fFD" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="60" id="cB5-4U-xmC"/>
+                                                                        <constraint firstAttribute="width" constant="60" id="o2L-q3-Reo"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="RooftopCLOSED"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMB-Nk-f7c" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="84" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="60" id="kLQ-bI-hDd"/>
+                                                                        <constraint firstAttribute="height" constant="60" id="nfq-gn-HGx"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="SunroofTRANSPARENT"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bc1-dA-clv" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="168" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="60" id="2WV-Dd-xFh"/>
+                                                                        <constraint firstAttribute="height" constant="60" id="xh9-8M-XW0"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="TrunkOPEN"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oct-z1-vG0" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="252" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="60" id="3db-9V-Adb"/>
+                                                                        <constraint firstAttribute="height" constant="60" id="a1o-2g-7HI"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="DoorlockUNLOCKED"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="ebg-Tu-tR8">
+                                                            <rect key="frame" x="0.0" y="252" width="312" height="60"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r77-Rd-DKQ" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="60" id="UmX-MI-Zf6"/>
+                                                                        <constraint firstAttribute="height" constant="60" id="y3h-do-Fim"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="BatteryCHARGING"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vwN-fO-dVe" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="84" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="60" id="5uE-pR-Ds7"/>
+                                                                        <constraint firstAttribute="width" constant="60" id="ijW-ap-lWM"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="EngineOFF"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mZE-HI-zIL" customClass="FullScreenControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="168" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="60" id="Cfz-3k-2KH"/>
+                                                                        <constraint firstAttribute="height" constant="60" id="Ksb-vW-bB5"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="btn_location"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPn-eV-eVp" customClass="FullScreenControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="252" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="60" id="9rA-bI-Xby"/>
+                                                                        <constraint firstAttribute="height" constant="60" id="sSh-UA-Oja"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="btn_navi-destination"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="L0u-6V-N48">
+                                                            <rect key="frame" x="42" y="336" width="228" height="60"/>
+                                                            <subviews>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfa-uB-ckd" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="60" id="Q1o-rY-Wvt"/>
+                                                                        <constraint firstAttribute="height" constant="60" id="YYx-1t-qvo"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="HVAC_OFF"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1v-xl-xIi" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="84" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="60" id="OsA-bd-F8O"/>
+                                                                        <constraint firstAttribute="height" constant="60" id="pG9-Qh-bxa"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="WindscreenHeatingON"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8d9-MQ-h5i" customClass="DualControlButton" customModule="The_App" customModuleProvider="target">
+                                                                    <rect key="frame" x="168" y="0.0" width="60" height="60"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="60" id="RsZ-sq-2Bi"/>
+                                                                        <constraint firstAttribute="width" constant="60" id="Ylu-QC-f4s"/>
+                                                                    </constraints>
+                                                                    <size key="titleShadowOffset" width="4" height="0.0"/>
+                                                                    <state key="normal" image="WindowDOWN"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                            <real key="value" value="0.29999999999999999"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                                                            <real key="value" value="12"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColour">
+                                                                            <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                                        </userDefinedRuntimeAttribute>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </button>
+                                                            </subviews>
+                                                        </stackView>
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="ML0-kb-2mO" firstAttribute="centerX" secondItem="BKk-sc-1fp" secondAttribute="centerX" id="2HC-7R-LHo"/>
-                                                <constraint firstItem="qWr-H0-Cfr" firstAttribute="top" secondItem="X0j-hT-mtn" secondAttribute="bottom" constant="24" id="MOY-se-Ss7"/>
-                                                <constraint firstAttribute="trailing" secondItem="Ygq-bS-dZo" secondAttribute="trailing" constant="24" id="QBy-5X-WR3"/>
-                                                <constraint firstItem="X0j-hT-mtn" firstAttribute="top" secondItem="BKk-sc-1fp" secondAttribute="bottom" constant="24" id="b7n-bT-34m"/>
-                                                <constraint firstItem="X0j-hT-mtn" firstAttribute="centerX" secondItem="BKk-sc-1fp" secondAttribute="centerX" id="ega-2f-6yJ"/>
-                                                <constraint firstItem="BKk-sc-1fp" firstAttribute="top" secondItem="ML0-kb-2mO" secondAttribute="bottom" constant="24" id="kVq-Y5-CrD"/>
-                                                <constraint firstAttribute="bottom" secondItem="Ygq-bS-dZo" secondAttribute="bottom" constant="38" id="maC-67-ZmR"/>
-                                                <constraint firstItem="qWr-H0-Cfr" firstAttribute="centerX" secondItem="BKk-sc-1fp" secondAttribute="centerX" id="ozc-wx-atj"/>
-                                            </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZBr-wx-FGe" userLabel="Status Container" customClass="ShadowView" customModule="The_App" customModuleProvider="target">
-                                            <rect key="frame" x="24" y="459" width="159" height="60"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m97-tb-kc0" userLabel="Status Container" customClass="ShadowView" customModule="The_App" customModuleProvider="target">
+                                            <rect key="frame" x="31" y="473" width="313" height="60"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Io6-gy-3dA">
-                                                    <rect key="frame" x="20" y="10.5" width="119.5" height="39.5"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalCentering" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gKC-zN-Yjg">
+                                                    <rect key="frame" x="23.5" y="9.5" width="266.5" height="41.5"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="AOB-WX-Fxz">
-                                                            <rect key="frame" x="0.0" y="0.0" width="23" height="39.5"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Fn1-KW-Q8a">
+                                                            <rect key="frame" x="0.0" y="0.0" width="35.5" height="41.5"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GPS" translatesAutoresizingMaskIntoConstraints="NO" id="hd1-dP-na5">
-                                                                    <rect key="frame" x="0.5" y="0.0" width="22" height="22"/>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_speed" translatesAutoresizingMaskIntoConstraints="NO" id="OcU-qB-stb">
+                                                                    <rect key="frame" x="5.5" y="0.0" width="24" height="24"/>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GPS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HL9-aP-NBa">
-                                                                    <rect key="frame" x="0.0" y="26" width="23" height="13.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- km/h" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CwR-fI-d7R">
+                                                                    <rect key="frame" x="0.0" y="28" width="35.5" height="13.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="xbs-zl-oGn">
-                                                            <rect key="frame" x="49" y="0.0" width="22" height="39.5"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="1z1-Ny-98n">
+                                                            <rect key="frame" x="60" y="0.0" width="34.5" height="41.5"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DAMAGE" translatesAutoresizingMaskIntoConstraints="NO" id="h8g-sU-ra0">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_powertrain" translatesAutoresizingMaskIntoConstraints="NO" id="lgq-dE-Ppt">
+                                                                    <rect key="frame" x="5" y="0.0" width="24" height="24"/>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OAz-Yz-XkE">
-                                                                    <rect key="frame" x="8.5" y="26" width="5.5" height="13.5"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hybrid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gop-Ko-15t">
+                                                                    <rect key="frame" x="0.0" y="28" width="34.5" height="13.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </stackView>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="g6S-sh-FB1">
-                                                            <rect key="frame" x="97.5" y="0.0" width="22" height="39.5"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="oQn-pf-1B7">
+                                                            <rect key="frame" x="114.5" y="0.0" width="44.5" height="41.5"/>
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BATTERY" translatesAutoresizingMaskIntoConstraints="NO" id="bPc-dq-wcA">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ico_mileage" translatesAutoresizingMaskIntoConstraints="NO" id="PSX-YT-QaI">
+                                                                    <rect key="frame" x="10" y="0.0" width="24" height="24"/>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2500km" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfi-Pf-Tri">
+                                                                    <rect key="frame" x="0.0" y="28" width="44.5" height="13.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="WUl-Hc-yGM">
+                                                            <rect key="frame" x="185" y="1" width="22" height="39.5"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DAMAGE" translatesAutoresizingMaskIntoConstraints="NO" id="gwb-x1-hja">
                                                                     <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
                                                                 </imageView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="–%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izS-u9-me5">
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="–" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x9B-eS-PKg">
+                                                                    <rect key="frame" x="8" y="26" width="6" height="13.5"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="SvO-Pu-0yO">
+                                                            <rect key="frame" x="244.5" y="1" width="22" height="39.5"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BATTERY" translatesAutoresizingMaskIntoConstraints="NO" id="fGx-VK-IOT">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="–%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="24k-0Q-95k">
                                                                     <rect key="frame" x="3.5" y="26" width="15" height="13.5"/>
                                                                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="11"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -318,12 +495,11 @@
                                                     </subviews>
                                                 </stackView>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.33333333333333331" green="0.34901960784313724" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="backgroundColor" name="Lightclay"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="159" id="2z0-dN-PB4"/>
-                                                <constraint firstAttribute="height" constant="60" id="JbN-zT-fPA"/>
-                                                <constraint firstItem="Io6-gy-3dA" firstAttribute="centerY" secondItem="ZBr-wx-FGe" secondAttribute="centerY" id="xcr-Uk-Fmh"/>
-                                                <constraint firstItem="Io6-gy-3dA" firstAttribute="centerX" secondItem="ZBr-wx-FGe" secondAttribute="centerX" id="yAO-Qw-Fw9"/>
+                                                <constraint firstItem="gKC-zN-Yjg" firstAttribute="centerX" secondItem="m97-tb-kc0" secondAttribute="centerX" id="afX-G0-Y2P"/>
+                                                <constraint firstItem="gKC-zN-Yjg" firstAttribute="centerY" secondItem="m97-tb-kc0" secondAttribute="centerY" id="gwt-yU-tuI"/>
+                                                <constraint firstAttribute="height" constant="60" id="lmq-ZA-v3k"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -342,45 +518,66 @@
                                         </view>
                                     </subviews>
                                 </view>
-                                <color key="backgroundColor" red="0.32156862745098036" green="0.33725490196078434" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="Clay"/>
                                 <constraints>
-                                    <constraint firstItem="A0o-FX-kTD" firstAttribute="width" secondItem="A0o-FX-kTD" secondAttribute="height" multiplier="1:1" id="0q3-F2-7da"/>
-                                    <constraint firstItem="BKk-sc-1fp" firstAttribute="centerX" secondItem="A0o-FX-kTD" secondAttribute="centerX" id="136-JI-p2L"/>
-                                    <constraint firstItem="BKk-sc-1fp" firstAttribute="centerY" secondItem="A0o-FX-kTD" secondAttribute="centerY" id="3cu-h0-O4w"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ew5-xx-3Ez" secondAttribute="bottom" id="GLe-xa-I9o"/>
-                                    <constraint firstItem="ZBr-wx-FGe" firstAttribute="leading" secondItem="LtB-VF-Tn4" secondAttribute="leading" constant="24" id="MXN-RG-hAB"/>
-                                    <constraint firstItem="A0o-FX-kTD" firstAttribute="centerX" secondItem="LtB-VF-Tn4" secondAttribute="centerX" id="UrM-4g-9L7"/>
-                                    <constraint firstItem="Ew5-xx-3Ez" firstAttribute="leading" secondItem="LtB-VF-Tn4" secondAttribute="leading" id="Xa9-gj-H3z"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ew5-xx-3Ez" secondAttribute="trailing" id="eou-4G-U85"/>
-                                    <constraint firstAttribute="bottom" secondItem="ZBr-wx-FGe" secondAttribute="bottom" constant="38" id="jqZ-a0-9g6"/>
-                                    <constraint firstItem="Ew5-xx-3Ez" firstAttribute="top" secondItem="LtB-VF-Tn4" secondAttribute="top" id="oeA-Yb-9be"/>
-                                    <constraint firstItem="A0o-FX-kTD" firstAttribute="width" secondItem="LtB-VF-Tn4" secondAttribute="width" id="pi1-n0-5eJ"/>
-                                    <constraint firstItem="A0o-FX-kTD" firstAttribute="centerY" secondItem="LtB-VF-Tn4" secondAttribute="centerY" constant="-62" id="sqH-yf-67A"/>
+                                    <constraint firstAttribute="trailing" secondItem="m97-tb-kc0" secondAttribute="trailing" constant="31" id="1WB-gJ-Mcl"/>
+                                    <constraint firstItem="3dQ-vf-gsY" firstAttribute="leading" secondItem="QKs-Rn-m4G" secondAttribute="leading" id="215-US-O05"/>
+                                    <constraint firstItem="uB8-jR-Jx0" firstAttribute="centerY" secondItem="ZxH-C1-0Ry" secondAttribute="centerY" multiplier="1.15" id="42f-yU-edr"/>
+                                    <constraint firstItem="3dQ-vf-gsY" firstAttribute="top" secondItem="QKs-Rn-m4G" secondAttribute="top" id="5eq-sF-PUt"/>
+                                    <constraint firstItem="m97-tb-kc0" firstAttribute="centerX" secondItem="QKs-Rn-m4G" secondAttribute="centerX" id="CKf-wg-9jo"/>
+                                    <constraint firstItem="ZxH-C1-0Ry" firstAttribute="centerY" secondItem="QKs-Rn-m4G" secondAttribute="centerY" constant="-62" id="Ig0-Yq-Mpc"/>
+                                    <constraint firstItem="m97-tb-kc0" firstAttribute="leading" secondItem="QKs-Rn-m4G" secondAttribute="leading" constant="31" id="RHt-n5-5rY"/>
+                                    <constraint firstItem="uB8-jR-Jx0" firstAttribute="centerX" secondItem="ZxH-C1-0Ry" secondAttribute="centerX" id="UaU-rt-Kug"/>
+                                    <constraint firstItem="ZxH-C1-0Ry" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QKs-Rn-m4G" secondAttribute="top" id="itd-Jl-hKJ"/>
+                                    <constraint firstItem="ZxH-C1-0Ry" firstAttribute="width" secondItem="ZxH-C1-0Ry" secondAttribute="height" multiplier="1:1" id="joP-18-t92"/>
+                                    <constraint firstAttribute="trailing" secondItem="3dQ-vf-gsY" secondAttribute="trailing" id="ktH-v6-qWM"/>
+                                    <constraint firstAttribute="bottom" secondItem="3dQ-vf-gsY" secondAttribute="bottom" id="nZh-vQ-0Xt"/>
+                                    <constraint firstItem="ZxH-C1-0Ry" firstAttribute="centerX" secondItem="QKs-Rn-m4G" secondAttribute="centerX" id="pbT-QT-gDr"/>
+                                    <constraint firstAttribute="bottom" secondItem="m97-tb-kc0" secondAttribute="bottom" constant="24" id="v8O-5F-43S"/>
+                                    <constraint firstItem="ZxH-C1-0Ry" firstAttribute="width" secondItem="QKs-Rn-m4G" secondAttribute="width" priority="999" id="vl4-tZ-nJs"/>
                                 </constraints>
                                 <connections>
-                                    <outlet property="batteryLabel" destination="izS-u9-me5" id="Hlh-Xt-WfY"/>
-                                    <outlet property="chargingButton" destination="qWr-H0-Cfr" id="DJf-CT-XEe"/>
-                                    <outlet property="damageLabel" destination="OAz-Yz-XkE" id="dMi-Uw-Mgp"/>
-                                    <outlet property="doorsLockButton" destination="xiF-ua-Fgg" id="HzS-rH-hC3"/>
-                                    <outlet property="frontLightsButton" destination="Mo0-zX-qOC" id="Vhp-IA-bf3"/>
-                                    <outlet property="interiorLightsButton" destination="jDk-g5-9WU" id="dyp-Gz-tIb"/>
-                                    <outlet property="rearLightsButton" destination="C4m-le-Dyi" id="3b8-SA-Wxs"/>
-                                    <outlet property="remoteControlButton" destination="SRj-z8-VGg" id="OJI-f4-LY3"/>
-                                    <outlet property="rooftopOpacityButton" destination="xQX-go-bLJ" id="ePk-cB-rZU"/>
-                                    <outlet property="rooftopOpenButton" destination="D4k-ga-8sS" id="TCc-1i-Sa0"/>
-                                    <outlet property="statusContainer" destination="ZBr-wx-FGe" id="LmS-Mu-IwM"/>
-                                    <outlet property="trunkLockButton" destination="X0j-hT-mtn" id="put-uL-Fwg"/>
-                                    <outlet property="windshieldHeatingButton" destination="ohQ-6S-uMw" id="d5b-Hj-zXA"/>
-                                    <outletCollection property="buttons" destination="xQX-go-bLJ" collectionClass="NSMutableArray" id="pqw-oH-f4b"/>
-                                    <outletCollection property="buttons" destination="ohQ-6S-uMw" collectionClass="NSMutableArray" id="Q16-Cq-lVG"/>
-                                    <outletCollection property="buttons" destination="X0j-hT-mtn" collectionClass="NSMutableArray" id="ng9-IO-Hvt"/>
-                                    <outletCollection property="buttons" destination="SRj-z8-VGg" collectionClass="NSMutableArray" id="p0o-Ha-1vP"/>
-                                    <outletCollection property="buttons" destination="xiF-ua-Fgg" collectionClass="NSMutableArray" id="juS-0Z-ZX1"/>
-                                    <outletCollection property="buttons" destination="qWr-H0-Cfr" collectionClass="NSMutableArray" id="pdJ-5o-mIU"/>
-                                    <outletCollection property="buttons" destination="jDk-g5-9WU" collectionClass="NSMutableArray" id="sug-vU-yXU"/>
-                                    <outletCollection property="buttons" destination="D4k-ga-8sS" collectionClass="NSMutableArray" id="paP-iN-Ujg"/>
-                                    <outletCollection property="buttons" destination="C4m-le-Dyi" collectionClass="NSMutableArray" id="Zn5-RZ-6dQ"/>
-                                    <outletCollection property="buttons" destination="Mo0-zX-qOC" collectionClass="NSMutableArray" id="AQF-2o-Bwp"/>
+                                    <outlet property="batteryLabel" destination="24k-0Q-95k" id="em4-5s-IEW"/>
+                                    <outlet property="chargingButton" destination="r77-Rd-DKQ" id="yGN-zF-4tX"/>
+                                    <outlet property="doorsLockButton" destination="oct-z1-vG0" id="bIN-IT-d6x"/>
+                                    <outlet property="emergencyFlasherButton" destination="HL6-fC-YWK" id="2dd-4N-hwq"/>
+                                    <outlet property="engineButton" destination="vwN-fO-dVe" id="2i5-I1-JZf"/>
+                                    <outlet property="frontLightsButton" destination="Y3U-PQ-jxD" id="Bj0-WD-Lxw"/>
+                                    <outlet property="hvacButton" destination="Wfa-uB-ckd" id="5Qm-F0-9dK"/>
+                                    <outlet property="interiorLightsButton" destination="6iZ-B9-xOM" id="jbr-Dt-JRY"/>
+                                    <outlet property="mainStacksVerticalConstraint" destination="42f-yU-edr" id="Tj6-gR-lp6"/>
+                                    <outlet property="mileageLabel" destination="hfi-Pf-Tri" id="wnm-QM-GcX"/>
+                                    <outlet property="naviDestinationButton" destination="JPn-eV-eVp" id="JdN-dU-PdY"/>
+                                    <outlet property="parkingBrakeButton" destination="VgX-kX-6sR" id="aHr-Nf-hnI"/>
+                                    <outlet property="powertrainLabel" destination="Gop-Ko-15t" id="XKI-zB-1Db"/>
+                                    <outlet property="rearLightsButton" destination="zNE-aE-CkB" id="hr2-kT-UkY"/>
+                                    <outlet property="remoteControlButton" destination="5te-qz-PRD" id="bpj-Yt-9Vt"/>
+                                    <outlet property="rooftopOpacityButton" destination="SMB-Nk-f7c" id="LeC-6d-wbX"/>
+                                    <outlet property="rooftopOpenButton" destination="8ab-Hv-fFD" id="0hP-8r-D4h"/>
+                                    <outlet property="speedLabel" destination="CwR-fI-d7R" id="bge-Zt-pcI"/>
+                                    <outlet property="statusContainer" destination="m97-tb-kc0" id="2mL-Y1-IqM"/>
+                                    <outlet property="trunkLockButton" destination="bc1-dA-clv" id="Avd-IX-3Xz"/>
+                                    <outlet property="vehicleLocationButton" destination="mZE-HI-zIL" id="fAm-zY-Rth"/>
+                                    <outlet property="windowsButton" destination="8d9-MQ-h5i" id="KJW-ZX-ang"/>
+                                    <outlet property="windscreenDamageLabel" destination="x9B-eS-PKg" id="RAn-Ey-DAC"/>
+                                    <outlet property="windshieldHeatingButton" destination="i1v-xl-xIi" id="x3k-C9-dNb"/>
+                                    <outletCollection property="buttons" destination="zNE-aE-CkB" collectionClass="NSMutableArray" id="vqk-ZG-Paj"/>
+                                    <outletCollection property="buttons" destination="Y3U-PQ-jxD" collectionClass="NSMutableArray" id="dJ0-PO-vs5"/>
+                                    <outletCollection property="buttons" destination="SMB-Nk-f7c" collectionClass="NSMutableArray" id="BkC-5y-RZl"/>
+                                    <outletCollection property="buttons" destination="8ab-Hv-fFD" collectionClass="NSMutableArray" id="Yv8-cB-bYD"/>
+                                    <outletCollection property="buttons" destination="vwN-fO-dVe" collectionClass="NSMutableArray" id="b1A-Sk-FLF"/>
+                                    <outletCollection property="buttons" destination="r77-Rd-DKQ" collectionClass="NSMutableArray" id="YSx-vh-w5q"/>
+                                    <outletCollection property="buttons" destination="Wfa-uB-ckd" collectionClass="NSMutableArray" id="kdx-Fq-07B"/>
+                                    <outletCollection property="buttons" destination="6iZ-B9-xOM" collectionClass="NSMutableArray" id="hoN-Gs-9gk"/>
+                                    <outletCollection property="buttons" destination="i1v-xl-xIi" collectionClass="NSMutableArray" id="8M7-qu-FdZ"/>
+                                    <outletCollection property="buttons" destination="bc1-dA-clv" collectionClass="NSMutableArray" id="Z9A-Xf-tMV"/>
+                                    <outletCollection property="buttons" destination="8d9-MQ-h5i" collectionClass="NSMutableArray" id="D7T-nq-LWk"/>
+                                    <outletCollection property="buttons" destination="HL6-fC-YWK" collectionClass="NSMutableArray" id="PeQ-0F-w75"/>
+                                    <outletCollection property="buttons" destination="JPn-eV-eVp" collectionClass="NSMutableArray" id="PC5-m2-1B1"/>
+                                    <outletCollection property="buttons" destination="mZE-HI-zIL" collectionClass="NSMutableArray" id="pFL-Q3-0tR"/>
+                                    <outletCollection property="buttons" destination="oct-z1-vG0" collectionClass="NSMutableArray" id="YKH-Nr-rgu"/>
+                                    <outletCollection property="buttons" destination="5te-qz-PRD" collectionClass="NSMutableArray" id="U2F-EX-2si"/>
+                                    <outletCollection property="buttons" destination="VgX-kX-6sR" collectionClass="NSMutableArray" id="LDh-tx-BbU"/>
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="controlFunctionsCellID" id="zdu-G4-Vpx" customClass="ControlFunctionsCollectionViewCell" customModule="The_App" customModuleProvider="target">
@@ -685,7 +882,7 @@ move the car</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GfN-Rb-0N4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3494" y="1576"/>
+            <point key="canvasLocation" x="3494" y="1588"/>
         </scene>
         <!--Control-->
         <scene sceneID="7av-aL-ubl">
@@ -874,6 +1071,105 @@ move the car</string>
             </objects>
             <point key="canvasLocation" x="2625" y="143"/>
         </scene>
+        <!--VEHICLE LOCATION-->
+        <scene sceneID="gh7-aE-pt8">
+            <objects>
+                <viewController storyboardIdentifier="VehicleLocationViewControllerID" id="YiX-8c-5nD" customClass="VehicleLocationViewController" customModule="The_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rRd-Wp-26a"/>
+                        <viewControllerLayoutGuide type="bottom" id="AyX-mt-iDd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Xy-UO-E4P">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pph-i7-DPd">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <outlet property="delegate" destination="YiX-8c-5nD" id="Uvx-ZS-f4g"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pph-i7-DPd" firstAttribute="leading" secondItem="5Xy-UO-E4P" secondAttribute="leading" id="6xw-1K-Dm1"/>
+                            <constraint firstItem="pph-i7-DPd" firstAttribute="top" secondItem="rRd-Wp-26a" secondAttribute="bottom" id="LWe-Kj-oEu"/>
+                            <constraint firstAttribute="trailing" secondItem="pph-i7-DPd" secondAttribute="trailing" id="czz-Ci-dVd"/>
+                            <constraint firstItem="AyX-mt-iDd" firstAttribute="top" secondItem="pph-i7-DPd" secondAttribute="bottom" id="ycd-T6-00H"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="VEHICLE LOCATION" id="6pX-hQ-POv">
+                        <barButtonItem key="rightBarButtonItem" image="refresh" id="GKT-cL-3Ur">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="refreshTapped:" destination="YiX-8c-5nD" id="hzq-2I-XKe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <connections>
+                        <outlet property="mapView" destination="pph-i7-DPd" id="rDp-Gy-5eY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kgt-la-LXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4529" y="1589"/>
+        </scene>
+        <!--NAVI DESTINATION-->
+        <scene sceneID="NpL-fU-gsU">
+            <objects>
+                <viewController storyboardIdentifier="NaviDestinationViewControllerID" id="ZKj-rP-htl" customClass="NaviDestinationViewController" customModule="The_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qDK-ua-x6E"/>
+                        <viewControllerLayoutGuide type="bottom" id="kkq-YE-iAY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eak-sS-Jd6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsScale="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hkp-7W-kAN">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outlet property="delegate" destination="ZKj-rP-htl" id="5N3-43-o1d"/>
+                                    <outletCollection property="gestureRecognizers" destination="48F-OK-JGl" appends="YES" id="Vuc-VQ-ZUB"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hkp-7W-kAN" firstAttribute="top" secondItem="qDK-ua-x6E" secondAttribute="bottom" id="0f7-s2-N0K"/>
+                            <constraint firstAttribute="trailing" secondItem="hkp-7W-kAN" secondAttribute="trailing" id="Icf-7L-U6I"/>
+                            <constraint firstItem="kkq-YE-iAY" firstAttribute="top" secondItem="hkp-7W-kAN" secondAttribute="bottom" id="bHk-eB-8lr"/>
+                            <constraint firstItem="hkp-7W-kAN" firstAttribute="leading" secondItem="eak-sS-Jd6" secondAttribute="leading" id="yUy-Ve-uTF"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout" top="YES"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="NAVI DESTINATION" id="AvM-lX-z4M">
+                        <barButtonItem key="rightBarButtonItem" image="refresh" id="k0J-WG-cMV">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="refreshTapped:" destination="ZKj-rP-htl" id="nUF-1t-eQd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <connections>
+                        <outlet property="mapView" destination="hkp-7W-kAN" id="ewJ-QF-1b6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qIa-K5-fhc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="48F-OK-JGl">
+                    <connections>
+                        <action selector="dropPinGestureRecognised:" destination="ZKj-rP-htl" id="RL5-lv-lCM"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="5535" y="1588"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BATTERY" width="22" height="22"/>
@@ -882,17 +1178,32 @@ move the car</string>
         <image name="Connect" width="16" height="26"/>
         <image name="DAMAGE" width="22" height="22"/>
         <image name="DoorlockUNLOCKED" width="60" height="60"/>
-        <image name="GPS" width="22" height="22"/>
+        <image name="EngineOFF" width="60" height="60"/>
+        <image name="FlashOFF" width="60" height="60"/>
+        <image name="HVAC_OFF" width="60" height="60"/>
         <image name="HeadlightOFF" width="60" height="60"/>
         <image name="InteriorlightON" width="60" height="60"/>
         <image name="Remote" width="60" height="60"/>
         <image name="RooftopCLOSED" width="60" height="60"/>
         <image name="SunroofTRANSPARENT" width="60" height="60"/>
         <image name="TrunkOPEN" width="60" height="60"/>
+        <image name="WindowDOWN" width="60" height="60"/>
         <image name="WindscreenHeatingON" width="60" height="60"/>
         <image name="back" width="22" height="22"/>
+        <image name="btn_location" width="60" height="60"/>
+        <image name="btn_navi-destination" width="60" height="60"/>
+        <image name="btn_parking-brake_off" width="60" height="60"/>
         <image name="close" width="22" height="22"/>
         <image name="hm_car" width="375" height="375"/>
+        <image name="ico_mileage" width="24" height="24"/>
+        <image name="ico_powertrain" width="24" height="24"/>
+        <image name="ico_speed" width="24" height="24"/>
         <image name="refresh" width="22" height="22"/>
+        <namedColor name="Clay">
+            <color red="0.32156862749999998" green="0.33725490200000002" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Lightclay">
+            <color red="0.33333333329999998" green="0.34901960780000002" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

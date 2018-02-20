@@ -9,6 +9,6 @@
 import Foundation
 
 
-protocol Parser: CapabilityParser, ResponseParser, VehicleStatusParser {
+protocol Parser: CapabilityParser, ResponseParser {
 
 }
