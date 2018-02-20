@@ -9,6 +9,7 @@
 import AutoAPI
 import Foundation
 
+
 public class DiagnosticsCommand: CommandClass {
 
     public private(set) var mileage: UInt32 = 0

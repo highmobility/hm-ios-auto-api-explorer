@@ -19,7 +19,7 @@
 		207B4657203C56AC002F346D /* ParkingBrakeCommand+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4655203C56AB002F346D /* ParkingBrakeCommand+Cmds.swift */; };
 		207B4658203C56AC002F346D /* ParkingBrakeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4656203C56AC002F346D /* ParkingBrakeCommand.swift */; };
 		207B465A203C56DA002F346D /* WindscreenCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4659203C56DA002F346D /* WindscreenCommand.swift */; };
-		207B466C203C6CD4002F346D /* Position+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B466B203C6CD4002F346D /* Position+Extensions.swift */; };
+		207B467E203C8961002F346D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B467D203C8961002F346D /* Location.swift */; };
 		2086D8EA1F13CCB0009F01D8 /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2086D8E91F13CCB0009F01D8 /* CommandType.swift */; };
 		2086D8EE1F13D17F009F01D8 /* ParserResponseOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2086D8ED1F13D17F009F01D8 /* ParserResponseOnly.swift */; };
 		2094F2391F0FB5BB00779FFA /* Car.h in Headers */ = {isa = PBXBuildFile; fileRef = 2094F2371F0FB5BB00779FFA /* Car.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -80,7 +80,7 @@
 		207B4655203C56AB002F346D /* ParkingBrakeCommand+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ParkingBrakeCommand+Cmds.swift"; sourceTree = "<group>"; };
 		207B4656203C56AC002F346D /* ParkingBrakeCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingBrakeCommand.swift; sourceTree = "<group>"; };
 		207B4659203C56DA002F346D /* WindscreenCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindscreenCommand.swift; sourceTree = "<group>"; };
-		207B466B203C6CD4002F346D /* Position+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Position+Extensions.swift"; sourceTree = "<group>"; };
+		207B467D203C8961002F346D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		2086D8E91F13CCB0009F01D8 /* CommandType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandType.swift; sourceTree = "<group>"; };
 		2086D8ED1F13D17F009F01D8 /* ParserResponseOnly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserResponseOnly.swift; sourceTree = "<group>"; };
 		2094F2341F0FB5BB00779FFA /* Car.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Car.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,6 +214,7 @@
 				2086D8E91F13CCB0009F01D8 /* CommandType.swift */,
 				2094F2501F0FC46900779FFA /* ConnectionMethod.swift */,
 				2094F2531F0FC4B700779FFA /* ConnectionState.swift */,
+				207B467D203C8961002F346D /* Location.swift */,
 			);
 			name = Enums;
 			sourceTree = "<group>";
@@ -223,7 +224,6 @@
 			children = (
 				2094F25D1F0FD22600779FFA /* Collection+UInt8.swift */,
 				2094F25E1F0FD22600779FFA /* KeychainLayer.swift */,
-				207B466B203C6CD4002F346D /* Position+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -391,7 +391,6 @@
 				207B465A203C56DA002F346D /* WindscreenCommand.swift in Sources */,
 				20EDE5341F11109C00464E8E /* ClimateClass+Cmds.swift in Sources */,
 				2094F2731F10010900779FFA /* LightsClass.swift in Sources */,
-				207B466C203C6CD4002F346D /* Position+Extensions.swift in Sources */,
 				20EDE5321F11107E00464E8E /* ChargingClass+Cmds.swift in Sources */,
 				206765D31F7B8D2D00D38F3F /* EngineClass+Cmds.swift in Sources */,
 				20EDE5291F10F5A100464E8E /* CommandError.swift in Sources */,
@@ -420,6 +419,7 @@
 				2094F2511F0FC46900779FFA /* ConnectionMethod.swift in Sources */,
 				206765D11F7B8B2D00D38F3F /* EngineClass.swift in Sources */,
 				20EDE54E1F11352000464E8E /* RemoteControlClass+Cmds.swift in Sources */,
+				207B467E203C8961002F346D /* Location.swift in Sources */,
 				20EDE5451F1118CA00464E8E /* FailureMessageClass.swift in Sources */,
 				20EDE5361F11118E00464E8E /* DoorsCommand+Cmds.swift in Sources */,
 				2094F2751F10077700779FFA /* TrunkClass.swift in Sources */,

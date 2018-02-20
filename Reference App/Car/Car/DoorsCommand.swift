@@ -13,18 +13,13 @@ import Foundation
 public class DoorClass {
     public let isLocked: Bool
     public let isOpen: Bool
-
-    public var locationStr: String {
-        return location.stringValue
-    }
-
-    let location: Door.Location
+    public let location: Location
 
 
     init(door: Door) {
         isLocked = door.lock == .locked
         isOpen = door.position == .open
-        location = door.location
+        location = Location(position: door.location)
     }
 }
 

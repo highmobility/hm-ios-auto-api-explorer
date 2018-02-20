@@ -22,7 +22,7 @@ class ControlFunctionsManager {
     }
 
     var digitalKeyControlFunctions: [ControlFunction] {
-        return allControlFunctions.filter { [.doorsLock, .engine, .trunkAccess].contains($0.kind) }
+        return allControlFunctions.filter { [.doorsLock, .doorsStatus, .engine, .trunkAccess].contains($0.kind) }
     }
 
     var lightsControlFunctions: [ControlFunction] {

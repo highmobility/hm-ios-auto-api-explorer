@@ -21,10 +21,12 @@ class ControlViewController: UIViewController {
     private var isGettingVehicleStatus: Bool = false
 
     private var collectionViewController: ControlCollectionViewController!
+    private var doorsStatusViewController: DoorsStatusViewController?
     private var naviDestinationViewController: NaviDestinationViewController?
     private var remoteControlViewController: RemoteControlViewController?
     private var vehicleLocationViewController: VehicleLocationViewController?
 
+    private var lastDoorsStatus: [DoorClass]?
     private var lastNaviDestination: NaviDestinationClass!
     private var lastVehicleLocation: VehicleLocationClass?
 
@@ -69,6 +71,7 @@ class ControlViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
+        doorsStatusViewController = nil
         naviDestinationViewController = nil
         remoteControlViewController = nil
         // TODO: MapView IS RETAINING exessive amounts of memory
@@ -132,7 +135,14 @@ private extension ControlViewController {
             return
         }
 
-        if let controller = viewController as? NaviDestinationViewController {
+        if let controller = viewController as? DoorsStatusViewController {
+            doorsStatusViewController = controller
+
+            if let doorsStatus = lastDoorsStatus {
+                doorsStatusViewController?.doorsUpdated(doorsStatus)
+            }
+        }
+        else if let controller = viewController as? NaviDestinationViewController {
             naviDestinationViewController = controller
 
             if let naviDestination = lastNaviDestination {
@@ -180,7 +190,10 @@ private extension ControlViewController {
         }
 
         // Persist some values
-        if let naviDestination = command as? NaviDestinationClass {
+        if let doorsCommand = command as? DoorsCommand {
+            lastDoorsStatus = doorsCommand.doors
+        }
+        else if let naviDestination = command as? NaviDestinationClass {
             lastNaviDestination = naviDestination
         }
         else if let vehicleLocation = command as? VehicleLocationClass {
@@ -288,6 +301,9 @@ private extension ControlViewController {
 
             case _ as DiagnosticsCommand:
                 collectionViewController.receivedOther(commandType)
+
+            case let command as DoorsCommand:
+                doorsStatusViewController?.doorsUpdated(command.doors)
 
             case let command as NaviDestinationClass:
                 naviDestinationViewController?.updateCoordinate(command.coordinate, name: command.name)

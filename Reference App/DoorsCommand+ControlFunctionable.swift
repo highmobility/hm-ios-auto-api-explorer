@@ -23,6 +23,17 @@ extension DoorsCommand: ControlFunctionable {
     }
 
     var controlFunctions: [ControlFunction] {
+        return [createLockUnlock(), createShowStatus()]
+    }
+
+    var stringValue: (ControlFunction.Kind) -> String? {
+        return { _ in nil }
+    }
+}
+
+private extension DoorsCommand {
+
+    func createLockUnlock() -> DualControlFunction {
         let mainAction = ControlAction(name: "unlocked", iconName: "DoorlockUNLOCKED") { errorHandler in
             Car.shared.sendDoorsCommand(lock: false) {
                 if let error = $0 { errorHandler?(error) }
@@ -35,14 +46,10 @@ extension DoorsCommand: ControlFunctionable {
             }
         }
 
-        return [DualControlFunction(kind: .doorsLock, mainAction: mainAction, oppositeAction: oppositeAction, isMainTrue: false)]
+        return DualControlFunction(kind: .doorsLock, mainAction: mainAction, oppositeAction: oppositeAction, isMainTrue: false)
     }
 
-    var kinds: [ControlFunction.Kind] {
-        return [.doorsLock]
-    }
-
-    var stringValue: (ControlFunction.Kind) -> String? {
-        return { _ in nil }
+    func createShowStatus() -> FullScreenControlFunction {
+        return FullScreenControlFunction(kind: .doorsStatus, iconName: "DoorlockUNLOCKED", viewControllerID: "DoorsStatusViewControllerID")
     }
 }

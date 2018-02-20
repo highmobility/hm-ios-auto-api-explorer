@@ -15,6 +15,7 @@ class ControlFunction {
     enum Kind: String {
         case charging           = "Charging"
         case doorsLock          = "Door Locks"
+        case doorsStatus        = "Doors Status"
         case emergencyFlasher   = "Emergency Flasher"
         case engine             = "Engine"
         case honkFlash          = "Honk and Flash"

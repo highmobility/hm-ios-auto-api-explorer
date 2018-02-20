@@ -50,6 +50,7 @@
 		207B466E203C7709002F346D /* SingleControlFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B466D203C7709002F346D /* SingleControlFunction.swift */; };
 		207B4670203C7929002F346D /* SingleControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B466F203C7929002F346D /* SingleControlButton.swift */; };
 		207B4672203C7A50002F346D /* SingleControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4671203C7A50002F346D /* SingleControlTableViewCell.swift */; };
+		207B467C203C83D3002F346D /* DoorsStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B467B203C83D3002F346D /* DoorsStatusViewController.swift */; };
 		207E48421DB66BE10031C0FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E48411DB66BE10031C0FB /* AppDelegate.swift */; };
 		207E484B1DB66BE10031C0FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 207E484A1DB66BE10031C0FB /* Assets.xcassets */; };
 		207E484E1DB66BE10031C0FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 207E484C1DB66BE10031C0FB /* LaunchScreen.storyboard */; };
@@ -166,6 +167,7 @@
 		207B466D203C7709002F346D /* SingleControlFunction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleControlFunction.swift; sourceTree = "<group>"; };
 		207B466F203C7929002F346D /* SingleControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleControlButton.swift; sourceTree = "<group>"; };
 		207B4671203C7A50002F346D /* SingleControlTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleControlTableViewCell.swift; sourceTree = "<group>"; };
+		207B467B203C83D3002F346D /* DoorsStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsStatusViewController.swift; sourceTree = "<group>"; };
 		207E483E1DB66BE10031C0FB /* The App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		207E48411DB66BE10031C0FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		207E484A1DB66BE10031C0FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				2019AAB71F1F5250003A8FDB /* ConnectViewController.swift */,
 				20FCE1641ECF458200FA62E1 /* ControlViewController.swift */,
 				20FCE1661ECF45C800FA62E1 /* ControlCollectionViewController.swift */,
+				207B467B203C83D3002F346D /* DoorsStatusViewController.swift */,
 				207B4662203C5956002F346D /* NaviDestinationViewController.swift */,
 				20BA06171EDEB7B80057E6B8 /* RemoteControlViewController.swift */,
 				207B4661203C5956002F346D /* VehicleLocationViewController.swift */,
@@ -630,6 +633,7 @@
 				200C7C771DC7752100C31B21 /* CGRect.swift in Sources */,
 				206EB9121EEADEA600887096 /* ControlFunctionsManager.swift in Sources */,
 				20E1566B1ED4466F00208E0B /* DualControlTableViewCell.swift in Sources */,
+				207B467C203C83D3002F346D /* DoorsStatusViewController.swift in Sources */,
 				20B23CF11F1274E1006CFC06 /* DoorsCommand+ControlFunctionable.swift in Sources */,
 				20B8FA8F1EE1BFC10007EFF7 /* UIEdgeInsets+SimpleInit.swift in Sources */,
 				205500201EC4BC7C007C9837 /* TitlesScrollView.swift in Sources */,

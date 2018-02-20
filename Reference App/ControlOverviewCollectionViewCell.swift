@@ -114,6 +114,7 @@ private extension ControlOverviewCollectionViewCell {
         switch controlFunction.kind {
         case .charging:             return chargingButton
         case .doorsLock:            return doorsLockButton
+        case .doorsStatus:          return nil
         case .emergencyFlasher:     return emergencyFlasherButton
         case .engine:               return engineButton
         case .honkFlash:            return honkFlashButton

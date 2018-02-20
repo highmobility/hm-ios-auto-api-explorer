@@ -13,17 +13,15 @@ import Foundation
 public class WindowClass {
 
     public let isOpen: Bool
-
-    public var positionStr: String {
-        return position.stringValue
-    }
-
+    public let location: Location
 
     let position: Position
 
 
     init(window: Window) {
         isOpen = window.openClosed == .open
+        location = Location(position: window.position)
+
         position = window.position
     }
 }
