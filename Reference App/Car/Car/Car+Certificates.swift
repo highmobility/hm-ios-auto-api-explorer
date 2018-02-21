@@ -55,43 +55,6 @@ extension Car {
     public func resetAccessCertificatesStorage() {
         LocalDevice.shared.resetStorage()
     }
-
-    public func setDeviceCertificate(_ deviceCertificate: String, devicePrivateKey: String, issuerPublicKey: String) throws {
-        self.deviceCert = deviceCertificate
-        self.privateKey = devicePrivateKey
-        self.publicKey = issuerPublicKey
-
-        try LocalDevice.shared.initialise(deviceCertificate: deviceCertificate, devicePrivateKey: devicePrivateKey, issuerPublicKey: issuerPublicKey)
-    }
-
-
-    // MARK: Internal
-
-    func initialiseLocalDevice() {
-        guard let deviceCert = self.deviceCert else {
-            fatalError("Missing device certificate!")
-        }
-
-        guard let privateKey = self.privateKey else {
-            fatalError("Missing device's private key")
-        }
-
-        guard let publicKey = self.publicKey else {
-            fatalError("Missing issuer public key")
-        }
-
-        // If we have all the needed stuff, try to initialise the LocalDevice
-        do {
-            try LocalDevice.shared.initialise(deviceCertificate: deviceCert, devicePrivateKey: privateKey, issuerPublicKey: publicKey)
-        }
-        catch {
-            // There's no point in initialising with some default values,
-            // because the whole app gets its data from the server,
-            // the default certificate wouldn't work with anything!
-
-            fatalError("Failed to initialised LocalDevice: \(error)")
-        }
-    }
 }
 
 private extension Car {

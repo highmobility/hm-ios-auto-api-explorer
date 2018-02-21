@@ -59,7 +59,9 @@ extension Car {
             return
         }
 
-        initialiseLocalDevice()
+        guard LocalDevice.shared.certificate != nil else {
+            return print("Missing LocalDevice certificate and other values.")
+        }
 
         do {
             try device.startBroadcasting()
