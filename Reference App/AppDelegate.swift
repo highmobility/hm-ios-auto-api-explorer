@@ -33,41 +33,27 @@ fileprivate extension AppDelegate {
     func initialiseLocalDevice() {
 
         /*
-
-         Before using the HMKit, you must initialise the LocalDevice with a snippet from the Developer Center:
-         - go to Developer Center
-         - LOGIN
-         - choose DEVELOP (in top-left, the (2nd) button with a spanner)
-         - choose APPLICATIONS (in the left)
-         - look for SANDBOX app
-         - click on the "Device Certificates" on the app
-         - choose the SANDBOX DEVICE
-         - copy the whole snippet
-         - paste it below this comment box
-         - you made it!
-
-         Bonus steps after completing the above:
-         - relax
-         - celebrate
-         - explore the APIs
-
-
-         An example of a snippet copied from the Developer Center (do not use, will obviously not work):
-
-         do {
-            try LocalDevice.shared.initialise(deviceCertificate: Base64String,
-                                                devicePrivateKey: Base64String,
-                                                issuerPublicKey: Base64String)
-         }
-         catch {
-            // Handle the error
-            print("Invalid initialisation parameters, please double-check the snippet: \(error)")
-         }
-
+         * Before using HMKit, you'll have to initialise the LocalDevice singleton
+         * with a snippet from the Platform Workspace:
+         *
+         *   1. Sign in to the workspace
+         *   2. Go to the LEARN section and choose iOS
+         *   3. Follow the Getting Started instructions
+         *
+         * By the end of the tutorial you will have a snippet for initialisation,
+         * that looks something like this:
+         *
+         *   do {
+         *       try LocalDevice.shared.initialise(deviceCertificate: Base64String, devicePrivateKey: Base64String, issuerPublicKey: Base64String)
+         *   }
+         *   catch {
+         *       // Handle the error
+         *       print("Invalid initialisation parameters, please double-check the snippet: \(error)")
+         *   }
          */
 
 
-        // PASTE THE SNIPPET HERE
+        <#Paste the SNIPPET here#>
 
 
         // This just checks if you've seen the above (and are able to follow instructions)
@@ -78,34 +64,7 @@ fileprivate extension AppDelegate {
 
     func initialiseTelematics() {
 
-        /*
-
-         Before using Telematics in HMKit, you must get the Access Certificate for the car / emualator:
-         - go to Developer Center
-         - LOGIN
-         - go to Tutorials ›› SDK ›› iOS for instructions to connect a service to the car
-         - authorise the service
-         - take a good look into the mirror, you badass
-         - open the SANDBOX car emulator
-         - on the left, in the Authorised Services list, choose the Service you used before
-         - copy the ACCESS TOKEN
-         - paste it below to the appropriately named variable
-
-         Bonus steps again:
-         - get a beverage
-         - quench your thirst
-         - change the world with your mind
-         - explore the APIs
-
-
-         An example of an access token:
-
-         6fb79a87-19bf-4db6-8ad5-12c3341603c1
-
-         */
-
-
-        let accessToken: String = "PASTE THE ACCESS TOKEN HERE"
+        let accessToken: String = "<#Paste the ACCESS TOKEN here#>"
 
 
         do {
