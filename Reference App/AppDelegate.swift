@@ -28,7 +28,7 @@ import UIKit
     }
 }
 
-fileprivate extension AppDelegate {
+private extension AppDelegate {
 
     func initialiseLocalDevice() {
 
