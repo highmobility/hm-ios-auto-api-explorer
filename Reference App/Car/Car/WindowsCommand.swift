@@ -69,3 +69,45 @@ extension WindowsCommand: ResponseParser {
         return .other(self)
     }
 }
+
+
+public class WindowsStatusCommand: CommandClass {
+
+    public private(set) var windows: [WindowClass] = []
+}
+
+extension WindowsStatusCommand: Parser {
+
+}
+
+extension WindowsStatusCommand: CapabilityParser {
+
+    func update(from capability: Capability) {
+        guard capability.command is Windows.Type else {
+            return
+        }
+
+        guard capability.supports(Windows.MessageTypes.windowsState) else {
+            return
+        }
+
+        isAvailable = true
+    }
+}
+
+extension WindowsStatusCommand: ResponseParser {
+
+    @discardableResult func update(from response: Command) -> CommandType? {
+        guard let windows = response as? Windows else {
+            return nil
+        }
+
+        guard let array = windows.windows else {
+            return nil
+        }
+
+        self.windows = array.map { WindowClass(window: $0) }
+
+        return .other(self)
+    }
+}

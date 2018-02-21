@@ -66,3 +66,45 @@ extension DoorsCommand: ResponseParser {
         return .other(self)
     }
 }
+
+
+public class DoorsStatusCommand: CommandClass {
+
+    public private(set) var doors: [DoorClass] = []
+}
+
+extension DoorsStatusCommand: Parser {
+
+}
+
+extension DoorsStatusCommand: CapabilityParser {
+
+    func update(from capability: Capability) {
+        guard capability.command is DoorLocks.Type else {
+            return
+        }
+
+        guard capability.supports(DoorLocks.MessageTypes.lockState) else {
+            return
+        }
+
+        isAvailable = true
+    }
+}
+
+extension DoorsStatusCommand: ResponseParser {
+
+    @discardableResult func update(from response: Command) -> CommandType? {
+        guard let doorLocks = response as? DoorLocks else {
+            return nil
+        }
+
+        guard let doors = doorLocks.doors else {
+            return nil
+        }
+
+        self.doors = doors.map { DoorClass(door: $0) }
+
+        return .other(self)
+    }
+}

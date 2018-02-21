@@ -18,7 +18,6 @@ public class Car {
 
     // MARK: Vars
 
-
     public var activeVehicleSerial: Data?
     public var connectionMethod: ConnectionMethod
 
@@ -40,6 +39,7 @@ public class Car {
     public let climate = ClimateClass()
     public let diagnostics = DiagnosticsCommand()
     public let doors = DoorsCommand()
+    public let doorsStatus = DoorsStatusCommand()
     public let engine = EngineClass()
     public let honkHornFlashLights = HonkHornFlashLightsClass()
     public let lights = LightsClass()
@@ -50,6 +50,7 @@ public class Car {
     public let trunk = TrunkClass()
     public let vehicleLocation = VehicleLocationClass()
     public let windows = WindowsCommand()
+    public let windowsState = WindowsStatusCommand()
     public let windscreen = WindscreenCommand()
 
 
@@ -87,7 +88,7 @@ public class Car {
 
         // Collections
         anyHashableObservers = Set()
-        commands = [charging, climate, doors, diagnostics, engine, honkHornFlashLights, lights, naviDestination, parkingBrake, remoteControl, rooftop, trunk, vehicleLocation, windows, windscreen]
+        commands = [charging, climate, doors, doorsStatus, diagnostics, engine, honkHornFlashLights, lights, naviDestination, parkingBrake, remoteControl, rooftop, trunk, vehicleLocation, windows, windowsState, windscreen]
 
         // Initialise some of the LocalDevice things
         LocalDevice.loggingOptions = [.command, .error, .general, .bluetooth, .telematics, .urlRequests]

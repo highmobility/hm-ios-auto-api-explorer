@@ -202,6 +202,9 @@ private extension ControlViewController {
         if let doorsCommand = command as? DoorsCommand {
             lastDoorsStatus = doorsCommand.doors
         }
+        else if let doorsCommand = command as? DoorsStatusCommand {
+            lastDoorsStatus = doorsCommand.doors
+        }
         else if let naviDestination = command as? NaviDestinationClass {
             lastNaviDestination = naviDestination
         }
@@ -315,6 +318,9 @@ private extension ControlViewController {
                 collectionViewController.receivedOther(commandType)
 
             case let command as DoorsCommand:
+                doorsStatusViewController?.doorsUpdated(command.doors)
+
+            case let command as DoorsStatusCommand:
                 doorsStatusViewController?.doorsUpdated(command.doors)
 
             case let command as NaviDestinationClass:
