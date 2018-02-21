@@ -101,7 +101,7 @@ private extension DoorsStatusViewController {
                 lockLabel.text = door.isLocked ? "LOCKED" : "UNLOCKED"
                 positionLabel.text = door.isOpen ? "OPEN" : "CLOSED"
 
-                lockLabel.textColor = door.isLocked ? UIColor(named: "Pale") : UIColor(named: "Darkclay")
+                lockLabel.textColor = !door.isLocked ? UIColor(named: "Pale") : UIColor(named: "Darkclay")
                 positionLabel.textColor = door.isOpen ? UIColor(named: "Pale") : UIColor(named: "Darkclay")
             }
             else {

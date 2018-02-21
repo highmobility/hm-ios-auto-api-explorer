@@ -52,7 +52,7 @@ fileprivate extension AppDelegate {
          - explore the APIs
 
 
-         An example of a snippet copied from the Developer Center (do not use, will obviously not work):
+         An example of a snippet similar to the one copied from the Developer Center (do not use, will obviously not work):
 
          do {
             try Car.shared.setDeviceCertificate(Base64String,
