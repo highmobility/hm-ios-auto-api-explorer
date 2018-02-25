@@ -26,7 +26,7 @@ extension HonkHornFlashLightsClass: CapabilityParser {
             return
         }
 
-        guard capability.supportsAllMessageTypes(for: HonkHornFlashFlights.self) else {
+        guard capability.supports(HonkHornFlashFlights.MessageTypes.honkFlash) else {
             return
         }
 

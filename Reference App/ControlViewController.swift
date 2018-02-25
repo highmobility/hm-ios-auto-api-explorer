@@ -214,6 +214,9 @@ private extension ControlViewController {
         else if let windowsCommand = command as? WindowsCommand {
             lastWindowsStatus = windowsCommand.windows
         }
+        else if let windowsCommand = command as? WindowsStatusCommand {
+            lastWindowsStatus = windowsCommand.windows
+        }
 
         return true
     }
@@ -330,6 +333,9 @@ private extension ControlViewController {
                 vehicleLocationViewController?.updateCoordinate(command.coordinate)
 
             case let command as WindowsCommand:
+                windowsStatusViewController?.windowsUpdated(command.windows)
+
+            case let command as WindowsStatusCommand:
                 windowsStatusViewController?.windowsUpdated(command.windows)
 
             default:
