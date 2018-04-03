@@ -45,7 +45,7 @@ class ControlFunctionsManager {
         // - Find the ControlFunctionSettable ones from them
         // - Get the ControlFunctions from those
         // - Flatten the ControlFunction-arrays
-        let functions = commands.flatMap { $0 }.flatMap { $0 as? ControlFunctionable }.map { $0.controlFunctions }.flatMap { $0 }
+        let functions = commands.compactMap { $0 }.compactMap { $0 as? ControlFunctionable }.flatMap { $0.controlFunctions }
 
         // - Sort the ControlFunctions by name
         allControlFunctions = functions.sorted { $0.name < $1.name }

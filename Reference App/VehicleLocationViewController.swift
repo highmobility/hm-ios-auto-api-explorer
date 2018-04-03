@@ -116,7 +116,7 @@ private extension VehicleLocationViewController {
             return
         }
 
-        if let annotation = mapView.annotations.flatMap({ $0 as? MKPointAnnotation }).first {
+        if let annotation = mapView.annotations.compactMap({ $0 as? MKPointAnnotation }).first {
             UIView.animate(withDuration: 0.5) {
                 annotation.coordinate = coordinate
 

@@ -348,7 +348,7 @@ private extension ControlViewController {
 
         case .vehicleStatii:
             // Update all the functions
-            Car.shared.availableCommands.flatMap { $0 }.forEach {
+            Car.shared.availableCommands.compactMap { $0 }.forEach {
                 self.updateControlFunctions(with: $0)
             }
 

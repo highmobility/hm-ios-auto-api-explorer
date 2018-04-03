@@ -57,7 +57,7 @@ private extension UIViewController {
     // MARK: Computed Vars
 
     var infoLabel: UILabel {
-        var label: UILabel! = window.subviews.flatMap({ $0 as? UILabel }).first
+        var label: UILabel! = window.subviews.compactMap { $0 as? UILabel }.first
 
         // If it exists - return it
         guard label == nil else {

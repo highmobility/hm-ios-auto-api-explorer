@@ -36,7 +36,7 @@ extension VehicleStatii: ResponseParser {
             return nil
         }
 
-        vehicleStatus.states?.flatMap { $0 as? Command }.forEach {
+        vehicleStatus.states?.compactMap { $0 as? Command }.forEach {
             self.parseStatus($0)
         }
 

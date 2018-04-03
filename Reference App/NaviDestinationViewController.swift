@@ -120,7 +120,7 @@ extension NaviDestinationViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, didChange newState: MKAnnotationViewDragState, fromOldState oldState: MKAnnotationViewDragState) {
         switch newState {
         case .ending:
-            guard let annotation = mapView.annotations.flatMap({ $0 as? MKPointAnnotation }).first else {
+            guard let annotation = mapView.annotations.compactMap({ $0 as? MKPointAnnotation }).first else {
                 return
             }
 
@@ -192,7 +192,7 @@ private extension NaviDestinationViewController {
 
             self.name = addressPieces.joined(separator: ", ")
 
-            if let annotation = self.mapView.annotations.flatMap({ $0 as? MKPointAnnotation }).first {
+            if let annotation = self.mapView.annotations.compactMap({ $0 as? MKPointAnnotation }).first {
                 annotation.title = self.name
             }
         }
@@ -206,7 +206,7 @@ private extension NaviDestinationViewController {
             return
         }
 
-        if let annotation = mapView.annotations.flatMap({ $0 as? MKPointAnnotation }).first {
+        if let annotation = mapView.annotations.compactMap({ $0 as? MKPointAnnotation }).first {
             UIView.animate(withDuration: 0.5) {
                 annotation.coordinate = coordinate
                 annotation.title = name

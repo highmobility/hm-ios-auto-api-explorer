@@ -36,7 +36,7 @@ extension String {
 extension String: UInt8CollectionConvertible {
 
     var bytes: [UInt8] {
-        return characterPairs.flatMap { UInt8($0, radix: 16) }
+        return characterPairs.compactMap { UInt8($0, radix: 16) }
     }
 
     var data: Data {

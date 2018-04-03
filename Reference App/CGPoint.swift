@@ -53,6 +53,8 @@ extension CGPoint {
     ///
     /// - returns: Initialised CGPoint with x and y values set.
     init(radian: CGFloat, radius: CGFloat) {
+        self.init()
+
         x = cos(radian) * radius
         y = sin(radian) * radius
     }

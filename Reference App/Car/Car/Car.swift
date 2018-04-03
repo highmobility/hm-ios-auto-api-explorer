@@ -61,16 +61,15 @@ public class Car {
     // MARK: Methods
 
     public func clearBroadcastingFilter() {
-        LocalDevice.shared.clearBroadcastingFilter()
+        LocalDevice.shared.configuration.broadcastingFilter = nil
     }
 
     public func setBroadcastingFilter<C: Collection>(to vehicleSerial: C) where C.Iterator.Element == UInt8 {
-        do {
-            try LocalDevice.shared.setBroadcastingFilter(serial: vehicleSerial)
+        guard vehicleSerial.count == 9 else {
+            return print("Vehicle serial should be 9-bytes")
         }
-        catch {
-            print("Vehicle serial should be 9-bytes, error: \(error)")
-        }
+
+        LocalDevice.shared.configuration.broadcastingFilter = vehicleSerial.data
     }
 
     public func setTelematicsBasePath(to base: String) {

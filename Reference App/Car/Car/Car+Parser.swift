@@ -13,11 +13,11 @@ import Foundation
 extension Car {
 
     var capabilityParsers: [CapabilityParser] {
-        return commands.flatMap { $0 as? CapabilityParser }
+        return commands.compactMap { $0 as? CapabilityParser }
     }
 
     var responseParsers: [ResponseParser] {
-        return commands.flatMap { $0 as? ResponseParser }
+        return commands.compactMap { $0 as? ResponseParser }
     }
 
 
@@ -31,7 +31,7 @@ extension Car {
 
     func parseResponse(_ response: Command) {
         // There can only be ONE matching response
-        let matchingParsers = responseParsers.flatMap { $0.update(from: response) }
+        let matchingParsers = responseParsers.compactMap { $0.update(from: response) }
 
         guard let commandType = matchingParsers.first else {
             return

@@ -33,7 +33,7 @@ extension CarObserver {
 extension Car {
 
     var carObservers: [CarObserver] {
-        return anyHashableObservers.flatMap { $0 as? CarObserver }
+        return anyHashableObservers.compactMap { $0 as? CarObserver }
     }
 
 
