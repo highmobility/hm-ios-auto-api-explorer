@@ -39,6 +39,10 @@ extension Car: LinkDelegate {
         }
     }
 
+    public func link(_ link: Link, revokeCompleted bytes: [UInt8]) {
+        // Not interested in this app
+    }
+
     public func link(_ link: Link, stateChanged oldState: LinkState) {
         switch (link.state, oldState) {
         case (.authenticated, .connected):

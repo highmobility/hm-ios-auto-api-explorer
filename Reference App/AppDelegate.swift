@@ -55,18 +55,7 @@ private extension AppDelegate {
          */
 
 
-        do {
-            try LocalDevice.shared.initialise(
-                deviceCertificate: "dGVzdBqx6r+ZrF9cR9jXUdeN2d/5y2lNM3fmpKatIEyYIlv4OBj7ntd/6su2N9ppx1JaBM6iZ4kb21NWjZnHy4A5d8B1h+b3RZtEHRH66CG5W8v9KeW8Ys1jkFtPArQSWfGBZCYKBTES3f6xzavljmEki2lO0ckYDzstDaDA7y4PS0dCQ9IRePhAVmxaL1byZCAKZj160WM6",
-                devicePrivateKey: "uXrk0ueSBjPc2PxYwt7lSSpilOgDAUVZn8hIjjX9GV4=",
-                issuerPublicKey: "9pA3j5EZAfPE0lB4Y7UmS9lKcP0NQPSzICrF+x794Nw8Ss7gKrG6mTHX5MfvH0EzogqdE0LXkfUWwLLtSmqNzA=="
-            )
-        }
-        catch {
-            // Handle the error
-            print("Invalid initialisation parameters, please double check the snippet.")
-        }
-
+        <#Insert LocalDevice snippet#>
 
 
         // This just checks if you've seen the above (and are able to follow instructions)
@@ -77,7 +66,7 @@ private extension AppDelegate {
 
     func initialiseTelematics() {
 
-        let accessToken: String = "97f9bb32-e527-4c8b-9bc2-b157d7d31e9a"
+        let accessToken: String = <#Insert access token#>
 
 
         do {
