@@ -31,7 +31,6 @@ import UIKit
 private extension AppDelegate {
 
     func initialiseLocalDevice() {
-
         LocalDevice.shared.resetStorage()
 
         /*
@@ -65,7 +64,6 @@ private extension AppDelegate {
     }
 
     func initialiseTelematics() {
-
         let accessToken: String = <#Insert access token#>
 
 
