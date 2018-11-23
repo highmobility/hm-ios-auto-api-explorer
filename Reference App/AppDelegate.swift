@@ -31,7 +31,7 @@ import UIKit
 private extension AppDelegate {
 
     func initialiseLocalDevice() {
-        LocalDevice.shared.resetStorage()
+        HMLocalDevice.shared.resetStorage()
 
         /*
          * Before using HMKit, you'll have to initialise the LocalDevice singleton
@@ -54,21 +54,20 @@ private extension AppDelegate {
          */
 
 
-        <#Insert LocalDevice snippet#>
+        <#Insert HMLocalDevice initialising snippet#>
 
 
         // This just checks if you've seen the above (and are able to follow instructions)
-        guard LocalDevice.shared.certificate != nil else {
+        guard HMLocalDevice.shared.certificate != nil else {
             fatalError("Please initialise the HMKit with the instrucions above, thanks")
         }
     }
 
     func initialiseTelematics() {
-        let accessToken: String = <#Insert access token#>
-
+        let accessToken: String = "<#Insert Access Token#>"
 
         do {
-            try Telematics.downloadAccessCertificate(accessToken: accessToken) {
+            try HMTelematics.downloadAccessCertificate(accessToken: accessToken) {
                 switch $0 {
                 case .failure(let failureReason):
                     print("Failed to download Access Certificate for Telematics: \(failureReason)")

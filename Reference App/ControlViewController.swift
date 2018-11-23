@@ -157,7 +157,7 @@ private extension ControlViewController {
         else if let controller = viewController as? VehicleLocationViewController {
             vehicleLocationViewController = controller
 
-            if let coordinate = lastVehicleLocation?.coordinate {
+            if let coordinate = lastVehicleLocation?.coordinates {
                 vehicleLocationViewController?.updateCoordinate(coordinate)
             }
         }
@@ -330,7 +330,7 @@ private extension ControlViewController {
                 naviDestinationViewController?.updateCoordinate(command.coordinate, name: command.name)
 
             case let command as VehicleLocationClass:
-                vehicleLocationViewController?.updateCoordinate(command.coordinate)
+                vehicleLocationViewController?.updateCoordinate(command.coordinates)
 
             case let command as WindowsCommand:
                 windowsStatusViewController?.windowsUpdated(command.windows)

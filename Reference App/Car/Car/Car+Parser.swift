@@ -23,13 +23,13 @@ extension Car {
 
     // MARK: Methods - Parsing
 
-    func parseCapability(_ capability: Capability) {
+    func parseCapability(_ capability: AACapability) {
         capabilityParsers.forEach {
             $0.update(from: capability)
         }
     }
 
-    func parseResponse(_ response: Command) {
+    func parseResponse(_ response: AACommand) {
         // There can only be ONE matching response
         let matchingParsers = responseParsers.compactMap { $0.update(from: response) }
 

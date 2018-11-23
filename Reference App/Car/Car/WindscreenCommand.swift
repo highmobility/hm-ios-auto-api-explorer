@@ -21,12 +21,12 @@ extension WindscreenCommand: Parser {
 
 extension WindscreenCommand: CapabilityParser {
 
-    func update(from capability: Capability) {
-        guard capability.command is Windscreen.Type else {
+    func update(from capability: AACapability) {
+        guard capability.command is AAWindscreen.Type else {
             return
         }
 
-        guard capability.supports(Windscreen.MessageTypes.getWindscreenState, .windscreenState) else {
+        guard capability.supports(AAWindscreen.MessageTypes.getWindscreenState, .windscreenState) else {
             return
         }
 
@@ -36,8 +36,8 @@ extension WindscreenCommand: CapabilityParser {
 
 extension WindscreenCommand: ResponseParser {
 
-    @discardableResult func update(from response: Command) -> CommandType? {
-        guard let windscreen = response as? Windscreen else {
+    @discardableResult func update(from response: AACommand) -> CommandType? {
+        guard let windscreen = response as? AAWindscreen else {
             return nil
         }
 

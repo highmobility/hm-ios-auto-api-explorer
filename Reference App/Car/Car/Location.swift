@@ -29,7 +29,7 @@ public enum Location {
     }
 
 
-    init(position: Position) {
+    init(position: AALocation) {
         switch position {
         case .frontLeft:    self = .frontLeft
         case .frontRight:   self = .frontRight

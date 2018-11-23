@@ -42,15 +42,15 @@ extension FailureMessageClass: ParserResponseOnly {
 
 extension FailureMessageClass: ResponseParser {
 
-    @discardableResult func update(from response: Command) -> CommandType? {
-        guard let failureMessage = response as? FailureMessage else {
+    @discardableResult func update(from response: AACommand) -> CommandType? {
+        guard let failureMessage = response as? AAFailureMessage else {
             return nil
         }
 
-        guard let failureReason = failureMessage.failureReason,
+        guard let failureReason = failureMessage.reason,
             let reason = Reason(rawValue: failureReason.rawValue),
-            let failedMessageIdentifier = failureMessage.failedMessageIdentifier,
-            let failedMessageType = failureMessage.failedMessageType else {
+            let failedMessageIdentifier = failureMessage.messageIdentifier,
+            let failedMessageType = failureMessage.messageType else {
                 return nil
         }
 

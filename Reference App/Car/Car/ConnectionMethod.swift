@@ -12,6 +12,5 @@ import Foundation
 public enum ConnectionMethod {
 
     case bluetooth
-
     case telematics
 }

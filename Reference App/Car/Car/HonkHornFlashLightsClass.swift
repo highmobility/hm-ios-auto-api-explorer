@@ -21,12 +21,12 @@ extension HonkHornFlashLightsClass: Parser {
 
 extension HonkHornFlashLightsClass: CapabilityParser {
 
-    func update(from capability: Capability) {
-        guard capability.command is HonkHornFlashFlights.Type else {
+    func update(from capability: AACapability) {
+        guard capability.command is AAHonkHornFlashLights.Type else {
             return
         }
 
-        guard capability.supports(HonkHornFlashFlights.MessageTypes.honkFlash) else {
+        guard capability.supports(AAHonkHornFlashLights.MessageTypes.honkFlash) else {
             return
         }
 
@@ -36,8 +36,8 @@ extension HonkHornFlashLightsClass: CapabilityParser {
 
 extension HonkHornFlashLightsClass: ResponseParser {
 
-    @discardableResult func update(from response: Command) -> CommandType? {
-        guard let honkFlash = response as? HonkHornFlashFlights else {
+    @discardableResult func update(from response: AACommand) -> CommandType? {
+        guard let honkFlash = response as? AAHonkHornFlashLights else {
             return nil
         }
 

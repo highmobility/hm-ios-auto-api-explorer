@@ -15,20 +15,21 @@ extension Car {
     // MARK: Public
 
     public func deleteAccessCertificates<T: Collection>(for carSerial: T) where T.Iterator.Element == UInt8 {
-        while LocalDevice.shared.revokeCertificatePair(withSerial: carSerial) { }
+        while HMLocalDevice.shared.revokeSingleCertificate(withSerial: carSerial, isProviding: true) { }
+        while HMLocalDevice.shared.revokeSingleCertificate(withSerial: carSerial, isProviding: false) { }
     }
 
     public func downloadAccessCertificates(accessToken: String, completion: @escaping (Bool) -> Void) {
         do {
-            try Telematics.downloadAccessCertificate(accessToken: accessToken) {
+            try HMTelematics.downloadAccessCertificate(accessToken: accessToken) {
                 switch $0 {
                 case .failure(let reason):
                     print("Failed:", reason)
                     completion(false)
 
                 case .success:
-                    print("Registered access certificates:", LocalDevice.shared.registeredCertificates)
-                    print("Stored     access certificates:", LocalDevice.shared.storedCertificates)
+                    print("Registered access certificates:", HMLocalDevice.shared.registeredCertificates)
+                    print("Stored     access certificates:", HMLocalDevice.shared.storedCertificates)
 
                     completion(true)
                 }
@@ -43,7 +44,7 @@ extension Car {
 
     public func isPairedToVehicle<T: Collection>(serial: T) -> Bool where T.Iterator.Element == UInt8 {
         do {
-            return try LocalDevice.shared.isAuthorisedToVehicle(serial: serial)
+            return try HMLocalDevice.shared.isAuthorisedToVehicle(serial: serial)
         }
         catch {
             print("\(type(of: self)) -\(#function) Local Device uninitialised!")
@@ -53,7 +54,7 @@ extension Car {
     }
 
     public func resetAccessCertificatesStorage() {
-        LocalDevice.shared.resetStorage()
+        HMLocalDevice.shared.resetStorage()
     }
 }
 

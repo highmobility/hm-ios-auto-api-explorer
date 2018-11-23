@@ -21,12 +21,12 @@ extension EngineClass: Parser {
 
 extension EngineClass: CapabilityParser {
 
-    func update(from capability: Capability) {
-        guard capability.command is Engine.Type else {
+    func update(from capability: AACapability) {
+        guard capability.command is AAEngine.Type else {
             return
         }
 
-        guard capability.supportsAllMessageTypes(for: Engine.self) else {
+        guard capability.supportsAllMessageTypes(for: AAEngine.self) else {
             return
         }
 
@@ -36,16 +36,16 @@ extension EngineClass: CapabilityParser {
 
 extension EngineClass: ResponseParser {
 
-    @discardableResult func update(from response: Command) -> CommandType? {
-        guard let engine = response as? Engine else {
+    @discardableResult func update(from response: AACommand) -> CommandType? {
+        guard let engine = response as? AAEngine else {
             return nil
         }
 
-        guard let ignitionState = engine.isIgnitionOn else {
+        guard let ignitionState = engine.ignitionState else {
             return nil
         }
 
-        on = ignitionState
+        on = ignitionState == .active
 
         return .other(self)
     }

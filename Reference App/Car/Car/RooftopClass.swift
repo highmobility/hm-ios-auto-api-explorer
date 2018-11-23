@@ -22,12 +22,12 @@ extension RooftopClass: Parser {
 
 extension RooftopClass: CapabilityParser {
 
-    func update(from capability: Capability) {
-        guard capability.command is RooftopControl.Type else {
+    func update(from capability: AACapability) {
+        guard capability.command is AARooftopControl.Type else {
             return
         }
 
-        guard capability.supportsAllMessageTypes(for: RooftopControl.self) else {
+        guard capability.supportsAllMessageTypes(for: AARooftopControl.self) else {
             return
         }
 
@@ -37,8 +37,8 @@ extension RooftopClass: CapabilityParser {
 
 extension RooftopClass: ResponseParser {
 
-    @discardableResult func update(from response: Command) -> CommandType? {
-        guard let rooftop = response as? RooftopControl else {
+    @discardableResult func update(from response: AACommand) -> CommandType? {
+        guard let rooftop = response as? AARooftopControl else {
             return nil
         }
 

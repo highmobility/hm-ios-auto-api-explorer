@@ -13,7 +13,7 @@ import Foundation
 
 public class VehicleLocationClass: CommandClass {
 
-    public private(set) var coordinate = CLLocationCoordinate2D()
+    public private(set) var coordinates = CLLocationCoordinate2D()
 }
 
 extension VehicleLocationClass: Parser {
@@ -23,12 +23,12 @@ extension VehicleLocationClass: Parser {
 
 extension VehicleLocationClass: CapabilityParser {
 
-    func update(from capability: Capability) {
-        guard capability.command is VehicleLocation.Type else {
+    func update(from capability: AACapability) {
+        guard capability.command is AAVehicleLocation.Type else {
             return
         }
 
-        guard capability.supportsAllMessageTypes(for: VehicleLocation.self) else {
+        guard capability.supportsAllMessageTypes(for: AAVehicleLocation.self) else {
             return
         }
 
@@ -38,16 +38,16 @@ extension VehicleLocationClass: CapabilityParser {
 
 extension VehicleLocationClass: ResponseParser {
 
-    @discardableResult func update(from response: Command) -> CommandType? {
-        guard let vehicleLocation = response as? VehicleLocation else {
+    @discardableResult func update(from response: AACommand) -> CommandType? {
+        guard let vehicleLocation = response as? AAVehicleLocation else {
             return nil
         }
 
-        guard let coordinates = vehicleLocation.coordinate else {
+        guard let coordinates = vehicleLocation.coordinates else {
             return nil
         }
 
-        self.coordinate = coordinates
+        self.coordinates = coordinates
 
         return .other(self)
     }

@@ -25,7 +25,7 @@ extension Car {
     }
 
 
-    var activeLink: Link? {
+    var activeLink: HMLink? {
         if device.link?.state == .authenticated {
             return device.link
         }
@@ -34,8 +34,8 @@ extension Car {
     }
 
 
-    private var device: LocalDevice {
-        return LocalDevice.shared
+    private var device: HMLocalDevice {
+        return HMLocalDevice.shared
     }
 
 
@@ -59,7 +59,7 @@ extension Car {
             return
         }
 
-        guard LocalDevice.shared.certificate != nil else {
+        guard HMLocalDevice.shared.certificate != nil else {
             return print("Missing LocalDevice certificate and other values.")
         }
 

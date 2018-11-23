@@ -17,7 +17,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = TrunkAccess.getTrunkState
+        let bytes = AATrunkAccess.getState
 
         print("- Car - get trunk state")
 
@@ -29,8 +29,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let settings = TrunkAccess.Settings(lock: (lock ? .lock : .unlock), position: nil)
-        let bytes = TrunkAccess.openClose(settings)
+        let bytes = AATrunkAccess.controlTrunk((lock ? .locked : .unlocked), changePosition: nil)
 
         print("- Car - send trunk command, lock: \(lock)")
 
@@ -42,8 +41,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let settings = TrunkAccess.Settings(lock: nil, position: (open ? .open : .close))
-        let bytes = TrunkAccess.openClose(settings)
+        let bytes = AATrunkAccess.controlTrunk(nil, changePosition: (open ? .open : .closed))
 
         print("- Car - send trunk command, open: \(open)")
         

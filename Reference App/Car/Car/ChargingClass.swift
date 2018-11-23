@@ -25,12 +25,12 @@ extension ChargingClass: Parser {
 
 extension ChargingClass: CapabilityParser {
 
-    func update(from capability: Capability) {
-        guard capability.command is Charging.Type else {
+    func update(from capability: AACapability) {
+        guard capability.command is AACharging.Type else {
             return
         }
 
-        guard capability.supportsAllMessageTypes(for: Charging.self) else {
+        guard capability.supportsAllMessageTypes(for: AACharging.self) else {
             return
         }
 
@@ -40,13 +40,13 @@ extension ChargingClass: CapabilityParser {
 
 extension ChargingClass: ResponseParser {
 
-    @discardableResult func update(from response: Command) -> CommandType? {
-        guard let charging = response as? Charging else {
+    @discardableResult func update(from response: AACommand) -> CommandType? {
+        guard let charging = response as? AACharging else {
             return nil
         }
 
         guard let batteryLevel = charging.batteryLevel,
-            let chargingState = charging.chargingState else {
+            let chargingState = charging.state else {
                 return nil
         }
 

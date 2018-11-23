@@ -33,12 +33,12 @@ extension LightsClass: Parser {
 
 extension LightsClass: CapabilityParser {
 
-    func update(from capability: Capability) {
-        guard capability.command is Lights.Type else {
+    func update(from capability: AACapability) {
+        guard capability.command is AALights.Type else {
             return
         }
 
-        guard capability.supportsAllMessageTypes(for: Lights.self) else {
+        guard capability.supportsAllMessageTypes(for: AALights.self) else {
             return
         }
 
@@ -48,8 +48,8 @@ extension LightsClass: CapabilityParser {
 
 extension LightsClass: ResponseParser {
 
-    @discardableResult func update(from response: Command) -> CommandType? {
-        guard let lights = response as? Lights else {
+    @discardableResult func update(from response: AACommand) -> CommandType? {
+        guard let lights = response as? AALights else {
             return nil
         }
 
@@ -58,17 +58,17 @@ extension LightsClass: ResponseParser {
             return nil
         }
 
-        guard let interiorState = lights.isInteriorActive else {
+        guard let interiorState = lights.interiorState else {
             return nil
         }
 
-        guard let rearExteriorState = lights.isRearExteriorActive else {
+        guard let rearExteriorState = lights.rearExteriorState else {
             return nil
         }
 
         frontExteriorLightsState = frontLightsState
-        interiorLightsActive = interiorState
-        rearLightsActive = rearExteriorState
+        interiorLightsActive = interiorState == .active
+        rearLightsActive = rearExteriorState == .active
 
         return .other(self)
     }

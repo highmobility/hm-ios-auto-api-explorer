@@ -12,10 +12,10 @@ import Foundation
 
 class VehicleStatii: CommandClass {
 
-    let parseStatus: (Command) -> Void
+    let parseStatus: (AACommand) -> Void
 
 
-    init(parseStatus: @escaping (Command) -> Void) {
+    init(parseStatus: @escaping (AACommand) -> Void) {
         self.parseStatus = parseStatus
 
         super.init()
@@ -31,12 +31,12 @@ extension VehicleStatii: ParserResponseOnly {
 
 extension VehicleStatii: ResponseParser {
 
-    @discardableResult func update(from response: Command) -> CommandType? {
-        guard let vehicleStatus = response as? VehicleStatus else {
+    @discardableResult func update(from response: AACommand) -> CommandType? {
+        guard let vehicleStatus = response as? AAVehicleStatus else {
             return nil
         }
 
-        vehicleStatus.states?.compactMap { $0 as? Command }.forEach {
+        vehicleStatus.states?.compactMap { $0 as? AACommand }.forEach {
             self.parseStatus($0)
         }
 

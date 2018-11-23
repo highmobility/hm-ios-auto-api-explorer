@@ -17,7 +17,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = RemoteControl.getControlMode
+        let bytes = AARemoteControl.getControlState
 
         print("- Car - get remote control state")
 
@@ -29,7 +29,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = RemoteControl.controlCommand(RemoteControl.Control(speed: speed, angle: angle))
+        let bytes = AARemoteControl.controlCommand(angle: angle, speed: speed)
 
         print("- Car - send remote control command, angle: \(angle), speed: \(speed)")
 
@@ -41,7 +41,9 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = RemoteControl.startControlMode
+        guard let bytes = AARemoteControl.startStopControl(.start) else {
+            return failed(.invalidValues)
+        }
 
         print("- Car - send remote control command, START")
 
@@ -53,7 +55,9 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = RemoteControl.stopControlMode
+        guard let bytes = AARemoteControl.startStopControl(.stop) else {
+            return failed(.invalidValues)
+        }
 
         print("- Car - send remote control command, STOP")
 

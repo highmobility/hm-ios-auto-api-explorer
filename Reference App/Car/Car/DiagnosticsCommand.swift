@@ -23,12 +23,12 @@ extension DiagnosticsCommand: Parser {
 
 extension DiagnosticsCommand: CapabilityParser {
 
-    func update(from capability: Capability) {
-        guard capability.command is Diagnostics.Type else {
+    func update(from capability: AACapability) {
+        guard capability.command is AADiagnostics.Type else {
             return
         }
 
-        guard capability.supportsAllMessageTypes(for: Diagnostics.self) else {
+        guard capability.supportsAllMessageTypes(for: AADiagnostics.self) else {
             return
         }
 
@@ -38,8 +38,8 @@ extension DiagnosticsCommand: CapabilityParser {
 
 extension DiagnosticsCommand: ResponseParser {
 
-    @discardableResult func update(from response: Command) -> CommandType? {
-        guard let diagnostics = response as? Diagnostics else {
+    @discardableResult func update(from response: AACommand) -> CommandType? {
+        guard let diagnostics = response as? AADiagnostics else {
             return nil
         }
 

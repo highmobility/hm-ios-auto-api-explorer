@@ -21,12 +21,12 @@ extension ParkingBrakeCommand: Parser {
 
 extension ParkingBrakeCommand: CapabilityParser {
 
-    func update(from capability: Capability) {
-        guard capability.command is ParkingBrake.Type else {
+    func update(from capability: AACapability) {
+        guard capability.command is AAParkingBrake.Type else {
             return
         }
 
-        guard capability.supportsAllMessageTypes(for: ParkingBrake.self) else {
+        guard capability.supportsAllMessageTypes(for: AAParkingBrake.self) else {
             return
         }
 
@@ -36,16 +36,16 @@ extension ParkingBrakeCommand: CapabilityParser {
 
 extension ParkingBrakeCommand: ResponseParser {
 
-    @discardableResult func update(from response: Command) -> CommandType? {
-        guard let parkingBrake = response as? ParkingBrake else {
+    @discardableResult func update(from response: AACommand) -> CommandType? {
+        guard let parkingBrake = response as? AAParkingBrake else {
             return nil
         }
 
-        guard let isActive = parkingBrake.isActive else {
+        guard let state = parkingBrake.state else {
             return nil
         }
 
-        self.isActive = isActive
+        self.isActive = state == .active
 
         return .other(self)
     }

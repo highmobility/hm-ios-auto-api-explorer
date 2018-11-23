@@ -39,12 +39,12 @@ extension RemoteControlClass: Parser {
 
 extension RemoteControlClass: CapabilityParser {
 
-    func update(from capability: Capability) {
-        guard capability.command is RemoteControl.Type else {
+    func update(from capability: AACapability) {
+        guard capability.command is AARemoteControl.Type else {
             return
         }
 
-        guard capability.supportsAllMessageTypes(for: RemoteControl.self) else {
+        guard capability.supportsAllMessageTypes(for: AARemoteControl.self) else {
             return
         }
 
@@ -54,8 +54,8 @@ extension RemoteControlClass: CapabilityParser {
 
 extension RemoteControlClass: ResponseParser {
 
-    @discardableResult func update(from response: Command) -> CommandType? {
-        guard let remoteControl = response as? RemoteControl else {
+    @discardableResult func update(from response: AACommand) -> CommandType? {
+        guard let remoteControl = response as? AARemoteControl else {
             return nil
         }
 

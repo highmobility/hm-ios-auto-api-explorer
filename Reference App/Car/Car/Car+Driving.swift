@@ -140,7 +140,7 @@ private extension Car {
     }
 
     func updateAlivePing(withSpeed speed: Int8) {
-        LocalDevice.shared.configuration.isAlivePingActive = speed != 0
+        HMLocalDevice.shared.configuration.isAlivePingActive = speed != 0
     }
 
     func updateSpeedThreshold(movingForward: Bool) {

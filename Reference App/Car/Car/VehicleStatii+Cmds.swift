@@ -13,7 +13,7 @@ import Foundation
 public extension Car {
 
     public func getVehicleStatii(failed: @escaping CommandFailed) {
-        let bytes = VehicleStatus.getVehicleStatus
+        let bytes = AAVehicleStatus.getVehicleStatus
 
         print("- Car - get vehicle statii")
 
