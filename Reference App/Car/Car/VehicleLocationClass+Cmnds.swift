@@ -17,7 +17,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AAVehicleLocation.getLocation
+        let bytes = AAVehicleLocation.getLocation.bytes
 
         print("- Car - get vehicle location")
 

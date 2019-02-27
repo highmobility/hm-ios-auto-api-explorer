@@ -17,7 +17,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AAWindows.getWindowsState
+        let bytes = AAWindows.getWindowsState.bytes
 
         print("- Car - get windows state")
 
@@ -31,7 +31,7 @@ public extension Car {
 
         let state: AAPositionState = open ? .open : .closed
         let windows: [AAWindowPosition] = self.windows.windows.map { AAWindowPosition(location: $0.position, position: state) }
-        let bytes = AAWindows.controlWindows(openPercentages: nil, positions: windows)
+        let bytes = AAWindows.controlWindows(openPercentages: nil, positions: windows).bytes
 
         print("- Car - send windows command, open: \(open)")
 

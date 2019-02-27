@@ -23,7 +23,7 @@ extension ParserResponseOnly {
 
     // MARK: CapabilityParser
 
-    func update(from capability: AACapability) {
+    func update(from capability: AACapabilityValue) {
 
     }
 }

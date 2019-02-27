@@ -38,19 +38,12 @@ public class FailureMessageClass: CommandClass {
 
 extension FailureMessageClass: ParserResponseOnly {
 
-}
-
-extension FailureMessageClass: ResponseParser {
-
-    @discardableResult func update(from response: AACommand) -> CommandType? {
-        guard let failureMessage = response as? AAFailureMessage else {
-            return nil
-        }
-
-        guard let failureReason = failureMessage.reason,
+    @discardableResult func update(from response: AACapability) -> CommandType? {
+        guard let failureMessage = response as? AAFailureMessage,
+            let failureReason = failureMessage.reason?.value,
             let reason = Reason(rawValue: failureReason.rawValue),
-            let failedMessageIdentifier = failureMessage.messageIdentifier,
-            let failedMessageType = failureMessage.messageType else {
+            let failedMessageIdentifier = failureMessage.messageIdentifier?.value,
+            let failedMessageType = failureMessage.messageType?.value else {
                 return nil
         }
 

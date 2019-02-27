@@ -35,14 +35,16 @@ private extension Car {
         }
 
         do {
-            try link.sendCommand(command, sent: {
-                if let error = $0 {
+            try link.send(command: command) {
+                switch $0 {
+                case .error(let error):
                     failed(.miscellaneous(error))
-                }
-                else {
+
+                case .success:
                     // Bluetooth returns GOOD response through LinkDelegate
+                    break
                 }
-            })
+            }
         }
         catch {
             failed(.miscellaneous(error))

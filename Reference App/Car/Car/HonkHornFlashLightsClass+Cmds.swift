@@ -17,7 +17,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AAHonkHornFlashLights.activateEmergencyFlasher(activate ? .active : .inactive)
+        let bytes = AAHonkHornFlashLights.activateEmergencyFlasher(activate ? .active : .inactive).bytes
 
         print("- Car - send emergency flasher command, activate \(activate)")
 
@@ -29,7 +29,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        guard let bytes = AAHonkHornFlashLights.honkHorn(seconds: 1, flashLightsXTimes: 1) else {
+        guard let bytes = AAHonkHornFlashLights.honkHorn(seconds: 1, flashLightsXTimes: 1)?.bytes else {
             return failed(.invalidValues)
         }
 

@@ -26,16 +26,16 @@ extension Car {
 
 
     var activeLink: HMLink? {
-        if device.link?.state == .authenticated {
-            return device.link
+        if device.links.first?.state == .authenticated {
+            return device.links.first
         }
 
         return nil
     }
 
 
-    private var device: HMLocalDevice {
-        return HMLocalDevice.shared
+    private var device: HMKit {
+        return HMKit.shared
     }
 
 
@@ -59,8 +59,8 @@ extension Car {
             return
         }
 
-        guard HMLocalDevice.shared.certificate != nil else {
-            return print("Missing LocalDevice certificate and other values.")
+        guard HMKit.shared.certificate != nil else {
+            return print("Missing HMKit certificate and other values.")
         }
 
         do {

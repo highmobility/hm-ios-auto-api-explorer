@@ -23,13 +23,10 @@ extension NaviDestinationClass: Parser {
 
 extension NaviDestinationClass: CapabilityParser {
 
-    func update(from capability: AACapability) {
-        guard capability.command is AANaviDestination.Type else {
-            return
-        }
-
-        guard capability.supportsAllMessageTypes(for: AANaviDestination.self) else {
-            return
+    func update(from capability: AACapabilityValue) {
+        guard capability.capability is AANaviDestination.Type,
+            capability.supportsAllMessageTypes(for: AANaviDestination.self) else {
+                return
         }
 
         isAvailable = true
@@ -38,13 +35,10 @@ extension NaviDestinationClass: CapabilityParser {
 
 extension NaviDestinationClass: ResponseParser {
 
-    @discardableResult func update(from response: AACommand) -> CommandType? {
-        guard let naviDestination = response as? AANaviDestination else {
-            return nil
-        }
-
-        guard let coordinate = naviDestination.coordinates,
-            let name = naviDestination.name else {
+    @discardableResult func update(from response: AACapability) -> CommandType? {
+        guard let naviDestination = response as? AANaviDestination,
+            let coordinate = naviDestination.coordinates?.value,
+            let name = naviDestination.name?.value else {
                 return nil
         }
 

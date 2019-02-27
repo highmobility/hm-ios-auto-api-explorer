@@ -20,10 +20,10 @@ extension Car: HMLinkDelegate {
         catch {
             print("\(type(of: self)) -\(#function) failed to approve authorisation: \(error)")
 
-            link.dropLink()
+            link.disconnect()
 
-            if HMLocalDevice.shared.state == .broadcasting {
-                HMLocalDevice.shared.stopBroadcasting()
+            if HMKit.shared.state == .broadcasting {
+                HMKit.shared.stopBroadcasting()
             }
         }
     }
@@ -43,8 +43,8 @@ extension Car: HMLinkDelegate {
         // Not interested in this app
     }
 
-    public func link(_ link: HMLink, stateChanged oldState: HMLinkState) {
-        switch (link.state, oldState) {
+    public func link(_ link: HMLink, stateChanged newState: HMLinkState, previousState: HMLinkState) {
+        switch (newState, previousState) {
         case (.authenticated, .connected):
             DispatchQueue.main.asyncAfter(deadline: (DispatchTime.now() + 0.01)) {
                 self.connectionState = .authenticated
@@ -53,5 +53,9 @@ extension Car: HMLinkDelegate {
         default:
             break
         }
+    }
+
+    public func link(_ link: HMLink, receivedError error: HMProtocolError) {
+        print("Link received an error: \(error)")
     }
 }

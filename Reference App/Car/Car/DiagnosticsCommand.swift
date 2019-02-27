@@ -13,7 +13,6 @@ import Foundation
 public class DiagnosticsCommand: CommandClass {
 
     public private(set) var mileage: UInt32 = 0
-
     public private(set) var speed: Int16 = 0
 }
 
@@ -23,13 +22,10 @@ extension DiagnosticsCommand: Parser {
 
 extension DiagnosticsCommand: CapabilityParser {
 
-    func update(from capability: AACapability) {
-        guard capability.command is AADiagnostics.Type else {
-            return
-        }
-
-        guard capability.supportsAllMessageTypes(for: AADiagnostics.self) else {
-            return
+    func update(from capability: AACapabilityValue) {
+        guard capability.capability is AADiagnostics.Type,
+            capability.supportsAllMessageTypes(for: AADiagnostics.self) else {
+                return
         }
 
         isAvailable = true
@@ -38,13 +34,10 @@ extension DiagnosticsCommand: CapabilityParser {
 
 extension DiagnosticsCommand: ResponseParser {
 
-    @discardableResult func update(from response: AACommand) -> CommandType? {
-        guard let diagnostics = response as? AADiagnostics else {
-            return nil
-        }
-
-        guard let mileage = diagnostics.mileage,
-            let speed = diagnostics.speed else {
+    @discardableResult func update(from response: AACapability) -> CommandType? {
+        guard let diagnostics = response as? AADiagnostics,
+            let mileage = diagnostics.mileage?.value,
+            let speed = diagnostics.speed?.value else {
                 return nil
         }
 

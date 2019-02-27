@@ -21,7 +21,6 @@
 		207B465A203C56DA002F346D /* WindscreenCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4659203C56DA002F346D /* WindscreenCommand.swift */; };
 		207B467E203C8961002F346D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B467D203C8961002F346D /* Location.swift */; };
 		207DDA3520736A4A00B30370 /* AutoAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA3420736A4A00B30370 /* AutoAPI.framework */; };
-		207DDA3720736A4A00B30370 /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA3620736A4A00B30370 /* CommonCrypto.framework */; };
 		207DDA3920736A4A00B30370 /* HMCryptoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA3820736A4A00B30370 /* HMCryptoKit.framework */; };
 		207DDA3B20736A4A00B30370 /* HMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA3A20736A4A00B30370 /* HMKit.framework */; };
 		207DDA3D20736A4A00B30370 /* HMUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA3C20736A4A00B30370 /* HMUtilities.framework */; };
@@ -32,7 +31,7 @@
 		2094F2511F0FC46900779FFA /* ConnectionMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2501F0FC46900779FFA /* ConnectionMethod.swift */; };
 		2094F2541F0FC4B700779FFA /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2531F0FC4B700779FFA /* ConnectionState.swift */; };
 		2094F2561F0FC4D900779FFA /* Car+Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2551F0FC4D900779FFA /* Car+Observer.swift */; };
-		2094F2581F0FC81200779FFA /* Car+LocalDeviceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2571F0FC81200779FFA /* Car+LocalDeviceDelegate.swift */; };
+		2094F2581F0FC81200779FFA /* Car+HMKitDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2571F0FC81200779FFA /* Car+HMKitDelegate.swift */; };
 		2094F25A1F0FCB3100779FFA /* Car+LinkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2591F0FCB3100779FFA /* Car+LinkDelegate.swift */; };
 		2094F25C1F0FD16700779FFA /* Car+Certificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F25B1F0FD16700779FFA /* Car+Certificates.swift */; };
 		2094F25F1F0FD22600779FFA /* Collection+UInt8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F25D1F0FD22600779FFA /* Collection+UInt8.swift */; };
@@ -97,7 +96,7 @@
 		2094F2501F0FC46900779FFA /* ConnectionMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionMethod.swift; sourceTree = "<group>"; };
 		2094F2531F0FC4B700779FFA /* ConnectionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionState.swift; sourceTree = "<group>"; };
 		2094F2551F0FC4D900779FFA /* Car+Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+Observer.swift"; sourceTree = "<group>"; };
-		2094F2571F0FC81200779FFA /* Car+LocalDeviceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Car+LocalDeviceDelegate.swift"; path = "Car/Car+LocalDeviceDelegate.swift"; sourceTree = SOURCE_ROOT; };
+		2094F2571F0FC81200779FFA /* Car+HMKitDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Car+HMKitDelegate.swift"; path = "Car/Car+HMKitDelegate.swift"; sourceTree = SOURCE_ROOT; };
 		2094F2591F0FCB3100779FFA /* Car+LinkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+LinkDelegate.swift"; sourceTree = "<group>"; };
 		2094F25B1F0FD16700779FFA /* Car+Certificates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+Certificates.swift"; sourceTree = "<group>"; };
 		2094F25D1F0FD22600779FFA /* Collection+UInt8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+UInt8.swift"; sourceTree = "<group>"; };
@@ -140,7 +139,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				207DDA3520736A4A00B30370 /* AutoAPI.framework in Frameworks */,
-				207DDA3720736A4A00B30370 /* CommonCrypto.framework in Frameworks */,
 				207DDA3920736A4A00B30370 /* HMCryptoKit.framework in Frameworks */,
 				207DDA3B20736A4A00B30370 /* HMKit.framework in Frameworks */,
 				207DDA3D20736A4A00B30370 /* HMUtilities.framework in Frameworks */,
@@ -208,7 +206,7 @@
 				2094F25B1F0FD16700779FFA /* Car+Certificates.swift */,
 				20EDE5541F114E0200464E8E /* Car+Driving.swift */,
 				2094F2591F0FCB3100779FFA /* Car+LinkDelegate.swift */,
-				2094F2571F0FC81200779FFA /* Car+LocalDeviceDelegate.swift */,
+				2094F2571F0FC81200779FFA /* Car+HMKitDelegate.swift */,
 				2094F2551F0FC4D900779FFA /* Car+Observer.swift */,
 				20EDE52D1F110EC900464E8E /* Car+Parser.swift */,
 			);
@@ -408,7 +406,7 @@
 				204A9C752019DA370072F4D1 /* NaviDestinationClass.swift in Sources */,
 				20A429801F7BB065003FF9A2 /* WindowsCommand+Cmds.swift in Sources */,
 				20EDE5401F11161400464E8E /* Capabilities+Cmds.swift in Sources */,
-				2094F2581F0FC81200779FFA /* Car+LocalDeviceDelegate.swift in Sources */,
+				2094F2581F0FC81200779FFA /* Car+HMKitDelegate.swift in Sources */,
 				2094F24F1F0FB68C00779FFA /* Car.swift in Sources */,
 				20EDE53C1F1113AD00464E8E /* TrunkClass+Cmds.swift in Sources */,
 				2086D8EA1F13CCB0009F01D8 /* CommandType.swift in Sources */,

@@ -22,13 +22,10 @@ extension RooftopClass: Parser {
 
 extension RooftopClass: CapabilityParser {
 
-    func update(from capability: AACapability) {
-        guard capability.command is AARooftopControl.Type else {
-            return
-        }
-
-        guard capability.supportsAllMessageTypes(for: AARooftopControl.self) else {
-            return
+    func update(from capability: AACapabilityValue) {
+        guard capability.capability is AARooftopControl.Type,
+            capability.supportsAllMessageTypes(for: AARooftopControl.self) else {
+                return
         }
 
         isAvailable = true
@@ -37,18 +34,15 @@ extension RooftopClass: CapabilityParser {
 
 extension RooftopClass: ResponseParser {
 
-    @discardableResult func update(from response: AACommand) -> CommandType? {
-        guard let rooftop = response as? AARooftopControl else {
-            return nil
-        }
-
-        guard let dimmingState = rooftop.dimming,
-            let openState = rooftop.position else {
+    @discardableResult func update(from response: AACapability) -> CommandType? {
+        guard let rooftop = response as? AARooftopControl,
+            let dimmingState = rooftop.dimming?.value,
+            let openState = rooftop.position?.value else {
                 return nil
         }
 
-        dimmed = dimmingState == 100
-        open = openState == 100
+        dimmed = dimmingState == 1.0
+        open = openState == 1.0
 
         return .other(self)
     }

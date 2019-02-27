@@ -12,10 +12,10 @@ import Foundation
 
 class CapabilitiesClass: CommandClass {
 
-    let parseCapability: (AACapability) -> Void
+    let parseCapability: (AACapabilityValue) -> Void
 
 
-    init(parseCapability: @escaping (AACapability) -> Void) {
+    init(parseCapability: @escaping (AACapabilityValue) -> Void) {
         self.parseCapability = parseCapability
 
         super.init()
@@ -27,16 +27,14 @@ class CapabilitiesClass: CommandClass {
 
 extension CapabilitiesClass: ParserResponseOnly {
 
-}
-
-extension CapabilitiesClass: ResponseParser {
-
-    @discardableResult func update(from response: AACommand) -> CommandType? {
+    @discardableResult func update(from response: AACapability) -> CommandType? {
         guard let capabilities = response as? AACapabilities else {
             return nil
         }
 
-        capabilities.forEach {
+        capabilities.capabilities?.compactMap {
+            $0.value
+        }.forEach {
             self.parseCapability($0)
         }
 

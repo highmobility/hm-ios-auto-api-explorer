@@ -39,13 +39,10 @@ extension WindowsCommand: Parser {
 
 extension WindowsCommand: CapabilityParser {
 
-    func update(from capability: AACapability) {
-        guard capability.command is AAWindows.Type else {
-            return
-        }
-
-        guard capability.supportsAllMessageTypes(for: AAWindows.self) else {
-            return
+    func update(from capability: AACapabilityValue) {
+        guard capability.capability is AAWindows.Type,
+            capability.supportsAllMessageTypes(for: AAWindows.self) else {
+                return
         }
 
         isAvailable = true
@@ -54,17 +51,25 @@ extension WindowsCommand: CapabilityParser {
 
 extension WindowsCommand: ResponseParser {
 
-    @discardableResult func update(from response: AACommand) -> CommandType? {
-        guard let windows = response as? AAWindows else {
-            return nil
+    @discardableResult func update(from response: AACapability) -> CommandType? {
+        guard let windows = response as? AAWindows,
+            let positions = windows.positions else {
+                return nil
         }
 
-        guard let positions = windows.positions else {
-            return nil
+        open = positions.compactMap {
+            $0.value
+        }.filter {
+            $0.location == .hatch
+        }.contains {
+            $0.position == .open
         }
 
-        self.open = positions.filter { $0.location != .hatch }.contains { $0.position == .open }
-        self.windows = positions.map { WindowClass(open: $0) }
+        self.windows = positions.compactMap {
+            $0.value
+        }.map {
+            WindowClass(open: $0)
+        }
 
         return .other(self)
     }
@@ -82,13 +87,10 @@ extension WindowsStatusCommand: Parser {
 
 extension WindowsStatusCommand: CapabilityParser {
 
-    func update(from capability: AACapability) {
-        guard capability.command is AAWindows.Type else {
-            return
-        }
-
-        guard capability.supports(AAWindows.MessageTypes.windowsState) else {
-            return
+    func update(from capability: AACapabilityValue) {
+        guard capability.capability is AAWindows.Type,
+            capability.supports(AAWindows.MessageTypes.windowsState) else {
+                return
         }
 
         isAvailable = true
@@ -97,16 +99,17 @@ extension WindowsStatusCommand: CapabilityParser {
 
 extension WindowsStatusCommand: ResponseParser {
 
-    @discardableResult func update(from response: AACommand) -> CommandType? {
-        guard let windows = response as? AAWindows else {
-            return nil
+    @discardableResult func update(from response: AACapability) -> CommandType? {
+        guard let windows = response as? AAWindows,
+            let positions = windows.positions else {
+                return nil
         }
 
-        guard let positions = windows.positions else {
-            return nil
+        self.windows = positions.compactMap {
+            $0.value
+        }.map {
+            WindowClass(open: $0)
         }
-
-        self.windows = positions.map { WindowClass(open: $0) }
 
         return .other(self)
     }

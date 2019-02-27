@@ -61,7 +61,7 @@ public class Car {
     // MARK: Methods
 
     public func clearBroadcastingFilter() {
-        HMLocalDevice.shared.configuration.broadcastingFilter = nil
+        HMKit.shared.configuration.broadcastingFilter = nil
     }
 
     public func setBroadcastingFilter<C: Collection>(to vehicleSerial: C) where C.Iterator.Element == UInt8 {
@@ -69,7 +69,7 @@ public class Car {
             return print("Vehicle serial should be 9-bytes")
         }
 
-        HMLocalDevice.shared.configuration.broadcastingFilter = vehicleSerial.data
+        HMKit.shared.configuration.broadcastingFilter = vehicleSerial.data
     }
 
     public func setTelematicsBasePath(to base: String) {
@@ -89,9 +89,9 @@ public class Car {
         anyHashableObservers = Set()
         commands = [charging, climate, doors, doorsStatus, diagnostics, engine, honkHornFlashLights, lights, naviDestination, parkingBrake, remoteControl, rooftop, trunk, vehicleLocation, windows, windowsState, windscreen]
 
-        // Initialise some of the LocalDevice things
-        HMLocalDevice.loggingOptions = [.command, .error, .general, .bluetooth, .telematics, .urlRequests]
-        HMLocalDevice.shared.delegate = self
+        // Initialise some of the HMKit things
+        HMKit.shared.loggingOptions = [.command, .error, .general, .bluetooth, .telematics, .urlRequests]
+        HMKit.shared.delegate = self
 
         addMetaCommands()
     }

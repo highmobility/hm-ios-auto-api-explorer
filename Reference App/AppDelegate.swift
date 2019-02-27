@@ -21,8 +21,8 @@ import UIKit
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let _ = Car.shared      // Just so that the Car is initialised 
 
-        initialiseLocalDevice() // LocalDevice represents THIS device in HMKit
-        initialiseTelematics()  // Telematics connects to the car / emulator through the internet, not Bluetooth (like the LocalDevice does)
+        initialiseHMKit()
+        initialiseTelematics()  // Telematics connects to the car / emulator through the internet, not Bluetooth (like the HMKit does)
 
         return true
     }
@@ -30,11 +30,11 @@ import UIKit
 
 private extension AppDelegate {
 
-    func initialiseLocalDevice() {
-        HMLocalDevice.shared.resetStorage()
+    func initialiseHMKit() {
+        HMKit.shared.resetStorage()
 
         /*
-         * Before using HMKit, you'll have to initialise the LocalDevice singleton
+         * Before using HMKit, you'll have to initialise the HMKit singleton
          * with a snippet from the Platform Workspace:
          *
          *   1. Sign in to the workspace
@@ -45,7 +45,7 @@ private extension AppDelegate {
          * that looks something like this:
          *
          *   do {
-         *       try LocalDevice.shared.initialise(deviceCertificate: Base64String, devicePrivateKey: Base64String, issuerPublicKey: Base64String)
+         *       try HMKit.shared.initialise(deviceCertificate: Base64String, devicePrivateKey: Base64String, issuerPublicKey: Base64String)
          *   }
          *   catch {
          *       // Handle the error
@@ -54,17 +54,17 @@ private extension AppDelegate {
          */
 
 
-        <#Insert HMLocalDevice initialising snippet#>
+        <#Paste the HMKit INITIALISATION SNIPPET here#>
 
 
         // This just checks if you've seen the above (and are able to follow instructions)
-        guard HMLocalDevice.shared.certificate != nil else {
+        guard HMKit.shared.certificate != nil else {
             fatalError("Please initialise the HMKit with the instrucions above, thanks")
         }
     }
 
     func initialiseTelematics() {
-        let accessToken: String = "<#Insert Access Token#>"
+        let accessToken: String = "<#ACCESS TOKEN#>"
 
         do {
             try HMTelematics.downloadAccessCertificate(accessToken: accessToken) {

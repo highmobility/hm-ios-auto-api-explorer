@@ -11,6 +11,7 @@ import Foundation
 
 
 public enum Location {
+    case all
     case frontLeft
     case frontRight
     case hatch
@@ -20,6 +21,7 @@ public enum Location {
 
     var stringValue: String {
         switch self {
+        case .all:          return "all"
         case .frontLeft:    return "front left"
         case .frontRight:   return "front right"
         case .hatch:        return "hatch"
@@ -31,6 +33,7 @@ public enum Location {
 
     init(position: AALocation) {
         switch position {
+        case .all:          self = .all
         case .frontLeft:    self = .frontLeft
         case .frontRight:   self = .frontRight
         case .hatch:        self = .hatch

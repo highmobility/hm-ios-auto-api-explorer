@@ -52,8 +52,6 @@
 		207B4682203C9579002F346D /* WindowsStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4681203C9579002F346D /* WindowsStatusViewController.swift */; };
 		207DDA2A20736A4300B30370 /* HMUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA2520736A4000B30370 /* HMUtilities.framework */; };
 		207DDA2B20736A4300B30370 /* HMUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA2520736A4000B30370 /* HMUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		207DDA2C20736A4300B30370 /* CommonCrypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA2620736A4000B30370 /* CommonCrypto.framework */; };
-		207DDA2D20736A4300B30370 /* CommonCrypto.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA2620736A4000B30370 /* CommonCrypto.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		207DDA2E20736A4300B30370 /* HMCryptoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA2720736A4100B30370 /* HMCryptoKit.framework */; };
 		207DDA2F20736A4300B30370 /* HMCryptoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA2720736A4100B30370 /* HMCryptoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		207DDA3020736A4300B30370 /* AutoAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA2820736A4200B30370 /* AutoAPI.framework */; };
@@ -121,7 +119,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				207DDA2B20736A4300B30370 /* HMUtilities.framework in Embed Frameworks */,
-				207DDA2D20736A4300B30370 /* CommonCrypto.framework in Embed Frameworks */,
 				2088B1041F12949F00A0F5A7 /* Car.framework in Embed Frameworks */,
 				207DDA3120736A4300B30370 /* AutoAPI.framework in Embed Frameworks */,
 				207DDA3320736A4300B30370 /* HMKit.framework in Embed Frameworks */,
@@ -177,7 +174,6 @@
 		207B467B203C83D3002F346D /* DoorsStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsStatusViewController.swift; sourceTree = "<group>"; };
 		207B4681203C9579002F346D /* WindowsStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowsStatusViewController.swift; sourceTree = "<group>"; };
 		207DDA2520736A4000B30370 /* HMUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HMUtilities.framework; sourceTree = "<group>"; };
-		207DDA2620736A4000B30370 /* CommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CommonCrypto.framework; sourceTree = "<group>"; };
 		207DDA2720736A4100B30370 /* HMCryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HMCryptoKit.framework; sourceTree = "<group>"; };
 		207DDA2820736A4200B30370 /* AutoAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AutoAPI.framework; sourceTree = "<group>"; };
 		207DDA2920736A4300B30370 /* HMKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HMKit.framework; sourceTree = "<group>"; };
@@ -224,7 +220,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				207DDA2A20736A4300B30370 /* HMUtilities.framework in Frameworks */,
-				207DDA2C20736A4300B30370 /* CommonCrypto.framework in Frameworks */,
 				2088B1031F12949F00A0F5A7 /* Car.framework in Frameworks */,
 				207DDA3020736A4300B30370 /* AutoAPI.framework in Frameworks */,
 				207DDA3220736A4300B30370 /* HMKit.framework in Frameworks */,
@@ -304,7 +299,6 @@
 			isa = PBXGroup;
 			children = (
 				207DDA2820736A4200B30370 /* AutoAPI.framework */,
-				207DDA2620736A4000B30370 /* CommonCrypto.framework */,
 				207DDA2720736A4100B30370 /* HMCryptoKit.framework */,
 				207DDA2920736A4300B30370 /* HMKit.framework */,
 				207DDA2520736A4000B30370 /* HMUtilities.framework */,

@@ -12,5 +12,5 @@ import Foundation
 
 protocol ResponseParser {
 
-    @discardableResult func update(from response: AACommand) -> CommandType?
+    @discardableResult func update(from response: AACapability) -> CommandType?
 }

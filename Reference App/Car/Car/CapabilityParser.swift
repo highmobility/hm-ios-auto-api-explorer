@@ -12,5 +12,5 @@ import Foundation
 
 protocol CapabilityParser {
 
-    func update(from capability: AACapability)
+    func update(from capability: AACapabilityValue)
 }

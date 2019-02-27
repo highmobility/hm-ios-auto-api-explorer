@@ -1,5 +1,5 @@
 //
-//  Car+LocalDeviceDelegate.swift
+//  Car+HMKitDelegate.swift
 //  Car
 //
 //  Created by Mikk Rätsep on 07/07/2017.
@@ -10,9 +10,9 @@ import Foundation
 import HMKit
 
 
-extension Car: HMLocalDeviceDelegate {
+extension Car: HMKitDelegate {
 
-    public func localDevice(didLoseLink link: HMLink) {
+    public func hmKit(didLoseLink link: HMLink) {
         link.delegate = nil
 
         // This gives time for HMKit to start it's broadcasting again (that it does automatically after losing a link),
@@ -20,24 +20,24 @@ extension Car: HMLocalDeviceDelegate {
         DispatchQueue.main.asyncAfter(deadline: (DispatchTime.now() + 0.01)) {
             self.connectionState = .disconnected
 
-            if HMLocalDevice.shared.state == .broadcasting {
-                HMLocalDevice.shared.stopBroadcasting()
+            if HMKit.shared.state == .broadcasting {
+                HMKit.shared.stopBroadcasting()
             }
         }
     }
 
-    public func localDevice(didReceiveLink link: HMLink) {
+    public func hmKit(didReceiveLink link: HMLink) {
         link.delegate = self
 
         connectionState = .connected
 
-        if HMLocalDevice.shared.state == .broadcasting {
-            HMLocalDevice.shared.stopBroadcasting()
+        if HMKit.shared.state == .broadcasting {
+            HMKit.shared.stopBroadcasting()
         }
     }
 
-    public func localDevice(stateChanged state: HMLocalDeviceState, oldState: HMLocalDeviceState) {
-        switch (state, oldState) {
+    public func hmKit(stateChanged newState: HMKitState, oldState: HMKitState) {
+        switch (newState, oldState) {
         case (.bluetoothUnavailable, _):
             connectionState = .unavailable
 

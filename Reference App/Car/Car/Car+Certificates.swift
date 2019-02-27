@@ -15,8 +15,8 @@ extension Car {
     // MARK: Public
 
     public func deleteAccessCertificates<T: Collection>(for carSerial: T) where T.Iterator.Element == UInt8 {
-        while HMLocalDevice.shared.revokeSingleCertificate(withSerial: carSerial, isProviding: true) { }
-        while HMLocalDevice.shared.revokeSingleCertificate(withSerial: carSerial, isProviding: false) { }
+        while let _ = HMKit.shared.revokeCertificate(withSerial: carSerial, type: .providing) { }
+        while let _ = HMKit.shared.revokeCertificate(withSerial: carSerial, type: .gaining) { }
     }
 
     public func downloadAccessCertificates(accessToken: String, completion: @escaping (Bool) -> Void) {
@@ -28,8 +28,8 @@ extension Car {
                     completion(false)
 
                 case .success:
-                    print("Registered access certificates:", HMLocalDevice.shared.registeredCertificates)
-                    print("Stored     access certificates:", HMLocalDevice.shared.storedCertificates)
+                    print("Registered access certificates:", HMKit.shared.registeredCertificates)
+                    print("Stored     access certificates:", HMKit.shared.storedCertificates)
 
                     completion(true)
                 }
@@ -44,7 +44,7 @@ extension Car {
 
     public func isPairedToVehicle<T: Collection>(serial: T) -> Bool where T.Iterator.Element == UInt8 {
         do {
-            return try HMLocalDevice.shared.isAuthorisedToVehicle(serial: serial)
+            return try HMKit.shared.isAuthorised(toVehicle: serial)
         }
         catch {
             print("\(type(of: self)) -\(#function) Local Device uninitialised!")
@@ -54,7 +54,7 @@ extension Car {
     }
 
     public func resetAccessCertificatesStorage() {
-        HMLocalDevice.shared.resetStorage()
+        HMKit.shared.resetStorage()
     }
 }
 

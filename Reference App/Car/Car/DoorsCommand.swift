@@ -36,13 +36,10 @@ extension DoorsCommand: Parser {
 
 extension DoorsCommand: CapabilityParser {
 
-    func update(from capability: AACapability) {
-        guard capability.command is AADoorLocks.Type else {
-            return
-        }
-
-        guard capability.supportsAllMessageTypes(for: AADoorLocks.self) else {
-            return
+    func update(from capability: AACapabilityValue) {
+        guard capability.capability is AADoorLocks.Type,
+            capability.supportsAllMessageTypes(for: AADoorLocks.self) else {
+                return
         }
 
         isAvailable = true
@@ -51,18 +48,22 @@ extension DoorsCommand: CapabilityParser {
 
 extension DoorsCommand: ResponseParser {
 
-    @discardableResult func update(from response: AACommand) -> CommandType? {
-        guard let doorLocks = response as? AADoorLocks else {
-            return nil
-        }
-
-        guard let locks = doorLocks.locks,
-            let positions = doorLocks.positions else {
+    @discardableResult func update(from response: AACapability) -> CommandType? {
+        guard let doorLocks = response as? AADoorLocks,
+            let locks = doorLocks.locks,
+            let positions = doorLocks.positions?.compactMap({ $0.value }) else {
                 return nil
         }
 
-        self.locked = locks.allSatisfy { $0.lock == .locked }
-        self.doors = locks.compactMap { lock in
+        locked = locks.compactMap {
+            $0.value
+        }.allSatisfy {
+            $0.lock == .locked
+        }
+
+        doors = locks.compactMap {
+            $0.value
+        }.compactMap { lock in
             guard let position = positions.first(where: { $0.location == lock.location }) else {
                 return nil
             }
@@ -86,13 +87,10 @@ extension DoorsStatusCommand: Parser {
 
 extension DoorsStatusCommand: CapabilityParser {
 
-    func update(from capability: AACapability) {
-        guard capability.command is AADoorLocks.Type else {
-            return
-        }
-
-        guard capability.supports(AADoorLocks.MessageTypes.locksState) else {
-            return
+    func update(from capability: AACapabilityValue) {
+        guard capability.capability is AADoorLocks.Type,
+            capability.supports(AADoorLocks.MessageTypes.locksState) else {
+                return
         }
 
         isAvailable = true
@@ -101,17 +99,16 @@ extension DoorsStatusCommand: CapabilityParser {
 
 extension DoorsStatusCommand: ResponseParser {
 
-    @discardableResult func update(from response: AACommand) -> CommandType? {
-        guard let doorLocks = response as? AADoorLocks else {
-            return nil
-        }
-
-        guard let locks = doorLocks.locks,
-            let positions = doorLocks.positions else {
+    @discardableResult func update(from response: AACapability) -> CommandType? {
+        guard let doorLocks = response as? AADoorLocks,
+            let locks = doorLocks.locks,
+            let positions = doorLocks.positions?.compactMap({ $0.value }) else {
                 return nil
         }
 
-        self.doors = locks.compactMap { lock in
+        doors = locks.compactMap {
+            $0.value
+        }.compactMap { lock in
             guard let position = positions.first(where: { $0.location == lock.location }) else {
                 return nil
             }

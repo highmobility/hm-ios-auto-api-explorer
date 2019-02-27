@@ -22,13 +22,10 @@ extension TrunkClass: Parser {
 
 extension TrunkClass: CapabilityParser {
 
-    func update(from capability: AACapability) {
-        guard capability.command is AATrunkAccess.Type else {
-            return
-        }
-
-        guard capability.supportsAllMessageTypes(for: AATrunkAccess.self) else {
-            return
+    func update(from capability: AACapabilityValue) {
+        guard capability.capability is AATrunkAccess.Type,
+            capability.supportsAllMessageTypes(for: AATrunkAccess.self) else {
+                return
         }
 
         isAvailable = true
@@ -37,13 +34,10 @@ extension TrunkClass: CapabilityParser {
 
 extension TrunkClass: ResponseParser {
 
-    @discardableResult func update(from response: AACommand) -> CommandType? {
-        guard let trunkAccess = response as? AATrunkAccess else {
-            return nil
-        }
-
-        guard let lockState = trunkAccess.lock,
-            let positionState = trunkAccess.position else {
+    @discardableResult func update(from response: AACapability) -> CommandType? {
+        guard let trunkAccess = response as? AATrunkAccess,
+            let lockState = trunkAccess.lock?.value,
+            let positionState = trunkAccess.position?.value else {
                 return nil
         }
 

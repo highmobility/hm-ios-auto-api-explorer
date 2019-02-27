@@ -33,13 +33,10 @@ extension LightsClass: Parser {
 
 extension LightsClass: CapabilityParser {
 
-    func update(from capability: AACapability) {
-        guard capability.command is AALights.Type else {
-            return
-        }
-
-        guard capability.supportsAllMessageTypes(for: AALights.self) else {
-            return
+    func update(from capability: AACapabilityValue) {
+        guard capability.capability is AALights.Type,
+            capability.supportsAllMessageTypes(for: AALights.self) else {
+                return
         }
 
         isAvailable = true
@@ -48,26 +45,17 @@ extension LightsClass: CapabilityParser {
 
 extension LightsClass: ResponseParser {
 
-    @discardableResult func update(from response: AACommand) -> CommandType? {
-        guard let lights = response as? AALights else {
-            return nil
-        }
-
-        // Extract the values
-        guard let frontExteriorState = lights.frontExterior, let frontLightsState = FrontExteriorLightState(rawValue: frontExteriorState.rawValue) else {
-            return nil
-        }
-
-        guard let interiorState = lights.interiorState else {
-            return nil
-        }
-
-        guard let rearExteriorState = lights.rearExteriorState else {
-            return nil
+    @discardableResult func update(from response: AACapability) -> CommandType? {
+        guard let lights = response as? AALights,
+            let frontExteriorState = lights.frontExterior?.value,
+            let frontLightsState = FrontExteriorLightState(rawValue: frontExteriorState.rawValue),
+            let interiorState = lights.interiorLamps,
+            let rearExteriorState = lights.rearExteriorState?.value else {
+                return nil
         }
 
         frontExteriorLightsState = frontLightsState
-        interiorLightsActive = interiorState == .active
+        interiorLightsActive = interiorState.contains(where: { $0.value?.state == .active })
         rearLightsActive = rearExteriorState == .active
 
         return .other(self)

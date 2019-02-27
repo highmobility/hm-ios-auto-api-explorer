@@ -17,7 +17,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AACharging.getChargingState
+        let bytes = AACharging.getChargingState.bytes
 
         print("- Car - get charging state")
 
@@ -29,7 +29,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AACharging.startStopCharging(start ? .active : .inactive)
+        let bytes = AACharging.startStopCharging(start ? .active : .inactive).bytes
 
         print("- Car - send charging command, start: \(start)")
 

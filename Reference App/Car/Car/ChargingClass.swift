@@ -12,10 +12,10 @@ import Foundation
 
 public class ChargingClass: CommandClass {
 
-    public typealias Percentage = UInt8
+    public typealias Percentage = Double
 
 
-    public private(set) var battery: Percentage = Percentage.max
+    public private(set) var battery: Percentage = .nan
     public private(set) var charging: Bool = false
 }
 
@@ -25,13 +25,10 @@ extension ChargingClass: Parser {
 
 extension ChargingClass: CapabilityParser {
 
-    func update(from capability: AACapability) {
-        guard capability.command is AACharging.Type else {
-            return
-        }
-
-        guard capability.supportsAllMessageTypes(for: AACharging.self) else {
-            return
+    func update(from capability: AACapabilityValue) {
+        guard capability.capability is AACharging.Type,
+            capability.supportsAllMessageTypes(for: AACharging.self) else {
+                return
         }
 
         isAvailable = true
@@ -40,13 +37,10 @@ extension ChargingClass: CapabilityParser {
 
 extension ChargingClass: ResponseParser {
 
-    @discardableResult func update(from response: AACommand) -> CommandType? {
-        guard let charging = response as? AACharging else {
-            return nil
-        }
-
-        guard let batteryLevel = charging.batteryLevel,
-            let chargingState = charging.state else {
+    @discardableResult func update(from response: AACapability) -> CommandType? {
+        guard let charging = response as? AACharging,
+            let batteryLevel = charging.batteryLevel?.value,
+            let chargingState = charging.state?.value else {
                 return nil
         }
 
