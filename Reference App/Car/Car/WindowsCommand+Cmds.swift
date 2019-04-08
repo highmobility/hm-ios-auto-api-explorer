@@ -12,7 +12,7 @@ import Foundation
 
 public extension Car {
 
-    public func getWindowsState(failed: @escaping CommandFailed) {
+    func getWindowsState(failed: @escaping CommandFailed) {
         guard windows.isAvailable else {
             return failed(.needsInitialState)
         }
@@ -24,7 +24,7 @@ public extension Car {
         sendCommand(bytes, failed: failed)
     }
 
-    public func sendWindowsCommand(open: Bool, failed: @escaping CommandFailed) {
+    func sendWindowsCommand(open: Bool, failed: @escaping CommandFailed) {
         guard self.windows.isAvailable else {
             return failed(.needsInitialState)
         }

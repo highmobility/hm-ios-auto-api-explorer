@@ -19,7 +19,7 @@ extension FullCellCollectionViewFlowLayout: CustomFlowLayoutCommonInitialiser {
         return { $0.size }
     }
 
-    var customScrollDirection: UICollectionViewScrollDirection { return .horizontal }
+    var customScrollDirection: UICollectionView.ScrollDirection { return .horizontal }
 
     var spacingConstant: CGFloat { return 0.0 }
 }

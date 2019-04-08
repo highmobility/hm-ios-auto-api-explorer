@@ -12,7 +12,7 @@ import Foundation
 
 public extension Car {
 
-    public func sendParkingBrake(activate: Bool, failed: @escaping CommandFailed) {
+    func sendParkingBrake(activate: Bool, failed: @escaping CommandFailed) {
         guard parkingBrake.isAvailable else {
             return failed(.needsInitialState)
         }

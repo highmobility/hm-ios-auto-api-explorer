@@ -13,7 +13,7 @@ import Foundation
 
 public extension Car {
 
-    public func getNaviDestination(failed: @escaping CommandFailed) {
+    func getNaviDestination(failed: @escaping CommandFailed) {
         guard naviDestination.isAvailable else {
             return failed(.needsInitialState)
         }
@@ -25,7 +25,7 @@ public extension Car {
         sendCommand(bytes, failed: failed)
     }
 
-    public func sendNaviDestination(coordinate: CLLocationCoordinate2D, name: String, failed: @escaping CommandFailed) {
+    func sendNaviDestination(coordinate: CLLocationCoordinate2D, name: String, failed: @escaping CommandFailed) {
         guard naviDestination.isAvailable else {
             return failed(.needsInitialState)
         }

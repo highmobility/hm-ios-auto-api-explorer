@@ -12,7 +12,7 @@ import Foundation
 
 public extension Car {
 
-    public func sendEngineCommand(on: Bool, failed: @escaping CommandFailed) {
+    func sendEngineCommand(on: Bool, failed: @escaping CommandFailed) {
         guard engine.isAvailable else {
             return failed(.needsInitialState)
         }

@@ -12,7 +12,7 @@ import Foundation
 
 public extension Car {
 
-    public func getVehicleLocation(failed: @escaping CommandFailed) {
+    func getVehicleLocation(failed: @escaping CommandFailed) {
         guard vehicleLocation.isAvailable else {
             return failed(.needsInitialState)
         }

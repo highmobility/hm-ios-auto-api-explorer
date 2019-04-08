@@ -13,7 +13,7 @@ import HMKit
 
 public extension Car {
 
-    public typealias CommandFailed = (CommandError?) -> Void
+    typealias CommandFailed = (CommandError?) -> Void
 
 
     func sendCommand<C: Collection>(_ command: C, failed: @escaping CommandFailed) where C.Iterator.Element == UInt8 {

@@ -16,7 +16,7 @@ extension Collection where Iterator.Element == UInt8 {
     }
 
     var data: Data {
-        return Data(bytes: bytes)
+        return Data(bytes)
     }
 
     var hexString: String {

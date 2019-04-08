@@ -14,7 +14,7 @@ class ConnectViewController: UIViewController {
 
     @IBOutlet var connectionSegment: UISegmentedControl! {
         didSet {
-            connectionSegment.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.white], for: .selected)
+            connectionSegment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white], for: .selected)
             connectionSegment.setEnabled(Car.shared.isBluetoothEvenPossible, forSegmentAt: 1)
 
             connectionSegment.selectedSegmentIndex = 0

@@ -12,7 +12,7 @@ import Foundation
 
 public extension Car {
 
-    public func sendEmergencyFlasherCommand(activate: Bool, failed: @escaping CommandFailed) {
+    func sendEmergencyFlasherCommand(activate: Bool, failed: @escaping CommandFailed) {
         guard honkHornFlashLights.isAvailable else {
             return failed(.needsInitialState)
         }
@@ -24,7 +24,7 @@ public extension Car {
         sendCommand(bytes, failed: failed)
     }
 
-    public func sendHonkHornFlashLightsOnce(failed: @escaping CommandFailed) {
+    func sendHonkHornFlashLightsOnce(failed: @escaping CommandFailed) {
         guard honkHornFlashLights.isAvailable else {
             return failed(.needsInitialState)
         }

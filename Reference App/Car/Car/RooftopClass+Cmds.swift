@@ -12,7 +12,7 @@ import Foundation
 
 public extension Car {
 
-    public func getRooftopState(failed: @escaping CommandFailed) {
+    func getRooftopState(failed: @escaping CommandFailed) {
         guard rooftop.isAvailable else {
             return failed(.needsInitialState)
         }
@@ -24,7 +24,7 @@ public extension Car {
         sendCommand(bytes, failed: failed)
     }
 
-    public func sendRooftopCommand(dimmed: Bool, failed: @escaping CommandFailed) {
+    func sendRooftopCommand(dimmed: Bool, failed: @escaping CommandFailed) {
         guard rooftop.isAvailable else {
             return failed(.needsInitialState)
         }
@@ -36,7 +36,7 @@ public extension Car {
         sendCommand(bytes, failed: failed)
     }
 
-    public func sendRooftopCommand(open: Bool, failed: @escaping CommandFailed) {
+    func sendRooftopCommand(open: Bool, failed: @escaping CommandFailed) {
         guard rooftop.isAvailable else {
             return failed(.needsInitialState)
         }

@@ -40,7 +40,7 @@ extension String: UInt8CollectionConvertible {
     }
 
     var data: Data {
-        return Data(bytes: bytes)
+        return Data(bytes)
     }
 
     var hex: String {

@@ -98,7 +98,7 @@ private extension UIViewController {
         window.alpha = 0.0
         window.backgroundColor = navigationController?.navigationBar.barTintColor
         window.isHidden = false
-        window.windowLevel = UIWindowLevelStatusBar
+        window.windowLevel = UIWindow.Level.statusBar
 
         // Add it to the strong refenrece variable
         UIViewController.strongWindow = window

@@ -12,7 +12,7 @@ import Foundation
 
 public extension Car {
 
-    public func getClimateState(failed: @escaping CommandFailed) {
+    func getClimateState(failed: @escaping CommandFailed) {
         guard climate.isAvailable else {
             return failed(.needsInitialState)
         }
@@ -24,7 +24,7 @@ public extension Car {
         sendCommand(bytes, failed: failed)
     }
 
-    public func sendHVACCommand(activate: Bool, failed: @escaping CommandFailed) {
+    func sendHVACCommand(activate: Bool, failed: @escaping CommandFailed) {
         guard climate.isAvailable else {
             return failed(.needsInitialState)
         }
@@ -36,7 +36,7 @@ public extension Car {
         sendCommand(bytes, failed: failed)
     }
 
-    public func sendWindshieldDefrostingCommand(defrosting: Bool, failed: @escaping CommandFailed) {
+    func sendWindshieldDefrostingCommand(defrosting: Bool, failed: @escaping CommandFailed) {
         guard climate.isAvailable else {
             return failed(.needsInitialState)
         }

@@ -44,7 +44,7 @@ import UIKit
 
         animationGroup.autoreverses     = true
         animationGroup.duration         = Constants.animDuration
-        animationGroup.timingFunction   = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animationGroup.timingFunction   = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         animationGroup.animations       = [scaleAnimation, borderAnimation]
 
         border.add(animationGroup, forKey: nil)

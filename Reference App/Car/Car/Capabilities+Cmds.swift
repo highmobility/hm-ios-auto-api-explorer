@@ -12,7 +12,7 @@ import Foundation
 
 public extension Car {
 
-    public func getCapabilities(failed: @escaping CommandFailed) {
+    func getCapabilities(failed: @escaping CommandFailed) {
         let bytes = AACapabilities.getCapabilities.bytes
 
         // TODO: Should wipe the car clean as well then?

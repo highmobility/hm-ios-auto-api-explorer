@@ -12,7 +12,7 @@ import Foundation
 
 public extension Car {
 
-    public func getRemoteControlStatus(failed: @escaping CommandFailed) {
+    func getRemoteControlStatus(failed: @escaping CommandFailed) {
         guard remoteControl.isAvailable else {
             return failed(.needsInitialState)
         }
@@ -24,7 +24,7 @@ public extension Car {
         sendCommand(bytes, failed: failed)
     }
 
-    public func sendRemoteControlDrivingCommand(angle: RemoteControlClass.Angle, speed: RemoteControlClass.Speed, failed: @escaping CommandFailed) {
+    func sendRemoteControlDrivingCommand(angle: RemoteControlClass.Angle, speed: RemoteControlClass.Speed, failed: @escaping CommandFailed) {
         guard remoteControl.isAvailable else {
             return failed(.needsInitialState)
         }
@@ -36,7 +36,7 @@ public extension Car {
         sendCommand(bytes, failed: failed)
     }
 
-    public func sendRemoteControlStartCommand(failed: @escaping CommandFailed) {
+    func sendRemoteControlStartCommand(failed: @escaping CommandFailed) {
         guard remoteControl.isAvailable else {
             return failed(.needsInitialState)
         }
@@ -50,7 +50,7 @@ public extension Car {
         sendCommand(bytes, failed: failed)
     }
 
-    public func sendRemoteControlStopCommand(failed: @escaping CommandFailed) {
+    func sendRemoteControlStopCommand(failed: @escaping CommandFailed) {
         guard remoteControl.isAvailable else {
             return failed(.needsInitialState)
         }

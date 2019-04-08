@@ -19,7 +19,7 @@ class DualControlTableViewCell: ControlTableViewCell {
 
     @IBOutlet var segment: UISegmentedControl! {
         didSet {
-            segment.setTitleTextAttributes([NSAttributedStringKey.foregroundColor : UIColor.white], for: .selected)
+            segment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.white], for: .selected)
         }
     }
 

@@ -12,7 +12,7 @@ import Foundation
 
 public extension Car {
 
-    public func getTrunkState(failed: @escaping CommandFailed) {
+    func getTrunkState(failed: @escaping CommandFailed) {
         guard trunk.isAvailable else {
             return failed(.needsInitialState)
         }
@@ -24,7 +24,7 @@ public extension Car {
         sendCommand(bytes, failed: failed)
     }
 
-    public func sendTrunkCommand(lock: Bool, failed: @escaping CommandFailed) {
+    func sendTrunkCommand(lock: Bool, failed: @escaping CommandFailed) {
         guard trunk.isAvailable else {
             return failed(.needsInitialState)
         }
@@ -36,7 +36,7 @@ public extension Car {
         sendCommand(bytes, failed: failed)
     }
 
-    public func sendTrunkCommand(open: Bool, failed: @escaping CommandFailed) {
+    func sendTrunkCommand(open: Bool, failed: @escaping CommandFailed) {
         guard trunk.isAvailable else {
             return failed(.needsInitialState)
         }

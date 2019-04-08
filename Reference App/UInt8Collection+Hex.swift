@@ -23,7 +23,7 @@ extension Collection where Iterator.Element == UInt8, Self: UInt8CollectionConve
     }
 
     var data: Data {
-        return Data(bytes: bytes)
+        return Data(bytes)
     }
 
     var hex: String {

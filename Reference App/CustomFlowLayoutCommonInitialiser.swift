@@ -11,7 +11,7 @@ import UIKit
 
 protocol CustomFlowLayoutCommonInitialiser: CustomItemSizeFromBounds, CommonInitialiser {
 
-    var customScrollDirection: UICollectionViewScrollDirection { get }
+    var customScrollDirection: UICollectionView.ScrollDirection { get }
     var spacingConstant: CGFloat { get }
 }
 

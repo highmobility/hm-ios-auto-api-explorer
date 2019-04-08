@@ -100,14 +100,14 @@ private extension TitlesScrollView {
 
         // Change the "left" label
         if idx >= labels.startIndex {
-            let diff = fabs(progress - CGFloat(idx))
+            let diff = abs(progress - CGFloat(idx))
 
             labels[idx].textColor = UIColor.Custom.highlight.interpolateRGBColor(to: UIColor.Custom.pale, fraction: diff)
         }
 
         // Change the "right" label
         if (idx + 1) < labels.endIndex {
-            let diff = fabs(CGFloat(idx + 1) - progress)
+            let diff = abs(CGFloat(idx + 1) - progress)
 
             labels[idx + 1].textColor = UIColor.Custom.highlight.interpolateRGBColor(to: UIColor.Custom.pale, fraction: diff)
         }

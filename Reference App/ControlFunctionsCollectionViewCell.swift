@@ -26,7 +26,7 @@ class ControlFunctionsCollectionViewCell: UICollectionViewCell {
     // MARK: Methods
 
     func updateControlFunction(_ function: ControlFunction) {
-        guard let index = controlFunctions.index(where: { $0.kind == function.kind }) else {
+        guard let index = controlFunctions.firstIndex(where: { $0.kind == function.kind }) else {
             return print("\(type(of: self)) -\(#function) doesn't contain function: \(function.name)")
         }
 

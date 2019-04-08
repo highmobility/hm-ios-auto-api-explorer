@@ -12,7 +12,7 @@ import Foundation
 
 public extension Car {
 
-    public func getChargingState(failed: @escaping CommandFailed) {
+    func getChargingState(failed: @escaping CommandFailed) {
         guard charging.isAvailable else {
             return failed(.needsInitialState)
         }
@@ -24,7 +24,7 @@ public extension Car {
         sendCommand(bytes, failed: failed)
     }
 
-    public func sendChargingCommand(start: Bool, failed: @escaping CommandFailed) {
+    func sendChargingCommand(start: Bool, failed: @escaping CommandFailed) {
         guard charging.isAvailable else {
             return failed(.needsInitialState)
         }

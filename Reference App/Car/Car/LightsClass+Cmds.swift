@@ -12,7 +12,7 @@ import Foundation
 
 public extension Car {
 
-    public func getLightsState(failed: @escaping CommandFailed) {
+    func getLightsState(failed: @escaping CommandFailed) {
         guard lights.isAvailable else {
             return failed(.needsInitialState)
         }
@@ -24,9 +24,9 @@ public extension Car {
         sendCommand(bytes, failed: failed)
     }
 
-    public func sendLightsCommand(frontExteriorLights: LightsClass.FrontExteriorLightState, failed: @escaping CommandFailed) {
+    func sendLightsCommand(frontExteriorLights: LightsClass.FrontExteriorLightState, failed: @escaping CommandFailed) {
         guard let frontExterior = AAFrontLightState(rawValue: frontExteriorLights.rawValue),
-            let bytes = AALights.controlLights(frontExterior: frontExterior, rearExterior: nil, interior: nil, ambientColour: nil)?.bytes else {
+            let bytes = AALights.controlLights(frontExterior: frontExterior)?.bytes else {
                 return failed(.invalidValues)
         }
 
@@ -35,8 +35,12 @@ public extension Car {
         sendCommand(bytes, failed: failed)
     }
 
-    public func sendLightsCommand(interiorLightsActive: Bool, failed: @escaping CommandFailed) {
-        guard let bytes = AALights.controlLights(frontExterior: nil, rearExterior: nil, interior: (interiorLightsActive ? .active : .inactive), ambientColour: nil)?.bytes else {
+    func sendLightsCommand(interiorLightsActive: Bool, failed: @escaping CommandFailed) {
+        let lamps = lights.interiorLamps.map {
+            AAInteriorLamp(location: $0.location, state: interiorLightsActive ? .active : .inactive)
+        }
+
+        guard let bytes = AALights.controlLights(interiorLamps: lamps)?.bytes else {
             return failed(.invalidValues)
         }
 
@@ -45,8 +49,8 @@ public extension Car {
         sendCommand(bytes, failed: failed)
     }
 
-    public func sendLightsCommand(rearLightsActive: Bool, failed: @escaping CommandFailed) {
-        guard let bytes = AALights.controlLights(frontExterior: nil, rearExterior: (rearLightsActive ? .active : .inactive), interior: nil, ambientColour: nil)?.bytes else {
+    func sendLightsCommand(rearLightsActive: Bool, failed: @escaping CommandFailed) {
+        guard let bytes = AALights.controlLights(rearExterior: rearLightsActive ? .active : .inactive)?.bytes else {
             return failed(.invalidValues)
         }
 

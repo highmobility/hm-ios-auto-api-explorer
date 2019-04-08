@@ -23,8 +23,13 @@ public class LightsClass: CommandClass {
 
 
     public private(set) var frontExteriorLightsState: FrontExteriorLightState = .unknown
-    public private(set) var interiorLightsActive: Bool = false
     public private(set) var rearLightsActive: Bool = false
+
+    public var interiorLightsActive: Bool {
+        return interiorLamps.contains(where: { $0.state == .active })
+    }
+
+    private(set) var interiorLamps: [AAInteriorLamp] = []
 }
 
 extension LightsClass: Parser {
@@ -55,7 +60,7 @@ extension LightsClass: ResponseParser {
         }
 
         frontExteriorLightsState = frontLightsState
-        interiorLightsActive = interiorState.contains(where: { $0.value?.state == .active })
+        interiorLamps = interiorState.compactMap { $0.value }
         rearLightsActive = rearExteriorState == .active
 
         return .other(self)
