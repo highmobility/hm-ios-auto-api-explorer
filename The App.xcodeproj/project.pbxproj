@@ -319,7 +319,6 @@
 		207E48401DB66BE10031C0FB /* The App */ = {
 			isa = PBXGroup;
 			children = (
-				20F68CB81DD35BFE00ED16A7 /* Frameworks */,
 				207E48551DB66C0C0031C0FB /* Source */,
 				207E48561DB66C160031C0FB /* Resources */,
 			);
@@ -454,14 +453,6 @@
 				20EEE06A1F1293E1007B32F4 /* Car.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		20F68CB81DD35BFE00ED16A7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		20FCE1631ECF201A00FA62E1 /* Views */ = {

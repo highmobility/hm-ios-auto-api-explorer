@@ -82,11 +82,6 @@
 		207B4656203C56AC002F346D /* ParkingBrakeCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingBrakeCommand.swift; sourceTree = "<group>"; };
 		207B4659203C56DA002F346D /* WindscreenCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindscreenCommand.swift; sourceTree = "<group>"; };
 		207B467D203C8961002F346D /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
-		207DDA3420736A4A00B30370 /* AutoAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AutoAPI.framework; path = ../../AutoAPI.framework; sourceTree = "<group>"; };
-		207DDA3620736A4A00B30370 /* CommonCrypto.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CommonCrypto.framework; path = ../../CommonCrypto.framework; sourceTree = "<group>"; };
-		207DDA3820736A4A00B30370 /* HMCryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HMCryptoKit.framework; path = ../../HMCryptoKit.framework; sourceTree = "<group>"; };
-		207DDA3A20736A4A00B30370 /* HMKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HMKit.framework; path = ../../HMKit.framework; sourceTree = "<group>"; };
-		207DDA3C20736A4A00B30370 /* HMUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HMUtilities.framework; path = ../../HMUtilities.framework; sourceTree = "<group>"; };
 		20805BC123757240000FA31C /* HMKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = HMKit.xcframework; path = ../../HMKit.xcframework; sourceTree = "<group>"; };
 		20805D112375799E000FA31C /* AutoAPI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AutoAPI.xcframework; path = ../../AutoAPI.xcframework; sourceTree = "<group>"; };
 		20805D122375799E000FA31C /* HMCryptoKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = HMCryptoKit.xcframework; path = ../../HMCryptoKit.xcframework; sourceTree = "<group>"; };
@@ -185,11 +180,6 @@
 				20805D122375799E000FA31C /* HMCryptoKit.xcframework */,
 				20805D132375799E000FA31C /* HMUtilities.xcframework */,
 				20805BC123757240000FA31C /* HMKit.xcframework */,
-				207DDA3420736A4A00B30370 /* AutoAPI.framework */,
-				207DDA3620736A4A00B30370 /* CommonCrypto.framework */,
-				207DDA3820736A4A00B30370 /* HMCryptoKit.framework */,
-				207DDA3A20736A4A00B30370 /* HMKit.framework */,
-				207DDA3C20736A4A00B30370 /* HMUtilities.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
