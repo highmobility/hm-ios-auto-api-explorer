@@ -10,9 +10,9 @@ import Foundation
 import HMKit
 
 
-extension Car: HMKitDelegate {
+extension Car: HMLocalDeviceDelegate {
 
-    public func hmKit(didLoseLink link: HMLink) {
+    public func localDevice(didLoseLink link: HMLink) {
         link.delegate = nil
 
         // This gives time for HMKit to start it's broadcasting again (that it does automatically after losing a link),
@@ -20,23 +20,23 @@ extension Car: HMKitDelegate {
         DispatchQueue.main.asyncAfter(deadline: (DispatchTime.now() + 0.01)) {
             self.connectionState = .disconnected
 
-            if HMKit.shared.state == .broadcasting {
-                HMKit.shared.stopBroadcasting()
+            if HMLocalDevice.shared.state == .broadcasting {
+                HMLocalDevice.shared.stopBroadcasting()
             }
         }
     }
 
-    public func hmKit(didReceiveLink link: HMLink) {
+    public func localDevice(didReceiveLink link: HMLink) {
         link.delegate = self
 
         connectionState = .connected
 
-        if HMKit.shared.state == .broadcasting {
-            HMKit.shared.stopBroadcasting()
+        if HMLocalDevice.shared.state == .broadcasting {
+            HMLocalDevice.shared.stopBroadcasting()
         }
     }
 
-    public func hmKit(stateChanged newState: HMKitState, oldState: HMKitState) {
+    public func localDevice(stateChanged newState: HMLocalDeviceState, oldState: HMLocalDeviceState) {
         switch (newState, oldState) {
         case (.bluetoothUnavailable, _):
             connectionState = .unavailable
@@ -46,6 +46,9 @@ extension Car: HMKitDelegate {
 
         case (.idle, _):
             connectionState = .idle
+
+        @unknown default:
+            break
         }
     }
 }

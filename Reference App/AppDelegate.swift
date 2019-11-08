@@ -31,7 +31,7 @@ import UIKit
 private extension AppDelegate {
 
     func initialiseHMKit() {
-        HMKit.shared.resetStorage()
+        HMLocalDevice.shared.resetStorage()
 
         /*
          * Before using HMKit, you'll have to initialise the HMKit singleton
@@ -58,7 +58,7 @@ private extension AppDelegate {
 
 
         // This just checks if you've seen the above (and are able to follow instructions)
-        guard HMKit.shared.certificate != nil else {
+        guard HMLocalDevice.shared.certificate != nil else {
             fatalError("Please initialise the HMKit with the instrucions above, thanks")
         }
     }
@@ -74,7 +74,7 @@ private extension AppDelegate {
 
                 case .success(let vehicleSerial):
                     // Set the serial to the Car.framework (the magical helper)
-                    Car.shared.activeVehicleSerial = vehicleSerial
+                    Car.shared.activeVehicleSerial = vehicleSerial.data
                 }
             }
         }

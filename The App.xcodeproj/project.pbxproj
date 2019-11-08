@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -50,18 +50,18 @@
 		207B4672203C7A50002F346D /* SingleControlTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4671203C7A50002F346D /* SingleControlTableViewCell.swift */; };
 		207B467C203C83D3002F346D /* DoorsStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B467B203C83D3002F346D /* DoorsStatusViewController.swift */; };
 		207B4682203C9579002F346D /* WindowsStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4681203C9579002F346D /* WindowsStatusViewController.swift */; };
-		207DDA2A20736A4300B30370 /* HMUtilities.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA2520736A4000B30370 /* HMUtilities.framework */; };
-		207DDA2B20736A4300B30370 /* HMUtilities.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA2520736A4000B30370 /* HMUtilities.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		207DDA2E20736A4300B30370 /* HMCryptoKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA2720736A4100B30370 /* HMCryptoKit.framework */; };
-		207DDA2F20736A4300B30370 /* HMCryptoKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA2720736A4100B30370 /* HMCryptoKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		207DDA3020736A4300B30370 /* AutoAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA2820736A4200B30370 /* AutoAPI.framework */; };
-		207DDA3120736A4300B30370 /* AutoAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA2820736A4200B30370 /* AutoAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		207DDA3220736A4300B30370 /* HMKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA2920736A4300B30370 /* HMKit.framework */; };
-		207DDA3320736A4300B30370 /* HMKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 207DDA2920736A4300B30370 /* HMKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		207E48421DB66BE10031C0FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207E48411DB66BE10031C0FB /* AppDelegate.swift */; };
 		207E484B1DB66BE10031C0FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 207E484A1DB66BE10031C0FB /* Assets.xcassets */; };
 		207E484E1DB66BE10031C0FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 207E484C1DB66BE10031C0FB /* LaunchScreen.storyboard */; };
 		208038C11DB6924C00285C29 /* OvalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208038BF1DB6924C00285C29 /* OvalButton.swift */; };
+		20805BC523757248000FA31C /* HMKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20805BBF23757238000FA31C /* HMKit.xcframework */; };
+		20805BC623757248000FA31C /* HMKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20805BBF23757238000FA31C /* HMKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		20805D1B237579A9000FA31C /* AutoAPI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D0F2375798A000FA31C /* AutoAPI.xcframework */; };
+		20805D1C237579A9000FA31C /* AutoAPI.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D0F2375798A000FA31C /* AutoAPI.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		20805D1D237579AA000FA31C /* HMCryptoKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D0D23757980000FA31C /* HMCryptoKit.xcframework */; };
+		20805D1E237579AA000FA31C /* HMCryptoKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D0D23757980000FA31C /* HMCryptoKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		20805D1F237579AC000FA31C /* HMUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D0B23757971000FA31C /* HMUtilities.xcframework */; };
+		20805D20237579AC000FA31C /* HMUtilities.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D0B23757971000FA31C /* HMUtilities.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2088B1031F12949F00A0F5A7 /* Car.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20EEE06A1F1293E1007B32F4 /* Car.framework */; };
 		2088B1041F12949F00A0F5A7 /* Car.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20EEE06A1F1293E1007B32F4 /* Car.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		209BE79C1EF0240D00FA51E1 /* RoundedImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BE79B1EF0240D00FA51E1 /* RoundedImageButton.swift */; };
@@ -118,11 +118,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				207DDA2B20736A4300B30370 /* HMUtilities.framework in Embed Frameworks */,
+				20805D1E237579AA000FA31C /* HMCryptoKit.xcframework in Embed Frameworks */,
+				20805D20237579AC000FA31C /* HMUtilities.xcframework in Embed Frameworks */,
 				2088B1041F12949F00A0F5A7 /* Car.framework in Embed Frameworks */,
-				207DDA3120736A4300B30370 /* AutoAPI.framework in Embed Frameworks */,
-				207DDA3320736A4300B30370 /* HMKit.framework in Embed Frameworks */,
-				207DDA2F20736A4300B30370 /* HMCryptoKit.framework in Embed Frameworks */,
+				20805D1C237579A9000FA31C /* AutoAPI.xcframework in Embed Frameworks */,
+				20805BC623757248000FA31C /* HMKit.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,16 +173,16 @@
 		207B4671203C7A50002F346D /* SingleControlTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleControlTableViewCell.swift; sourceTree = "<group>"; };
 		207B467B203C83D3002F346D /* DoorsStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsStatusViewController.swift; sourceTree = "<group>"; };
 		207B4681203C9579002F346D /* WindowsStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowsStatusViewController.swift; sourceTree = "<group>"; };
-		207DDA2520736A4000B30370 /* HMUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HMUtilities.framework; sourceTree = "<group>"; };
-		207DDA2720736A4100B30370 /* HMCryptoKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HMCryptoKit.framework; sourceTree = "<group>"; };
-		207DDA2820736A4200B30370 /* AutoAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AutoAPI.framework; sourceTree = "<group>"; };
-		207DDA2920736A4300B30370 /* HMKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HMKit.framework; sourceTree = "<group>"; };
 		207E483E1DB66BE10031C0FB /* The App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		207E48411DB66BE10031C0FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		207E484A1DB66BE10031C0FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		207E484D1DB66BE10031C0FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		207E484F1DB66BE10031C0FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		208038BF1DB6924C00285C29 /* OvalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OvalButton.swift; sourceTree = "<group>"; };
+		20805BBF23757238000FA31C /* HMKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = HMKit.xcframework; sourceTree = "<group>"; };
+		20805D0B23757971000FA31C /* HMUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = HMUtilities.xcframework; sourceTree = "<group>"; };
+		20805D0D23757980000FA31C /* HMCryptoKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = HMCryptoKit.xcframework; sourceTree = "<group>"; };
+		20805D0F2375798A000FA31C /* AutoAPI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AutoAPI.xcframework; sourceTree = "<group>"; };
 		209BE79B1EF0240D00FA51E1 /* RoundedImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageButton.swift; sourceTree = "<group>"; };
 		20AC533B1F7932CC00C9C23E /* TripleControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleControlButton.swift; sourceTree = "<group>"; };
 		20B23CF01F1274E1006CFC06 /* DoorsCommand+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DoorsCommand+ControlFunctionable.swift"; sourceTree = "<group>"; };
@@ -219,11 +219,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				207DDA2A20736A4300B30370 /* HMUtilities.framework in Frameworks */,
+				20805D1D237579AA000FA31C /* HMCryptoKit.xcframework in Frameworks */,
+				20805D1F237579AC000FA31C /* HMUtilities.xcframework in Frameworks */,
+				20805D1B237579A9000FA31C /* AutoAPI.xcframework in Frameworks */,
 				2088B1031F12949F00A0F5A7 /* Car.framework in Frameworks */,
-				207DDA3020736A4300B30370 /* AutoAPI.framework in Frameworks */,
-				207DDA3220736A4300B30370 /* HMKit.framework in Frameworks */,
-				207DDA2E20736A4300B30370 /* HMCryptoKit.framework in Frameworks */,
+				20805BC523757248000FA31C /* HMKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,10 +298,10 @@
 		207E48351DB66BE10031C0FB = {
 			isa = PBXGroup;
 			children = (
-				207DDA2820736A4200B30370 /* AutoAPI.framework */,
-				207DDA2720736A4100B30370 /* HMCryptoKit.framework */,
-				207DDA2920736A4300B30370 /* HMKit.framework */,
-				207DDA2520736A4000B30370 /* HMUtilities.framework */,
+				20805D0F2375798A000FA31C /* AutoAPI.xcframework */,
+				20805D0D23757980000FA31C /* HMCryptoKit.xcframework */,
+				20805BBF23757238000FA31C /* HMKit.xcframework */,
+				20805D0B23757971000FA31C /* HMUtilities.xcframework */,
 				20EEE0651F1293E1007B32F4 /* Car.xcodeproj */,
 				207E48401DB66BE10031C0FB /* The App */,
 				207E483F1DB66BE10031C0FB /* Products */,
@@ -507,6 +507,8 @@
 				2088B1061F12949F00A0F5A7 /* PBXTargetDependency */,
 			);
 			name = "The App";
+			packageProductDependencies = (
+			);
 			productName = "Reference App";
 			productReference = 207E483E1DB66BE10031C0FB /* The App.app */;
 			productType = "com.apple.product-type.application";
@@ -538,6 +540,8 @@
 				Base,
 			);
 			mainGroup = 207E48351DB66BE10031C0FB;
+			packageReferences = (
+			);
 			productRefGroup = 207E483F1DB66BE10031C0FB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -801,7 +805,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -816,15 +821,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Reference\\ App/Car",
-					"$(PROJECT_DIR)/Reference\\ App",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Reference App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.5.3;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hm.reference-app.explore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -844,15 +848,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/Reference\\ App/Car",
-					"$(PROJECT_DIR)/Reference\\ App",
-				);
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "Reference App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 2.5.3;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hm.reference-app.explore";
 				PRODUCT_NAME = "$(TARGET_NAME)";

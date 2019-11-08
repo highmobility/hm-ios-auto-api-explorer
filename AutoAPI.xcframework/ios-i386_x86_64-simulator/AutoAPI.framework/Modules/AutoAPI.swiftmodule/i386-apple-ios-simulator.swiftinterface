@@ -1,0 +1,3288 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.1.2 (swiftlang-1100.0.278 clang-1100.0.33.9)
+// swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name AutoAPI
+import CoreLocation
+import Foundation
+import HMUtilities
+import Swift
+import UIKit
+public typealias AACapabilityIdentifier = Swift.UInt16
+public typealias AANetworkSSID = Swift.String
+public typealias AAPercentage = Swift.Double
+public typealias AAPropertyIdentifier = Swift.UInt8
+public struct AAAutoAPI {
+  public static func parseBinary<C>(_ binary: C) -> AutoAPI.AACapability? where C : Swift.Collection, C.Element == Swift.UInt8
+}
+public class AACapabilities : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let capabilities: [AutoAPI.AAProperty<AutoAPI.AACapabilityValue>]?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AACapabilities : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getCapabilities
+    case capabilities
+    case getCapability
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AACapabilities.MessageTypes]
+    public static var allCases: [AutoAPI.AACapabilities.MessageTypes] {
+      get
+    }
+  }
+}
+extension AACapabilities {
+  public static var getCapabilities: AutoAPI.AACommand {
+    get
+  }
+  public static func getCapability(_ commandID: AutoAPI.AACapabilityIdentifier) -> AutoAPI.AACommand
+}
+public struct AAInteriorLamp {
+  public let location: AutoAPI.AALightLocation
+  public let state: AutoAPI.AAActiveState
+  public init(location: AutoAPI.AALightLocation, state: AutoAPI.AAActiveState)
+}
+extension AAInteriorLamp : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public struct AACapabilityValue {
+  public let capability: AutoAPI.AACapability.Type
+  public let supportedMessageTypes: [Swift.UInt8]
+  public var identifier: AutoAPI.AACapabilityIdentifier {
+    get
+  }
+  public func supports(_ messageTypes: [Swift.UInt8]) -> Swift.Bool
+  public func supports<C>(_ messageTypes: C...) -> Swift.Bool where C : Swift.CaseIterable, C : Swift.RawRepresentable, C.RawValue == Swift.UInt8
+  public func supportsAllMessageTypes<M>(for command: M.Type) -> Swift.Bool where M : AutoAPI.AAMessageTypesGettable
+}
+extension AACapabilityValue : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+extension AACapabilityValue : Swift.Equatable {
+  public static func == (lhs: AutoAPI.AACapabilityValue, rhs: AutoAPI.AACapabilityValue) -> Swift.Bool
+}
+public enum AAPropertyFailureReason : Swift.UInt8 {
+  case rateLimit
+  case executionTimeout
+  case formatError
+  case unauthorised
+  case unknown
+  case pending
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAPropertyFailureReason : AutoAPI.AABytesConvertable {
+}
+public enum AAWorkingState : Swift.UInt8 {
+  case resting
+  case driverAvailable
+  case working
+  case driving
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAWorkingState : AutoAPI.AABytesConvertable {
+}
+public enum AAEnabledState : Swift.UInt8 {
+  case disabled
+  case enabled
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAEnabledState : AutoAPI.AABytesConvertable {
+}
+public struct AASDKVersion {
+  public let major: Swift.UInt8
+  public let minor: Swift.UInt8
+  public let patch: Swift.UInt8
+  public var string: Swift.String {
+    get
+  }
+}
+extension AASDKVersion : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public class AACharging : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let batteryCurrentAC: AutoAPI.AAProperty<Swift.Float>?
+  final public let batteryCurrentDC: AutoAPI.AAProperty<Swift.Float>?
+  final public let batteryLevel: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let batteryTemperature: AutoAPI.AAProperty<Swift.Float>?
+  final public let chargeLimit: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let chargeMode: AutoAPI.AAProperty<AutoAPI.AAChargeMode>?
+  final public let chargePortState: AutoAPI.AAProperty<AutoAPI.AAOpenClose>?
+  final public let chargerVoltageAC: AutoAPI.AAProperty<Swift.Float>?
+  final public let chargerVoltageDC: AutoAPI.AAProperty<Swift.Float>?
+  final public let chargingRate: AutoAPI.AAProperty<Swift.Float>?
+  final public let chargingWindowChosen: AutoAPI.AAProperty<AutoAPI.AAChosenState>?
+  final public let departureTimes: [AutoAPI.AAProperty<AutoAPI.AADepartureTime>]?
+  final public let estimatedRange: AutoAPI.AAProperty<Swift.UInt16>?
+  final public let maxChargingCurrentAC: AutoAPI.AAProperty<Swift.Float>?
+  final public let pluggedIn: AutoAPI.AAProperty<AutoAPI.AAPluggedInState>?
+  final public let plugType: AutoAPI.AAProperty<AutoAPI.AAPlugType>?
+  final public let reductionOfChargingCurrentTimes: [AutoAPI.AAProperty<AutoAPI.AAReductionTime>]?
+  final public let state: AutoAPI.AAProperty<AutoAPI.AAChargingState>?
+  final public let timers: [AutoAPI.AAProperty<AutoAPI.AAChargingTimer>]?
+  final public let timeToCompleteCharge: AutoAPI.AAProperty<Swift.UInt16>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AACharging : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getChargingState
+    case chargingState
+    case startStopCharging
+    case setChargeLimit
+    case openCloseChargePort
+    case setChargeMode
+    case setChargingTimers
+    case setReductionTimes
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AACharging.MessageTypes]
+    public static var allCases: [AutoAPI.AACharging.MessageTypes] {
+      get
+    }
+  }
+}
+extension AACharging {
+  public static var getChargingState: AutoAPI.AACommand {
+    get
+  }
+  public static func openCloseChargePort(_ state: AutoAPI.AAOpenClose) -> AutoAPI.AACommand
+  public static func setChargeLimit(_ limit: AutoAPI.AAPercentage) -> AutoAPI.AACommand
+  public static func setChargeMode(_ mode: AutoAPI.AAChargeMode) -> AutoAPI.AACommand?
+  public static func setChargingTimers(_ timers: [AutoAPI.AAChargingTimer]) -> AutoAPI.AACommand
+  public static func setReductionOfChargingCurrentTimes(_ times: [AutoAPI.AAReductionTime]) -> AutoAPI.AACommand
+  public static func startStopCharging(_ state: AutoAPI.AAActiveState) -> AutoAPI.AACommand
+}
+public class AAChassisSettings : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let currentChassisPosition: AutoAPI.AAProperty<Swift.Int8>?
+  final public let currentSpringRates: [AutoAPI.AAProperty<AutoAPI.AASpringRateValue>]?
+  final public let drivingMode: AutoAPI.AAProperty<AutoAPI.AADrivingMode>?
+  final public let maximumChassisPosition: AutoAPI.AAProperty<Swift.Int8>?
+  final public let maximumSpringRates: [AutoAPI.AAProperty<AutoAPI.AASpringRateValue>]?
+  final public let minimumChassisPosition: AutoAPI.AAProperty<Swift.Int8>?
+  final public let minimumSpringRates: [AutoAPI.AAProperty<AutoAPI.AASpringRateValue>]?
+  final public let sportChronoState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAChassisSettings : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getChassisSettings
+    case chassisSettings
+    case setDrivingMode
+    case startStopSportChrono
+    case setSpringRates
+    case setChassisPosition
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAChassisSettings.MessageTypes]
+    public static var allCases: [AutoAPI.AAChassisSettings.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAChassisSettings {
+  public static var getChassisSettings: AutoAPI.AACommand {
+    get
+  }
+  public static func setChassisPosition(_ position: Swift.Int8) -> AutoAPI.AACommand
+  public static func setDrivingMode(_ mode: AutoAPI.AADrivingMode) -> AutoAPI.AACommand
+  public static func setSpringRates(_ rates: [AutoAPI.AASpringRateValue]) -> AutoAPI.AACommand
+  public static func startStopSportChrono(_ startStop: AutoAPI.AAStartStopState) -> AutoAPI.AACommand
+}
+public class AAHood : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let position: AutoAPI.AAProperty<AutoAPI.AAPositionState>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAHood : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getHoodState
+    case hoodState
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAHood.MessageTypes]
+    public static var allCases: [AutoAPI.AAHood.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAHood {
+  public static var getHoodState: AutoAPI.AACommand {
+    get
+  }
+}
+public enum AAPresenceState : Swift.UInt8 {
+  case notPresent
+  case present
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAPresenceState : AutoAPI.AABytesConvertable {
+}
+public class AAClimate : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let defrostingTemperature: AutoAPI.AAProperty<Swift.Float>?
+  final public let defoggingState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let defrostingState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let driverTemperature: AutoAPI.AAProperty<Swift.Float>?
+  final public let hvacState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let insideTemperature: AutoAPI.AAProperty<Swift.Float>?
+  final public let ionisingState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let outsideTemperature: AutoAPI.AAProperty<Swift.Float>?
+  final public let passengerTemperature: AutoAPI.AAProperty<Swift.Float>?
+  final public let rearTemperature: AutoAPI.AAProperty<Swift.Float>?
+  final public let weekdaysStartingTimes: [AutoAPI.AAProperty<AutoAPI.AAClimateWeekdayTime>]?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAClimate : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getClimateState
+    case climateState
+    case changeStartingTimes
+    case startStopHVAC
+    case startStopDefogging
+    case startStopDefrosting
+    case startStopIonising
+    case changeTemperatures
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAClimate.MessageTypes]
+    public static var allCases: [AutoAPI.AAClimate.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAClimate {
+  public static var getClimateState: AutoAPI.AACommand {
+    get
+  }
+  public static func changeStartingTimes(_ times: [AutoAPI.AAClimateWeekdayTime]) -> AutoAPI.AACommand
+  public static func changeTemperatures(driver: Swift.Float?, passenger: Swift.Float?, rear: Swift.Float?) -> AutoAPI.AACommand
+  public static func startStopDefogging(_ state: AutoAPI.AAActiveState) -> AutoAPI.AACommand
+  public static func startStopDefrosting(_ state: AutoAPI.AAActiveState) -> AutoAPI.AACommand
+  public static func startStopHVAC(_ state: AutoAPI.AAActiveState) -> AutoAPI.AACommand
+  public static func startStopIonising(_ state: AutoAPI.AAActiveState) -> AutoAPI.AACommand
+}
+public class AAHonkHornFlashLights : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let flasherState: AutoAPI.AAProperty<AutoAPI.AAFlasherState>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAHonkHornFlashLights : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getFlasherState
+    case flasherState
+    case honkFlash
+    case emergencyFlasher
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAHonkHornFlashLights.MessageTypes]
+    public static var allCases: [AutoAPI.AAHonkHornFlashLights.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAHonkHornFlashLights {
+  public static var getFlasherState: AutoAPI.AACommand {
+    get
+  }
+  public static func activateEmergencyFlasher(_ state: AutoAPI.AAActiveState) -> AutoAPI.AACommand
+  public static func honkHorn(seconds: Swift.UInt8?, flashLightsXTimes xTimes: Swift.UInt8?) -> AutoAPI.AACommand?
+}
+public struct AAFogLight {
+  public let location: AutoAPI.AALightLocation
+  public let state: AutoAPI.AAActiveState
+  public init(location: AutoAPI.AALightLocation, state: AutoAPI.AAActiveState)
+}
+extension AAFogLight : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public class AAKeyfobPosition : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let relativePosition: AutoAPI.AAProperty<AutoAPI.AAKeyfobRelativePosition>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAKeyfobPosition : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getPosition
+    case position
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAKeyfobPosition.MessageTypes]
+    public static var allCases: [AutoAPI.AAKeyfobPosition.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAKeyfobPosition {
+  public static var getKeyfobPosition: AutoAPI.AACommand {
+    get
+  }
+}
+public class AALights : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let ambientColour: AutoAPI.AAProperty<AutoAPI.AAColour>?
+  final public let emergencyBrakeState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let fogLights: [AutoAPI.AAProperty<AutoAPI.AAFogLight>]?
+  final public let frontExterior: AutoAPI.AAProperty<AutoAPI.AAFrontLightState>?
+  final public let interiorLamps: [AutoAPI.AAProperty<AutoAPI.AAInteriorLamp>]?
+  final public let readingLamps: [AutoAPI.AAProperty<AutoAPI.AAReadingLamp>]?
+  final public let rearExteriorState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let reverseState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AALights : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getLightsState
+    case lightsState
+    case controlLights
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AALights.MessageTypes]
+    public static var allCases: [AutoAPI.AALights.MessageTypes] {
+      get
+    }
+  }
+}
+extension AALights {
+  public static var getLightsState: AutoAPI.AACommand {
+    get
+  }
+  public static func controlLights(frontExterior: AutoAPI.AAFrontLightState? = nil, rearExterior: AutoAPI.AAActiveState? = nil, ambientColour: AutoAPI.AAColour? = nil, fogLights: [AutoAPI.AAFogLight]? = nil, readingLamps: [AutoAPI.AAReadingLamp]? = nil, interiorLamps: [AutoAPI.AAInteriorLamp]? = nil) -> AutoAPI.AACommand?
+}
+public class AARooftopControl : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let convertibleRoofState: AutoAPI.AAProperty<AutoAPI.AAConvertibleRoofState>?
+  final public let dimming: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let position: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let sunroofTiltState: AutoAPI.AAProperty<AutoAPI.AATiltState>?
+  final public let sunroofState: AutoAPI.AAProperty<AutoAPI.AAPositionState>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AARooftopControl : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getRooftopState
+    case rooftopState
+    case controlRooftop
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AARooftopControl.MessageTypes]
+    public static var allCases: [AutoAPI.AARooftopControl.MessageTypes] {
+      get
+    }
+  }
+}
+extension AARooftopControl {
+  public static var getRooftopState: AutoAPI.AACommand {
+    get
+  }
+  public static func controlRooftop(dimming: AutoAPI.AAPercentage?, open: AutoAPI.AAPercentage?, convertibleRoof: AutoAPI.AAConvertibleRoofState?, sunroofTilt: AutoAPI.AATiltState?, sunroofState: AutoAPI.AAPositionState?) -> AutoAPI.AACommand
+}
+public class AASeats : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let personsDetected: [AutoAPI.AAProperty<AutoAPI.AASeatPersonDetected>]?
+  final public let seatbeltsFastened: [AutoAPI.AAProperty<AutoAPI.AASeatbeltFastened>]?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AASeats : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getSeatsState
+    case seatsState
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AASeats.MessageTypes]
+    public static var allCases: [AutoAPI.AASeats.MessageTypes] {
+      get
+    }
+  }
+}
+extension AASeats {
+  public static var getSeatsState: AutoAPI.AACommand {
+    get
+  }
+}
+public class AAWindows : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let openPercentages: [AutoAPI.AAProperty<AutoAPI.AAWindowOpenPercentage>]?
+  final public let positions: [AutoAPI.AAProperty<AutoAPI.AAWindowPosition>]?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAWindows : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getWindowsState
+    case windowsState
+    case control
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAWindows.MessageTypes]
+    public static var allCases: [AutoAPI.AAWindows.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAWindows {
+  public static var getWindowsState: AutoAPI.AACommand {
+    get
+  }
+  public static func controlWindows(openPercentages: [AutoAPI.AAWindowOpenPercentage]?, positions: [AutoAPI.AAWindowPosition]?) -> AutoAPI.AACommand
+}
+public class AAWindscreen : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let damage: AutoAPI.AAProperty<AutoAPI.AAWindscreenDamage>?
+  final public let damageConfidence: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let damageDetectionTime: AutoAPI.AAProperty<Foundation.Date>?
+  final public let damageZone: AutoAPI.AAProperty<AutoAPI.AAZone>?
+  final public let needsReplacement: AutoAPI.AAProperty<AutoAPI.AANeedsReplacement>?
+  final public let zoneMatrix: AutoAPI.AAProperty<AutoAPI.AAZone>?
+  final public let wipersIntensity: AutoAPI.AAProperty<AutoAPI.AAWipersIntensity>?
+  final public let wipersState: AutoAPI.AAProperty<AutoAPI.AAWipersState>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAWindscreen : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getWindscreenState
+    case windscreenState
+    case setDamage
+    case setNeedsReplacement
+    case activateWipers
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAWindscreen.MessageTypes]
+    public static var allCases: [AutoAPI.AAWindscreen.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAWindscreen {
+  public static var getWindscreenState: AutoAPI.AACommand {
+    get
+  }
+  public static func controlWipers(_ state: AutoAPI.AAWipersState, intensity: AutoAPI.AAWipersIntensity?) -> AutoAPI.AACommand
+  public static func setDamage(_ damage: AutoAPI.AAWindscreenDamage, in zone: AutoAPI.AAZone) -> AutoAPI.AACommand
+  public static func setNeedsReplacement(_ needsReplacement: AutoAPI.AANeedsReplacement) -> AutoAPI.AACommand
+}
+public class AADiagnostics : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let absState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let adBlueLevel: AutoAPI.AAProperty<Swift.Float>?
+  final public let batteryLevel: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let batteryVoltage: AutoAPI.AAProperty<Swift.Float>?
+  final public let brakeFluidLevel: AutoAPI.AAProperty<AutoAPI.AAFluidLevel>?
+  final public let checkControlMessages: [AutoAPI.AAProperty<AutoAPI.AACheckControlMessage>]?
+  final public let distanceSinceReset: AutoAPI.AAProperty<Swift.UInt16>?
+  final public let distanceSinceStart: AutoAPI.AAProperty<Swift.UInt16>?
+  final public let engineCoolantTemperature: AutoAPI.AAProperty<Swift.Int16>?
+  final public let engineLoad: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let engineOilTemperature: AutoAPI.AAProperty<Swift.Int16>?
+  final public let engineTorque: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let engineTotalFuelConsumption: AutoAPI.AAProperty<Swift.Float>?
+  final public let engineTotalOperatingHours: AutoAPI.AAProperty<Swift.Float>?
+  final public let engineRPM: AutoAPI.AAProperty<Swift.UInt16>?
+  final public let estimatedRange: AutoAPI.AAProperty<Swift.UInt16>?
+  final public let fuelLevel: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let fuelVolume: AutoAPI.AAProperty<Swift.Float>?
+  final public let mileage: AutoAPI.AAProperty<Swift.UInt32>?
+  final public let mileageMeters: AutoAPI.AAProperty<Swift.UInt32>?
+  final public let speed: AutoAPI.AAProperty<Swift.Int16>?
+  final public let tirePressures: [AutoAPI.AAProperty<AutoAPI.AATirePressure>]?
+  final public let tireTemperatures: [AutoAPI.AAProperty<AutoAPI.AATireTemperature>]?
+  final public let troubleCodes: [AutoAPI.AAProperty<AutoAPI.AADiagnosticTroubleCode>]?
+  final public let washerFluidLevel: AutoAPI.AAProperty<AutoAPI.AAFluidLevel>?
+  final public let wheelBasedSpeed: AutoAPI.AAProperty<Swift.Int16>?
+  final public let wheelRPMs: [AutoAPI.AAProperty<AutoAPI.AAWheelRPM>]?
+  public var dieselExhaustFluid: AutoAPI.AAProperty<Swift.Float>? {
+    get
+  }
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AADiagnostics : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getDiagnosticsState
+    case diagnosticsState
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AADiagnostics.MessageTypes]
+    public static var allCases: [AutoAPI.AADiagnostics.MessageTypes] {
+      get
+    }
+  }
+}
+extension AADiagnostics {
+  public static var getDiagnosticsState: AutoAPI.AACommand {
+    get
+  }
+}
+public class AAMaintenance : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  public typealias Weeks = Swift.UInt8
+  final public let automaticTeleserviceCallDate: AutoAPI.AAProperty<Foundation.Date>?
+  final public let brakeFluidChangeDate: AutoAPI.AAProperty<Foundation.Date>?
+  final public let cbsReportsCount: AutoAPI.AAProperty<Swift.UInt8>?
+  final public let conditionBasedServices: [AutoAPI.AAProperty<AutoAPI.AAConditionBasedService>]?
+  final public let daysToNextService: AutoAPI.AAProperty<Swift.Int16>?
+  final public let kmToNextService: AutoAPI.AAProperty<Swift.UInt32>?
+  final public let monthsToExhaustInspection: AutoAPI.AAProperty<Swift.UInt8>?
+  final public let nextInspectionDate: AutoAPI.AAProperty<Foundation.Date>?
+  final public let serviceDistanceThreshold: AutoAPI.AAProperty<Swift.UInt16>?
+  final public let serviceTimeThreshold: AutoAPI.AAProperty<AutoAPI.AAMaintenance.Weeks>?
+  final public let teleserviceAvailability: AutoAPI.AAProperty<AutoAPI.AAAvailability>?
+  final public let teleserviceBatteryCallDate: AutoAPI.AAProperty<Foundation.Date>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAMaintenance : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getMaintenanceState
+    case maintenanceState
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAMaintenance.MessageTypes]
+    public static var allCases: [AutoAPI.AAMaintenance.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAMaintenance {
+  public static var getMaintenanceState: AutoAPI.AACommand {
+    get
+  }
+}
+public enum AATiltState : Swift.UInt8 {
+  case closed
+  case tilted
+  case halfTilted
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AATiltState : AutoAPI.AABytesConvertable {
+}
+public class AAOffroad : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let routeIncline: AutoAPI.AAProperty<Swift.Int16>?
+  final public let wheelSuspension: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAOffroad : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getOffroadState
+    case offroadState
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAOffroad.MessageTypes]
+    public static var allCases: [AutoAPI.AAOffroad.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAOffroad {
+  public static var getOffroadState: AutoAPI.AACommand {
+    get
+  }
+}
+public class AARace : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let accelerations: [AutoAPI.AAProperty<AutoAPI.AAAcceleration>]?
+  final public let acceleratorPedalIdleSwitchState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let acceleratorPedalKickdownSwitchState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let brakePedalPosition: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let brakePedalSwitchState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let brakePressure: AutoAPI.AAProperty<Swift.Float>?
+  final public let brakeTorqueVectorings: [AutoAPI.AAProperty<AutoAPI.AABrakeTorqueVectoring>]?
+  final public let clutchPedalSwitchState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let espState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let gasPedalPosition: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let gearMode: AutoAPI.AAProperty<AutoAPI.AAGearMode>?
+  final public let oversteering: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let rearSuspensionSteering: AutoAPI.AAProperty<Swift.Int8>?
+  final public let selectedGear: AutoAPI.AAProperty<Swift.Int8>?
+  final public let steeringAngle: AutoAPI.AAProperty<Swift.Int8>?
+  final public let understeering: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let vehicleMoving: AutoAPI.AAProperty<AutoAPI.AAMovingState>?
+  final public let yawRate: AutoAPI.AAProperty<Swift.Float>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AARace : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getRaceState
+    case raceState
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AARace.MessageTypes]
+    public static var allCases: [AutoAPI.AARace.MessageTypes] {
+      get
+    }
+  }
+}
+extension AARace {
+  public static var getRaceState: AutoAPI.AACommand {
+    get
+  }
+}
+public class AADoorLocks : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let insideLocks: [AutoAPI.AAProperty<AutoAPI.AADoorLock>]?
+  final public let locks: [AutoAPI.AAProperty<AutoAPI.AADoorLock>]?
+  final public let positions: [AutoAPI.AAProperty<AutoAPI.AADoorPosition>]?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AADoorLocks : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getLocksState
+    case locksState
+    case lockUnlock
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AADoorLocks.MessageTypes]
+    public static var allCases: [AutoAPI.AADoorLocks.MessageTypes] {
+      get
+    }
+  }
+}
+extension AADoorLocks {
+  public static var getLocksState: AutoAPI.AACommand {
+    get
+  }
+  public static func lockUnlock(_ state: AutoAPI.AALockState) -> AutoAPI.AACommand
+}
+public enum AADirection : Swift.UInt8 {
+  case forward
+  case reverse
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AADirection : AutoAPI.AABytesConvertable {
+}
+public class AAEngine : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let accessoriesPoweredState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let engineState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let ignitionState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAEngine : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getEngineState
+    case engineState
+    case turnOnOff
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAEngine.MessageTypes]
+    public static var allCases: [AutoAPI.AAEngine.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAEngine {
+  public static var getEngineState: AutoAPI.AACommand {
+    get
+  }
+  public static func turnIgnitionOnOff(_ state: AutoAPI.AAActiveState) -> AutoAPI.AACommand
+}
+public class AATrunkAccess : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let lock: AutoAPI.AAProperty<AutoAPI.AALockState>?
+  final public let position: AutoAPI.AAProperty<AutoAPI.AAPositionState>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AATrunkAccess : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getState
+    case state
+    case lockOpen
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AATrunkAccess.MessageTypes]
+    public static var allCases: [AutoAPI.AATrunkAccess.MessageTypes] {
+      get
+    }
+  }
+}
+extension AATrunkAccess {
+  public static var getState: AutoAPI.AACommand {
+    get
+  }
+  public static func controlTrunk(_ lockUnlock: AutoAPI.AALockState?, changePosition position: AutoAPI.AAPositionState?) -> AutoAPI.AACommand
+}
+public class AAWakeUp : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAWakeUp : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case wakeUp
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAWakeUp.MessageTypes]
+    public static var allCases: [AutoAPI.AAWakeUp.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAWakeUp {
+  public static var wakeUp: AutoAPI.AACommand {
+    get
+  }
+}
+public class AALightConditions : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let insideLight: AutoAPI.AAProperty<Swift.Float>?
+  final public let outsideLight: AutoAPI.AAProperty<Swift.Float>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AALightConditions : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getConditions
+    case conditions
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AALightConditions.MessageTypes]
+    public static var allCases: [AutoAPI.AALightConditions.MessageTypes] {
+      get
+    }
+  }
+}
+extension AALightConditions {
+  public static var getConditions: AutoAPI.AACommand {
+    get
+  }
+}
+public class AAWeatherConditions : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let rainIntensity: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAWeatherConditions : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getConditions
+    case conditions
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAWeatherConditions.MessageTypes]
+    public static var allCases: [AutoAPI.AAWeatherConditions.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAWeatherConditions {
+  public static var getConditions: AutoAPI.AACommand {
+    get
+  }
+}
+public struct AADriverCard : Swift.Equatable {
+  public let driverNumber: Swift.UInt8
+  public let present: AutoAPI.AAPresenceState
+  public static func == (a: AutoAPI.AADriverCard, b: AutoAPI.AADriverCard) -> Swift.Bool
+}
+extension AADriverCard : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public class AAFailureMessage : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let description: AutoAPI.AAProperty<Swift.String>?
+  final public let messageIdentifier: AutoAPI.AAProperty<AutoAPI.AACapabilityIdentifier>?
+  final public let messageType: AutoAPI.AAProperty<Swift.UInt8>?
+  final public let reason: AutoAPI.AAProperty<AutoAPI.AAFailureReason>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAFailureMessage : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case failure
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAFailureMessage.MessageTypes]
+    public static var allCases: [AutoAPI.AAFailureMessage.MessageTypes] {
+      get
+    }
+  }
+}
+public class AAFirmwareVersion : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let applicationVersion: AutoAPI.AAProperty<Swift.String>?
+  final public let hmkitVersion: AutoAPI.AAProperty<AutoAPI.AASDKVersion>?
+  final public let hmkitBuildName: AutoAPI.AAProperty<Swift.String>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAFirmwareVersion : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getVersion
+    case version
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAFirmwareVersion.MessageTypes]
+    public static var allCases: [AutoAPI.AAFirmwareVersion.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAFirmwareVersion {
+  public static var getVersion: AutoAPI.AACommand {
+    get
+  }
+}
+public class AABrowser : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AABrowser : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case loadURL
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AABrowser.MessageTypes]
+    public static var allCases: [AutoAPI.AABrowser.MessageTypes] {
+      get
+    }
+  }
+}
+extension AABrowser {
+  public static func loadURL(_ url: Foundation.URL) -> AutoAPI.AACommand
+}
+public class AAGraphics : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAGraphics : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case displayImage
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAGraphics.MessageTypes]
+    public static var allCases: [AutoAPI.AAGraphics.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAGraphics {
+  public static func displayImage(_ url: Foundation.URL) -> AutoAPI.AACommand
+}
+public class AAMessaging : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let recipientHandle: AutoAPI.AAProperty<Swift.String>?
+  final public let text: AutoAPI.AAProperty<Swift.String>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAMessaging : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case received
+    case send
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAMessaging.MessageTypes]
+    public static var allCases: [AutoAPI.AAMessaging.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAMessaging {
+  public static func received(message text: Swift.String, senderHandle handle: Swift.String?) -> AutoAPI.AACommand
+}
+public class AANotifications : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let actionItems: [AutoAPI.AAProperty<AutoAPI.AAActionItem>]?
+  final public let receivedActionID: AutoAPI.AAProperty<Swift.UInt8>?
+  final public let receivedClearCommand: Swift.Bool
+  final public let text: AutoAPI.AAProperty<Swift.String>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  required convenience public init?(bytes: [Swift.UInt8])
+  @objc deinit
+}
+extension AANotifications : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case notification
+    case action
+    case clear
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AANotifications.MessageTypes]
+    public static var allCases: [AutoAPI.AANotifications.MessageTypes] {
+      get
+    }
+  }
+}
+extension AANotifications {
+  public static var clearNotification: AutoAPI.AACommand {
+    get
+  }
+  public static func activatedAction(_ action: Swift.UInt8) -> AutoAPI.AACommand
+  public static func received(text: Swift.String, actionItems items: [AutoAPI.AAActionItem]?) -> AutoAPI.AACommand
+}
+public enum AADriverSeatLocation : Swift.UInt8 {
+  case left
+  case right
+  case center
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AADriverSeatLocation : AutoAPI.AABytesConvertable {
+}
+public class AATextInput : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AATextInput : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case input
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AATextInput.MessageTypes]
+    public static var allCases: [AutoAPI.AATextInput.MessageTypes] {
+      get
+    }
+  }
+}
+extension AATextInput {
+  public static func textInput(_ text: Swift.String) -> AutoAPI.AACommand
+}
+public enum AAChosenState : Swift.UInt8 {
+  case notChosen
+  case chosen
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAChosenState : AutoAPI.AABytesConvertable {
+}
+public class AAVideoHandover : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAVideoHandover : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case handover
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAVideoHandover.MessageTypes]
+    public static var allCases: [AutoAPI.AAVideoHandover.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAVideoHandover {
+  public static func videoHandover(url: Foundation.URL, startingSecond second: Swift.UInt16?, screen: AutoAPI.AAScreen?) -> AutoAPI.AACommand
+}
+public struct AAClimateWeekdayTime {
+  public var weekday: AutoAPI.AAWeekday
+  public var time: AutoAPI.AATime
+  public init(weekday: AutoAPI.AAWeekday, time: AutoAPI.AATime)
+}
+extension AAClimateWeekdayTime : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public enum AAPluggedInState : Swift.UInt8 {
+  case disconnected
+  case pluggedIn
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAPluggedInState : AutoAPI.AABytesConvertable {
+}
+public enum AADisplayUnit : Swift.UInt8 {
+  case km
+  case miles
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AADisplayUnit : AutoAPI.AABytesConvertable {
+}
+public class AAWiFi : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let connectedState: AutoAPI.AAProperty<AutoAPI.AAConnectionState>?
+  final public let enabledState: AutoAPI.AAProperty<AutoAPI.AAEnabledState>?
+  final public let networkSecurity: AutoAPI.AAProperty<AutoAPI.AANetworkSecurity>?
+  final public let networkSSID: AutoAPI.AAProperty<AutoAPI.AANetworkSSID>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAWiFi : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getState
+    case state
+    case connectToNetwork
+    case forgetNetwork
+    case enableDisable
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAWiFi.MessageTypes]
+    public static var allCases: [AutoAPI.AAWiFi.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAWiFi {
+  public static var getWifiState: AutoAPI.AACommand {
+    get
+  }
+  public static func connectToNetwork(ssid: AutoAPI.AANetworkSSID, security: AutoAPI.AANetworkSecurity, password: Swift.String?) -> AutoAPI.AACommand
+  public static func enableDisalbe(_ state: AutoAPI.AAEnabledState) -> AutoAPI.AACommand
+  public static func forgetNetwork(ssid: AutoAPI.AANetworkSSID) -> AutoAPI.AACommand
+}
+public struct AATirePressure {
+  public let location: AutoAPI.AALocation
+  public let pressure: Swift.Float
+}
+extension AATirePressure : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public class AADriverFatigue : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let fatigueLevel: AutoAPI.AAProperty<AutoAPI.AAFatigueLevel>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AADriverFatigue : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case fatigueDetected
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AADriverFatigue.MessageTypes]
+    public static var allCases: [AutoAPI.AADriverFatigue.MessageTypes] {
+      get
+    }
+  }
+}
+public class AAHeartRate : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAHeartRate : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case sendRate
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAHeartRate.MessageTypes]
+    public static var allCases: [AutoAPI.AAHeartRate.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAHeartRate {
+  public static func sendRate(_ rate: Swift.UInt8) -> AutoAPI.AACommand
+}
+public class AAHomeCharger : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let authenticationMechanism: AutoAPI.AAProperty<AutoAPI.AAAuthenticationMechanism>?
+  final public let authenticationState: AutoAPI.AAProperty<AutoAPI.AAAuthenticationState>?
+  final public let chargeCurrentDC: AutoAPI.AAProperty<Swift.Float>?
+  final public let chargingPower: AutoAPI.AAProperty<Swift.Float>?
+  final public let chargingState: AutoAPI.AAProperty<AutoAPI.AAChargingState>?
+  final public let hotspotState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let coordinates: AutoAPI.AAProperty<AutoAPI.AACoordinates>?
+  final public let maximumChargeCurrent: AutoAPI.AAProperty<Swift.Float>?
+  final public let minimumChargeCurrent: AutoAPI.AAProperty<Swift.Float>?
+  final public let plugType: AutoAPI.AAProperty<AutoAPI.AAPlugType>?
+  final public let priceTariffs: [AutoAPI.AAProperty<AutoAPI.AAPriceTariff>]?
+  final public let solarChargingState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let wifiHotspotPassword: AutoAPI.AAProperty<Swift.String>?
+  final public let wifiHotspotSecurity: AutoAPI.AAProperty<AutoAPI.AANetworkSecurity>?
+  final public let wifiHotspotSSID: AutoAPI.AAProperty<Swift.String>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAHomeCharger : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getChargerState
+    case chargerState
+    case setChargingCurrent
+    case setPriceTariffs
+    case activateSolarCharging
+    case enableWifiHotspot
+    case authenticateExpire
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAHomeCharger.MessageTypes]
+    public static var allCases: [AutoAPI.AAHomeCharger.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAHomeCharger {
+  public static var getChargerState: AutoAPI.AACommand {
+    get
+  }
+  public static func activateSolarCharging(_ state: AutoAPI.AAActiveState) -> AutoAPI.AACommand
+  public static func enableWifiHotspot(_ enable: AutoAPI.AAEnabledState) -> AutoAPI.AACommand
+  public static func setAuthenticationState(_ state: AutoAPI.AAAuthenticationState) -> AutoAPI.AACommand
+  public static func setChargingCurrent(_ current: Swift.Float) -> AutoAPI.AACommand
+  public static func setPriceTariffs(_ tariffs: [AutoAPI.AAPriceTariff]) -> AutoAPI.AACommand
+}
+public class AAFueling : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let gasFlapLockState: AutoAPI.AAProperty<AutoAPI.AALockState>?
+  final public let gasFlapPosition: AutoAPI.AAProperty<AutoAPI.AAPositionState>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAFueling : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getGasFlapState
+    case gasFlapState
+    case opencloseGasFlap
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAFueling.MessageTypes]
+    public static var allCases: [AutoAPI.AAFueling.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAFueling {
+  public static var getGasFlapState: AutoAPI.AACommand {
+    get
+  }
+  public static func controlGasFlap(lockState: AutoAPI.AALockState?, position: AutoAPI.AAPositionState?) -> AutoAPI.AACommand
+}
+public class AAParkingBrake : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let state: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAParkingBrake : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getBrakeState
+    case brakeState
+    case activate
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAParkingBrake.MessageTypes]
+    public static var allCases: [AutoAPI.AAParkingBrake.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAParkingBrake {
+  public static var getBrakeState: AutoAPI.AACommand {
+    get
+  }
+  public static func activate(_ state: AutoAPI.AAActiveState) -> AutoAPI.AACommand
+}
+public class AAParkingTicket : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let endTime: AutoAPI.AAProperty<Foundation.Date>?
+  final public let operatorName: AutoAPI.AAProperty<Swift.String>?
+  final public let startTime: AutoAPI.AAProperty<Foundation.Date>?
+  final public let state: AutoAPI.AAProperty<AutoAPI.AAParkingTicketState>?
+  final public let ticketID: AutoAPI.AAProperty<Swift.String>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAParkingTicket : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getTicket
+    case parkingTicket
+    case startParking
+    case endParking
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAParkingTicket.MessageTypes]
+    public static var allCases: [AutoAPI.AAParkingTicket.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAParkingTicket {
+  public static var getTicket: AutoAPI.AACommand {
+    get
+  }
+  public static func endParking() -> AutoAPI.AACommand
+  public static func startParking(ticketID: Swift.String, startTime: Foundation.Date, endTime: Foundation.Date?, operatorName: Swift.String?) -> AutoAPI.AACommand
+}
+public class AARemoteControl : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let angle: AutoAPI.AAProperty<Swift.Int16>?
+  final public let controlMode: AutoAPI.AAProperty<AutoAPI.AAControlMode>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AARemoteControl : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getControlState
+    case controlMode
+    case controlCommand
+    case startStopControl
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AARemoteControl.MessageTypes]
+    public static var allCases: [AutoAPI.AARemoteControl.MessageTypes] {
+      get
+    }
+  }
+}
+extension AARemoteControl {
+  public static var getControlState: AutoAPI.AACommand {
+    get
+  }
+  public static func controlCommand(angle: Swift.Int16?, speed: Swift.Int8?) -> AutoAPI.AACommand
+  public static func startStopControl(_ startStop: AutoAPI.AAStartStopState) -> AutoAPI.AACommand?
+}
+public class AAPowerTakeoff : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let activeState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let engagedState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAPowerTakeoff : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getState
+    case state
+    case activate
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAPowerTakeoff.MessageTypes]
+    public static var allCases: [AutoAPI.AAPowerTakeoff.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAPowerTakeoff {
+  public static var getState: AutoAPI.AACommand {
+    get
+  }
+  public static func activate(_ state: AutoAPI.AAActiveState) -> AutoAPI.AACommand
+}
+public class AATheftAlarm : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let state: AutoAPI.AAProperty<AutoAPI.AATheftAlarmState>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AATheftAlarm : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getAlarmState
+    case alarmState
+    case setAlarmState
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AATheftAlarm.MessageTypes]
+    public static var allCases: [AutoAPI.AATheftAlarm.MessageTypes] {
+      get
+    }
+  }
+}
+extension AATheftAlarm {
+  public static var getAlarmState: AutoAPI.AACommand {
+    get
+  }
+  public static func setAlarmState(_ state: AutoAPI.AATheftAlarmState) -> AutoAPI.AACommand
+}
+public class AAStartStop : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let activeState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAStartStop : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getState
+    case state
+    case activate
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAStartStop.MessageTypes]
+    public static var allCases: [AutoAPI.AAStartStop.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAStartStop {
+  public static var getState: AutoAPI.AACommand {
+    get
+  }
+  public static func activate(_ state: AutoAPI.AAActiveState) -> AutoAPI.AACommand
+}
+public struct AAWindowPosition {
+  public let location: AutoAPI.AALocation
+  public let position: AutoAPI.AAPositionState
+  public init(location: AutoAPI.AALocation, position: AutoAPI.AAPositionState)
+}
+extension AAWindowPosition : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public enum AATimeState : Swift.UInt8 {
+  case normal
+  case quarterBefore4½Hours
+  case reached4½Hours
+  case quarterBefore9Hours
+  case reached9Hours
+  case quarterBefore16Hours
+  case reached16Hours
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AATimeState : AutoAPI.AABytesConvertable {
+}
+public class AAValetMode : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let state: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAValetMode : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getState
+    case state
+    case activate
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAValetMode.MessageTypes]
+    public static var allCases: [AutoAPI.AAValetMode.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAValetMode {
+  public static var getState: AutoAPI.AACommand {
+    get
+  }
+  public static func activate(_ state: AutoAPI.AAActiveState) -> AutoAPI.AACommand
+}
+public class AANaviDestination : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let coordinates: AutoAPI.AAProperty<AutoAPI.AACoordinates>?
+  final public let name: AutoAPI.AAProperty<Swift.String>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AANaviDestination : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getDestination
+    case destination
+    case setDestination
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AANaviDestination.MessageTypes]
+    public static var allCases: [AutoAPI.AANaviDestination.MessageTypes] {
+      get
+    }
+  }
+}
+extension AANaviDestination {
+  public static var getDestination: AutoAPI.AACommand {
+    get
+  }
+  public static func setDestination(coordinates: AutoAPI.AACoordinates, name: Swift.String?) -> AutoAPI.AACommand
+}
+public class AAVehicleLocation : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let altitude: AutoAPI.AAProperty<Swift.Double>?
+  final public let heading: AutoAPI.AAProperty<Swift.Double>?
+  final public let coordinates: AutoAPI.AAProperty<AutoAPI.AACoordinates>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAVehicleLocation : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getLocation
+    case location
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAVehicleLocation.MessageTypes]
+    public static var allCases: [AutoAPI.AAVehicleLocation.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAVehicleLocation {
+  public static var getLocation: AutoAPI.AACommand {
+    get
+  }
+}
+public class AAVehicleTime : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let time: AutoAPI.AAProperty<Foundation.Date>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAVehicleTime : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getTime
+    case time
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAVehicleTime.MessageTypes]
+    public static var allCases: [AutoAPI.AAVehicleTime.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAVehicleTime {
+  public static var getTime: AutoAPI.AACommand {
+    get
+  }
+}
+public enum AAAuthenticationState : Swift.UInt8 {
+  case unauthenticated
+  case authenticated
+  public static let expire: AutoAPI.AAAuthenticationState
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAAuthenticationState : AutoAPI.AABytesConvertable {
+}
+public struct AASeatbeltFastened {
+  public let fastened: AutoAPI.AAFastened
+  public let location: AutoAPI.AASeatLocation
+}
+extension AASeatbeltFastened : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public enum AAAccelerationType : Swift.UInt8 {
+  case longitudinal
+  case lateral
+  case frontLateral
+  case rearLateral
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAAccelerationType : AutoAPI.AABytesConvertable {
+}
+public enum AAAuthenticationMechanism : Swift.UInt8 {
+  case pin
+  case app
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAAuthenticationMechanism : AutoAPI.AABytesConvertable {
+}
+public class AAMultiCommand : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let states: [AutoAPI.AACapability]?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAMultiCommand : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case states
+    case send
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAMultiCommand.MessageTypes]
+    public static var allCases: [AutoAPI.AAMultiCommand.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAMultiCommand {
+  public static func combined(_ commands: AutoAPI.AACommand...) -> AutoAPI.AACommand
+}
+public enum AAAxle : Swift.UInt8 {
+  case front
+  case rear
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAAxle : AutoAPI.AABytesConvertable {
+}
+public struct AADepartureTime {
+  public let state: AutoAPI.AAActiveState
+  public let time: AutoAPI.AATime?
+}
+extension AADepartureTime : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public enum AAChargeMode : Swift.UInt8 {
+  case immediate
+  case timerBased
+  case inductive
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAChargeMode : AutoAPI.AABytesConvertable {
+}
+public struct AADoorLock {
+  public let location: AutoAPI.AALocation
+  public let lock: AutoAPI.AALockState
+}
+extension AADoorLock : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public enum AAOpenClose : Swift.UInt8 {
+  case closed
+  case open
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAOpenClose : AutoAPI.AABytesConvertable {
+}
+public enum AAChargingState : Swift.UInt8 {
+  case notCharging
+  case charging
+  case chargingComplete
+  case initialising
+  case chargingPaused
+  case chargingError
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAChargingState : AutoAPI.AABytesConvertable {
+}
+public enum AACruiseControlLimiter : Swift.UInt8 {
+  case inactive
+  case higherSpeedRequested
+  case lowerSpeedRequested
+  case speedFixed
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AACruiseControlLimiter : AutoAPI.AABytesConvertable {
+}
+public enum AAControlMode : Swift.UInt8 {
+  case unavailable
+  case available
+  case started
+  case failedToStart
+  case aborted
+  case ended
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAControlMode : AutoAPI.AABytesConvertable {
+}
+public enum AADrivingMode : Swift.UInt8 {
+  case regular
+  case eco
+  case sport
+  case sportPlus
+  case ecoPlus
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AADrivingMode : AutoAPI.AABytesConvertable {
+}
+public enum AAFailureReason : Swift.UInt8 {
+  case unsupportedCapability
+  case unauthorised
+  case incorrectState
+  case executionTimeout
+  case vehicleAsleep
+  case invalidCommand
+  case pending
+  case rateLimit
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAFailureReason : AutoAPI.AABytesConvertable {
+}
+public enum AAFatigueLevel : Swift.UInt8 {
+  case light
+  case pauseRecommended
+  case actionNeeded
+  case carReadyToTakeOver
+  public static let driverNeedsRest: AutoAPI.AAFatigueLevel
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAFatigueLevel : AutoAPI.AABytesConvertable {
+}
+public enum AAFlasherState : Swift.UInt8 {
+  case inactive
+  case emergencyFlasherActive
+  case leftFlasherActive
+  case rightFlasherActive
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAFlasherState : AutoAPI.AABytesConvertable {
+}
+public class AACruiseControl : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let adaptiveState: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let adaptiveTargetSpeed: AutoAPI.AAProperty<Swift.Int16>?
+  final public let limiter: AutoAPI.AAProperty<AutoAPI.AACruiseControlLimiter>?
+  final public let state: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let targetSpeed: AutoAPI.AAProperty<Swift.Int16>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AACruiseControl : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getControlState
+    case controlState
+    case activateCruiseControl
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AACruiseControl.MessageTypes]
+    public static var allCases: [AutoAPI.AACruiseControl.MessageTypes] {
+      get
+    }
+  }
+}
+extension AACruiseControl {
+  public static var getCruiseControlState: AutoAPI.AACommand {
+    get
+  }
+  public static func activateCruiseControl(state: AutoAPI.AAActiveState, targetSpeed: Swift.Int16? = nil) -> AutoAPI.AACommand
+}
+public enum AAGearMode : Swift.UInt8 {
+  case manual
+  case park
+  case reverse
+  case neutral
+  case drive
+  case lowGear
+  case sport
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAGearMode : AutoAPI.AABytesConvertable {
+}
+public enum AAKeyfobRelativePosition : Swift.UInt8 {
+  case outOfRange
+  case outsideDriverSide
+  case outsideInFront
+  case outsidePassengerSide
+  case outsideBehind
+  case inside
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAKeyfobRelativePosition : AutoAPI.AABytesConvertable {
+}
+public enum AAFrontLightState : Swift.UInt8 {
+  case inactive
+  case active
+  case activeFullBeam
+  case daylightRunningLamps
+  case automatic
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAFrontLightState : AutoAPI.AABytesConvertable {
+}
+public enum AALightLocation : Swift.UInt8 {
+  case front
+  case rear
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AALightLocation : AutoAPI.AABytesConvertable {
+}
+public protocol AACapability : AutoAPI.AACapabilityClass, AutoAPI.AAIdentifiable {
+}
+extension AACapability {
+  public var debugTree: HMUtilities.HMDebugTree {
+    get
+  }
+}
+public enum AALockState : Swift.UInt8 {
+  case unlocked
+  case locked
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AALockState : AutoAPI.AABytesConvertable {
+}
+public struct AAProperties : Swift.Sequence, Swift.IteratorProtocol, AutoAPI.AABytesConvertable {
+  public var carSignature: [Swift.UInt8]? {
+    get
+  }
+  public var nonce: [Swift.UInt8]? {
+    get
+  }
+  public var timestamp: Foundation.Date? {
+    get
+  }
+  public var bytes: [Swift.UInt8]
+  public init?(bytes: [Swift.UInt8])
+  mutating public func next() -> AutoAPI.AABasicProperty?
+  public typealias Element = AutoAPI.AABasicProperty
+  public typealias Iterator = AutoAPI.AAProperties
+}
+public enum AAGearbox : Swift.UInt8 {
+  case manual
+  case automatic
+  case semiAutomatic
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAGearbox : AutoAPI.AABytesConvertable {
+}
+public class AAMobile : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let connected: AutoAPI.AAProperty<AutoAPI.AAConnectionState>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAMobile : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getMobileState
+    case state
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAMobile.MessageTypes]
+    public static var allCases: [AutoAPI.AAMobile.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAMobile {
+  public static var getConnectionState: AutoAPI.AACommand {
+    get
+  }
+}
+public enum AANeedsReplacement : Swift.UInt8 {
+  case unknown
+  case no
+  case yes
+  public static let noReplacementNeeded: AutoAPI.AANeedsReplacement
+  public static let replacementNeeded: AutoAPI.AANeedsReplacement
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AANeedsReplacement : AutoAPI.AABytesConvertable {
+}
+public enum AANetworkSecurity : Swift.UInt8 {
+  case none
+  case WEP
+  case WPA_WPA2Personal
+  case WPA2Personal
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AANetworkSecurity : AutoAPI.AABytesConvertable {
+}
+public struct AACheckControlMessage {
+  public let id: Swift.UInt16
+  public let remainingMinutes: Swift.UInt32
+  public let status: Swift.String
+  public let text: Swift.String
+}
+extension AACheckControlMessage : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public enum AAParkingTicketState : Swift.UInt8 {
+  case ended
+  case started
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAParkingTicketState : AutoAPI.AABytesConvertable {
+}
+public class AABasicProperty : AutoAPI.AABytesConvertable {
+  public var identifier: AutoAPI.AAPropertyIdentifier {
+    get
+  }
+  public var failure: AutoAPI.AAPropertyFailure? {
+    get
+  }
+  public var timestamp: Foundation.Date? {
+    get
+  }
+  public var valueBytes: [Swift.UInt8]? {
+    get
+  }
+  final public let bytes: [Swift.UInt8]
+  required public init?(bytes: [Swift.UInt8])
+  @objc deinit
+}
+public enum AAPlugType : Swift.UInt8 {
+  case type1
+  case type2
+  case combinedChargingSystem
+  case CHAdeMO
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAPlugType : AutoAPI.AABytesConvertable {
+}
+public struct AAPropertyFailure {
+  public let reason: AutoAPI.AAPropertyFailureReason
+  public let description: Swift.String
+}
+extension AAPropertyFailure : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+extension AAPropertyFailure : Swift.Equatable {
+  public static func == (lhs: AutoAPI.AAPropertyFailure, rhs: AutoAPI.AAPropertyFailure) -> Swift.Bool
+}
+public enum AALocation : Swift.UInt8 {
+  case frontLeft
+  case frontRight
+  case rearRight
+  case rearLeft
+  case hatch
+  case all
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AALocation : AutoAPI.AABytesConvertable {
+}
+public enum AAPositionState : Swift.UInt8 {
+  case closed
+  case open
+  case intermediate
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAPositionState : AutoAPI.AABytesConvertable {
+}
+public enum AAPowerTrain : Swift.UInt8 {
+  case unknown
+  case allElectric
+  case combustionEngine
+  case plugInHybrid
+  case hydrogen
+  case hydrogenHybrid
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAPowerTrain : AutoAPI.AABytesConvertable {
+}
+public enum AAPricingType : Swift.UInt8 {
+  case startingFee
+  case perMinute
+  case perKWh
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAPricingType : AutoAPI.AABytesConvertable {
+}
+public enum AAScreen : Swift.UInt8 {
+  case front
+  case rear
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAScreen : AutoAPI.AABytesConvertable {
+}
+public enum AAFastened : Swift.UInt8 {
+  case notFastened
+  case fastened
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAFastened : AutoAPI.AABytesConvertable {
+}
+public class AAUsage : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let accelerationEvalution: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let averageFuelConsumption: AutoAPI.AAProperty<Swift.Float>?
+  final public let averageWeeklyDistance: AutoAPI.AAProperty<Swift.UInt16>?
+  final public let averageWeeklyDistanceLongTerm: AutoAPI.AAProperty<Swift.UInt16>?
+  final public let currentFuelConsumption: AutoAPI.AAProperty<Swift.Float>?
+  final public let drivingModeActivationPeriods: [AutoAPI.AAProperty<AutoAPI.AADrivingModeActivationPeriod>]?
+  final public let drivingModeEnergyConsumptions: [AutoAPI.AAProperty<AutoAPI.AADrivingModeEnergyConsumption>]?
+  final public let drivingStyleEvalution: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let lastTripAverageEnergyRecuperation: AutoAPI.AAProperty<Swift.Float>?
+  final public let lastTripBatteryRemaining: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let lastTripElectricPortion: AutoAPI.AAProperty<AutoAPI.AAPercentage>?
+  final public let lastTripEnergyConsumption: AutoAPI.AAProperty<Swift.Float>?
+  final public let lastTripFuelConsumption: AutoAPI.AAProperty<Swift.Float>?
+  final public let lastTripDate: AutoAPI.AAProperty<Foundation.Date>?
+  final public let mileageAfterLastTrip: AutoAPI.AAProperty<Swift.UInt32>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAUsage : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getUsage
+    case usageState
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAUsage.MessageTypes]
+    public static var allCases: [AutoAPI.AAUsage.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAUsage {
+  public static var getUsage: AutoAPI.AACommand {
+    get
+  }
+}
+public enum AASeatLocation : Swift.UInt8 {
+  case frontLeft
+  case frontRight
+  case rearRight
+  case rearLeft
+  case rearCenter
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AASeatLocation : AutoAPI.AABytesConvertable {
+}
+public enum AAStartStopState : Swift.UInt8 {
+  case start
+  case stop
+  case reset
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAStartStopState : AutoAPI.AABytesConvertable {
+}
+public enum AATheftAlarmState : Swift.UInt8 {
+  case notArmed
+  case armed
+  case triggered
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AATheftAlarmState : AutoAPI.AABytesConvertable {
+}
+public enum AATimerType : Swift.UInt8 {
+  case prefferedStartTime
+  case prefferedEndTime
+  case departureDate
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AATimerType : AutoAPI.AABytesConvertable {
+}
+public enum AAFluidLevel : Swift.UInt8 {
+  case low
+  case filled
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAFluidLevel : AutoAPI.AABytesConvertable {
+}
+public enum AAWindscreenDamage : Swift.UInt8 {
+  case noImpactDetected
+  case impactButNoDamageDetected
+  case damageSmallerThan_1in
+  case damageLargerThan_1in
+  public static let small: AutoAPI.AAWindscreenDamage
+  public static let big: AutoAPI.AAWindscreenDamage
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAWindscreenDamage : AutoAPI.AABytesConvertable {
+}
+public struct AADiagnosticTroubleCode {
+  public let ecuID: Swift.String
+  public let id: Swift.String
+  public let occurences: Swift.UInt8
+  public let status: Swift.String
+}
+extension AADiagnosticTroubleCode : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public enum AAWipersIntensity : Swift.UInt8 {
+  case level0
+  case level1
+  case level2
+  case level3
+  public static let inactive: AutoAPI.AAWipersIntensity
+  public static let highest: AutoAPI.AAWipersIntensity
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAWipersIntensity : AutoAPI.AABytesConvertable {
+}
+public enum AAWipersState : Swift.UInt8 {
+  case inactive
+  case active
+  case automatic
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAWipersState : AutoAPI.AABytesConvertable {
+}
+public enum AAZone : Swift.RawRepresentable {
+  case unavailable
+  case matrix(Swift.UInt8)
+  public static let unknown: AutoAPI.AAZone
+  public var horisontal: Swift.UInt8 {
+    get
+  }
+  public var vertical: Swift.UInt8 {
+    get
+  }
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+  public init?(rawValue: Swift.UInt8)
+  public init(horisontal: Swift.UInt8, vertical: Swift.UInt8)
+}
+extension AAZone : AutoAPI.AABytesConvertable {
+}
+extension AAZone : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension AAZone : Swift.Equatable {
+}
+public class AAProperty<ValueType> : AutoAPI.AABasicProperty where ValueType : AutoAPI.AABytesConvertable {
+  public var value: ValueType? {
+    get
+  }
+  @objc deinit
+}
+extension AAProperty : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+public enum AAAvailability : Swift.UInt8 {
+  case pending
+  case idle
+  case successful
+  case error
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAAvailability : AutoAPI.AABytesConvertable {
+}
+public struct AADoorPosition {
+  public let location: AutoAPI.AALocation
+  public let position: AutoAPI.AAPositionState
+}
+extension AADoorPosition : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public class AACapabilityClass : AutoAPI.AABytesConvertable {
+  public var carSignature: [Swift.UInt8]? {
+    get
+  }
+  public var nonce: [Swift.UInt8]? {
+    get
+  }
+  public var timestamp: Foundation.Date? {
+    get
+  }
+  public var properties: AutoAPI.AAProperties
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  required convenience public init?(bytes: [Swift.UInt8])
+  @objc deinit
+}
+public struct AADrivingModeActivationPeriod {
+  public let mode: AutoAPI.AADrivingMode
+  public let period: AutoAPI.AAPercentage
+}
+extension AADrivingModeActivationPeriod : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public enum AAConvertibleRoofState : Swift.UInt8 {
+  case closed
+  case open
+  case emergencyLocked
+  case closedSecured
+  case openSecured
+  case hardTopMounted
+  case intermediatePosition
+  case loadingPosition
+  case loadingPositionImmediate
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAConvertibleRoofState : AutoAPI.AABytesConvertable {
+}
+public struct AASeatPersonDetected {
+  public let detected: AutoAPI.AADetectedState
+  public let location: AutoAPI.AASeatLocation
+}
+extension AASeatPersonDetected : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public struct AADrivingModeEnergyConsumption {
+  public let mode: AutoAPI.AADrivingMode
+  public let consumption: Swift.Float
+}
+extension AADrivingModeEnergyConsumption : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public protocol AAIdentifiable {
+  static var identifier: AutoAPI.AACapabilityIdentifier { get }
+}
+public struct AAAcceleration {
+  public let type: AutoAPI.AAAccelerationType
+  public let value: Swift.Float
+}
+extension AAAcceleration : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public struct AADriverWorkingState {
+  public let driverNumber: Swift.UInt8
+  public let state: AutoAPI.AAWorkingState
+}
+extension AADriverWorkingState : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+extension AADriverWorkingState : Swift.Equatable {
+  public static func == (a: AutoAPI.AADriverWorkingState, b: AutoAPI.AADriverWorkingState) -> Swift.Bool
+}
+public enum AAGasFlapState : Swift.UInt8 {
+  case closed
+  case open
+  case locked
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAGasFlapState : AutoAPI.AABytesConvertable {
+}
+public struct AAActionItem {
+  public let identifier: Swift.UInt8
+  public let name: Swift.String
+  public init(identifier: Swift.UInt8, name: Swift.String)
+}
+extension AAActionItem : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public struct AABrakeTorqueVectoring {
+  public let axle: AutoAPI.AAAxle
+  public let state: AutoAPI.AAActiveState
+}
+extension AABrakeTorqueVectoring : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public struct AADriverTimeState : Swift.Equatable {
+  public let driverNumber: Swift.UInt8
+  public let state: AutoAPI.AATimeState
+  public static func == (a: AutoAPI.AADriverTimeState, b: AutoAPI.AADriverTimeState) -> Swift.Bool
+}
+extension AADriverTimeState : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public enum AAWeekday : Swift.UInt8 {
+  case monday
+  case tuesday
+  case wednesday
+  case thursday
+  case friday
+  case saturday
+  case sunday
+  case automatic
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAWeekday : AutoAPI.AABytesConvertable {
+}
+public struct AAChargingTimer {
+  public let type: AutoAPI.AATimerType
+  public let time: Foundation.Date
+  public init(type: AutoAPI.AATimerType, time: Foundation.Date)
+}
+extension AAChargingTimer : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+extension AAChargingTimer : Swift.Equatable {
+  public static func == (a: AutoAPI.AAChargingTimer, b: AutoAPI.AAChargingTimer) -> Swift.Bool
+}
+public enum AADashboardLightName : Swift.UInt8 {
+  case highMainBeam
+  case lowDippedBeam
+  case hazardWarning
+  case brakeFailureSystemMalfunction
+  case hatchOpen
+  case fuelLevel
+  case engineCoolantTemperature
+  case batteryChargingCondition
+  case engineOil
+  case positionSideLights
+  case frontFogLight
+  case rearFogLight
+  case parkHeating
+  case engineIndicator
+  case serviceCallForMaintenance
+  case transmissionFluidTemperature
+  case transmissionFailureMalfunction
+  case antilockBrakeSystemFailure
+  case workBrakeLinings
+  case windscreenWindShieldWasherFluid
+  case tireFailureMalfunction
+  case engineOilLevel
+  case engineCoolantLevel
+  case steeringFailure
+  case electronicSpeedControllerIndiction
+  case brakeLights
+  case adBlueLevel
+  case fuelFilterDifferentialPressure
+  case seatBelt
+  case advancedEmergencyBrakingSystem
+  case autonomousCruiseControl
+  case trailerConnected
+  case airbag
+  case escSwitchedOff
+  case laneDepartureWarningSwitchedOff
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AADashboardLightName : AutoAPI.AABytesConvertable {
+}
+public protocol AABytesConvertable : HMUtilities.HMBytesConvertable {
+}
+extension Float : AutoAPI.AABytesConvertable {
+}
+extension Double : AutoAPI.AABytesConvertable {
+}
+extension UInt : AutoAPI.AABytesConvertable {
+}
+extension UInt8 : AutoAPI.AABytesConvertable {
+}
+extension UInt16 : AutoAPI.AABytesConvertable {
+}
+extension UInt32 : AutoAPI.AABytesConvertable {
+}
+extension UInt64 : AutoAPI.AABytesConvertable {
+}
+extension Int : AutoAPI.AABytesConvertable {
+}
+extension Int8 : AutoAPI.AABytesConvertable {
+}
+extension Int16 : AutoAPI.AABytesConvertable {
+}
+extension Int32 : AutoAPI.AABytesConvertable {
+}
+extension Int64 : AutoAPI.AABytesConvertable {
+}
+extension Date : AutoAPI.AABytesConvertable {
+}
+extension String : AutoAPI.AABytesConvertable {
+}
+extension URL : AutoAPI.AABytesConvertable {
+}
+public struct AASpringRateValue {
+  public let axle: AutoAPI.AAAxle
+  public let value: Swift.UInt8
+  public init(axle: AutoAPI.AAAxle, value: Swift.UInt8)
+}
+extension AASpringRateValue : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public struct AAActivatedDays : Swift.OptionSet {
+  public static let monday: AutoAPI.AAActivatedDays
+  public static let tuesday: AutoAPI.AAActivatedDays
+  public static let wednesday: AutoAPI.AAActivatedDays
+  public static let thursday: AutoAPI.AAActivatedDays
+  public static let friday: AutoAPI.AAActivatedDays
+  public static let saturday: AutoAPI.AAActivatedDays
+  public static let sunday: AutoAPI.AAActivatedDays
+  public static let automatic: AutoAPI.AAActivatedDays
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8
+  public init(rawValue: Swift.UInt8)
+  public typealias Element = AutoAPI.AAActivatedDays
+  public typealias ArrayLiteralElement = AutoAPI.AAActivatedDays
+}
+extension AAActivatedDays : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension AAActivatedDays : AutoAPI.AABytesConvertable {
+}
+public struct AATime {
+  public var hour: Swift.UInt8
+  public var minute: Swift.UInt8
+  public init(hour: Swift.UInt8, minute: Swift.UInt8)
+}
+extension AATime : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+extension AATime : Swift.Equatable {
+  public static func == (a: AutoAPI.AATime, b: AutoAPI.AATime) -> Swift.Bool
+}
+public struct AAColour {
+  public var red: Swift.Double
+  public var green: Swift.Double
+  public var blue: Swift.Double
+  public init(red: Swift.Double, green: Swift.Double, blue: Swift.Double)
+}
+extension AAColour : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+extension AAColour : Swift.Equatable {
+  public static func == (a: AutoAPI.AAColour, b: AutoAPI.AAColour) -> Swift.Bool
+}
+public enum AAMovingState : Swift.UInt8 {
+  case notMoving
+  case moving
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAMovingState : AutoAPI.AABytesConvertable {
+}
+public typealias AACoordinates = CoreLocation.CLLocationCoordinate2D
+extension CLLocationCoordinate2D : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public struct AATireTemperature {
+  public let location: AutoAPI.AALocation
+  public let temperature: Swift.Float
+}
+extension AATireTemperature : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public enum AAConnectionState : Swift.UInt8 {
+  case disconnected
+  case connected
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAConnectionState : AutoAPI.AABytesConvertable {
+}
+public struct AAReductionTime {
+  public let state: AutoAPI.AAStartStopState
+  public let time: AutoAPI.AATime
+  public init(state: AutoAPI.AAStartStopState, time: AutoAPI.AATime)
+}
+extension AAReductionTime : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public class AADashboardLights : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let lights: [AutoAPI.AAProperty<AutoAPI.AADashboardLight>]?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AADashboardLights : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getDashboardLights
+    case dashboardLights
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AADashboardLights.MessageTypes]
+    public static var allCases: [AutoAPI.AADashboardLights.MessageTypes] {
+      get
+    }
+  }
+}
+extension AADashboardLights {
+  public static var getDashboardLights: AutoAPI.AACommand {
+    get
+  }
+}
+public class AAHistorical : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let states: [AutoAPI.AACapability]?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAHistorical : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getHistoricalStates
+    case states
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAHistorical.MessageTypes]
+    public static var allCases: [AutoAPI.AAHistorical.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAHistorical {
+  public static func getHistoricalStates(for capability: AutoAPI.AACapability.Type, startDate: Foundation.Date, endDate: Foundation.Date) -> AutoAPI.AACommand
+}
+public class AATachograph : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let driversCards: [AutoAPI.AAProperty<AutoAPI.AADriverCard>]?
+  final public let driversTimeStates: [AutoAPI.AAProperty<AutoAPI.AADriverTimeState>]?
+  final public let driversWorkingStates: [AutoAPI.AAProperty<AutoAPI.AADriverWorkingState>]?
+  final public let vehicleDirection: AutoAPI.AAProperty<AutoAPI.AADirection>?
+  final public let vehicleMotionState: AutoAPI.AAProperty<AutoAPI.AAMovingState>?
+  final public let vehicleOverspeedActive: AutoAPI.AAProperty<AutoAPI.AAActiveState>?
+  final public let vehicleSpeed: AutoAPI.AAProperty<Swift.Int16>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AATachograph : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getState
+    case state
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AATachograph.MessageTypes]
+    public static var allCases: [AutoAPI.AATachograph.MessageTypes] {
+      get
+    }
+  }
+}
+extension AATachograph {
+  public static var getState: AutoAPI.AACommand {
+    get
+  }
+}
+public enum AADashboardLightState : Swift.UInt8 {
+  case inactive
+  case info
+  case yellow
+  case red
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AADashboardLightState : AutoAPI.AABytesConvertable {
+}
+public struct AAPriceTariff {
+  public let currency: Swift.String
+  public let price: Swift.Float
+  public let type: AutoAPI.AAPricingType
+  public init(currency: Swift.String, price: Swift.Float, type: AutoAPI.AAPricingType)
+}
+extension AAPriceTariff : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+extension AAPriceTariff : Swift.Equatable {
+  public static func == (a: AutoAPI.AAPriceTariff, b: AutoAPI.AAPriceTariff) -> Swift.Bool
+}
+public struct AAReadingLamp {
+  public let location: AutoAPI.AALocation
+  public let state: AutoAPI.AAActiveState
+  public init(location: AutoAPI.AALocation, state: AutoAPI.AAActiveState)
+}
+extension AAReadingLamp : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public enum AADueStatus : Swift.UInt8 {
+  case ok
+  case pending
+  case overdue
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AADueStatus : AutoAPI.AABytesConvertable {
+}
+public struct AACommand : AutoAPI.AABytesConvertable {
+  public init(bytes: [Swift.UInt8])
+  public var bytes: [Swift.UInt8]
+}
+public protocol AAMessageTypesGettable {
+  associatedtype MessageTypes : Swift.CaseIterable, Swift.RawRepresentable where Self.MessageTypes.RawValue == Swift.UInt8
+}
+public enum AAActiveState : Swift.UInt8 {
+  case inactive
+  case active
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AAActiveState : AutoAPI.AABytesConvertable {
+}
+public struct AAConditionBasedService {
+  public let date: Foundation.Date
+  public let description: Swift.String
+  public let id: Swift.UInt16
+  public let status: AutoAPI.AADueStatus
+  public let text: Swift.String
+}
+extension AAConditionBasedService : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public struct AAWindowOpenPercentage {
+  public let location: AutoAPI.AALocation
+  public let percentage: AutoAPI.AAPercentage
+  public init(location: AutoAPI.AALocation, percentage: AutoAPI.AAPercentage)
+}
+extension AAWindowOpenPercentage : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public struct AAWheelRPM {
+  public let location: AutoAPI.AALocation
+  public let rpm: Swift.UInt16
+}
+extension AAWheelRPM : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+public enum AADetectedState : Swift.UInt8 {
+  case notDetected
+  case detected
+  public typealias RawValue = Swift.UInt8
+  public init?(rawValue: Swift.UInt8)
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+extension AADetectedState : AutoAPI.AABytesConvertable {
+}
+public class AAVehicleStatus : AutoAPI.AACapabilityClass, AutoAPI.AACapability {
+  final public let brand: AutoAPI.AAProperty<Swift.String>?
+  final public let colourName: AutoAPI.AAProperty<Swift.String>?
+  final public let displayUnit: AutoAPI.AAProperty<AutoAPI.AADisplayUnit>?
+  final public let driverSeatPosition: AutoAPI.AAProperty<AutoAPI.AADriverSeatLocation>?
+  final public let engineVolume: AutoAPI.AAProperty<Swift.Float>?
+  final public let engineMaxTorque: AutoAPI.AAProperty<Swift.UInt16>?
+  final public let equipment: [AutoAPI.AAProperty<Swift.String>]?
+  final public let gearbox: AutoAPI.AAProperty<AutoAPI.AAGearbox>?
+  final public let licensePlate: AutoAPI.AAProperty<Swift.String>?
+  final public let modelName: AutoAPI.AAProperty<Swift.String>?
+  final public let modelYear: AutoAPI.AAProperty<Swift.UInt16>?
+  final public let name: AutoAPI.AAProperty<Swift.String>?
+  final public let numberOfDoors: AutoAPI.AAProperty<Swift.UInt8>?
+  final public let numberOfSeats: AutoAPI.AAProperty<Swift.UInt8>?
+  final public let powerKW: AutoAPI.AAProperty<Swift.UInt16>?
+  final public let powerTrain: AutoAPI.AAProperty<AutoAPI.AAPowerTrain>?
+  final public let salesDesignation: AutoAPI.AAProperty<Swift.String>?
+  final public let states: [AutoAPI.AACapability]?
+  final public let vin: AutoAPI.AAProperty<Swift.String>?
+  public static var identifier: AutoAPI.AACapabilityIdentifier
+  @objc deinit
+}
+extension AAVehicleStatus : AutoAPI.AAMessageTypesGettable {
+  public enum MessageTypes : Swift.UInt8, Swift.CaseIterable {
+    case getVehicleStatus
+    case vehicleStatus
+    public typealias RawValue = Swift.UInt8
+    public init?(rawValue: Swift.UInt8)
+    public var rawValue: Swift.UInt8 {
+      get
+    }
+    public typealias AllCases = [AutoAPI.AAVehicleStatus.MessageTypes]
+    public static var allCases: [AutoAPI.AAVehicleStatus.MessageTypes] {
+      get
+    }
+  }
+}
+extension AAVehicleStatus {
+  public static var getVehicleStatus: AutoAPI.AACommand {
+    get
+  }
+}
+public struct AADashboardLight {
+  public let name: AutoAPI.AADashboardLightName
+  public let state: AutoAPI.AADashboardLightState
+}
+extension AADashboardLight : AutoAPI.AABytesConvertable {
+  public var bytes: [Swift.UInt8] {
+    get
+  }
+  public init?(bytes: [Swift.UInt8])
+}
+extension AutoAPI.AACapabilities.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AACapabilities.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AACapabilities.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAPropertyFailureReason : Swift.Equatable {}
+extension AutoAPI.AAPropertyFailureReason : Swift.Hashable {}
+extension AutoAPI.AAPropertyFailureReason : Swift.RawRepresentable {}
+extension AutoAPI.AAWorkingState : Swift.Equatable {}
+extension AutoAPI.AAWorkingState : Swift.Hashable {}
+extension AutoAPI.AAWorkingState : Swift.RawRepresentable {}
+extension AutoAPI.AAEnabledState : Swift.Equatable {}
+extension AutoAPI.AAEnabledState : Swift.Hashable {}
+extension AutoAPI.AAEnabledState : Swift.RawRepresentable {}
+extension AutoAPI.AACharging.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AACharging.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AACharging.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAChassisSettings.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAChassisSettings.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAChassisSettings.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAHood.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAHood.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAHood.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAPresenceState : Swift.Equatable {}
+extension AutoAPI.AAPresenceState : Swift.Hashable {}
+extension AutoAPI.AAPresenceState : Swift.RawRepresentable {}
+extension AutoAPI.AAClimate.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAClimate.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAClimate.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAHonkHornFlashLights.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAHonkHornFlashLights.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAHonkHornFlashLights.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAKeyfobPosition.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAKeyfobPosition.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAKeyfobPosition.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AALights.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AALights.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AALights.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AARooftopControl.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AARooftopControl.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AARooftopControl.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AASeats.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AASeats.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AASeats.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAWindows.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAWindows.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAWindows.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAWindscreen.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAWindscreen.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAWindscreen.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AADiagnostics.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AADiagnostics.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AADiagnostics.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAMaintenance.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAMaintenance.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAMaintenance.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AATiltState : Swift.Equatable {}
+extension AutoAPI.AATiltState : Swift.Hashable {}
+extension AutoAPI.AATiltState : Swift.RawRepresentable {}
+extension AutoAPI.AAOffroad.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAOffroad.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAOffroad.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AARace.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AARace.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AARace.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AADoorLocks.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AADoorLocks.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AADoorLocks.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AADirection : Swift.Equatable {}
+extension AutoAPI.AADirection : Swift.Hashable {}
+extension AutoAPI.AADirection : Swift.RawRepresentable {}
+extension AutoAPI.AAEngine.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAEngine.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAEngine.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AATrunkAccess.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AATrunkAccess.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AATrunkAccess.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAWakeUp.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAWakeUp.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAWakeUp.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AALightConditions.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AALightConditions.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AALightConditions.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAWeatherConditions.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAWeatherConditions.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAWeatherConditions.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAFailureMessage.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAFailureMessage.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAFailureMessage.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAFirmwareVersion.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAFirmwareVersion.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAFirmwareVersion.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AABrowser.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AABrowser.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AABrowser.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAGraphics.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAGraphics.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAGraphics.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAMessaging.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAMessaging.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAMessaging.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AANotifications.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AANotifications.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AANotifications.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AADriverSeatLocation : Swift.Equatable {}
+extension AutoAPI.AADriverSeatLocation : Swift.Hashable {}
+extension AutoAPI.AADriverSeatLocation : Swift.RawRepresentable {}
+extension AutoAPI.AATextInput.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AATextInput.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AATextInput.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAChosenState : Swift.Equatable {}
+extension AutoAPI.AAChosenState : Swift.Hashable {}
+extension AutoAPI.AAChosenState : Swift.RawRepresentable {}
+extension AutoAPI.AAVideoHandover.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAVideoHandover.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAVideoHandover.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAPluggedInState : Swift.Equatable {}
+extension AutoAPI.AAPluggedInState : Swift.Hashable {}
+extension AutoAPI.AAPluggedInState : Swift.RawRepresentable {}
+extension AutoAPI.AADisplayUnit : Swift.Equatable {}
+extension AutoAPI.AADisplayUnit : Swift.Hashable {}
+extension AutoAPI.AADisplayUnit : Swift.RawRepresentable {}
+extension AutoAPI.AAWiFi.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAWiFi.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAWiFi.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AADriverFatigue.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AADriverFatigue.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AADriverFatigue.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAHeartRate.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAHeartRate.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAHeartRate.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAHomeCharger.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAHomeCharger.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAHomeCharger.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAFueling.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAFueling.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAFueling.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAParkingBrake.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAParkingBrake.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAParkingBrake.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAParkingTicket.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAParkingTicket.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAParkingTicket.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AARemoteControl.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AARemoteControl.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AARemoteControl.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAPowerTakeoff.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAPowerTakeoff.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAPowerTakeoff.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AATheftAlarm.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AATheftAlarm.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AATheftAlarm.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAStartStop.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAStartStop.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAStartStop.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AATimeState : Swift.Equatable {}
+extension AutoAPI.AATimeState : Swift.Hashable {}
+extension AutoAPI.AATimeState : Swift.RawRepresentable {}
+extension AutoAPI.AAValetMode.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAValetMode.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAValetMode.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AANaviDestination.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AANaviDestination.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AANaviDestination.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAVehicleLocation.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAVehicleLocation.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAVehicleLocation.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAVehicleTime.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAVehicleTime.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAVehicleTime.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAAuthenticationState : Swift.Equatable {}
+extension AutoAPI.AAAuthenticationState : Swift.Hashable {}
+extension AutoAPI.AAAuthenticationState : Swift.RawRepresentable {}
+extension AutoAPI.AAAccelerationType : Swift.Equatable {}
+extension AutoAPI.AAAccelerationType : Swift.Hashable {}
+extension AutoAPI.AAAccelerationType : Swift.RawRepresentable {}
+extension AutoAPI.AAAuthenticationMechanism : Swift.Equatable {}
+extension AutoAPI.AAAuthenticationMechanism : Swift.Hashable {}
+extension AutoAPI.AAAuthenticationMechanism : Swift.RawRepresentable {}
+extension AutoAPI.AAMultiCommand.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAMultiCommand.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAMultiCommand.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAAxle : Swift.Equatable {}
+extension AutoAPI.AAAxle : Swift.Hashable {}
+extension AutoAPI.AAAxle : Swift.RawRepresentable {}
+extension AutoAPI.AAChargeMode : Swift.Hashable {}
+extension AutoAPI.AAChargeMode : Swift.RawRepresentable {}
+extension AutoAPI.AAOpenClose : Swift.Equatable {}
+extension AutoAPI.AAOpenClose : Swift.Hashable {}
+extension AutoAPI.AAOpenClose : Swift.RawRepresentable {}
+extension AutoAPI.AAChargingState : Swift.Equatable {}
+extension AutoAPI.AAChargingState : Swift.Hashable {}
+extension AutoAPI.AAChargingState : Swift.RawRepresentable {}
+extension AutoAPI.AACruiseControlLimiter : Swift.Equatable {}
+extension AutoAPI.AACruiseControlLimiter : Swift.Hashable {}
+extension AutoAPI.AACruiseControlLimiter : Swift.RawRepresentable {}
+extension AutoAPI.AAControlMode : Swift.Equatable {}
+extension AutoAPI.AAControlMode : Swift.Hashable {}
+extension AutoAPI.AAControlMode : Swift.RawRepresentable {}
+extension AutoAPI.AADrivingMode : Swift.Equatable {}
+extension AutoAPI.AADrivingMode : Swift.Hashable {}
+extension AutoAPI.AADrivingMode : Swift.RawRepresentable {}
+extension AutoAPI.AAFailureReason : Swift.Equatable {}
+extension AutoAPI.AAFailureReason : Swift.Hashable {}
+extension AutoAPI.AAFailureReason : Swift.RawRepresentable {}
+extension AutoAPI.AAFatigueLevel : Swift.Equatable {}
+extension AutoAPI.AAFatigueLevel : Swift.Hashable {}
+extension AutoAPI.AAFatigueLevel : Swift.RawRepresentable {}
+extension AutoAPI.AAFlasherState : Swift.Equatable {}
+extension AutoAPI.AAFlasherState : Swift.Hashable {}
+extension AutoAPI.AAFlasherState : Swift.RawRepresentable {}
+extension AutoAPI.AACruiseControl.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AACruiseControl.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AACruiseControl.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAGearMode : Swift.Equatable {}
+extension AutoAPI.AAGearMode : Swift.Hashable {}
+extension AutoAPI.AAGearMode : Swift.RawRepresentable {}
+extension AutoAPI.AAKeyfobRelativePosition : Swift.Equatable {}
+extension AutoAPI.AAKeyfobRelativePosition : Swift.Hashable {}
+extension AutoAPI.AAKeyfobRelativePosition : Swift.RawRepresentable {}
+extension AutoAPI.AAFrontLightState : Swift.Hashable {}
+extension AutoAPI.AAFrontLightState : Swift.RawRepresentable {}
+extension AutoAPI.AALightLocation : Swift.Equatable {}
+extension AutoAPI.AALightLocation : Swift.Hashable {}
+extension AutoAPI.AALightLocation : Swift.RawRepresentable {}
+extension AutoAPI.AALockState : Swift.Equatable {}
+extension AutoAPI.AALockState : Swift.Hashable {}
+extension AutoAPI.AALockState : Swift.RawRepresentable {}
+extension AutoAPI.AAGearbox : Swift.Equatable {}
+extension AutoAPI.AAGearbox : Swift.Hashable {}
+extension AutoAPI.AAGearbox : Swift.RawRepresentable {}
+extension AutoAPI.AAMobile.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAMobile.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAMobile.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AANeedsReplacement : Swift.Equatable {}
+extension AutoAPI.AANeedsReplacement : Swift.Hashable {}
+extension AutoAPI.AANeedsReplacement : Swift.RawRepresentable {}
+extension AutoAPI.AANetworkSecurity : Swift.Equatable {}
+extension AutoAPI.AANetworkSecurity : Swift.Hashable {}
+extension AutoAPI.AANetworkSecurity : Swift.RawRepresentable {}
+extension AutoAPI.AAParkingTicketState : Swift.Equatable {}
+extension AutoAPI.AAParkingTicketState : Swift.Hashable {}
+extension AutoAPI.AAParkingTicketState : Swift.RawRepresentable {}
+extension AutoAPI.AAPlugType : Swift.Equatable {}
+extension AutoAPI.AAPlugType : Swift.Hashable {}
+extension AutoAPI.AAPlugType : Swift.RawRepresentable {}
+extension AutoAPI.AALocation : Swift.Equatable {}
+extension AutoAPI.AALocation : Swift.Hashable {}
+extension AutoAPI.AALocation : Swift.RawRepresentable {}
+extension AutoAPI.AAPositionState : Swift.Equatable {}
+extension AutoAPI.AAPositionState : Swift.Hashable {}
+extension AutoAPI.AAPositionState : Swift.RawRepresentable {}
+extension AutoAPI.AAPowerTrain : Swift.Equatable {}
+extension AutoAPI.AAPowerTrain : Swift.Hashable {}
+extension AutoAPI.AAPowerTrain : Swift.RawRepresentable {}
+extension AutoAPI.AAPricingType : Swift.Equatable {}
+extension AutoAPI.AAPricingType : Swift.Hashable {}
+extension AutoAPI.AAPricingType : Swift.RawRepresentable {}
+extension AutoAPI.AAScreen : Swift.Equatable {}
+extension AutoAPI.AAScreen : Swift.Hashable {}
+extension AutoAPI.AAScreen : Swift.RawRepresentable {}
+extension AutoAPI.AAFastened : Swift.Equatable {}
+extension AutoAPI.AAFastened : Swift.Hashable {}
+extension AutoAPI.AAFastened : Swift.RawRepresentable {}
+extension AutoAPI.AAUsage.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAUsage.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAUsage.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AASeatLocation : Swift.Equatable {}
+extension AutoAPI.AASeatLocation : Swift.Hashable {}
+extension AutoAPI.AASeatLocation : Swift.RawRepresentable {}
+extension AutoAPI.AAStartStopState : Swift.Hashable {}
+extension AutoAPI.AAStartStopState : Swift.RawRepresentable {}
+extension AutoAPI.AATheftAlarmState : Swift.Equatable {}
+extension AutoAPI.AATheftAlarmState : Swift.Hashable {}
+extension AutoAPI.AATheftAlarmState : Swift.RawRepresentable {}
+extension AutoAPI.AATimerType : Swift.Equatable {}
+extension AutoAPI.AATimerType : Swift.Hashable {}
+extension AutoAPI.AATimerType : Swift.RawRepresentable {}
+extension AutoAPI.AAFluidLevel : Swift.Equatable {}
+extension AutoAPI.AAFluidLevel : Swift.Hashable {}
+extension AutoAPI.AAFluidLevel : Swift.RawRepresentable {}
+extension AutoAPI.AAWindscreenDamage : Swift.Equatable {}
+extension AutoAPI.AAWindscreenDamage : Swift.Hashable {}
+extension AutoAPI.AAWindscreenDamage : Swift.RawRepresentable {}
+extension AutoAPI.AAWipersIntensity : Swift.Equatable {}
+extension AutoAPI.AAWipersIntensity : Swift.Hashable {}
+extension AutoAPI.AAWipersIntensity : Swift.RawRepresentable {}
+extension AutoAPI.AAWipersState : Swift.Equatable {}
+extension AutoAPI.AAWipersState : Swift.Hashable {}
+extension AutoAPI.AAWipersState : Swift.RawRepresentable {}
+extension AutoAPI.AAAvailability : Swift.Equatable {}
+extension AutoAPI.AAAvailability : Swift.Hashable {}
+extension AutoAPI.AAAvailability : Swift.RawRepresentable {}
+extension AutoAPI.AAConvertibleRoofState : Swift.Equatable {}
+extension AutoAPI.AAConvertibleRoofState : Swift.Hashable {}
+extension AutoAPI.AAConvertibleRoofState : Swift.RawRepresentable {}
+extension AutoAPI.AAGasFlapState : Swift.Equatable {}
+extension AutoAPI.AAGasFlapState : Swift.Hashable {}
+extension AutoAPI.AAGasFlapState : Swift.RawRepresentable {}
+extension AutoAPI.AAWeekday : Swift.Equatable {}
+extension AutoAPI.AAWeekday : Swift.Hashable {}
+extension AutoAPI.AAWeekday : Swift.RawRepresentable {}
+extension AutoAPI.AADashboardLightName : Swift.Equatable {}
+extension AutoAPI.AADashboardLightName : Swift.Hashable {}
+extension AutoAPI.AADashboardLightName : Swift.RawRepresentable {}
+extension AutoAPI.AAMovingState : Swift.Equatable {}
+extension AutoAPI.AAMovingState : Swift.Hashable {}
+extension AutoAPI.AAMovingState : Swift.RawRepresentable {}
+extension AutoAPI.AAConnectionState : Swift.Equatable {}
+extension AutoAPI.AAConnectionState : Swift.Hashable {}
+extension AutoAPI.AAConnectionState : Swift.RawRepresentable {}
+extension AutoAPI.AADashboardLights.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AADashboardLights.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AADashboardLights.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AAHistorical.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAHistorical.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAHistorical.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AATachograph.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AATachograph.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AATachograph.MessageTypes : Swift.RawRepresentable {}
+extension AutoAPI.AADashboardLightState : Swift.Equatable {}
+extension AutoAPI.AADashboardLightState : Swift.Hashable {}
+extension AutoAPI.AADashboardLightState : Swift.RawRepresentable {}
+extension AutoAPI.AADueStatus : Swift.Equatable {}
+extension AutoAPI.AADueStatus : Swift.Hashable {}
+extension AutoAPI.AADueStatus : Swift.RawRepresentable {}
+extension AutoAPI.AAActiveState : Swift.Hashable {}
+extension AutoAPI.AAActiveState : Swift.RawRepresentable {}
+extension AutoAPI.AADetectedState : Swift.Equatable {}
+extension AutoAPI.AADetectedState : Swift.Hashable {}
+extension AutoAPI.AADetectedState : Swift.RawRepresentable {}
+extension AutoAPI.AAVehicleStatus.MessageTypes : Swift.Equatable {}
+extension AutoAPI.AAVehicleStatus.MessageTypes : Swift.Hashable {}
+extension AutoAPI.AAVehicleStatus.MessageTypes : Swift.RawRepresentable {}

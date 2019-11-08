@@ -15,7 +15,7 @@ class CustomCollectionViewFlowLayout: UICollectionViewFlowLayout {
 
     override var itemSize: CGSize {
         set {
-            super.itemSize = itemSize
+            super.itemSize = newValue
         }
         get {
             guard let myself = self as? CustomItemSizeFromBounds else {

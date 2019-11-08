@@ -39,6 +39,7 @@ public enum Location {
         case .hatch:        self = .hatch
         case .rearLeft:     self = .rearLeft
         case .rearRight:    self = .rearRight
+        @unknown default:   fatalError()
         }
     }
 }

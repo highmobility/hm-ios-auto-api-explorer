@@ -37,7 +37,7 @@ private extension Car {
         do {
             try link.send(command: command) {
                 switch $0 {
-                case .error(let error):
+                case .failure(let error):
                     failed(.miscellaneous(error))
 
                 case .success:
@@ -57,18 +57,14 @@ private extension Car {
         }
 
         do {
-            try HMTelematics.sendCommand(command, serial: vehicleSerial) {
+            try HMTelematics.sendCommand(command, serial: vehicleSerial.bytes) {
                 switch $0 {
                 case .failure(let failure):
-                    failed(.telematicsFailure(failure))
+                    failed(.telematicsFailure("\(failure)"))
 
                 case .success(let data):
-                    guard let command = data else {
-                        return
-                    }
-
                     // Only handles VALID AutoAPI responses
-                    guard let response = AutoAPI.parseBinary(command) else {
+                    guard let response = AAAutoAPI.parseBinary(data) else {
                         return
                     }
 

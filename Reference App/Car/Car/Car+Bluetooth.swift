@@ -34,8 +34,8 @@ extension Car {
     }
 
 
-    private var device: HMKit {
-        return HMKit.shared
+    private var device: HMLocalDevice {
+        return HMLocalDevice.shared
     }
 
 
@@ -59,7 +59,7 @@ extension Car {
             return
         }
 
-        guard HMKit.shared.certificate != nil else {
+        guard HMLocalDevice.shared.certificate != nil else {
             return print("Missing HMKit certificate and other values.")
         }
 

@@ -22,15 +22,15 @@ extension Car: HMLinkDelegate {
 
             link.disconnect()
 
-            if HMKit.shared.state == .broadcasting {
-                HMKit.shared.stopBroadcasting()
+            if HMLocalDevice.shared.state == .broadcasting {
+                HMLocalDevice.shared.stopBroadcasting()
             }
         }
     }
 
     public func link(_ link: HMLink, commandReceived bytes: [UInt8]) {
         // Only handles VALID AutoAPI responses
-        guard let response = AutoAPI.parseBinary(bytes) else {
+        guard let response = AAAutoAPI.parseBinary(bytes) else {
             return
         }
 
