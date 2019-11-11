@@ -20,10 +20,6 @@
 		207B4658203C56AC002F346D /* ParkingBrakeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4656203C56AC002F346D /* ParkingBrakeCommand.swift */; };
 		207B465A203C56DA002F346D /* WindscreenCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B4659203C56DA002F346D /* WindscreenCommand.swift */; };
 		207B467E203C8961002F346D /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B467D203C8961002F346D /* Location.swift */; };
-		20805BC223757240000FA31C /* HMKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20805BC123757240000FA31C /* HMKit.xcframework */; };
-		20805D142375799E000FA31C /* AutoAPI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D112375799E000FA31C /* AutoAPI.xcframework */; };
-		20805D162375799E000FA31C /* HMCryptoKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D122375799E000FA31C /* HMCryptoKit.xcframework */; };
-		20805D182375799E000FA31C /* HMUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D132375799E000FA31C /* HMUtilities.xcframework */; };
 		2086D8EA1F13CCB0009F01D8 /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2086D8E91F13CCB0009F01D8 /* CommandType.swift */; };
 		2086D8EE1F13D17F009F01D8 /* ParserResponseOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2086D8ED1F13D17F009F01D8 /* ParserResponseOnly.swift */; };
 		2094F2391F0FB5BB00779FFA /* Car.h in Headers */ = {isa = PBXBuildFile; fileRef = 2094F2371F0FB5BB00779FFA /* Car.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -46,6 +42,14 @@
 		2094F2771F100A1500779FFA /* ClimateClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2761F100A1500779FFA /* ClimateClass.swift */; };
 		20A4297E1F7BAF22003FF9A2 /* WindowsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A4297D1F7BAF22003FF9A2 /* WindowsCommand.swift */; };
 		20A429801F7BB065003FF9A2 /* WindowsCommand+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A4297F1F7BB065003FF9A2 /* WindowsCommand+Cmds.swift */; };
+		20D322D02379669800C2636F /* AutoAPI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D112375799E000FA31C /* AutoAPI.xcframework */; };
+		20D322D12379669800C2636F /* AutoAPI.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D112375799E000FA31C /* AutoAPI.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		20D322D32379669900C2636F /* HMCryptoKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D122375799E000FA31C /* HMCryptoKit.xcframework */; };
+		20D322D42379669900C2636F /* HMCryptoKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D122375799E000FA31C /* HMCryptoKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		20D322D52379669A00C2636F /* HMKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20805BC123757240000FA31C /* HMKit.xcframework */; };
+		20D322D62379669A00C2636F /* HMKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20805BC123757240000FA31C /* HMKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		20D322D72379669B00C2636F /* HMUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D132375799E000FA31C /* HMUtilities.xcframework */; };
+		20D322D82379669B00C2636F /* HMUtilities.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D132375799E000FA31C /* HMUtilities.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		20EDE5291F10F5A100464E8E /* CommandError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5281F10F5A100464E8E /* CommandError.swift */; };
 		20EDE52B1F110A9C00464E8E /* ChargingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE52A1F110A9C00464E8E /* ChargingClass.swift */; };
 		20EDE52E1F110EC900464E8E /* Car+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE52D1F110EC900464E8E /* Car+Parser.swift */; };
@@ -67,6 +71,23 @@
 		20EDE5551F114E0200464E8E /* Car+Driving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5541F114E0200464E8E /* Car+Driving.swift */; };
 		20EDE5571F1152CF00464E8E /* Car+Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5561F1152CF00464E8E /* Car+Bluetooth.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		20D322D22379669800C2636F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				20D322D42379669900C2636F /* HMCryptoKit.xcframework in Embed Frameworks */,
+				20D322D12379669800C2636F /* AutoAPI.xcframework in Embed Frameworks */,
+				20D322D62379669A00C2636F /* HMKit.xcframework in Embed Frameworks */,
+				20D322D82379669B00C2636F /* HMUtilities.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		204A9C702019D5650072F4D1 /* VehicleLocationClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleLocationClass.swift; sourceTree = "<group>"; };
@@ -137,10 +158,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20805D162375799E000FA31C /* HMCryptoKit.xcframework in Frameworks */,
-				20805BC223757240000FA31C /* HMKit.xcframework in Frameworks */,
-				20805D142375799E000FA31C /* AutoAPI.xcframework in Frameworks */,
-				20805D182375799E000FA31C /* HMUtilities.xcframework in Frameworks */,
+				20D322D32379669900C2636F /* HMCryptoKit.xcframework in Frameworks */,
+				20D322D52379669A00C2636F /* HMKit.xcframework in Frameworks */,
+				20D322D02379669800C2636F /* AutoAPI.xcframework in Frameworks */,
+				20D322D72379669B00C2636F /* HMUtilities.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,6 +353,7 @@
 				2094F2301F0FB5BB00779FFA /* Frameworks */,
 				2094F2311F0FB5BB00779FFA /* Headers */,
 				2094F2321F0FB5BB00779FFA /* Resources */,
+				20D322D22379669800C2636F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
