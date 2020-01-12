@@ -18,7 +18,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AANaviDestination.getDestination.bytes
+        let bytes = AANaviDestination.getNaviDestination()
 
         print("- Car - get navi destination")
 
@@ -30,7 +30,8 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AANaviDestination.setDestination(coordinates: coordinate, name: name).bytes
+        let coordinates = AACoordinates(latitude: coordinate.latitude, longitude: coordinate.longitude)
+        let bytes = AANaviDestination.setNaviDestination(coordinates: coordinates, destinationName: name).bytes
 
         print("- Car - send navi destination, name:", name)
 

@@ -258,12 +258,6 @@ private extension ControlViewController {
     // MARK: Methods - Received from the car
 
     func receivedCommandParsed(_ commandType: CommandType) {
-        guard OperationQueue.current == .main else {
-            return OperationQueue.main.addOperation {
-                self.receivedCommandParsed(commandType)
-            }
-        }
-
         switch commandType {
         case .capabilities:
             let allPossibleCommands = Car.shared.availableCommands

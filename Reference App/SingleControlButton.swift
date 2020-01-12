@@ -55,7 +55,9 @@ extension SingleControlButton: ControlFunctionSettable {
 
 
     func setControlFunction(_ function: SingleControlFunction) {
-        setImage(UIImage(named: function.iconName), for: .normal)
+        OperationQueue.main.addOperation {
+            self.setImage(UIImage(named: function.iconName), for: .normal)
+        }
 
         activateAction = function.activate
 
@@ -66,6 +68,8 @@ extension SingleControlButton: ControlFunctionSettable {
 private extension SingleControlButton {
 
     func enableInteraction(_ enable: Bool) {
-        isEnabled = enable
+        OperationQueue.main.addOperation {
+            self.isEnabled = enable
+        }
     }
 }

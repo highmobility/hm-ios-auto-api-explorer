@@ -17,7 +17,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AAClimate.getClimateState.bytes
+        let bytes = AAClimate.getClimateState()
 
         print("- Car - get climate state")
 
@@ -29,7 +29,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AAClimate.startStopHVAC(activate ? .active : .inactive).bytes
+        let bytes = AAClimate.startStopHvac(hvacState: activate ? .active : .inactive)
 
         print("- Car - send HVAC command, activate: \(activate)")
 
@@ -41,7 +41,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AAClimate.startStopDefrosting(defrosting ? .active : .inactive).bytes
+        let bytes = AAClimate.startStopDefrosting(defrostingState: defrosting ? .active : .inactive)
 
         print("- Car - send windshield defrosting command, defrosting: \(defrosting)")
 

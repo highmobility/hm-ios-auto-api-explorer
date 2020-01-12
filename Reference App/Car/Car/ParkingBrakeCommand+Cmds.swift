@@ -17,7 +17,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AAParkingBrake.activate(activate ? .active : .inactive).bytes
+        let bytes = AAParkingBrake.setParkingBrake(status: activate ? .active : .inactive)
 
         print("- Car - send parking brake, activate: \(activate)")
 

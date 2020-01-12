@@ -142,6 +142,12 @@ private extension TitlesScrollView {
     // MARK: Titles
 
     func createNewTitles() {
+        guard OperationQueue.current == .main else {
+            return OperationQueue.main.addOperation {
+                self.createNewTitles()
+            }
+        }
+
         var xxx: CGFloat = 0.0
 
         // Loop through the titles and add labels to scrollView
@@ -168,6 +174,8 @@ private extension TitlesScrollView {
     func removeAllTitles() {
         labels.removeAll()
 
-        subviews.forEach { $0.removeFromSuperview() }
+        OperationQueue.main.addOperation {
+            self.subviews.forEach { $0.removeFromSuperview() }
+        }
     }
 }

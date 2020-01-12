@@ -22,9 +22,9 @@ extension DiagnosticsCommand: Parser {
 
 extension DiagnosticsCommand: CapabilityParser {
 
-    func update(from capability: AACapabilityValue) {
-        guard capability.capability is AADiagnostics.Type,
-            capability.supportsAllMessageTypes(for: AADiagnostics.self) else {
+    func update(from capability: AASupportedCapability) {
+        guard capability.capabilityID == AADiagnostics.identifier,
+            capability.supportsAllProperties(for: AADiagnostics.PropertyIdentifier.self) else {
                 return
         }
 

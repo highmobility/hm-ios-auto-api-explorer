@@ -34,7 +34,7 @@ private extension AppDelegate {
         HMLocalDevice.shared.resetStorage()
 
         /*
-         * Before using HMKit, you'll have to initialise the HMKit singleton
+         * Before using HMKit, you'll have to initialise the HMLocalDevice singleton
          * with a snippet from the Platform Workspace:
          *
          *   1. Sign in to the workspace
@@ -45,7 +45,7 @@ private extension AppDelegate {
          * that looks something like this:
          *
          *   do {
-         *       try HMKit.shared.initialise(deviceCertificate: Base64String, devicePrivateKey: Base64String, issuerPublicKey: Base64String)
+         *       try HMLocalDevice.shared.initialise(deviceCertificate: Base64String, devicePrivateKey: Base64String, issuerPublicKey: Base64String)
          *   }
          *   catch {
          *       // Handle the error

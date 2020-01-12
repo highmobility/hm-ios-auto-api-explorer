@@ -21,9 +21,9 @@ extension EngineClass: Parser {
 
 extension EngineClass: CapabilityParser {
 
-    func update(from capability: AACapabilityValue) {
-        guard capability.capability is AAEngine.Type,
-            capability.supportsAllMessageTypes(for: AAEngine.self) else {
+    func update(from capability: AASupportedCapability) {
+        guard capability.capabilityID == AAIgnition.identifier,
+            capability.supportsAllProperties(for: AAIgnition.PropertyIdentifier.self) else {
                 return
         }
 
@@ -34,12 +34,12 @@ extension EngineClass: CapabilityParser {
 extension EngineClass: ResponseParser {
 
     @discardableResult func update(from response: AACapability) -> CommandType? {
-        guard let engine = response as? AAEngine,
-            let ignitionState = engine.ignitionState?.value else {
+        guard let ignition = response as? AAIgnition,
+            let ignitionState = ignition.status?.value else {
                 return nil
         }
 
-        on = ignitionState == .active
+        on = ignitionState == .on
 
         return .other(self)
     }

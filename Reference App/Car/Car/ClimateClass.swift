@@ -22,10 +22,12 @@ extension ClimateClass: Parser {
 
 extension ClimateClass: CapabilityParser {
 
-    func update(from capability: AACapabilityValue) {
-        guard capability.capability is AAClimate.Type,
-            capability.supports(AAClimate.MessageTypes.getClimateState, .climateState, .startStopHVAC, .startStopDefrosting) else {
-                return
+    func update(from capability: AASupportedCapability) {
+        guard capability.capabilityID == AAClimate.identifier,
+            capability.supports(propertyIDs: AAClimate.PropertyIdentifier.hvacState.rawValue,
+                                AAClimate.PropertyIdentifier.defrostingTemperatureSetting.rawValue,
+                                AAClimate.PropertyIdentifier.defrostingState.rawValue) else {
+                                    return
         }
 
         isAvailable = true

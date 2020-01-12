@@ -21,6 +21,12 @@ extension UIViewController {
     }
 
     func displayStatusBarInfo(_ text: String?, for seconds: Double = 3.0, isPermanent: Bool = false, completion: (() -> Void)?) {
+        guard OperationQueue.current == .main else {
+            return OperationQueue.main.addOperation {
+                self.displayStatusBarInfo(text, for: seconds, isPermanent: isPermanent, completion: completion)
+            }
+        }
+
         guard let text = text, text.count > 0 else {
             return fadeOut(duration: Constants.animationDuration)
         }
@@ -127,6 +133,12 @@ private extension UIViewController {
     }
 
     func fadeOut(duration: Double) {
+        guard OperationQueue.current == .main else {
+            return OperationQueue.main.addOperation {
+                self.fadeOut(duration: duration)
+            }
+        }
+
         // Start the label slide-out first
         UIView.animate(withDuration: duration) {
             self.infoLabel.alpha = 0.0

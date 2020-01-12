@@ -36,17 +36,19 @@ extension VehicleStatii: ResponseParser {
             return nil
         }
 
-        vehicleStatus.states?.compactMap { $0 }.forEach {
+        vehicleStatus.states?.compactMap {
+            $0.value
+        }.forEach {
             self.parseStatus($0)
         }
 
-        if let powertrain = vehicleStatus.powerTrain?.value {
+        if let powertrain = vehicleStatus.powertrain?.value {
             switch powertrain {
             case .allElectric:      return .vehicleStatii(powertrain: "electric")
             case .combustionEngine: return .vehicleStatii(powertrain: "ICE")
             case .hydrogen:         return .vehicleStatii(powertrain: "H2")
             case .hydrogenHybrid:   return .vehicleStatii(powertrain: "H2-hybrid")
-            case .plugInHybrid:     return .vehicleStatii(powertrain: "plug-in")
+            case .phev:             return .vehicleStatii(powertrain: "plug-in")
             default:                return .vehicleStatii(powertrain: "unknown")
             }
         }

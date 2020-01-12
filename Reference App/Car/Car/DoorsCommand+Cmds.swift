@@ -17,7 +17,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AADoorLocks.getLocksState.bytes
+        let bytes = AADoors.getDoorsState()
 
         print("- Car - get doors state")
 
@@ -29,7 +29,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AADoorLocks.lockUnlock(lock ? .locked: .unlocked).bytes
+        let bytes = AADoors.lockUnlockDoors(locksState: lock ? .locked: .unlocked)
 
         print("- Car - send doors command, lock: \(lock)")
 

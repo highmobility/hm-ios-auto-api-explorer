@@ -16,8 +16,8 @@ public class DoorClass {
     public let location: Location
 
 
-    init(lock: AADoorLock, position: AADoorPosition) {
-        isLocked = lock.lock == .locked
+    init(lock: AALock, position: AADoorPosition) {
+        isLocked = lock.lockState == .locked
         isOpen = position.position != .closed
         location = Location(position: lock.location)
     }
@@ -36,9 +36,9 @@ extension DoorsCommand: Parser {
 
 extension DoorsCommand: CapabilityParser {
 
-    func update(from capability: AACapabilityValue) {
-        guard capability.capability is AADoorLocks.Type,
-            capability.supportsAllMessageTypes(for: AADoorLocks.self) else {
+    func update(from capability: AASupportedCapability) {
+        guard capability.capabilityID == AADoors.identifier,
+            capability.supportsAllProperties(for: AADoors.PropertyIdentifier.self) else {
                 return
         }
 
@@ -49,7 +49,7 @@ extension DoorsCommand: CapabilityParser {
 extension DoorsCommand: ResponseParser {
 
     @discardableResult func update(from response: AACapability) -> CommandType? {
-        guard let doorLocks = response as? AADoorLocks,
+        guard let doorLocks = response as? AADoors,
             let locks = doorLocks.locks,
             let positions = doorLocks.positions?.compactMap({ $0.value }) else {
                 return nil
@@ -58,13 +58,14 @@ extension DoorsCommand: ResponseParser {
         locked = locks.compactMap {
             $0.value
         }.allSatisfy {
-            $0.lock == .locked
+            $0.lockState == .locked
         }
 
         doors = locks.compactMap {
             $0.value
         }.compactMap { lock in
-            guard let position = positions.first(where: { $0.location == lock.location }) else {
+            // TODO: This (.rawValue) is a hack, until the spec is fixed in the next AutoAPI update
+            guard let position = positions.first(where: { $0.location.rawValue == lock.location.rawValue }) else {
                 return nil
             }
 
@@ -87,10 +88,12 @@ extension DoorsStatusCommand: Parser {
 
 extension DoorsStatusCommand: CapabilityParser {
 
-    func update(from capability: AACapabilityValue) {
-        guard capability.capability is AADoorLocks.Type,
-            capability.supports(AADoorLocks.MessageTypes.locksState) else {
-                return
+    func update(from capability: AASupportedCapability) {
+        guard capability.capabilityID == AADoors.identifier,
+            capability.supports(propertyIDs: AADoors.PropertyIdentifier.locks.rawValue,
+                                AADoors.PropertyIdentifier.locksState.rawValue,
+                                AADoors.PropertyIdentifier.positions.rawValue) else {
+                                    return
         }
 
         isAvailable = true
@@ -100,7 +103,7 @@ extension DoorsStatusCommand: CapabilityParser {
 extension DoorsStatusCommand: ResponseParser {
 
     @discardableResult func update(from response: AACapability) -> CommandType? {
-        guard let doorLocks = response as? AADoorLocks,
+        guard let doorLocks = response as? AADoors,
             let locks = doorLocks.locks,
             let positions = doorLocks.positions?.compactMap({ $0.value }) else {
                 return nil
@@ -109,7 +112,8 @@ extension DoorsStatusCommand: ResponseParser {
         doors = locks.compactMap {
             $0.value
         }.compactMap { lock in
-            guard let position = positions.first(where: { $0.location == lock.location }) else {
+            // TODO: This (.rawValue) is a hack, until the spec is fixed in the next AutoAPI update
+            guard let position = positions.first(where: { $0.location.rawValue == lock.location.rawValue }) else {
                 return nil
             }
 

@@ -29,7 +29,7 @@ public class LightsClass: CommandClass {
         return interiorLamps.contains(where: { $0.state == .active })
     }
 
-    private(set) var interiorLamps: [AAInteriorLamp] = []
+    private(set) var interiorLamps: [AALight] = []
 }
 
 extension LightsClass: Parser {
@@ -38,9 +38,9 @@ extension LightsClass: Parser {
 
 extension LightsClass: CapabilityParser {
 
-    func update(from capability: AACapabilityValue) {
-        guard capability.capability is AALights.Type,
-            capability.supportsAllMessageTypes(for: AALights.self) else {
+    func update(from capability: AASupportedCapability) {
+        guard capability.capabilityID == AALights.identifier,
+            capability.supportsAllProperties(for: AALights.PropertyIdentifier.self) else {
                 return
         }
 
@@ -52,10 +52,10 @@ extension LightsClass: ResponseParser {
 
     @discardableResult func update(from response: AACapability) -> CommandType? {
         guard let lights = response as? AALights,
-            let frontExteriorState = lights.frontExterior?.value,
+            let frontExteriorState = lights.frontExteriorLight?.value,
             let frontLightsState = FrontExteriorLightState(rawValue: frontExteriorState.rawValue),
-            let interiorState = lights.interiorLamps,
-            let rearExteriorState = lights.rearExteriorState?.value else {
+            let interiorState = lights.interiorLights,
+            let rearExteriorState = lights.rearExteriorLight?.value else {
                 return nil
         }
 

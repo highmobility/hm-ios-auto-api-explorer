@@ -28,7 +28,7 @@ extension Car: HMLinkDelegate {
         }
     }
 
-    public func link(_ link: HMLink, commandReceived bytes: [UInt8]) {
+    public func link(_ link: HMLink, commandReceived bytes: [UInt8], contentType: HMContainerContentType, requestID: [UInt8]) {
         // Only handles VALID AutoAPI responses
         guard let response = AAAutoAPI.parseBinary(bytes) else {
             return

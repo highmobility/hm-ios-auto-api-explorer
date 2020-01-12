@@ -21,9 +21,9 @@ extension ParkingBrakeCommand: Parser {
 
 extension ParkingBrakeCommand: CapabilityParser {
 
-    func update(from capability: AACapabilityValue) {
-        guard capability.capability is AAParkingBrake.Type,
-            capability.supportsAllMessageTypes(for: AAParkingBrake.self) else {
+    func update(from capability: AASupportedCapability) {
+        guard capability.capabilityID == AAParkingBrake.identifier,
+            capability.supportsAllProperties(for: AAParkingBrake.PropertyIdentifier.self) else {
                 return
         }
 
@@ -35,7 +35,7 @@ extension ParkingBrakeCommand: ResponseParser {
 
     @discardableResult func update(from response: AACapability) -> CommandType? {
         guard let parkingBrake = response as? AAParkingBrake,
-            let state = parkingBrake.state?.value else {
+            let state = parkingBrake.status?.value else {
                 return nil
         }
 

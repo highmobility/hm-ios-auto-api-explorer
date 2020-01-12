@@ -23,9 +23,9 @@ extension NaviDestinationClass: Parser {
 
 extension NaviDestinationClass: CapabilityParser {
 
-    func update(from capability: AACapabilityValue) {
-        guard capability.capability is AANaviDestination.Type,
-            capability.supportsAllMessageTypes(for: AANaviDestination.self) else {
+    func update(from capability: AASupportedCapability) {
+        guard capability.capabilityID == AANaviDestination.identifier,
+            capability.supportsAllProperties(for: AANaviDestination.PropertyIdentifier.self) else {
                 return
         }
 
@@ -38,11 +38,11 @@ extension NaviDestinationClass: ResponseParser {
     @discardableResult func update(from response: AACapability) -> CommandType? {
         guard let naviDestination = response as? AANaviDestination,
             let coordinate = naviDestination.coordinates?.value,
-            let name = naviDestination.name?.value else {
+            let name = naviDestination.destinationName?.value else {
                 return nil
         }
 
-        self.coordinate = coordinate
+        self.coordinate = CLLocationCoordinate2D(latitude: coordinate.latitude, longitude: coordinate.longitude)
         self.name = name
 
         return .other(self)

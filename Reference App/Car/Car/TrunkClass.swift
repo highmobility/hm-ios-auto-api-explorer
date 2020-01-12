@@ -22,9 +22,9 @@ extension TrunkClass: Parser {
 
 extension TrunkClass: CapabilityParser {
 
-    func update(from capability: AACapabilityValue) {
-        guard capability.capability is AATrunkAccess.Type,
-            capability.supportsAllMessageTypes(for: AATrunkAccess.self) else {
+    func update(from capability: AASupportedCapability) {
+        guard capability.capabilityID == AATrunk.identifier,
+            capability.supportsAllProperties(for: AATrunk.PropertyIdentifier.self) else {
                 return
         }
 
@@ -35,7 +35,7 @@ extension TrunkClass: CapabilityParser {
 extension TrunkClass: ResponseParser {
 
     @discardableResult func update(from response: AACapability) -> CommandType? {
-        guard let trunkAccess = response as? AATrunkAccess,
+        guard let trunkAccess = response as? AATrunk,
             let lockState = trunkAccess.lock?.value,
             let positionState = trunkAccess.position?.value else {
                 return nil

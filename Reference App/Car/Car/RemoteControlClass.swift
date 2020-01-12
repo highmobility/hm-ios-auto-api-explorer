@@ -39,9 +39,9 @@ extension RemoteControlClass: Parser {
 
 extension RemoteControlClass: CapabilityParser {
 
-    func update(from capability: AACapabilityValue) {
-        guard capability.capability is AARemoteControl.Type,
-            capability.supportsAllMessageTypes(for: AARemoteControl.self) else {
+    func update(from capability: AASupportedCapability) {
+        guard capability.capabilityID == AARemoteControl.identifier,
+            capability.supportsAllProperties(for: AARemoteControl.PropertyIdentifier.self) else {
                 return
         }
 

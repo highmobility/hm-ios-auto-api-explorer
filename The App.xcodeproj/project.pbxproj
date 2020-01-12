@@ -31,12 +31,16 @@
 		204D06AF1ED35BB000736B6A /* ControlFunctionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204D06AE1ED35BB000736B6A /* ControlFunctionsCollectionViewCell.swift */; };
 		20545F741F4DBD100015531E /* UIViewController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20545F731F4DBD100015531E /* UIViewController+StatusBar.swift */; };
 		205500201EC4BC7C007C9837 /* TitlesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2055001F1EC4BC7C007C9837 /* TitlesScrollView.swift */; };
+		20563D1B235F1C4100A452B6 /* HMKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20563D11235F1C2500A452B6 /* HMKit.xcframework */; };
+		20563D1C235F1C4100A452B6 /* HMKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20563D11235F1C2500A452B6 /* HMKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		206EB9101EEABC7C00887096 /* ControlFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EB90F1EEABC7C00887096 /* ControlFunction.swift */; };
 		206EB9121EEADEA600887096 /* ControlFunctionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EB9111EEADEA600887096 /* ControlFunctionsManager.swift */; };
 		206EB9151EEADF0000887096 /* ControlAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EB9141EEADF0000887096 /* ControlAction.swift */; };
 		206EB9171EEADF3600887096 /* DualControlFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EB9161EEADF3600887096 /* DualControlFunction.swift */; };
 		206EB9191EEADF5C00887096 /* FullScreenControlFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EB9181EEADF5C00887096 /* FullScreenControlFunction.swift */; };
 		206EB91B1EEAEEB500887096 /* ControlFunctionSettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EB91A1EEAEEB500887096 /* ControlFunctionSettable.swift */; };
+		206F95AB23C8B92E00D714AE /* HMCryptoKit in Frameworks */ = {isa = PBXBuildFile; productRef = 206F95AA23C8B92E00D714AE /* HMCryptoKit */; };
+		206F95AE23C8B95900D714AE /* AutoAPI in Frameworks */ = {isa = PBXBuildFile; productRef = 206F95AD23C8B95900D714AE /* AutoAPI */; };
 		207B465E203C590E002F346D /* ParkingBrakeCommand+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B465B203C590D002F346D /* ParkingBrakeCommand+ControlFunctionable.swift */; };
 		207B465F203C590E002F346D /* NaviDestinationClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B465C203C590D002F346D /* NaviDestinationClass+ControlFunctionable.swift */; };
 		207B4660203C590E002F346D /* VehicleLocationClass+ControlFunctionable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207B465D203C590D002F346D /* VehicleLocationClass+ControlFunctionable.swift */; };
@@ -54,14 +58,6 @@
 		207E484B1DB66BE10031C0FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 207E484A1DB66BE10031C0FB /* Assets.xcassets */; };
 		207E484E1DB66BE10031C0FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 207E484C1DB66BE10031C0FB /* LaunchScreen.storyboard */; };
 		208038C11DB6924C00285C29 /* OvalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208038BF1DB6924C00285C29 /* OvalButton.swift */; };
-		20805BC523757248000FA31C /* HMKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20805BBF23757238000FA31C /* HMKit.xcframework */; };
-		20805BC623757248000FA31C /* HMKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20805BBF23757238000FA31C /* HMKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		20805D1B237579A9000FA31C /* AutoAPI.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D0F2375798A000FA31C /* AutoAPI.xcframework */; };
-		20805D1C237579A9000FA31C /* AutoAPI.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D0F2375798A000FA31C /* AutoAPI.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		20805D1D237579AA000FA31C /* HMCryptoKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D0D23757980000FA31C /* HMCryptoKit.xcframework */; };
-		20805D1E237579AA000FA31C /* HMCryptoKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D0D23757980000FA31C /* HMCryptoKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		20805D1F237579AC000FA31C /* HMUtilities.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D0B23757971000FA31C /* HMUtilities.xcframework */; };
-		20805D20237579AC000FA31C /* HMUtilities.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20805D0B23757971000FA31C /* HMUtilities.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		2088B1031F12949F00A0F5A7 /* Car.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20EEE06A1F1293E1007B32F4 /* Car.framework */; };
 		2088B1041F12949F00A0F5A7 /* Car.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20EEE06A1F1293E1007B32F4 /* Car.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		209BE79C1EF0240D00FA51E1 /* RoundedImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BE79B1EF0240D00FA51E1 /* RoundedImageButton.swift */; };
@@ -118,11 +114,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				20805D1E237579AA000FA31C /* HMCryptoKit.xcframework in Embed Frameworks */,
-				20805D20237579AC000FA31C /* HMUtilities.xcframework in Embed Frameworks */,
+				20563D1C235F1C4100A452B6 /* HMKit.xcframework in Embed Frameworks */,
 				2088B1041F12949F00A0F5A7 /* Car.framework in Embed Frameworks */,
-				20805D1C237579A9000FA31C /* AutoAPI.xcframework in Embed Frameworks */,
-				20805BC623757248000FA31C /* HMKit.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -154,6 +147,7 @@
 		204D06AE1ED35BB000736B6A /* ControlFunctionsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ControlFunctionsCollectionViewCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		20545F731F4DBD100015531E /* UIViewController+StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+StatusBar.swift"; sourceTree = "<group>"; };
 		2055001F1EC4BC7C007C9837 /* TitlesScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitlesScrollView.swift; sourceTree = "<group>"; };
+		20563D11235F1C2500A452B6 /* HMKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = HMKit.xcframework; sourceTree = "<group>"; };
 		206EB90F1EEABC7C00887096 /* ControlFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFunction.swift; sourceTree = "<group>"; };
 		206EB9111EEADEA600887096 /* ControlFunctionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFunctionsManager.swift; sourceTree = "<group>"; };
 		206EB9141EEADF0000887096 /* ControlAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlAction.swift; sourceTree = "<group>"; };
@@ -179,10 +173,6 @@
 		207E484D1DB66BE10031C0FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		207E484F1DB66BE10031C0FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		208038BF1DB6924C00285C29 /* OvalButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OvalButton.swift; sourceTree = "<group>"; };
-		20805BBF23757238000FA31C /* HMKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = HMKit.xcframework; sourceTree = "<group>"; };
-		20805D0B23757971000FA31C /* HMUtilities.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = HMUtilities.xcframework; sourceTree = "<group>"; };
-		20805D0D23757980000FA31C /* HMCryptoKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = HMCryptoKit.xcframework; sourceTree = "<group>"; };
-		20805D0F2375798A000FA31C /* AutoAPI.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = AutoAPI.xcframework; sourceTree = "<group>"; };
 		209BE79B1EF0240D00FA51E1 /* RoundedImageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageButton.swift; sourceTree = "<group>"; };
 		20AC533B1F7932CC00C9C23E /* TripleControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripleControlButton.swift; sourceTree = "<group>"; };
 		20B23CF01F1274E1006CFC06 /* DoorsCommand+ControlFunctionable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DoorsCommand+ControlFunctionable.swift"; sourceTree = "<group>"; };
@@ -219,11 +209,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20805D1D237579AA000FA31C /* HMCryptoKit.xcframework in Frameworks */,
-				20805D1F237579AC000FA31C /* HMUtilities.xcframework in Frameworks */,
-				20805D1B237579A9000FA31C /* AutoAPI.xcframework in Frameworks */,
 				2088B1031F12949F00A0F5A7 /* Car.framework in Frameworks */,
-				20805BC523757248000FA31C /* HMKit.xcframework in Frameworks */,
+				206F95AB23C8B92E00D714AE /* HMCryptoKit in Frameworks */,
+				206F95AE23C8B95900D714AE /* AutoAPI in Frameworks */,
+				20563D1B235F1C4100A452B6 /* HMKit.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,10 +287,7 @@
 		207E48351DB66BE10031C0FB = {
 			isa = PBXGroup;
 			children = (
-				20805D0F2375798A000FA31C /* AutoAPI.xcframework */,
-				20805D0D23757980000FA31C /* HMCryptoKit.xcframework */,
-				20805BBF23757238000FA31C /* HMKit.xcframework */,
-				20805D0B23757971000FA31C /* HMUtilities.xcframework */,
+				20563D11235F1C2500A452B6 /* HMKit.xcframework */,
 				20EEE0651F1293E1007B32F4 /* Car.xcodeproj */,
 				207E48401DB66BE10031C0FB /* The App */,
 				207E483F1DB66BE10031C0FB /* Products */,
@@ -319,6 +305,7 @@
 		207E48401DB66BE10031C0FB /* The App */ = {
 			isa = PBXGroup;
 			children = (
+				20F68CB81DD35BFE00ED16A7 /* Frameworks */,
 				207E48551DB66C0C0031C0FB /* Source */,
 				207E48561DB66C160031C0FB /* Resources */,
 			);
@@ -455,6 +442,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		20F68CB81DD35BFE00ED16A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		20FCE1631ECF201A00FA62E1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -499,6 +494,8 @@
 			);
 			name = "The App";
 			packageProductDependencies = (
+				206F95AA23C8B92E00D714AE /* HMCryptoKit */,
+				206F95AD23C8B95900D714AE /* AutoAPI */,
 			);
 			productName = "Reference App";
 			productReference = 207E483E1DB66BE10031C0FB /* The App.app */;
@@ -532,6 +529,8 @@
 			);
 			mainGroup = 207E48351DB66BE10031C0FB;
 			packageReferences = (
+				206F95A923C8B92E00D714AE /* XCRemoteSwiftPackageReference "hmcryptokit-swift" */,
+				206F95AC23C8B95900D714AE /* XCRemoteSwiftPackageReference "auto-api-swift" */,
 			);
 			productRefGroup = 207E483F1DB66BE10031C0FB /* Products */;
 			projectDirPath = "";
@@ -812,14 +811,19 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Reference\\ App/Car",
+					"$(PROJECT_DIR)/Reference\\ App",
+				);
 				INFOPLIST_FILE = "Reference App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.3;
+				MARKETING_VERSION = 2.5.4;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hm.reference-app.explore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -839,14 +843,19 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				FRAMEWORK_SEARCH_PATHS = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Reference\\ App/Car",
+					"$(PROJECT_DIR)/Reference\\ App",
+				);
 				INFOPLIST_FILE = "Reference App/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.3;
+				MARKETING_VERSION = 2.5.4;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hm.reference-app.explore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -879,6 +888,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		206F95A923C8B92E00D714AE /* XCRemoteSwiftPackageReference "hmcryptokit-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:highmobility/hmcryptokit-swift.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.2.15;
+			};
+		};
+		206F95AC23C8B95900D714AE /* XCRemoteSwiftPackageReference "auto-api-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:highmobility/auto-api-swift.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		206F95AA23C8B92E00D714AE /* HMCryptoKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 206F95A923C8B92E00D714AE /* XCRemoteSwiftPackageReference "hmcryptokit-swift" */;
+			productName = HMCryptoKit;
+		};
+		206F95AD23C8B95900D714AE /* AutoAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 206F95AC23C8B95900D714AE /* XCRemoteSwiftPackageReference "auto-api-swift" */;
+			productName = AutoAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 207E48361DB66BE10031C0FB /* Project object */;
 }

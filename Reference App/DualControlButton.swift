@@ -56,7 +56,9 @@ extension DualControlButton: ControlFunctionSettable {
 
 
     func setControlFunction(_ function: DualControlFunction) {
-        setImage(UIImage(named: function.activeIconName), for: .normal)
+        OperationQueue.main.addOperation {
+            self.setImage(UIImage(named: function.activeIconName), for: .normal)
+        }
 
         activateOtherAction = function.activateOther
 
@@ -67,6 +69,8 @@ extension DualControlButton: ControlFunctionSettable {
 private extension DualControlButton {
 
     func enableInteraction(_ enable: Bool) {
-        isEnabled = enable
+        OperationQueue.main.addOperation {
+            self.isEnabled = enable
+        }
     }
 }

@@ -62,9 +62,9 @@ private extension Car {
                 case .failure(let failure):
                     failed(.telematicsFailure("\(failure)"))
 
-                case .success(let data):
+                case .success(let command, _, _):
                     // Only handles VALID AutoAPI responses
-                    guard let response = AAAutoAPI.parseBinary(data) else {
+                    guard let response = AAAutoAPI.parseBinary(command) else {
                         return
                     }
 

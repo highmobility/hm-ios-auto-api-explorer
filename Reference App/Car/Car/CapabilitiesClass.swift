@@ -12,10 +12,10 @@ import Foundation
 
 class CapabilitiesClass: CommandClass {
 
-    let parseCapability: (AACapabilityValue) -> Void
+    let parseCapability: (AASupportedCapability) -> Void
 
 
-    init(parseCapability: @escaping (AACapabilityValue) -> Void) {
+    init(parseCapability: @escaping (AASupportedCapability) -> Void) {
         self.parseCapability = parseCapability
 
         super.init()

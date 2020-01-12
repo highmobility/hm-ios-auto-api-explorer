@@ -15,7 +15,7 @@ public class WindowClass {
     public let isOpen: Bool
     public let location: Location
 
-    let position: AALocation
+    let position: AAWindowLocation
 
 
     init(open: AAWindowPosition) {
@@ -39,9 +39,9 @@ extension WindowsCommand: Parser {
 
 extension WindowsCommand: CapabilityParser {
 
-    func update(from capability: AACapabilityValue) {
-        guard capability.capability is AAWindows.Type,
-            capability.supportsAllMessageTypes(for: AAWindows.self) else {
+    func update(from capability: AASupportedCapability) {
+        guard capability.capabilityID == AAWindows.identifier,
+            capability.supportsAllProperties(for: AAWindows.PropertyIdentifier.self) else {
                 return
         }
 
@@ -87,10 +87,11 @@ extension WindowsStatusCommand: Parser {
 
 extension WindowsStatusCommand: CapabilityParser {
 
-    func update(from capability: AACapabilityValue) {
-        guard capability.capability is AAWindows.Type,
-            capability.supports(AAWindows.MessageTypes.windowsState) else {
-                return
+    func update(from capability: AASupportedCapability) {
+        guard capability.capabilityID == AAWindows.identifier,
+            capability.supports(propertyIDs: AAWindows.PropertyIdentifier.openPercentages.rawValue,
+                                AAWindows.PropertyIdentifier.positions.rawValue) else {
+                                    return
         }
 
         isAvailable = true

@@ -21,9 +21,9 @@ extension WindscreenCommand: Parser {
 
 extension WindscreenCommand: CapabilityParser {
 
-    func update(from capability: AACapabilityValue) {
-        guard capability.capability is AAWindscreen.Type,
-            capability.supports(AAWindscreen.MessageTypes.getWindscreenState, .windscreenState) else {
+    func update(from capability: AASupportedCapability) {
+        guard capability.capabilityID == AAWindscreen.identifier,
+            capability.supports(propertyIDs: AAWindscreen.PropertyIdentifier.windscreenDamage.rawValue) else {
                 return
         }
 
@@ -35,12 +35,12 @@ extension WindscreenCommand: ResponseParser {
 
     @discardableResult func update(from response: AACapability) -> CommandType? {
         guard let windscreen = response as? AAWindscreen,
-            let damage = windscreen.damage?.value else {
+            let damage = windscreen.windscreenDamage?.value else {
                 return nil
         }
 
         switch damage {
-        case .small, .big:
+        case .damageSmallerThan1Inch, .damageLargerThan1Inch:
             hasDamage = true
         default:
             hasDamage = false

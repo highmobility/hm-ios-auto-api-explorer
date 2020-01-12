@@ -102,12 +102,13 @@ private extension ControlCollectionViewController {
 
         controlFunctionsSections[horisontalIdx][verticalIdx] = function
 
-        // Can't update a cell that's not visible
-        if let cell = self.collectionView?.cellForItem(at: indexPath) as? ControlFunctionsCollectionViewCell {
-            cell.updateControlFunction(function)
-        }
-        else {
-            OperationQueue.main.addOperation {
+
+        OperationQueue.main.addOperation {
+            // Can't update a cell that's not visible
+            if let cell = self.collectionView?.cellForItem(at: indexPath) as? ControlFunctionsCollectionViewCell {
+                cell.updateControlFunction(function)
+            }
+            else {
                 self.collectionView?.reloadItems(at: [indexPath])
             }
         }

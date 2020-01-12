@@ -23,7 +23,7 @@ extension Car {
 
     // MARK: Methods - Parsing
 
-    func parseCapability(_ capability: AACapabilityValue) {
+    func parseCapability(_ capability: AASupportedCapability) {
         capabilityParsers.forEach {
             $0.update(from: capability)
         }

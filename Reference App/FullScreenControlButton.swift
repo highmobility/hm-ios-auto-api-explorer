@@ -55,7 +55,9 @@ extension FullScreenControlButton: ControlFunctionSettable {
 
 
     func setControlFunction(_ function: FullScreenControlFunction) {
-        setImage(UIImage(named: function.iconName), for: .normal)
+        OperationQueue.main.addOperation {
+            self.setImage(UIImage(named: function.iconName), for: .normal)
+        }
 
         viewControllerID = function.viewControllerID
 
@@ -66,6 +68,8 @@ extension FullScreenControlButton: ControlFunctionSettable {
 private extension FullScreenControlButton {
 
     func enableInteraction(_ enable: Bool) {
-        isEnabled = enable
+        OperationQueue.main.addOperation {
+            self.isEnabled = enable
+        }
     }
 }

@@ -23,9 +23,9 @@ extension VehicleLocationClass: Parser {
 
 extension VehicleLocationClass: CapabilityParser {
 
-    func update(from capability: AACapabilityValue) {
-        guard capability.capability is AAVehicleLocation.Type,
-            capability.supportsAllMessageTypes(for: AAVehicleLocation.self) else {
+    func update(from capability: AASupportedCapability) {
+        guard capability.capabilityID == AAVehicleLocation.identifier,
+            capability.supportsAllProperties(for: AAVehicleLocation.PropertyIdentifier.self) else {
                 return
         }
 
@@ -41,7 +41,7 @@ extension VehicleLocationClass: ResponseParser {
                 return nil
         }
 
-        self.coordinates = coordinates
+        self.coordinates = CLLocationCoordinate2D(latitude: coordinates.latitude, longitude: coordinates.longitude)
 
         return .other(self)
     }

@@ -17,7 +17,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AARooftopControl.getRooftopState.bytes
+        let bytes = AARooftopControl.getRooftopState()
 
         print("- Car - get rooftop state")
 
@@ -29,7 +29,13 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AARooftopControl.controlRooftop(dimming: (dimmed ? 1.0 : 0), open: nil, convertibleRoof: nil, sunroofTilt: nil, sunroofState: nil).bytes
+        guard let bytes = AARooftopControl.controlRooftop(dimming: dimmed ? 1.0 : 0.0,
+                                                          position: nil,
+                                                          convertibleRoofState: nil,
+                                                          sunroofTiltState: nil,
+                                                          sunroofState: nil) else {
+                                                            return failed(.invalidValues)
+        }
 
         print("- Car - send rooftop command, dimmed: \(dimmed)")
 
@@ -41,7 +47,13 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AARooftopControl.controlRooftop(dimming: nil, open: (open ? 1.0 : 0), convertibleRoof: nil, sunroofTilt: nil, sunroofState: nil).bytes
+        guard let bytes = AARooftopControl.controlRooftop(dimming: nil,
+                                                          position: open ? 1.0 : 0.0,
+                                                          convertibleRoofState: nil,
+                                                          sunroofTiltState: nil,
+                                                          sunroofState: nil) else {
+                                                            return failed(.invalidValues)
+        }
 
         print("- Car - send rooftop command, open: \(open)")
         

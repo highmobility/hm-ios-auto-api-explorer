@@ -56,7 +56,9 @@ extension TripleControlButton: ControlFunctionSettable {
 
 
     func setControlFunction(_ function: TripleControlFunction) {
-        setImage(UIImage(named: function.activeIconName), for: .normal)
+        OperationQueue.main.addOperation {
+            self.setImage(UIImage(named: function.activeIconName), for: .normal)
+        }
 
         activateNextAction = function.activateNext
 
@@ -67,6 +69,8 @@ extension TripleControlButton: ControlFunctionSettable {
 private extension TripleControlButton {
 
     func enableInteraction(_ enable: Bool) {
-        isEnabled = enable
+        OperationQueue.main.addOperation {
+            self.isEnabled = enable
+        }
     }
 }

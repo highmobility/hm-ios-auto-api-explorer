@@ -33,13 +33,20 @@ public enum Location {
 
     init(position: AALocation) {
         switch position {
-        case .all:          self = .all
         case .frontLeft:    self = .frontLeft
         case .frontRight:   self = .frontRight
-        case .hatch:        self = .hatch
         case .rearLeft:     self = .rearLeft
         case .rearRight:    self = .rearRight
-        @unknown default:   fatalError()
+        }
+    }
+
+    init(position: AAWindowLocation) {
+        switch position {
+        case .frontLeft:    self = .frontLeft
+        case .frontRight:   self = .frontRight
+        case .rearLeft:     self = .rearLeft
+        case .rearRight:    self = .rearRight
+        case .hatch:        self = .hatch
         }
     }
 }

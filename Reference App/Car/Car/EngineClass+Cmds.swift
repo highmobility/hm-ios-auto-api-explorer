@@ -17,7 +17,7 @@ public extension Car {
             return failed(.needsInitialState)
         }
 
-        let bytes = AAEngine.turnIgnitionOnOff(on ? .active : .inactive).bytes
+        let bytes = AAIgnition.turnIgnitionOnOff(status: on ? .on : .off)
 
         print("- Car - send engine command, on: \(on)")
 

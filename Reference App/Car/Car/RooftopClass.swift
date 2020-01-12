@@ -22,9 +22,9 @@ extension RooftopClass: Parser {
 
 extension RooftopClass: CapabilityParser {
 
-    func update(from capability: AACapabilityValue) {
-        guard capability.capability is AARooftopControl.Type,
-            capability.supportsAllMessageTypes(for: AARooftopControl.self) else {
+    func update(from capability: AASupportedCapability) {
+        guard capability.capabilityID == AARooftopControl.identifier,
+            capability.supportsAllProperties(for: AARooftopControl.PropertyIdentifier.self) else {
                 return
         }
 
