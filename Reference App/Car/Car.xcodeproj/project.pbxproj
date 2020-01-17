@@ -11,8 +11,6 @@
 		204A9C732019D9580072F4D1 /* VehicleLocationClass+Cmnds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A9C722019D9580072F4D1 /* VehicleLocationClass+Cmnds.swift */; };
 		204A9C752019DA370072F4D1 /* NaviDestinationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A9C742019DA370072F4D1 /* NaviDestinationClass.swift */; };
 		204A9C772019DD290072F4D1 /* NaviDestinationClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204A9C762019DD290072F4D1 /* NaviDestinationClass+Cmds.swift */; };
-		20563D28235F1C4F00A452B6 /* HMKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20563D22235F1C4F00A452B6 /* HMKit.xcframework */; };
-		20563D29235F1C4F00A452B6 /* HMKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20563D22235F1C4F00A452B6 /* HMKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		206765D11F7B8B2D00D38F3F /* EngineClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206765D01F7B8B2D00D38F3F /* EngineClass.swift */; };
 		206765D31F7B8D2D00D38F3F /* EngineClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206765D21F7B8D2D00D38F3F /* EngineClass+Cmds.swift */; };
 		206765D81F7B99BD00D38F3F /* HonkHornFlashLightsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206765D71F7B99BD00D38F3F /* HonkHornFlashLightsClass.swift */; };
@@ -47,6 +45,7 @@
 		2094F2771F100A1500779FFA /* ClimateClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2094F2761F100A1500779FFA /* ClimateClass.swift */; };
 		20A4297E1F7BAF22003FF9A2 /* WindowsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A4297D1F7BAF22003FF9A2 /* WindowsCommand.swift */; };
 		20A429801F7BB065003FF9A2 /* WindowsCommand+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A4297F1F7BB065003FF9A2 /* WindowsCommand+Cmds.swift */; };
+		20A6656823D1E42F00E2BD9D /* HMKit in Frameworks */ = {isa = PBXBuildFile; productRef = 20A6656723D1E42F00E2BD9D /* HMKit */; };
 		20EDE5291F10F5A100464E8E /* CommandError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5281F10F5A100464E8E /* CommandError.swift */; };
 		20EDE52B1F110A9C00464E8E /* ChargingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE52A1F110A9C00464E8E /* ChargingClass.swift */; };
 		20EDE52E1F110EC900464E8E /* Car+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE52D1F110EC900464E8E /* Car+Parser.swift */; };
@@ -68,20 +67,6 @@
 		20EDE5551F114E0200464E8E /* Car+Driving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5541F114E0200464E8E /* Car+Driving.swift */; };
 		20EDE5571F1152CF00464E8E /* Car+Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20EDE5561F1152CF00464E8E /* Car+Bluetooth.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		20563D2C235F1C4F00A452B6 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				20563D29235F1C4F00A452B6 /* HMKit.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		204A9C702019D5650072F4D1 /* VehicleLocationClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleLocationClass.swift; sourceTree = "<group>"; };
@@ -153,8 +138,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20A6656823D1E42F00E2BD9D /* HMKit in Frameworks */,
 				206F95B423C8B99D00D714AE /* AutoAPI in Frameworks */,
-				20563D28235F1C4F00A452B6 /* HMKit.xcframework in Frameworks */,
 				206F95B123C8B98800D714AE /* HMCryptoKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -348,7 +333,6 @@
 				2094F2301F0FB5BB00779FFA /* Frameworks */,
 				2094F2311F0FB5BB00779FFA /* Headers */,
 				2094F2321F0FB5BB00779FFA /* Resources */,
-				20563D2C235F1C4F00A452B6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -358,6 +342,7 @@
 			packageProductDependencies = (
 				206F95B023C8B98800D714AE /* HMCryptoKit */,
 				206F95B323C8B99D00D714AE /* AutoAPI */,
+				20A6656723D1E42F00E2BD9D /* HMKit */,
 			);
 			productName = TheCar;
 			productReference = 2094F2341F0FB5BB00779FFA /* Car.framework */;
@@ -392,6 +377,7 @@
 			packageReferences = (
 				206F95AF23C8B98800D714AE /* XCRemoteSwiftPackageReference "hmcryptokit-swift" */,
 				206F95B223C8B99D00D714AE /* XCRemoteSwiftPackageReference "auto-api-swift" */,
+				20A6656623D1E42F00E2BD9D /* XCRemoteSwiftPackageReference "hmkit-swift" */,
 			);
 			productRefGroup = 2094F2351F0FB5BB00779FFA /* Products */;
 			projectDirPath = "";
@@ -696,6 +682,14 @@
 				minimumVersion = 11.0.0;
 			};
 		};
+		20A6656623D1E42F00E2BD9D /* XCRemoteSwiftPackageReference "hmkit-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:highmobility/hmkit-swift.git";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 3.2.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -708,6 +702,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 206F95B223C8B99D00D714AE /* XCRemoteSwiftPackageReference "auto-api-swift" */;
 			productName = AutoAPI;
+		};
+		20A6656723D1E42F00E2BD9D /* HMKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20A6656623D1E42F00E2BD9D /* XCRemoteSwiftPackageReference "hmkit-swift" */;
+			productName = HMKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
