@@ -53,19 +53,9 @@ private extension AppDelegate {
          */
 
 
-        HMTelematics.urlBasePath = "https://sandbox.api.staging.high-mobility.net"
+        HMTelematics.urlBasePath = "https://sandbox.api.high-mobility.com"
 
-        do {
-            try HMLocalDevice.shared.initialise(
-                certificate: "dGVzdHrzrwEvHAU+P58S/jGy44sbgXxszRzDFPLkvakz6lnsv4dEZY3KeEmvEbWiCg7AI6x9ZtNQSP/uv3sCv9Zp8dUblbFl9A0Pkd+wBsn94yotBWU0GaloNb4M3QR/mWCEqgP9wKxr62+d1+WkZKbOJpyncpRKy8ZDwGZftqviIlQ8TA2MgiwRZy9Wu2GXBf8NC8NahsZU",
-                devicePrivateKey: "XS0CSsAqbx2Zd8WQYJ6woq+2948cTtEMMp7PE/o91Iw=",
-                issuerPublicKey: "LYU7ctMISWTfCFNahxH/5sxutlVeQi2uQcVkWuxHuRbiLsluKhRk+xzONI9xWEepfX84/Yjg2IPujdn0wlNK0Q=="
-            )
-        }
-        catch {
-            // Handle the error
-            print("Invalid initialisation parameters, please double-check the snippet: \(error)")
-        }
+        <# DEVICE CERTIFICATE SNIPPET #>
 
 
         // This just checks if you've seen the above (and are able to follow instructions)
@@ -75,7 +65,7 @@ private extension AppDelegate {
     }
 
     func initialiseTelematics() {
-        let accessToken: String = "0dff6cad-a1b7-4a24-90f7-cfccd14a7fad"
+        let accessToken: String = <# ACCESS TOKEN #>
 
         do {
             try HMTelematics.downloadAccessCertificate(accessToken: accessToken) {
