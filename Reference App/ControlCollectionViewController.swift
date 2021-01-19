@@ -6,7 +6,6 @@
 //  Copyright © 2017 High-Mobility GmbH. All rights reserved.
 //
 
-import Car
 import UIKit
 
 

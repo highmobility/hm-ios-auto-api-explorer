@@ -6,7 +6,6 @@
 //  Copyright © 2018 High-Mobility GmbH. All rights reserved.
 //
 
-import Car
 import CoreLocation
 import MapKit
 import UIKit

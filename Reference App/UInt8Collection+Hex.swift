@@ -9,13 +9,6 @@
 import Foundation
 
 
-extension Collection where Iterator.Element == UInt8 {
-
-    @available(*, deprecated, renamed: "hex") var hexString: String {
-        return map { String(format: "%02X", $0) }.joined()
-    }
-}
-
 extension Collection where Iterator.Element == UInt8, Self: UInt8CollectionConvertible {
 
     var bytes: [UInt8] {

@@ -6,7 +6,6 @@
 //  Copyright © 2017 High-Mobility GmbH. All rights reserved.
 //
 
-import Car
 import Foundation
 
 
@@ -45,7 +44,10 @@ class ControlFunctionsManager {
         // - Find the ControlFunctionSettable ones from them
         // - Get the ControlFunctions from those
         // - Flatten the ControlFunction-arrays
-        let functions = commands.compactMap { $0 }.compactMap { $0 as? ControlFunctionable }.flatMap { $0.controlFunctions }
+        let functions = commands
+            .compactMap { $0 }
+            .compactMap { $0 as? ControlFunctionable }
+            .flatMap { $0.controlFunctions }
 
         // - Sort the ControlFunctions by name
         allControlFunctions = functions.sorted { $0.name < $1.name }

@@ -31,6 +31,61 @@
 		204D06AF1ED35BB000736B6A /* ControlFunctionsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204D06AE1ED35BB000736B6A /* ControlFunctionsCollectionViewCell.swift */; };
 		20545F741F4DBD100015531E /* UIViewController+StatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20545F731F4DBD100015531E /* UIViewController+StatusBar.swift */; };
 		205500201EC4BC7C007C9837 /* TitlesScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2055001F1EC4BC7C007C9837 /* TitlesScrollView.swift */; };
+		205B0770256C0D28008EC1F8 /* Car+Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B076D256C0AA5008EC1F8 /* Car+Observer.swift */; };
+		205B0771256C0D28008EC1F8 /* Car+LinkDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B076B256C0AA5008EC1F8 /* Car+LinkDelegate.swift */; };
+		205B0772256C0D28008EC1F8 /* Car+Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B076E256C0AA5008EC1F8 /* Car+Parser.swift */; };
+		205B0773256C0D28008EC1F8 /* Car+Certificates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0769256C0AA5008EC1F8 /* Car+Certificates.swift */; };
+		205B0774256C0D28008EC1F8 /* Car+Driving.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B076A256C0AA5008EC1F8 /* Car+Driving.swift */; };
+		205B0775256C0D28008EC1F8 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0767256C0AA5008EC1F8 /* Car.swift */; };
+		205B0776256C0D28008EC1F8 /* Car+Bluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0768256C0AA5008EC1F8 /* Car+Bluetooth.swift */; };
+		205B0777256C0D28008EC1F8 /* Car+HMLocalDeviceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B076C256C0AA5008EC1F8 /* Car+HMLocalDeviceDelegate.swift */; };
+		205B0778256C0D2E008EC1F8 /* Collection+UInt8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0763256C0AA5008EC1F8 /* Collection+UInt8.swift */; };
+		205B0779256C0D2E008EC1F8 /* AASupportedCapability+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0764256C0AA5008EC1F8 /* AASupportedCapability+Extensions.swift */; };
+		205B077A256C0D2E008EC1F8 /* KeychainLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0765256C0AA5008EC1F8 /* KeychainLayer.swift */; };
+		205B077B256C0D33008EC1F8 /* ConnectionMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B075F256C0AA5008EC1F8 /* ConnectionMethod.swift */; };
+		205B077C256C0D33008EC1F8 /* CommandType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B075E256C0AA5008EC1F8 /* CommandType.swift */; };
+		205B077D256C0D33008EC1F8 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0761256C0AA5008EC1F8 /* Location.swift */; };
+		205B077E256C0D33008EC1F8 /* ConnectionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0760256C0AA5008EC1F8 /* ConnectionState.swift */; };
+		205B077F256C0D33008EC1F8 /* CommandError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B075D256C0AA5008EC1F8 /* CommandError.swift */; };
+		205B0780256C0D39008EC1F8 /* CommandClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B075B256C0AA5008EC1F8 /* CommandClass+Cmds.swift */; };
+		205B0781256C0D39008EC1F8 /* CommandClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B075A256C0AA5008EC1F8 /* CommandClass.swift */; };
+		205B0782256C0D3F008EC1F8 /* ChargingClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B073E256C0AA5008EC1F8 /* ChargingClass+Cmds.swift */; };
+		205B0783256C0D3F008EC1F8 /* ClimateClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0740256C0AA5008EC1F8 /* ClimateClass+Cmds.swift */; };
+		205B0784256C0D3F008EC1F8 /* ChargingClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B073D256C0AA5008EC1F8 /* ChargingClass.swift */; };
+		205B0785256C0D3F008EC1F8 /* LightsClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0749256C0AA5008EC1F8 /* LightsClass+Cmds.swift */; };
+		205B0786256C0D3F008EC1F8 /* RemoteControlClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B074F256C0AA5008EC1F8 /* RemoteControlClass+Cmds.swift */; };
+		205B0787256C0D3F008EC1F8 /* WindowsCommand+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0757256C0AA5008EC1F8 /* WindowsCommand+Cmds.swift */; };
+		205B0788256C0D3F008EC1F8 /* NaviDestinationClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B074B256C0AA5008EC1F8 /* NaviDestinationClass+Cmds.swift */; };
+		205B0789256C0D3F008EC1F8 /* ParkingBrakeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B074C256C0AA5008EC1F8 /* ParkingBrakeCommand.swift */; };
+		205B078A256C0D3F008EC1F8 /* VehicleLocationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0754256C0AA5008EC1F8 /* VehicleLocationClass.swift */; };
+		205B078B256C0D3F008EC1F8 /* ClimateClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B073F256C0AA5008EC1F8 /* ClimateClass.swift */; };
+		205B078C256C0D3F008EC1F8 /* NaviDestinationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B074A256C0AA5008EC1F8 /* NaviDestinationClass.swift */; };
+		205B078D256C0D3F008EC1F8 /* WindscreenCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0758256C0AA5008EC1F8 /* WindscreenCommand.swift */; };
+		205B078E256C0D3F008EC1F8 /* TrunkClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0752256C0AA5008EC1F8 /* TrunkClass.swift */; };
+		205B078F256C0D3F008EC1F8 /* EngineClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0745256C0AA5008EC1F8 /* EngineClass+Cmds.swift */; };
+		205B0790256C0D3F008EC1F8 /* ParkingBrakeCommand+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B074D256C0AA5008EC1F8 /* ParkingBrakeCommand+Cmds.swift */; };
+		205B0791256C0D3F008EC1F8 /* RooftopClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0750256C0AA5008EC1F8 /* RooftopClass.swift */; };
+		205B0792256C0D3F008EC1F8 /* EngineClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0744256C0AA5008EC1F8 /* EngineClass.swift */; };
+		205B0793256C0D3F008EC1F8 /* DoorsCommand+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0743256C0AA5008EC1F8 /* DoorsCommand+Cmds.swift */; };
+		205B0794256C0D3F008EC1F8 /* HonkHornFlashLightsClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0747256C0AA5008EC1F8 /* HonkHornFlashLightsClass+Cmds.swift */; };
+		205B0795256C0D3F008EC1F8 /* LightsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0748256C0AA5008EC1F8 /* LightsClass.swift */; };
+		205B0796256C0D3F008EC1F8 /* TrunkClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0753256C0AA5008EC1F8 /* TrunkClass+Cmds.swift */; };
+		205B0797256C0D3F008EC1F8 /* HonkHornFlashLightsClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0746256C0AA5008EC1F8 /* HonkHornFlashLightsClass.swift */; };
+		205B0798256C0D3F008EC1F8 /* WindowsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0756256C0AA5008EC1F8 /* WindowsCommand.swift */; };
+		205B0799256C0D3F008EC1F8 /* DiagnosticsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0741256C0AA5008EC1F8 /* DiagnosticsCommand.swift */; };
+		205B079A256C0D3F008EC1F8 /* VehicleLocationClass+Cmnds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0755256C0AA5008EC1F8 /* VehicleLocationClass+Cmnds.swift */; };
+		205B079B256C0D3F008EC1F8 /* RemoteControlClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B074E256C0AA5008EC1F8 /* RemoteControlClass.swift */; };
+		205B079C256C0D3F008EC1F8 /* DoorsCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0742256C0AA5008EC1F8 /* DoorsCommand.swift */; };
+		205B079D256C0D3F008EC1F8 /* RooftopClass+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0751256C0AA5008EC1F8 /* RooftopClass+Cmds.swift */; };
+		205B079E256C0D44008EC1F8 /* FailureMessageClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0739256C0AA5008EC1F8 /* FailureMessageClass.swift */; };
+		205B079F256C0D44008EC1F8 /* Capabilities+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0738256C0AA5008EC1F8 /* Capabilities+Cmds.swift */; };
+		205B07A0256C0D44008EC1F8 /* VehicleStatii.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B073A256C0AA5008EC1F8 /* VehicleStatii.swift */; };
+		205B07A1256C0D44008EC1F8 /* CapabilitiesClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0737256C0AA5008EC1F8 /* CapabilitiesClass.swift */; };
+		205B07A2256C0D44008EC1F8 /* VehicleStatii+Cmds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B073B256C0AA5008EC1F8 /* VehicleStatii+Cmds.swift */; };
+		205B07A3256C0D49008EC1F8 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0734256C0AA5008EC1F8 /* Parser.swift */; };
+		205B07A4256C0D49008EC1F8 /* ParserResponseOnly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0735256C0AA5008EC1F8 /* ParserResponseOnly.swift */; };
+		205B07A5256C0D4E008EC1F8 /* ResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0732256C0AA5008EC1F8 /* ResponseParser.swift */; };
+		205B07A6256C0D4E008EC1F8 /* CapabilityParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205B0731256C0AA5008EC1F8 /* CapabilityParser.swift */; };
 		206EB9101EEABC7C00887096 /* ControlFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EB90F1EEABC7C00887096 /* ControlFunction.swift */; };
 		206EB9121EEADEA600887096 /* ControlFunctionsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EB9111EEADEA600887096 /* ControlFunctionsManager.swift */; };
 		206EB9151EEADF0000887096 /* ControlAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206EB9141EEADF0000887096 /* ControlAction.swift */; };
@@ -56,8 +111,6 @@
 		207E484B1DB66BE10031C0FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 207E484A1DB66BE10031C0FB /* Assets.xcassets */; };
 		207E484E1DB66BE10031C0FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 207E484C1DB66BE10031C0FB /* LaunchScreen.storyboard */; };
 		208038C11DB6924C00285C29 /* OvalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 208038BF1DB6924C00285C29 /* OvalButton.swift */; };
-		2088B1031F12949F00A0F5A7 /* Car.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20EEE06A1F1293E1007B32F4 /* Car.framework */; };
-		2088B1041F12949F00A0F5A7 /* Car.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20EEE06A1F1293E1007B32F4 /* Car.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		209BE79C1EF0240D00FA51E1 /* RoundedImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 209BE79B1EF0240D00FA51E1 /* RoundedImageButton.swift */; };
 		20A6656523D1E3FF00E2BD9D /* HMKit in Frameworks */ = {isa = PBXBuildFile; productRef = 20A6656423D1E3FF00E2BD9D /* HMKit */; };
 		20AC533C1F7932CC00C9C23E /* TripleControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AC533B1F7932CC00C9C23E /* TripleControlButton.swift */; };
@@ -89,23 +142,6 @@
 		20FCE1671ECF45C800FA62E1 /* ControlCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FCE1661ECF45C800FA62E1 /* ControlCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		2088B1051F12949F00A0F5A7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 20EEE0651F1293E1007B32F4 /* Car.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 2094F2331F0FB5BB00779FFA;
-			remoteInfo = Car;
-		};
-		20EEE0691F1293E1007B32F4 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 20EEE0651F1293E1007B32F4 /* Car.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2094F2341F0FB5BB00779FFA;
-			remoteInfo = Car;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		209110211DB7A4EC008D89E7 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -113,7 +149,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2088B1041F12949F00A0F5A7 /* Car.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +180,61 @@
 		204D06AE1ED35BB000736B6A /* ControlFunctionsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ControlFunctionsCollectionViewCell.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		20545F731F4DBD100015531E /* UIViewController+StatusBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+StatusBar.swift"; sourceTree = "<group>"; };
 		2055001F1EC4BC7C007C9837 /* TitlesScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitlesScrollView.swift; sourceTree = "<group>"; };
+		205B0731256C0AA5008EC1F8 /* CapabilityParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapabilityParser.swift; sourceTree = "<group>"; };
+		205B0732256C0AA5008EC1F8 /* ResponseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseParser.swift; sourceTree = "<group>"; };
+		205B0734256C0AA5008EC1F8 /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		205B0735256C0AA5008EC1F8 /* ParserResponseOnly.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParserResponseOnly.swift; sourceTree = "<group>"; };
+		205B0737256C0AA5008EC1F8 /* CapabilitiesClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapabilitiesClass.swift; sourceTree = "<group>"; };
+		205B0738256C0AA5008EC1F8 /* Capabilities+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Capabilities+Cmds.swift"; sourceTree = "<group>"; };
+		205B0739256C0AA5008EC1F8 /* FailureMessageClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FailureMessageClass.swift; sourceTree = "<group>"; };
+		205B073A256C0AA5008EC1F8 /* VehicleStatii.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VehicleStatii.swift; sourceTree = "<group>"; };
+		205B073B256C0AA5008EC1F8 /* VehicleStatii+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "VehicleStatii+Cmds.swift"; sourceTree = "<group>"; };
+		205B073D256C0AA5008EC1F8 /* ChargingClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChargingClass.swift; sourceTree = "<group>"; };
+		205B073E256C0AA5008EC1F8 /* ChargingClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ChargingClass+Cmds.swift"; sourceTree = "<group>"; };
+		205B073F256C0AA5008EC1F8 /* ClimateClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClimateClass.swift; sourceTree = "<group>"; };
+		205B0740256C0AA5008EC1F8 /* ClimateClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClimateClass+Cmds.swift"; sourceTree = "<group>"; };
+		205B0741256C0AA5008EC1F8 /* DiagnosticsCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiagnosticsCommand.swift; sourceTree = "<group>"; };
+		205B0742256C0AA5008EC1F8 /* DoorsCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoorsCommand.swift; sourceTree = "<group>"; };
+		205B0743256C0AA5008EC1F8 /* DoorsCommand+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DoorsCommand+Cmds.swift"; sourceTree = "<group>"; };
+		205B0744256C0AA5008EC1F8 /* EngineClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineClass.swift; sourceTree = "<group>"; };
+		205B0745256C0AA5008EC1F8 /* EngineClass+Cmds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EngineClass+Cmds.swift"; sourceTree = "<group>"; };
+		205B0746256C0AA5008EC1F8 /* HonkHornFlashLightsClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HonkHornFlashLightsClass.swift; sourceTree = "<group>"; };
+		205B0747256C0AA5008EC1F8 /* HonkHornFlashLightsClass+Cmds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HonkHornFlashLightsClass+Cmds.swift"; sourceTree = "<group>"; };
+		205B0748256C0AA5008EC1F8 /* LightsClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LightsClass.swift; sourceTree = "<group>"; };
+		205B0749256C0AA5008EC1F8 /* LightsClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LightsClass+Cmds.swift"; sourceTree = "<group>"; };
+		205B074A256C0AA5008EC1F8 /* NaviDestinationClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaviDestinationClass.swift; sourceTree = "<group>"; };
+		205B074B256C0AA5008EC1F8 /* NaviDestinationClass+Cmds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NaviDestinationClass+Cmds.swift"; sourceTree = "<group>"; };
+		205B074C256C0AA5008EC1F8 /* ParkingBrakeCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParkingBrakeCommand.swift; sourceTree = "<group>"; };
+		205B074D256C0AA5008EC1F8 /* ParkingBrakeCommand+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ParkingBrakeCommand+Cmds.swift"; sourceTree = "<group>"; };
+		205B074E256C0AA5008EC1F8 /* RemoteControlClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteControlClass.swift; sourceTree = "<group>"; };
+		205B074F256C0AA5008EC1F8 /* RemoteControlClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RemoteControlClass+Cmds.swift"; sourceTree = "<group>"; };
+		205B0750256C0AA5008EC1F8 /* RooftopClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RooftopClass.swift; sourceTree = "<group>"; };
+		205B0751256C0AA5008EC1F8 /* RooftopClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RooftopClass+Cmds.swift"; sourceTree = "<group>"; };
+		205B0752256C0AA5008EC1F8 /* TrunkClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrunkClass.swift; sourceTree = "<group>"; };
+		205B0753256C0AA5008EC1F8 /* TrunkClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TrunkClass+Cmds.swift"; sourceTree = "<group>"; };
+		205B0754256C0AA5008EC1F8 /* VehicleLocationClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleLocationClass.swift; sourceTree = "<group>"; };
+		205B0755256C0AA5008EC1F8 /* VehicleLocationClass+Cmnds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VehicleLocationClass+Cmnds.swift"; sourceTree = "<group>"; };
+		205B0756256C0AA5008EC1F8 /* WindowsCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowsCommand.swift; sourceTree = "<group>"; };
+		205B0757256C0AA5008EC1F8 /* WindowsCommand+Cmds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WindowsCommand+Cmds.swift"; sourceTree = "<group>"; };
+		205B0758256C0AA5008EC1F8 /* WindscreenCommand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindscreenCommand.swift; sourceTree = "<group>"; };
+		205B075A256C0AA5008EC1F8 /* CommandClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandClass.swift; sourceTree = "<group>"; };
+		205B075B256C0AA5008EC1F8 /* CommandClass+Cmds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CommandClass+Cmds.swift"; sourceTree = "<group>"; };
+		205B075D256C0AA5008EC1F8 /* CommandError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandError.swift; sourceTree = "<group>"; };
+		205B075E256C0AA5008EC1F8 /* CommandType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommandType.swift; sourceTree = "<group>"; };
+		205B075F256C0AA5008EC1F8 /* ConnectionMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionMethod.swift; sourceTree = "<group>"; };
+		205B0760256C0AA5008EC1F8 /* ConnectionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionState.swift; sourceTree = "<group>"; };
+		205B0761256C0AA5008EC1F8 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		205B0763256C0AA5008EC1F8 /* Collection+UInt8.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+UInt8.swift"; sourceTree = "<group>"; };
+		205B0764256C0AA5008EC1F8 /* AASupportedCapability+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AASupportedCapability+Extensions.swift"; sourceTree = "<group>"; };
+		205B0765256C0AA5008EC1F8 /* KeychainLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainLayer.swift; sourceTree = "<group>"; };
+		205B0767256C0AA5008EC1F8 /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		205B0768256C0AA5008EC1F8 /* Car+Bluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+Bluetooth.swift"; sourceTree = "<group>"; };
+		205B0769256C0AA5008EC1F8 /* Car+Certificates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+Certificates.swift"; sourceTree = "<group>"; };
+		205B076A256C0AA5008EC1F8 /* Car+Driving.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+Driving.swift"; sourceTree = "<group>"; };
+		205B076B256C0AA5008EC1F8 /* Car+LinkDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+LinkDelegate.swift"; sourceTree = "<group>"; };
+		205B076C256C0AA5008EC1F8 /* Car+HMLocalDeviceDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+HMLocalDeviceDelegate.swift"; sourceTree = "<group>"; };
+		205B076D256C0AA5008EC1F8 /* Car+Observer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+Observer.swift"; sourceTree = "<group>"; };
+		205B076E256C0AA5008EC1F8 /* Car+Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Car+Parser.swift"; sourceTree = "<group>"; };
 		206EB90F1EEABC7C00887096 /* ControlFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFunction.swift; sourceTree = "<group>"; };
 		206EB9111EEADEA600887096 /* ControlFunctionsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlFunctionsManager.swift; sourceTree = "<group>"; };
 		206EB9141EEADF0000887096 /* ControlAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlAction.swift; sourceTree = "<group>"; };
@@ -196,7 +286,6 @@
 		20E1566E1ED447FE00208E0B /* ControlTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlTableViewCell.swift; sourceTree = "<group>"; };
 		20E270331EE1889900078DF0 /* FullCellCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullCellCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		20E7511A1DD0D83E00320674 /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
-		20EEE0651F1293E1007B32F4 /* Car.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Car.xcodeproj; path = "Reference App/Car/Car.xcodeproj"; sourceTree = "<group>"; };
 		20FCE1641ECF458200FA62E1 /* ControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ControlViewController.swift; sourceTree = "<group>"; };
 		20FCE1661ECF45C800FA62E1 /* ControlCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ControlCollectionViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
@@ -206,7 +295,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2088B1031F12949F00A0F5A7 /* Car.framework in Frameworks */,
 				206F95AB23C8B92E00D714AE /* HMCryptoKit in Frameworks */,
 				20A6656523D1E3FF00E2BD9D /* HMKit in Frameworks */,
 				206F95AE23C8B95900D714AE /* AutoAPI in Frameworks */,
@@ -268,6 +356,124 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		205B0733256C0AA5008EC1F8 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				205B0731256C0AA5008EC1F8 /* CapabilityParser.swift */,
+				205B0732256C0AA5008EC1F8 /* ResponseParser.swift */,
+			);
+			name = Parsers;
+			sourceTree = "<group>";
+		};
+		205B0736256C0AA5008EC1F8 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				205B0733256C0AA5008EC1F8 /* Parsers */,
+				205B0734256C0AA5008EC1F8 /* Parser.swift */,
+				205B0735256C0AA5008EC1F8 /* ParserResponseOnly.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		205B073C256C0AA5008EC1F8 /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				205B0737256C0AA5008EC1F8 /* CapabilitiesClass.swift */,
+				205B0738256C0AA5008EC1F8 /* Capabilities+Cmds.swift */,
+				205B0739256C0AA5008EC1F8 /* FailureMessageClass.swift */,
+				205B073A256C0AA5008EC1F8 /* VehicleStatii.swift */,
+				205B073B256C0AA5008EC1F8 /* VehicleStatii+Cmds.swift */,
+			);
+			name = Meta;
+			sourceTree = "<group>";
+		};
+		205B0759256C0AA5008EC1F8 /* Subclasses */ = {
+			isa = PBXGroup;
+			children = (
+				205B073D256C0AA5008EC1F8 /* ChargingClass.swift */,
+				205B073E256C0AA5008EC1F8 /* ChargingClass+Cmds.swift */,
+				205B073F256C0AA5008EC1F8 /* ClimateClass.swift */,
+				205B0740256C0AA5008EC1F8 /* ClimateClass+Cmds.swift */,
+				205B0741256C0AA5008EC1F8 /* DiagnosticsCommand.swift */,
+				205B0742256C0AA5008EC1F8 /* DoorsCommand.swift */,
+				205B0743256C0AA5008EC1F8 /* DoorsCommand+Cmds.swift */,
+				205B0744256C0AA5008EC1F8 /* EngineClass.swift */,
+				205B0745256C0AA5008EC1F8 /* EngineClass+Cmds.swift */,
+				205B0746256C0AA5008EC1F8 /* HonkHornFlashLightsClass.swift */,
+				205B0747256C0AA5008EC1F8 /* HonkHornFlashLightsClass+Cmds.swift */,
+				205B0748256C0AA5008EC1F8 /* LightsClass.swift */,
+				205B0749256C0AA5008EC1F8 /* LightsClass+Cmds.swift */,
+				205B074A256C0AA5008EC1F8 /* NaviDestinationClass.swift */,
+				205B074B256C0AA5008EC1F8 /* NaviDestinationClass+Cmds.swift */,
+				205B074C256C0AA5008EC1F8 /* ParkingBrakeCommand.swift */,
+				205B074D256C0AA5008EC1F8 /* ParkingBrakeCommand+Cmds.swift */,
+				205B074E256C0AA5008EC1F8 /* RemoteControlClass.swift */,
+				205B074F256C0AA5008EC1F8 /* RemoteControlClass+Cmds.swift */,
+				205B0750256C0AA5008EC1F8 /* RooftopClass.swift */,
+				205B0751256C0AA5008EC1F8 /* RooftopClass+Cmds.swift */,
+				205B0752256C0AA5008EC1F8 /* TrunkClass.swift */,
+				205B0753256C0AA5008EC1F8 /* TrunkClass+Cmds.swift */,
+				205B0754256C0AA5008EC1F8 /* VehicleLocationClass.swift */,
+				205B0755256C0AA5008EC1F8 /* VehicleLocationClass+Cmnds.swift */,
+				205B0756256C0AA5008EC1F8 /* WindowsCommand.swift */,
+				205B0757256C0AA5008EC1F8 /* WindowsCommand+Cmds.swift */,
+				205B0758256C0AA5008EC1F8 /* WindscreenCommand.swift */,
+			);
+			name = Subclasses;
+			sourceTree = "<group>";
+		};
+		205B075C256C0AA5008EC1F8 /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				205B0736256C0AA5008EC1F8 /* Protocols */,
+				205B073C256C0AA5008EC1F8 /* Meta */,
+				205B0759256C0AA5008EC1F8 /* Subclasses */,
+				205B075A256C0AA5008EC1F8 /* CommandClass.swift */,
+				205B075B256C0AA5008EC1F8 /* CommandClass+Cmds.swift */,
+			);
+			name = Commands;
+			sourceTree = "<group>";
+		};
+		205B0762256C0AA5008EC1F8 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				205B075D256C0AA5008EC1F8 /* CommandError.swift */,
+				205B075E256C0AA5008EC1F8 /* CommandType.swift */,
+				205B075F256C0AA5008EC1F8 /* ConnectionMethod.swift */,
+				205B0760256C0AA5008EC1F8 /* ConnectionState.swift */,
+				205B0761256C0AA5008EC1F8 /* Location.swift */,
+			);
+			name = Enums;
+			sourceTree = "<group>";
+		};
+		205B0766256C0AA5008EC1F8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				205B0763256C0AA5008EC1F8 /* Collection+UInt8.swift */,
+				205B0764256C0AA5008EC1F8 /* AASupportedCapability+Extensions.swift */,
+				205B0765256C0AA5008EC1F8 /* KeychainLayer.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		205B076F256C0AA5008EC1F8 /* Car */ = {
+			isa = PBXGroup;
+			children = (
+				205B075C256C0AA5008EC1F8 /* Commands */,
+				205B0762256C0AA5008EC1F8 /* Enums */,
+				205B0766256C0AA5008EC1F8 /* Extensions */,
+				205B0767256C0AA5008EC1F8 /* Car.swift */,
+				205B0768256C0AA5008EC1F8 /* Car+Bluetooth.swift */,
+				205B0769256C0AA5008EC1F8 /* Car+Certificates.swift */,
+				205B076A256C0AA5008EC1F8 /* Car+Driving.swift */,
+				205B076B256C0AA5008EC1F8 /* Car+LinkDelegate.swift */,
+				205B076C256C0AA5008EC1F8 /* Car+HMLocalDeviceDelegate.swift */,
+				205B076D256C0AA5008EC1F8 /* Car+Observer.swift */,
+				205B076E256C0AA5008EC1F8 /* Car+Parser.swift */,
+			);
+			path = Car;
+			sourceTree = "<group>";
+		};
 		206EB9131EEADED900887096 /* Control Functions */ = {
 			isa = PBXGroup;
 			children = (
@@ -284,7 +490,6 @@
 		207E48351DB66BE10031C0FB = {
 			isa = PBXGroup;
 			children = (
-				20EEE0651F1293E1007B32F4 /* Car.xcodeproj */,
 				207E48401DB66BE10031C0FB /* The App */,
 				207E483F1DB66BE10031C0FB /* Products */,
 			);
@@ -301,7 +506,6 @@
 		207E48401DB66BE10031C0FB /* The App */ = {
 			isa = PBXGroup;
 			children = (
-				20F68CB81DD35BFE00ED16A7 /* Frameworks */,
 				207E48551DB66C0C0031C0FB /* Source */,
 				207E48561DB66C160031C0FB /* Resources */,
 			);
@@ -312,6 +516,7 @@
 		207E48551DB66C0C0031C0FB /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				205B076F256C0AA5008EC1F8 /* Car */,
 				208038BB1DB68CCF00285C29 /* Extensions */,
 				20B8FA841EE1B7F30007EFF7 /* Layouts */,
 				204D06A71ED32B4400736B6A /* Models */,
@@ -430,22 +635,6 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
-		20EEE0661F1293E1007B32F4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				20EEE06A1F1293E1007B32F4 /* Car.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		20F68CB81DD35BFE00ED16A7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			path = ..;
-			sourceTree = "<group>";
-		};
 		20FCE1631ECF201A00FA62E1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -486,7 +675,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				2088B1061F12949F00A0F5A7 /* PBXTargetDependency */,
 			);
 			name = "The App";
 			packageProductDependencies = (
@@ -505,7 +693,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = "High-Mobility GmbH";
 				TargetAttributes = {
 					207E483D1DB66BE10031C0FB = {
@@ -532,28 +720,12 @@
 			);
 			productRefGroup = 207E483F1DB66BE10031C0FB /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 20EEE0661F1293E1007B32F4 /* Products */;
-					ProjectRef = 20EEE0651F1293E1007B32F4 /* Car.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				207E483D1DB66BE10031C0FB /* The App */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		20EEE06A1F1293E1007B32F4 /* Car.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Car.framework;
-			remoteRef = 20EEE0691F1293E1007B32F4 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		207E483C1DB66BE10031C0FB /* Resources */ = {
@@ -590,30 +762,47 @@
 			buildActionMask = 2147483647;
 			files = (
 				207B466A203C6201002F346D /* EngineClass+ControlFunctionable.swift in Sources */,
+				205B078D256C0D3F008EC1F8 /* WindscreenCommand.swift in Sources */,
+				205B0798256C0D3F008EC1F8 /* WindowsCommand.swift in Sources */,
 				2011669E1DC7733D0089576D /* TapToCarConverter.swift in Sources */,
+				205B07A4256C0D49008EC1F8 /* ParserResponseOnly.swift in Sources */,
 				206EB9151EEADF0000887096 /* ControlAction.swift in Sources */,
 				20269CDB1F73B8B70085A744 /* ChargingClass+ControlFunctionable.swift in Sources */,
+				205B0781256C0D39008EC1F8 /* CommandClass.swift in Sources */,
 				2019AAAD1F1F3CE8003A8FDB /* UInt8CollectionConvertible.swift in Sources */,
 				207B4670203C7929002F346D /* SingleControlButton.swift in Sources */,
+				205B0777256C0D28008EC1F8 /* Car+HMLocalDeviceDelegate.swift in Sources */,
 				204D06A61ED310F200736B6A /* ShadowView.swift in Sources */,
 				20E1566F1ED447FE00208E0B /* ControlTableViewCell.swift in Sources */,
 				201AC9131EE99A7500096D94 /* DualControlButton.swift in Sources */,
 				20CEC5CF1E55DEF800AC6B63 /* String+Extensions.swift in Sources */,
 				2011669A1DC7731C0089576D /* TapContainer.swift in Sources */,
+				205B0778256C0D2E008EC1F8 /* Collection+UInt8.swift in Sources */,
 				204D06AF1ED35BB000736B6A /* ControlFunctionsCollectionViewCell.swift in Sources */,
 				207B4672203C7A50002F346D /* SingleControlTableViewCell.swift in Sources */,
+				205B0792256C0D3F008EC1F8 /* EngineClass.swift in Sources */,
+				205B078C256C0D3F008EC1F8 /* NaviDestinationClass.swift in Sources */,
 				2005A4231E32110900F70140 /* String+Email.swift in Sources */,
 				207B4667203C61CD002F346D /* HonkHornFlashLightsClass+ControlFunctionable.swift in Sources */,
+				205B077E256C0D33008EC1F8 /* ConnectionState.swift in Sources */,
 				207E48421DB66BE10031C0FB /* AppDelegate.swift in Sources */,
+				205B0795256C0D3F008EC1F8 /* LightsClass.swift in Sources */,
 				20201EE11EC31F4500793611 /* ImageButton.swift in Sources */,
 				20B8FA8A1EE1BC030007EFF7 /* CustomItemSizeFromBounds.swift in Sources */,
 				2019AAB81F1F5250003A8FDB /* ConnectViewController.swift in Sources */,
 				20201EE31EC3505B00793611 /* UInt8Collection+Hex.swift in Sources */,
 				2023F1361ECC7D490009B9C5 /* Collection+Unique.swift in Sources */,
 				20DE23581F0D123A00C4BC7A /* TripleControlTableViewCell.swift in Sources */,
+				205B0796256C0D3F008EC1F8 /* TrunkClass+Cmds.swift in Sources */,
+				205B07A6256C0D4E008EC1F8 /* CapabilityParser.swift in Sources */,
+				205B0797256C0D3F008EC1F8 /* HonkHornFlashLightsClass.swift in Sources */,
 				200C7C781DC7752100C31B21 /* Double.swift in Sources */,
+				205B0771256C0D28008EC1F8 /* Car+LinkDelegate.swift in Sources */,
 				20545F741F4DBD100015531E /* UIViewController+StatusBar.swift in Sources */,
+				205B078F256C0D3F008EC1F8 /* EngineClass+Cmds.swift in Sources */,
 				20B8FA911EE1C0260007EFF7 /* CustomFlowLayoutCommonInitialiser.swift in Sources */,
+				205B079F256C0D44008EC1F8 /* Capabilities+Cmds.swift in Sources */,
+				205B0785256C0D3F008EC1F8 /* LightsClass+Cmds.swift in Sources */,
 				2036D1281EE8743E0075F5D2 /* RoundedView.swift in Sources */,
 				204D06AB1ED3366500736B6A /* ArcView.swift in Sources */,
 				20FCE1651ECF458200FA62E1 /* ControlViewController.swift in Sources */,
@@ -621,58 +810,88 @@
 				207B466E203C7709002F346D /* SingleControlFunction.swift in Sources */,
 				207B4682203C9579002F346D /* WindowsStatusViewController.swift in Sources */,
 				206EB9191EEADF5C00887096 /* FullScreenControlFunction.swift in Sources */,
+				205B0793256C0D3F008EC1F8 /* DoorsCommand+Cmds.swift in Sources */,
+				205B07A3256C0D49008EC1F8 /* Parser.swift in Sources */,
 				204D06AD1ED3510900736B6A /* ControlOverviewCollectionViewCell.swift in Sources */,
 				208038C11DB6924C00285C29 /* OvalButton.swift in Sources */,
+				205B07A1256C0D44008EC1F8 /* CapabilitiesClass.swift in Sources */,
+				205B077F256C0D33008EC1F8 /* CommandError.swift in Sources */,
 				201166981DC7730B0089576D /* DotView.swift in Sources */,
+				205B0784256C0D3F008EC1F8 /* ChargingClass.swift in Sources */,
+				205B0790256C0D3F008EC1F8 /* ParkingBrakeCommand+Cmds.swift in Sources */,
+				205B0770256C0D28008EC1F8 /* Car+Observer.swift in Sources */,
 				209BE79C1EF0240D00FA51E1 /* RoundedImageButton.swift in Sources */,
+				205B07A2256C0D44008EC1F8 /* VehicleStatii+Cmds.swift in Sources */,
 				20B7BE411F0CE87C005CFF1C /* TripleControlFunction.swift in Sources */,
+				205B0772256C0D28008EC1F8 /* Car+Parser.swift in Sources */,
 				20FCE1671ECF45C800FA62E1 /* ControlCollectionViewController.swift in Sources */,
 				207B4660203C590E002F346D /* VehicleLocationClass+ControlFunctionable.swift in Sources */,
 				207B4668203C61CD002F346D /* WindowsCommand+ControlFunctionable.swift in Sources */,
 				20C88A171EC5DCA300B8EF97 /* TitlesScrollViewContainer.swift in Sources */,
+				205B0783256C0D3F008EC1F8 /* ClimateClass+Cmds.swift in Sources */,
+				205B077B256C0D33008EC1F8 /* ConnectionMethod.swift in Sources */,
 				20B23CFA1F127725006CFC06 /* ControlFunctionable.swift in Sources */,
+				205B07A0256C0D44008EC1F8 /* VehicleStatii.swift in Sources */,
 				207B465E203C590E002F346D /* ParkingBrakeCommand+ControlFunctionable.swift in Sources */,
 				20B23D031F127BDE006CFC06 /* RemoteControlClass+ControlFunctionable.swift in Sources */,
+				205B0791256C0D3F008EC1F8 /* RooftopClass.swift in Sources */,
 				20E270341EE1889900078DF0 /* FullCellCollectionViewFlowLayout.swift in Sources */,
 				207B465F203C590E002F346D /* NaviDestinationClass+ControlFunctionable.swift in Sources */,
+				205B079D256C0D3F008EC1F8 /* RooftopClass+Cmds.swift in Sources */,
+				205B0774256C0D28008EC1F8 /* Car+Driving.swift in Sources */,
+				205B0782256C0D3F008EC1F8 /* ChargingClass+Cmds.swift in Sources */,
+				205B079E256C0D44008EC1F8 /* FailureMessageClass.swift in Sources */,
+				205B077C256C0D33008EC1F8 /* CommandType.swift in Sources */,
 				204D06A91ED32F4400736B6A /* UIColor+Custom.swift in Sources */,
+				205B0780256C0D39008EC1F8 /* CommandClass+Cmds.swift in Sources */,
+				205B077A256C0D2E008EC1F8 /* KeychainLayer.swift in Sources */,
 				200C7C771DC7752100C31B21 /* CGRect.swift in Sources */,
 				206EB9121EEADEA600887096 /* ControlFunctionsManager.swift in Sources */,
 				20E1566B1ED4466F00208E0B /* DualControlTableViewCell.swift in Sources */,
+				205B078E256C0D3F008EC1F8 /* TrunkClass.swift in Sources */,
+				205B079C256C0D3F008EC1F8 /* DoorsCommand.swift in Sources */,
 				207B467C203C83D3002F346D /* DoorsStatusViewController.swift in Sources */,
+				205B0788256C0D3F008EC1F8 /* NaviDestinationClass+Cmds.swift in Sources */,
 				20B23CF11F1274E1006CFC06 /* DoorsCommand+ControlFunctionable.swift in Sources */,
+				205B0775256C0D28008EC1F8 /* Car.swift in Sources */,
+				205B077D256C0D33008EC1F8 /* Location.swift in Sources */,
 				20B8FA8F1EE1BFC10007EFF7 /* UIEdgeInsets+SimpleInit.swift in Sources */,
 				205500201EC4BC7C007C9837 /* TitlesScrollView.swift in Sources */,
 				20DBC3911EE9B07F002A0293 /* FullScreenControlButton.swift in Sources */,
 				20B23CFF1F1279F4006CFC06 /* ClimateClass+ControlFunctionable.swift in Sources */,
+				205B0776256C0D28008EC1F8 /* Car+Bluetooth.swift in Sources */,
 				20B8FA881EE1BBE90007EFF7 /* CustomCollectionViewFlowLayout.swift in Sources */,
+				205B0773256C0D28008EC1F8 /* Car+Certificates.swift in Sources */,
 				207B4663203C5956002F346D /* VehicleLocationViewController.swift in Sources */,
 				20B23CF81F1275E5006CFC06 /* RooftopClass+ControlFunctionable.swift in Sources */,
+				205B0787256C0D3F008EC1F8 /* WindowsCommand+Cmds.swift in Sources */,
+				205B079B256C0D3F008EC1F8 /* RemoteControlClass.swift in Sources */,
 				20BA06181EDEB7B80057E6B8 /* RemoteControlViewController.swift in Sources */,
 				20CCEC531DB8ADC600EEFC7D /* Delay.swift in Sources */,
 				207B4664203C5956002F346D /* NaviDestinationViewController.swift in Sources */,
 				206EB91B1EEAEEB500887096 /* ControlFunctionSettable.swift in Sources */,
+				205B0799256C0D3F008EC1F8 /* DiagnosticsCommand.swift in Sources */,
 				206EB9171EEADF3600887096 /* DualControlFunction.swift in Sources */,
 				20AC533C1F7932CC00C9C23E /* TripleControlButton.swift in Sources */,
+				205B0779256C0D2E008EC1F8 /* AASupportedCapability+Extensions.swift in Sources */,
 				200C7C761DC7752100C31B21 /* CGPoint.swift in Sources */,
+				205B078B256C0D3F008EC1F8 /* ClimateClass.swift in Sources */,
 				20B8FA8D1EE1BD150007EFF7 /* CommonInitiliser.swift in Sources */,
 				20B23CF61F127585006CFC06 /* TrunkClass+ControlFunctionable.swift in Sources */,
+				205B078A256C0D3F008EC1F8 /* VehicleLocationClass.swift in Sources */,
 				20E7511B1DD0D83E00320674 /* RoundedButton.swift in Sources */,
 				206EB9101EEABC7C00887096 /* ControlFunction.swift in Sources */,
 				20B23D011F127A98006CFC06 /* LightsClass+ControlFunctionable.swift in Sources */,
+				205B079A256C0D3F008EC1F8 /* VehicleLocationClass+Cmnds.swift in Sources */,
 				20E1566C1ED4466F00208E0B /* FullScreenControlTableViewCell.swift in Sources */,
+				205B0794256C0D3F008EC1F8 /* HonkHornFlashLightsClass+Cmds.swift in Sources */,
+				205B0789256C0D3F008EC1F8 /* ParkingBrakeCommand.swift in Sources */,
+				205B0786256C0D3F008EC1F8 /* RemoteControlClass+Cmds.swift in Sources */,
+				205B07A5256C0D4E008EC1F8 /* ResponseParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		2088B1061F12949F00A0F5A7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Car;
-			targetProxy = 2088B1051F12949F00A0F5A7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		207E484C1DB66BE10031C0FB /* LaunchScreen.storyboard */ = {
@@ -711,6 +930,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -736,7 +956,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -771,6 +991,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -790,7 +1011,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -816,12 +1037,12 @@
 					"$(PROJECT_DIR)/Reference\\ App",
 				);
 				INFOPLIST_FILE = "Reference App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.5;
+				MARKETING_VERSION = 2.5.6;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hm.reference-app.explore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -848,12 +1069,12 @@
 					"$(PROJECT_DIR)/Reference\\ App",
 				);
 				INFOPLIST_FILE = "Reference App/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.5.5;
+				MARKETING_VERSION = 2.5.6;
 				OTHER_SWIFT_FLAGS = "-Xfrontend -debug-time-function-bodies";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.hm.reference-app.explore";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -901,7 +1122,7 @@
 			repositoryURL = "git@github.com:highmobility/auto-api-swift.git";
 			requirement = {
 				kind = upToNextMinorVersion;
-				minimumVersion = 11.0.0;
+				minimumVersion = 12.0.0;
 			};
 		};
 		20A6656323D1E3FF00E2BD9D /* XCRemoteSwiftPackageReference "hmkit-swift" */ = {
