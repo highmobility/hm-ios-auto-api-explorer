@@ -58,7 +58,7 @@ extension RemoteControlClass: ResponseParser {
                 return nil
         }
 
-        guard let controlModeStatus = ControlModeStatus(rawValue: controlMode.rawValue) else {
+        guard let controlModeStatus = ControlModeStatus(rawValue: controlMode.byteValue) else {
             return nil
         }
 

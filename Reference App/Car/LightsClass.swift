@@ -53,7 +53,7 @@ extension LightsClass: ResponseParser {
     @discardableResult func update(from response: AACapability) -> CommandType? {
         guard let lights = response as? AALights,
             let frontExteriorState = lights.frontExteriorLight?.value,
-            let frontLightsState = FrontExteriorLightState(rawValue: frontExteriorState.rawValue),
+            let frontLightsState = FrontExteriorLightState(rawValue: frontExteriorState.byteValue),
             let interiorState = lights.interiorLights,
             let rearExteriorState = lights.rearExteriorLight?.value else {
                 return nil

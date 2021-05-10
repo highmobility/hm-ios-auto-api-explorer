@@ -25,7 +25,7 @@ public extension Car {
     }
 
     func sendLightsCommand(frontExteriorLights: LightsClass.FrontExteriorLightState, failed: @escaping CommandFailed) {
-        guard let frontExterior = AALights.FrontExteriorLight(rawValue: frontExteriorLights.rawValue) else {
+        guard let frontExterior = AALights.FrontExteriorLight(bytes: [frontExteriorLights.rawValue]) else {
             return failed(.invalidValues)
         }
 

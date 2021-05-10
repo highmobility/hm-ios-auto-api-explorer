@@ -35,7 +35,7 @@ extension EngineClass: ResponseParser {
 
     @discardableResult func update(from response: AACapability) -> CommandType? {
         guard let ignition = response as? AAIgnition,
-            let ignitionState = ignition.status?.value else {
+              let ignitionState = ignition.state?.value else {
                 return nil
         }
 
