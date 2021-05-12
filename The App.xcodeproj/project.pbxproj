@@ -1121,8 +1121,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "git@github.com:highmobility/auto-api-swift.git";
 			requirement = {
-				kind = upToNextMinorVersion;
-				minimumVersion = 12.0.0;
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.0.0;
 			};
 		};
 		20A6656323D1E3FF00E2BD9D /* XCRemoteSwiftPackageReference "hmkit-swift" */ = {
